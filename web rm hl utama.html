@@ -108,6 +108,10 @@
   .ad-slide.active {opacity: 1;}
   .ad-slide img {width: 100%;height: 100%;object-fit: cover;border-radius: 12px;}
   .ad-label {position: absolute;top: 5px;left: 5px;background: rgba(95, 94, 94, 0.8);color: #fff;font-size: 11px;font-weight: 700;padding: 2px 5px;border-radius: 4px;}
+    /* Running Text */
+  .info-lomba {width: 100%;overflow: hidden;background: #000000;padding: 8px 0;color: #fff;font-weight: 700;position: relative;border-bottom: 2px solid #000000;}
+  .running-text {white-space: nowrap;display: inline-block;animation: jalan 15s linear infinite;}.info-lomba:hover .running-text {animation-play-state: paused;}
+  @keyframes jalan {from { transform: translateX(100%); }to   { transform: translateX(-100%); }}
   </style>
 </head>
 <body>
@@ -142,8 +146,16 @@
   <a href="channel.html"class="hover-red">Review</a>
   <a href="tentang.html"class="hover-red">Tentang</a>
 </nav>
-
       </div>
+       <!-- INFO LOMBA BERJALAN -->
+<div class="info-lomba">
+  <div class="running-text">
+    🎣 Lomba Ikan Mas Empang Damai — 28 Nov 2025 •  
+    🎣 Open Day Mini Kolam Ratu — 5 Des 2025 •  
+    🎣 Night Strike Telaga Silet — 12 Des 2025 •  
+    🎣 Grand Tournament Babon 2025 — Segera Dibuka!
+  </div>
+</div>
     </header>
      <div class="container">
   
@@ -674,3 +686,4 @@ updateJam();
 </script>
  </body>
 </html>
+
