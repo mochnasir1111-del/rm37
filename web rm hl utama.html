@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Republik Mancing — Liputan & Event Mancing</title>
+  <meta name="description" content="Berita, jadwal, video, dan event seputar dunia mancing — Republik Mancing." />
+  <style>
+    /* ---------- THEME (Hijau Fresh) ---------- */
+    :root{
+      --accent: #2e6d55;
+      --accent-600:#0a6f47;
+      --muted:#000000;
+      --card:#ffffff;
+      --bg:#f6f8f7;
+      --max:1150px;
+      --radius:12px;
+      --shadow: 0 6px 20px rgba(56, 179, 82, 0.205);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:var(--max);margin:28px auto;padding:0 16px}
+    /* ---------- HEADER ---------- */
+    header.site-header{position:sticky;top:12px;z-index:1100;background:rgba(255,255,255,0.9);backdrop-filter: blur(6px);border-radius:14px;box-shadow:var(--shadow);margin-bottom:18px;}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 18px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{width:56px;height:56px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(10,70,40,0.12);background:linear-gradient(135deg,var(--accent),var(--accent-600));}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brand-text h1{margin:0;font-size:18px;color:#0b3f2a}
+    .brand-text span{font-size:12px;color:var(--muted)}
+    nav.main-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    nav.main-nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:700}
+    nav.main-nav a.active{background:transparent;color:var(--accent);box-shadow:inset 0 -3px 0 rgba(11,139,90,0.12)}
+    /* ---------- FULL-WIDTH SLIDER (HERO) ---------- */
+    .hero-wrap{width:100%;margin:18px 0}
+    .hero-slider{position:relative;width:100%;overflow:hidden;border-radius:14px;box-shadow:0 8px 30px rgba(6,40,20,0.08);}
+    .hero-track{display:flex;transition:transform 0.6s ease}
+    .hero-slide{min-width:100%;position:relative}
+    .hero-slide img{width:100%;height:380px;object-fit:cover;display:block}
+    .hero-caption{position:absolute;left:20px;bottom:28px;right:20px;background:linear-gradient(90deg, rgba(6,12,6,0.72), rgba(6,12,6,0.18));color:#fff;padding:18px;border-radius:10px;backdrop-filter:blur(4px)}
+    .hero-caption h2{margin:0;font-size:22px;line-height:1.15}
+    .hero-meta{margin-top:8px;font-size:13px;color:rgba(255,255,255,0.85)}
+    /* arrows */
+    .hero-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);color:#fff;border:none;cursor:pointer}
+    .hero-arrow.left{left:12px} .hero-arrow.right{right:12px}
+    /* dots */
+    .hero-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
+    .hero-dots button{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.5);border:none;cursor:pointer}
+    .hero-dots button.active{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.15)}
+    /* ---------- LAYOUT ---------- */
+    .layout{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:8px}
+    main.content{min-width:0}
+    .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(10,30,10,0.03);overflow:hidden}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 6px;font-size:16px}
+    .card .meta{font-size:13px;color:var(--muted)}
+
+    /* excerpt list */
+    .list-article{display:flex;gap:12px;align-items:flex-start}
+    .list-article img{width:120px;height:76px;object-fit:cover;border-radius:8px}
+
+    /* sidebar */
+    .sidebar .card{margin-bottom:14px}
+    .sticky{position:sticky;top:20px}
+    /* event list */
+    .event-list li{margin-bottom:10px;display:flex;gap:10px;align-items:center}
+    .event-list img{width:54px;height:54px;border-radius:8px;object-fit:cover}
+    /* footer */
+    footer.site-footer{margin-top:26px;padding:18px;background:var(--card);border-radius:12px;color:var(--muted);font-size:14px}
+    /* responsive */
+    @media (max-width:980px){
+      .hero-slide img{height:260px}
+      .layout{grid-template-columns:1fr}
+      .sidebar{order:2}
+      .header-inner{padding:10px}
+    }
+    @media (max-width:480px){
+      .hero-slide img{height:180px}
+      .brand-text h1{font-size:16px}}
+     /* small helpers */
+   .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
+   .muted{color:var(--muted);font-size:13px}
+     /* SEMUA IMG OTOMATIS BISA ZOOM */
+   img:not(#popupImg) {cursor: default;transition: transform .90s ease;border-radius: 8px;}
+   img:not(#popupImg):hover transform: scale(1.05);
+     /* OVERLAY */
+  .popup-overlay {position: fixed;top:0; left:0;width:100%; height:100%;background: rgba(0,0,0,0.75);display:none;justify-content:center;align-items:center;z-index:9999;}
+     /* FRAME */
+  .popup-frame {background:white;padding:10px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.5);animation: zoomIn .25s ease;}
+  .popup-frame img {max-width:90vw;max-height:90vh;border-radius:10px;}
+     /* ANIMASI */
+@keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
+    .hover-red {transition: color .25s ease;}
+    .hover-red:hover {color: #d32f2f;cursor: pointer;}
+  .card {display: flex;flex-direction: column;gap: 10px;border-radius: 8px;overflow: hidden;transition: transform 0.25s ease, box-shadow 0.25s ease;}
+  .card img {width: 100%;height: 155px;object-fit: cover;transition: transform 0.3s ease;}
+  a:hover .card {transform: scale(1.03);box-shadow: 0 8px 18px rgba(0,0,0,0.18);}
+  a:hover .card img {transform: scale(1.08);}
+  .hover-red {transition: color 0.2s ease;}
+  a:hover .hover-red {color: #d32f2f;}
+  .hover-red {transition: color .25s ease;   /* halus */}
+  .hover-red:hover {color: #d32f2f;cursor: pointer;}
+     /* IKLAN */
+  .ad-slider-simple {width: 100%;max-width: 728px;height: 120px;margin: 20px auto;position: relative;overflow: hidden;border-radius: 12px;}
+  .ad-slide {position: absolute;top: 0; left: 0;width: 100%;height: 100%;opacity: 0;transition: opacity 0.5s;}
+  .ad-slide.active {opacity: 1;}
+  .ad-slide img {width: 100%;height: 100%;object-fit: cover;border-radius: 12px;}
+  .ad-label {position: absolute;top: 5px;left: 5px;background: rgba(95, 94, 94, 0.8);color: #fff;font-size: 11px;font-weight: 700;padding: 2px 5px;border-radius: 4px;}
+  </style>
+</head>
+<body>
+  <!-- POPUP -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-frame">
+    <img id="popupImg" src="" alt="">
+  </div>
+</div>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="site-header" role="banner" aria-label="header">
+      <div class="header-inner">
+        <a href="#" class="brand" aria-label="Republik Mancing">
+          <div class="logo" aria-hidden="true">
+            <img src="https://i.postimg.cc/43JHzVW8/329314-3ae915ca4c2cedce83b1b12a7addfd9d-22-11-2022-19-45-25.jpg" alt="RM logo">
+          </div>
+          <div class="brand-text">
+            <h1>Republik Mancing</h1>
+            <span>Liputan • Event • Tips • Video</span>
+          </div>
+        </a>
+<nav class="main-nav" role="navigation" aria-label="Main">
+  <a href="index.html" class="hover-red">Home</a>
+  <a href="berita-utama-2.html"class="hover-red">Berita Utama</a>
+  <a href="liputan-event.html"class="hover-red">Liputan Event</a>
+  <a href="jadwal-event.html"class="hover-red">Jadwal Event</a>
+  <a href="galeri.html"class="hover-red">Galeri</a>
+  <a href="komunitas.html"class="hover-red">Komunitas</a>
+  <a href="channel.html"class="hover-red">Review</a>
+  <a href="tentang.html"class="hover-red">Tentang</a>
+</nav>
+
+      </div>
+    </header>
+     <div class="container">
+  
+<main>
+ <!-- IKLAN SLIDER SIMPLE -->
+<div class="ad-slider-simple">
+  <div class="ad-slide active">
+    <a href="https://i.postimg.cc/4dyk1GNQ/info-lengkap-hubungi-123-456-7890-republikmancing-(1).png" target="_blank">
+      <img src="https://i.postimg.cc/4dyk1GNQ/info-lengkap-hubungi-123-456-7890-republikmancing-(1).png" alt="Iklan 3">
+      <span class="ad-label">Iklan</span>
+    </a>
+  </div>
+</div>
+</main>
+    <!-- HERO SLIDER (FULL WIDTH) -->
+    <div class="hero-wrap" aria-hidden="false">
+      <div class="hero-slider" id="heroSlider" role="region" aria-label="Berita Utama Slider">
+        <div class="hero-track">
+          <!-- slide 1 -->
+          <a class="hero-slide" href="berita-utama-1.html" aria-label="Buka Berita 1">
+            <img src="https://i.postimg.cc/q71SRqd2/20250530140128-00-06-47-08-Still003.png" alt="Induk Empang Damai">
+            <div class="hero-caption">
+              <h2 class="hover-red">Induk 3,2 Kg Naik di Empang Damai — Lomba Spektakuler</h2>
+              <div class="hero-meta">22 Nov 2025 • Liputan</div>
+            </div>
+          </a>
+
+          <!-- slide 2 -->
+          <a class="hero-slide" href="berita-utama-2.html" aria-label="Buka Berita 2">
+            <img src="https://i.postimg.cc/VkSQ0qKZ/Screenshot-20250810-145241-Facebook.jpg" alt="Teknik Babon">
+            <div class="hero-caption">
+              <h2 class="hover-red">Teknik Dasar Mancing Babon — Panduan Lengkap</h2>
+              <div class="hero-meta">20 Nov 2025 • Teknik</div>
+            </div>
+          </a>
+
+          <!-- slide 3 -->
+          <a class="hero-slide" href="berita-utama-3.html" aria-label="Buka Berita 3">
+            <img src="https://i.postimg.cc/hvrzxWtW/20250807110229-MTS-00-00-51-24-Still001.png" alt="Jadwal Kolam">
+            <div class="hero-caption">
+              <h2 class="hover-red">Jadwal Mancing Mingguan — 7 Kolam Terpopuler</h2>
+              <div class="hero-meta">10 Nov 2025 • Jadwal</div>
+            </div>
+          </a>
+
+          <!-- slide 4 -->
+          <a class="hero-slide" href="berita-utama-4.html" aria-label="Buka Berita 4">
+            <img src="https://i.postimg.cc/dtVWh4Dh/20250807110229-MTS-00-00-51-24-Still001.png" alt="Event Lomba">
+            <div class="hero-caption">
+              <h2 class="hover-red">Event Lomba Ikan Mas — Rekap & Juara</h2>
+              <div class="hero-meta">15 Nov 2025 • Event</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- arrows -->
+        <button class="hero-arrow left" aria-label="Sebelumnya" id="heroPrev">‹</button>
+        <button class="hero-arrow right" aria-label="Berikutnya" id="heroNext">›</button>
+
+        <!-- dots -->
+        <div class="hero-dots" role="tablist" aria-label="Indikator Slider">
+          <button data-slide="0" class="active" aria-label="Slide 1"></button>
+          <button data-slide="1" aria-label="Slide 2"></button>
+          <button data-slide="2" aria-label="Slide 3"></button>
+          <button data-slide="3" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="layout">
+      <main class="content">
+
+       
+        <!-- more articles -->
+         <h2>Liputan Event</h2>
+         <div class="grid-cards" style="margin-top:18px">
+  
+  <!-- Artikel 1 -->
+  <a href="https://republikmancing.com/teknik-dasar-mancing-babon" style="text-decoration:none;color:inherit">
+    <article class="card">
+      <img src="https://i.postimg.cc/VkSQ0qKZ/Screenshot-20250810-145241-Facebook.jpg" alt="Liputan Empang Damai">
+      <h4 style="margin:10px 0 6px"class="hover-red">Teknik Dasar Mancing Babon — Hasilkan Strike Beruntun</h4>
+      <div class="small">20 Nov 2025 • Republik Mancing</div>
+    </article>
+  </a>
+
+  <!-- Artikel 2 -->
+  <a href="https://republikmancing.com/lomba-ikan-mas-rekap-juara" style="text-decoration:none;color:inherit">
+    <article class="card">
+      <img src="https://picsum.photos/400/300?random=10" alt="Event Koleksi">
+      <h4 style="margin:10px 0 6px"class="hover-red">Lomba Ikan Mas — Rekap & Juara</h4>
+      <div class="small">15 Nov 2025 • Event</div>
+    </article>
+  </a>
+
+  <!-- Artikel 3 -->
+  <a href="https://republikmancing.com/jadwal-mancing-mingguan" style="text-decoration:none;color:inherit">
+    <article class="card">
+      <img src="https://picsum.photos/400/300?random=11" alt="Jadwal Mancing">
+      <h4 style="margin:10px 0 6px"class="hover-red">Jadwal Mingguan Pemancingan Terpopuler</h4>
+      <div class="small">10 Nov 2025 • Jadwal</div>
+    </article>
+  </a>
+           
+        <!-- Artikel 4 -->
+  <a href="https://republikmancing.com/jadwal-mancing-mingguan" style="text-decoration:none;color:inherit">
+    <article class="card">
+      <img src="https://picsum.photos/400/300?random=12" alt="Jadwal Mancing">
+      <h4 style="margin:10px 0 6px"class="hover-red">Jadwal Mancing Tuan Muda Kemang</h4>
+      <div class="small">10 Nov 2025 • Jadwal</div>
+    </article>
+  </a>
+</div>
+ <!-- Video column -->
+<div class="card video-list">
+  <div style="font-weight:800;margin-bottom:12px; font-size:18px">Video Terbaru</div>
+
+  <!-- VIDEO 1 -->
+  <a href="https://www.youtube.com/watch?v=S26h4_CJ0mw" target="_blank" class="video-item" 
+     style="margin-bottom:16px; display:flex; gap:14px; text-decoration:none; color:inherit">
+    
+    <img 
+      src="https://img.youtube.com/vi/S26h4_CJ0mw/hqdefault.jpg" 
+      style="width:340px; height:180px; object-fit:cover; border-radius:12px"
+      alt="thumbnail">
+
+    <div>
+      <div style="font-weight:800; font-size:17px; line-height:1.3"class="hover-red">Anniversary New Ratu Mas Ayu
+      </div>
+      <div class="small" style="font-size:14px">3 Nov 2025 • 12:34</div>
+    </div>
+  </a>
+
+</div>
+<!-- IKLAN SLIDER SIMPLE -->
+<div class="ad-slider-simple">
+  <div class="ad-slide active">
+    <a href="https://i.postimg.cc/fRMTt5rC/Desain-tanpa-judul-(21).png" target="_blank">
+      <img src="https://i.postimg.cc/fRMTt5rC/Desain-tanpa-judul-(21).png" alt="Iklan 1">
+      <span class="ad-label">Iklan</span>
+    </a>
+  </div>
+</div>
+<script>
+  let adIndex = 0;
+  const ads = document.querySelectorAll('.ad-slide');
+
+  function showAds() {
+    ads.forEach(ad => ad.classList.remove('active'));
+    ads[adIndex].classList.add('active');
+    adIndex = (adIndex + 1) % ads.length;
+  }
+
+  showAds();
+  setInterval(showAds, 4000);
+</script>
+
+
+  <!-- Jadwal Mancing -->
+        <section id="jadwal" style="margin-top:20px">
+          <div class="section-title">
+            <h3 class="hover-red">Jadwal Mancing Terdekat</h3>
+            <a class="btn hover-red" href="#event">Lihat Semua</a>
+          </div>
+          <div class="card">
+            <table>
+              <thead><tr><th>Tanggal</th><th>Lokasi</th><th>Event</th><th>Biaya</th></tr></thead>
+              <tbody>
+                <tr><td>28 Nov 2025</td><td>Empang Damai</td><td>Lomba Ikan Mas</td><td>Rp 150.000</td></tr>
+                <tr><td>5 Des 2025</td><td>Kolam Ratu</td><td>Open Day Mini</td><td>Rp 50.000</td></tr>
+                <tr><td>12 Des 2025</td><td>Telaga Silet</td><td>Night Strike</td><td>Rp 100.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+         <!-- Koleksi -->
+        <section id="koleksi" style="margin-top:18px">
+          <div class="section-title"><h3>Koleksi Foto & Video</h3><a class="btn hover-red" href="#channel">Semua Video</a></div>
+          <div class="grid-cards">
+            <div class="card"><img src="https://i.postimg.cc/VNMnwysh/Whats-App-Image-2025-10-30-at-18-56-32.jpg" alt="koleksi1"><div class="small" style="margin-top:8px"class="hover-red">Induk 2.4 kg — 5 Okt 2025</div></div>
+            <div class="card"><img src="https://i.postimg.cc/dtVWh4Dh/20250807110229-MTS-00-00-51-24-Still001.png" alt="koleksi2"><div class="small" style="margin-top:8px"class="hover-red">Juara & Piala — 18 Sep 2025</div></div>
+            <div class="card"><img src="https://i.postimg.cc/hvrzxWtW/20250807110229-MTS-00-00-51-24-Still001.png" alt="koleksi3"><div class="small" style="margin-top:8px"class="hover-red">Tips Umpan — 6 Agu 2025</div></div>
+          </div>
+        </section>
+
+        <!-- Mini event list dengan image popup + tombol WA -->
+<div class="card" id="event">
+  <div style="font-weight:800;margin-bottom:8px"class="hover-red">Event Mendatang</div>
+  
+  <ul style="padding-left:14px;margin:0;color:var(--muted);list-style:none">
+    
+    <li style="margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+      <!-- Image event -->
+      <a href="#popup1">
+        <img src="https://i.postimg.cc/vmrWRHV8/Whats-App-Image-2025-10-30-at-18-56-32.jpg" alt="Lomba Ikan Mas" style="width:50px;height:50px;object-fit:cover;border-radius:6px;cursor:pointer;">
+      </a>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <span class="hover-red">28 Nov 2025 — Lomba Ikan Mas (Empang Damai)</span>
+        <!-- Tombol daftar via WA -->
+        <a href="https://wa.me/628123456789?text=Daftar%20Lomba%20Ikan%20Mas" target="_blank" style="display:flex;align-items:center;gap:4px;padding:4px 8px;background:#25D366;color:#fff;border-radius:6px;font-size:13px;text-decoration:none;width:max-content;">
+          <img src="https://i.postimg.cc/gkW6vPX4/4.png" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain">
+          Daftar via WA
+        </a>
+      </div>
+    </li>
+    
+    <li style="margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+      <a href="#popup2">
+        <img src="https://i.postimg.cc/your-image2.jpg" alt="Open Day Mini" style="width:50px;height:50px;object-fit:cover;border-radius:6px;cursor:pointer;">
+      </a>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <span class="hover-red">5 Des 2025 — Open Day Mini (Kolam Ratu)</span>
+        <a href="https://wa.me/628123456789?text=Daftar%20Open%20Day%20Mini" target="_blank" style="display:flex;align-items:center;gap:4px;padding:4px 8px;background:#25D366;color:#fff;border-radius:6px;font-size:13px;text-decoration:none;width:max-content;">
+          <img src="https://i.postimg.cc/gkW6vPX4/4.png" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain">
+          Daftar via WA
+        </a>
+      </div>
+    </li>
+    
+    <li style="display:flex;align-items:center;gap:8px;">
+      <a href="#popup3">
+        <img src="https://i.postimg.cc/your-image3.jpg" alt="Night Strike" style="width:50px;height:50px;object-fit:cover;border-radius:6px;cursor:pointer;">
+      </a>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <span class="hover-red">12 Des 2025 — Night Strike (Telaga Silet)</span>
+        <a href="https://wa.me/628123456789?text=Daftar%20Night%20Strike" target="_blank" style="display:flex;align-items:center;gap:4px;padding:4px 8px;background:#25D366;color:#fff;border-radius:6px;font-size:13px;text-decoration:none;width:max-content;">
+          <img src="https://i.postimg.cc/gkW6vPX4/4.png" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain">Daftar via WA
+        </a>
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+<!-- Popup overlay -->
+<style>
+  .popup-overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center; align-items:center;
+    z-index:1000;
+  }
+  .popup-overlay img {
+    max-width:90%; max-height:80%;
+    border-radius:8px;
+  }
+  .popup-overlay:target {
+    display:flex;
+  }
+</style>
+
+<!-- Popups -->
+<div id="popup1" class="popup-overlay">
+  <a href="#"><img src="https://i.postimg.cc/vmrWRHV8/Whats-App-Image-2025-10-30-at-18-56-32.jpg" alt="Lomba Ikan Mas"></a>
+</div>
+<div id="popup2" class="popup-overlay">
+  <a href="#"><img src="https://i.postimg.cc/your-image2.jpg" alt="Open Day Mini"></a>
+</div>
+<div id="popup3" class="popup-overlay">
+  <a href="#"><img src="https://i.postimg.cc/your-image3.jpg" alt="Night Strike"></a>
+</div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sticky">
+
+          <!-- Highlight Video -->
+          <div class="card">
+            <div style="font-weight:800;margin-bottom:8px">Highlight Video</div>
+            <iframe width="100%" height="170" src="https://www.youtube.com/embed/YM9aFlzXr1U" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
+            <div style="margin-top:10px"><a class="btn hover-red" href="#channel">Kunjungi Channel</a></div>
+          </div>
+
+          <!-- Iklan -->
+<div class="card ads" id="iklan">
+  <div style="font-weight:800;margin-bottom:8px">Iklan</div>
+  
+  <!-- Card content dengan image klikable -->
+  <a href="https://www.tokopedia.com/umpanmancing/neuroattractant-spray-fish-attractant-ikan-umpan-mancing-bukan-essen-dari-always-strike-pancing-1729675270608948132?extParam=ivf%3Dfalse%26keyword%3Dmmfc+store%26search_id%3D202511201127450BB4AEC1710521034U6Y%26src%3Dsearch&t_id=1763638070293&t_st=1&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result target="_blank" style="text-decoration:none;color:inherit">
+    <div style="background:#fafafa;padding:12px;border-radius:8px;text-align:center;cursor:pointer">
+      
+      <!-- Image iklan -->
+      <img src="https://i.postimg.cc/FHbpjZHv/698f0bb3892445e2b028d93f5eb30e47-tplv-o3syd03w52-resize-jpeg-1600-1600.jpg" alt="Iklan Republik Mancing" style="width:100%;border-radius:8px;margin-bottom:8px;object-fit:cover">
+      
+      <div style="font-weight:700">Pasang Iklan di Republik Mancing</div>
+      <p class="small">Slot banner, sidebar, dan sponsor event. Hubungi: iklan@republikmancing.com</p>
+      <div style="margin-top:8px">
+        <span class="btn hover-red" style="display:inline-block;padding:6px 12px;background:#05662d;color:#fff;border-radius:6px;">Pesan Slot</span></div></div></a></div>
+        <!-- Berita Komunitas Mancing -->
+<!-- Card Komunitas Mancing -->
+<div class="card" id="komunitas">
+  <div style="font-weight:800;margin-bottom:8px">Komunitas Mancing</div>
+  <div style="background:#fafafa;padding:12px;border-radius:12px;text-align:left">
+    <ul style="padding-left:16px; line-height:1.6; margin:0;">
+      <li>
+        <a href="https://republikmancing.com/berita/strike-beruntun-kolam-ratu" target="_blank">
+          <strong class="hover-red">28 Nov 2025:</strong> Strike Beruntun di Kolam Ratu: Tips Umpan Ampuh</a></li><li>
+        <a href="https://republikmancing.com/berita/lomba-mini-strike-bersama" target="_blank">
+          <strong class="hover-red">27 Nov 2025:</strong> Komunitas Mancing “Strike Bersama” Gelar Lomba Mini</a></li><li>
+        <a href="https://republikmancing.com/berita/tips-umpan-ikan-mas" target="_blank">
+          <strong class="hover-red">26 Nov 2025:</strong> Tips Memilih Umpan Ikan Mas untuk Pemula</a></li></ul></div></div>
+
+<!-- Iklan 1 -->
+<div class="card ads" id="iklan">
+  <div style="font-weight:800;margin-bottom:8px">Iklan</div>
+  <div style="background:#fafafa;padding:12px;border-radius:8px;text-align:center">
+
+    <!-- Banner iklan (klik menuju link) -->
+    <a href="https://link-iklannya.com" target="_blank" style="display:block;margin-bottom:10px">
+      <img src="https://i.postimg.cc/13sSvHwT/20250712135030-MTS-00-00-07-12-Still001.png" 
+           alt="Banner Iklan" 
+           style="width:100%;border-radius:8px;object-fit:cover;">
+    </a>
+
+    <div style="font-weight:700">Pasang Iklan di Republik Mancing</div>
+    <p class="small">Slot banner, sidebar, dan sponsor event. Hubungi: iklan@republikmancing.com</p>
+
+    <!-- Tombol CTA -->
+    <div style="margin-top:8px">
+      <a class="btn hover-red" href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20pasang%20iklan" target="_blank">
+        Pesan Slot
+      </a>
+    </div>
+  </div>
+</div>
+             <!-- Iklan 2 -->
+<div class="card ads" id="iklan">
+  <div style="font-weight:800;margin-bottom:8px">Iklan</div>
+  <div style="background:#fafafa;padding:12px;border-radius:8px;text-align:center">
+
+    <!-- Banner iklan (klik menuju link) -->
+    <a href="https://link-iklannya.com" target="_blank" style="display:block;margin-bottom:10px">
+      <img src="https://i.postimg.cc/PxcV0tcw/Essen-Ikan-Mas-(1).png" 
+           alt="Banner Iklan" 
+           style="width:100%;border-radius:8px;object-fit:cover;">
+    </a>
+
+    <div style="font-weight:700">Pasang Iklan di Republik Mancing</div>
+    <p class="small">Slot banner, sidebar, dan sponsor event. Hubungi: iklan@republikmancing.com</p>
+
+    <!-- Tombol CTA -->
+    <div style="margin-top:8px">
+      <a class="btn hover-red" href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20pasang%20iklan" target="_blank">
+        Pesan Slot
+      </a>
+    </div>
+  </div>
+</div>
+ 
+
+          <!-- YouTube links -->
+          <div class="card youtube-list">
+            <div style="font-weight:800;margin-bottom:8px">Channel Republikmancing</div>
+            <ul style="padding-left:14px;margin:0">
+              <li style="margin-bottom:6px"><a href="https://www.youtube.com/channel/UC-example" target="_blank"class="hover-red">Channel YouTube — Republikmancing</a></li>
+              <li style="margin-bottom:6px"><a href="https://www.youtube.com/watch?v=S26h4_CJ0mw" target="_blank"class="hover-red">Video: Induk 3,2 Kg</a></li>
+              <li><a href="https://www.youtube.com/playlist?list=PL-example" target="_blank"class="hover-red">Playlist Liputan Event</a></li>
+            </ul>
+          </div>
+           <!-- JAM DIGITAL -->
+<div style="
+    width:100%;
+    text-align:center;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:10px;
+    padding:10px 0;
+    background:#ffffff;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+">
+  <span id="jam"></span>
+</div>
+        <!-- WIDGET JADWAL SHALAT KEMENAG -->
+<iframe 
+  src="https://www.islamicfinder.org/prayer-widget/1642911/shafi/11/0/20.0/18.0" 
+  width="100%" 
+  height="380" 
+  frameborder="0"
+  style="border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15)">
+</iframe>
+      </aside>
+    </div>
+                    <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+
+    <!-- Kolom 1 -->
+    <div style="flex:1;min-width:220px">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+      <p style="margin:0;color:#bbb;line-height:1.6">
+        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
+        Hadir sejak 2020 untuk komunitas mancing Nusantara.
+      </p>
+    </div>
+
+    <!-- Kolom 2 -->
+    <div style="flex:1;min-width:180px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+        <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
+        <li><a href="#event" style="color:#bbb;text-decoration:none">Event</a></li>
+        <li><a href="#koleksi" style="color:#bbb;text-decoration:none">Galeri</a></li>
+        <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 3 -->
+    <div style="flex:1;min-width:240px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+      <p style="margin:0;color:#bbb;line-height:1.8">
+        Email: <strong>info@republikmancing.com</strong><br>
+        WhatsApp: <strong>+62 85693927647</strong><br>
+        Jakarta-Purbalingga—Indonesia
+      </p>
+    </div>
+
+    <!-- Kolom 4 -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="https://i.postimg.cc/MGTBvbc9/1.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="https://i.postimg.cc/6qs4jkMH/2.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="https://i.postimg.cc/LXZF4wmd/7.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="https://i.postimg.cc/02sJpqMr/3.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+
+  <div style="text-align:center;color:#777;font-size:14px">
+    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
+  <!-- ---------- SCRIPTS ---------- -->
+  <script>
+    (function(){
+      // HERO SLIDER
+      const track = document.querySelector('.hero-track');
+      const slides = Array.from(document.querySelectorAll('.hero-slide'));
+      const dots = Array.from(document.querySelectorAll('.hero-dots button'));
+      const prev = document.getElementById('heroPrev');
+      const next = document.getElementById('heroNext');
+      let current = 0;
+      const total = slides.length;
+      let timer = null;
+
+      function goTo(i){
+        current = (i + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, idx)=> d.classList.toggle('active', idx===current));
+      }
+
+      function nextSlide(){
+        goTo(current+1);
+      }
+      function prevSlide(){
+        goTo(current-1);
+      }
+
+      function startAuto(){
+        stopAuto();
+        timer = setInterval(nextSlide, 5000);
+      }
+      function stopAuto(){
+        if(timer) clearInterval(timer);
+      }
+
+      // init
+      goTo(0);
+      startAuto();
+
+      // events
+      if(next) next.addEventListener('click', ()=>{ nextSlide(); startAuto(); });
+      if(prev) prev.addEventListener('click', ()=>{ prevSlide(); startAuto(); });
+      dots.forEach((d, i)=> d.addEventListener('click', ()=>{ goTo(i); startAuto(); }));
+
+      // pause on hover (desktop)
+      const hero = document.getElementById('heroSlider');
+      hero.addEventListener('mouseenter', stopAuto);
+      hero.addEventListener('mouseleave', startAuto);
+
+      // keyboard nav
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') { nextSlide(); startAuto(); }
+        if(e.key === 'ArrowLeft') { prevSlide(); startAuto(); }
+      });
+    })();
+  </script>
+  <script>
+const allImages = document.querySelectorAll("img:not(#popupImg)");
+const pop = document.getElementById("popupOverlay");
+const popImg = document.getElementById("popupImg");
+
+allImages.forEach(img => {
+  img.addEventListener("click", () => {
+    popImg.src = img.src;
+    pop.style.display = "flex";
+  });
+});
+
+pop.addEventListener("click", () => {
+  pop.style.display = "none";
+});
+  let adIndex = 0;const ads = document.querySelectorAll('.ad-slide');function showAds() {ads.forEach(ad => ad
+    .classList.remove('active'));ads[adIndex]
+    .classList.add('active');adIndex = (adIndex + 1) % ads.length;}showAds();setInterval(showAds, 4000);
+    
+function updateJam() {
+  const now = new Date();
+  const jam   = String(now.getHours()).padStart(2,'0');
+  const menit = String(now.getMinutes()).padStart(2,'0');
+  const detik = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById("jam").innerText = `${jam}:${menit}:${detik} WIB`;
+}
+setInterval(updateJam, 1000);
+updateJam();
+</script>
+ </body>
+</html>
