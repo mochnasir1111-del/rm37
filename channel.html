@@ -81,18 +81,6 @@
     /* footer */
     footer.site-footer{margin-top:26px;padding:18px;background:var(--card);border-radius:12px;color:var(--muted);font-size:14px}
 
-    /* responsive */
-    @media (max-width:980px){
-      .hero-slide img{height:260px}
-      .layout{grid-template-columns:1fr}
-      .sidebar{order:2}
-      .header-inner{padding:10px}
-    }
-    @media (max-width:480px){
-      .hero-slide img{height:180px}
-      .brand-text h1{font-size:16px}
-    }
-
     /* small helpers */
     .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
     .muted{color:var(--muted);font-size:13px}
@@ -105,87 +93,11 @@
    a:hover .hover-red {color: #d32f2f;}
    .hover-red {transition: color .25s ease;   /* halus */}
   .hover-red:hover {color: #d32f2f;                /* merah saat hover */cursor: pointer;}
-   /* Untuk gambar kecil di list berita */
-   img.small-thumb {width: 35%;height: 80px;object-fit: cover;border-radius: 6px;}
-   .hover-red {transition: color .25s ease;}
-   .hover-red:hover {color: #d32f2f;cursor: pointer;}
-
-/* GAMBAR FULL FRAME */
-  .card img {
-  width: 100%;
-  height: 180px;        /* atur tinggi default */
-  object-fit: cover;    
-  display: block;
-  transition: transform 1.35s ease;  /* smooth */}
-
-/* ZOOM DETIK.COM */
-.card:hover img {transform: scale(1.12);  /* zoom-in halus */}
-  .popup-overlay {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.7);
-    display:none;
-    justify-content:center; align-items:center;
-    z-index:1000;}
-  .popup-overlay img {max-width:90%; max-height:80%;border-radius:8px;}
-  .popup-overlay:target {display:flex;}
-
-  .ads-banner {width: 100%;max-width: 1000px;margin: 16px auto;padding: 0 12px;}
-  .ads-banner img {width: 100%;height: auto;border-radius: 8px;display: block;transition: opacity 0.3s ease;}
-  .ads-banner img:hover {opacity: 0.85;}
-  .video-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform .25s, box-shadow .25s;
-}
-
-.video-card img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform .3s ease;
-}
-
-.video-card:hover img {
-  transform: scale(1.06);
-}
-
-.video-card:hover .title {
-  color: #e60023; /* merah */
-}
-
-.youtube-icon {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.7);
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: white;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.youtube-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
 </style>
 </head>
 <body>
-  <!-- POPUP -->
-<div id="popupOverlay" class="popup-overlay">
-  <div class="popup-frame">
-    <img id="popupImg" src="" alt="">
-  </div>
-</div>
-
+ 
   <div class="container">
-
     <!-- HEADER -->
     <header class="site-header" role="banner" aria-label="header">
       <div class="header-inner">
@@ -208,17 +120,9 @@
   <a href="channel.html"class="hover-red">Review</a>
   <a href="tentang.html"class="hover-red">Tentang</a>
 </nav>
-
       </div>
     </header>
-    <!-- SPACE IKLAN -->
-<div class="ads-banner">
-  <a href="https://link-iklan-kamu.com" target="_blank">
-    <img src="https://picsum.photos/970/120?random=50" alt="Iklan">
-  </a>
-</div>
-
-
+   
             <!-- MAIN LAYOUT -->
     <div class="layout">
       <main class="content">
@@ -227,160 +131,54 @@
   <div class="section-title"><h3>Tutorial</h3></div>
 
   <div class="grid-cards">
-
     <!-- CARD 1 -->
-    <a href="https://www.youtube.com/watch?v=tt1jMcfnrZA&list=PLiyIvHi1aIDfcNEPxDlCzf-PvIdA32TJg&index=3" class="card" style="text-decoration:none; color:inherit">
-      <img src="https://i9.ytimg.com/vi_webp/tt1jMcfnrZA/sddefault.webp?v=616f32e7&sqp=CLyVt8kG&rs=AOn4CLB8IBGFYmUZYVchdKVGgqQyWZTqQw" alt="koleksi1">
+    <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="card" style="text-decoration:none; color:inherit">
+      <img src="https://picsum.photos/970/120?random=51" alt="koleksi1">
       <div class="small hover-red" style="margin-top:8px">Racikan Umpan RM — 5 Okt 2025</div>
     </a>
-
     <!-- CARD 2 -->
     <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="card" style="text-decoration:none; color:inherit">
       <img src="https://picsum.photos/970/120?random=52" alt="koleksi2">
       <div class="small hover-red" style="margin-top:8px">Racikan Umpan+Always Strike — 18 Sep 2025</div>
     </a>
-
     <!-- CARD 3 -->
     <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" class="card" style="text-decoration:none; color:inherit">
       <img src="https://picsum.photos/970/120?random=53" alt="koleksi3">
       <div class="small hover-red" style="margin-top:8px">Tips Umpan — 6 Agu 2025</div>
     </a>
-
     <!-- CARD 4 -->
     <a href="https://www.youtube.com/watch?v=VIDEO_ID_4" target="_blank" class="card" style="text-decoration:none; color:inherit">
       <img src="https://picsum.photos/970/120?random=54" alt="koleksi4">
       <div class="small hover-red" style="margin-top:8px">Tips Umpan Gacor — 6 Agu 2025</div>
     </a>
-
   </div>
 </section>
-
-
  <!-- Video column -->
 <div class="card video-list">
   <div style="font-weight:800;margin-bottom:12px; font-size:18px">Video Tutorial</div>
-
   <!-- VIDEO 1 -->
-  <a href="https://youtube.com/Sbcajd_G2KE" target="_blank" class="video-item" 
+  <a href="https://www.youtube.com/watch?v=S26h4_CJ0mw" target="_blank" class="video-item" 
      style="margin-bottom:16px; display:flex; gap:14px; text-decoration:none; color:inherit">
-    
     <img 
-      src="https://i9.ytimg.com/vi/Sbcajd_G2KE/maxresdefault.jpg?v=616f32e6&sqp=CJCTt8kG&rs=AOn4CLBUE_vjpHLGj0hvTY-UN15i-9LEbQ" 
+      src="https://img.youtube.com/vi/S26h4_CJ0mw/hqdefault.jpg" 
       style="width:340px; height:180px; object-fit:cover; border-radius:12px"
       alt="thumbnail">
-
     <div>
       <div style="font-weight:800; font-size:17px; line-height:1.3"class="hover-red">Anniversary New Ratu Mas Ayu
       </div>
       <div class="small" style="font-size:14px">3 Nov 2025 • 12:34</div>
     </div>
   </a>
-
 </div>
-<!-- IKLAN SLIDER SIMPLE -->
-<div class="ad-slider-simple">
-  <div class="ad-slide active">
-    <a href="https://i.postimg.cc/fRMTt5rC/Desain-tanpa-judul-(21).png" target="_blank">
-      <img src="https://picsum.photos/970/120?random=55" alt="Iklan 1">
-  </div>
-</div>
-<script>
-  let adIndex = 0;
-  const ads = document.querySelectorAll('.ad-slide');
-
-  function showAds() {
-    ads.forEach(ad => ad.classList.remove('active'));
-    ads[adIndex].classList.add('active');
-    adIndex = (adIndex + 1) % ads.length;
-  }
-
-  showAds();
-  setInterval(showAds, 4000);
-</script>
-
          <!-- Koleksi -->
-<section id="koleksi" style="margin-top:18px">
-  <div class="section-title"><h3>Review Umpan Mancing</h3></div>
-
-  <div class="grid-cards">
-
-    <!-- CARD 1 -->
-    <a href="https://youtu.be/Sbcajd_G2KE" target="_blank" class="video-card">
-      <img src="https://i9.ytimg.com/vi/Sbcajd_G2KE/maxresdefault.jpg?v=616f32e6&sqp=CJCTt8kG&rs=AOn4CLBUE_vjpHLGj0hvTY-UN15i-9LEbQ" alt="">
-      <div class="title small" style="margin-top:8px">Induk 2.4 kg — 5 Okt 2025</div>
-
-      <div class="youtube-icon">
-        <!-- YouTube SVG -->
-        <svg viewBox="0 0 24 24" fill="white">
-          <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.6-.9-2-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.7.4c-.4 0-1.3.1-2 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 9.9v1.9c0 1.8.5 3.7.5 3.7s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.8.2 7.6.4 7.6.4s4.8 0 8.7-.4c.4-.1 1.3-.1 2-1 .6-.7.8-2.3.8-2.3s.5-1.9.5-3.7V9.9c0-1.8-.5-3.7-.5-3.7zM9.7 13.9V8.4l5.8 2.8-5.8 2.7z"/>
-        </svg>
-        YouTube
-      </div>
-    </a>
-
-    <!-- CARD 2 -->
-    <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="video-card">
-      <img src="https://picsum.photos/970/120?random=57" alt="">
-      <div class="title small" style="margin-top:8px">Juara & Piala — 18 Sep 2025</div>
-
-      <div class="youtube-icon">
-        <svg viewBox="0 0 24 24" fill="white">
-          <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.6-.9-2-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.7.4c-.4 0-1.3.1-2 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 9.9v1.9c0 1.8.5 3.7.5 3.7s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.8.2 7.6.4 7.6.4s4.8 0 8.7-.4c.4-.1 1.3-.1 2-1 .6-.7.8-2.3.8-2.3s.5-1.9.5-3.7V9.9c0-1.8-.5-3.7-.5-3.7zM9.7 13.9V8.4l5.8 2.8-5.8 2.7z"/>
-        </svg>
-        YouTube
-      </div>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" class="video-card">
-      <img src="https://picsum.photos/970/120?random=58" alt="">
-      <div class="title small" style="margin-top:8px">Tips Umpan — 6 Agu 2025</div>
-
-      <div class="youtube-icon">
-        <svg viewBox="0 0 24 24" fill="white">
-          <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.6-.9-2-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.7.4c-.4 0-1.3.1-2 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 9.9v1.9c0 1.8.5 3.7.5 3.7s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.8.2 7.6.4 7.6.4s4.8 0 8.7-.4c.4-.1 1.3-.1 2-1 .6-.7.8-2.3.8-2.3s.5-1.9.5-3.7V9.9c0-1.8-.5-3.7-.5-3.7zM9.7 13.9V8.4l5.8 2.8-5.8 2.7z"/>
-        </svg>
-        YouTube
-      </div>
-    </a>
-
-  </div>
-</section>
-
-
-
-
-<!-- Popup overlay -->
-<style>
-  .popup-overlay {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.7);
-    display:none;
-    justify-content:center; align-items:center;
-    z-index:1000;
-  }
-  .popup-overlay img {
-    max-width:90%; max-height:80%;
-    border-radius:8px;
-  }
-  .popup-overlay:target {
-    display:flex;
-  }
-</style>
-
-<!-- Popups -->
-<div id="popup1" class="popup-overlay">
-  <a href="#"><img src="https://i.postimg.cc/vmrWRHV8/Whats-App-Image-2025-10-30-at-18-56-32.jpg" alt="Lomba Ikan Mas"></a>
-</div>
-<div id="popup2" class="popup-overlay">
-  <a href="#"><img src="https://i.postimg.cc/your-image2.jpg" alt="Open Day Mini"></a>
-</div>
-<div id="popup3" class="popup-overlay">
-  <a href="#"><img src="https://i.postimg.cc/your-image3.jpg" alt="Night Strike"></a>
-</div>
-
+        <section id="koleksi" style="margin-top:18px">
+          <div class="section-title"><h3>Review Umpan Mancing</h3></div>
+          <div class="grid-cards">
+            <div class="card"><img src="https://picsum.photos/970/120?random=56" alt="koleksi1"><div class="small" style="margin-top:8px"class="hover-red">Induk 2.4 kg — 5 Okt 2025</div></div>
+            <div class="card"><img src="https://picsum.photos/970/120?random=57" alt="koleksi2"><div class="small" style="margin-top:8px"class="hover-red">Juara & Piala — 18 Sep 2025</div></div>
+            <div class="card"><img src="https://picsum.photos/970/120?random=58" alt="koleksi3"><div class="small" style="margin-top:8px"class="hover-red">Tips Umpan — 6 Agu 2025</div></div>
+          </div>
+        </section>
       </main>
 
       <!-- SIDEBAR  -->
@@ -460,7 +258,6 @@
     </div>
   </div>
 </div>
- 
 
           <!-- YouTube links -->
           <div class="card youtube-list">
@@ -565,37 +362,6 @@ updateJam();
 
   <!-- ---------- SCRIPTS ---------- -->
   <script>
-    (function(){
-      // HERO SLIDER
-      const track = document.querySelector('.hero-track');
-      const slides = Array.from(document.querySelectorAll('.hero-slide'));
-      const dots = Array.from(document.querySelectorAll('.hero-dots button'));
-      const prev = document.getElementById('heroPrev');
-      const next = document.getElementById('heroNext');
-      let current = 0;
-      const total = slides.length;
-      let timer = null;
-
-      function goTo(i){
-        current = (i + total) % total;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((d, idx)=> d.classList.toggle('active', idx===current));
-      }
-
-      function nextSlide(){
-        goTo(current+1);
-      }
-      function prevSlide(){
-        goTo(current-1);
-      }
-
-      function startAuto(){
-        stopAuto();
-        timer = setInterval(nextSlide, 5000);
-      }
-      function stopAuto(){
-        if(timer) clearInterval(timer);
-      }
 
       // init
       goTo(0);
@@ -636,8 +402,3 @@ pop.addEventListener("click", () => {
 </script>
  </body>
 </html>
-
-
-
-
-
