@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Republik Mancing — Liputan & Event Mancing</title>
-  <meta name="description" content="Berita, jadwal, video, dan event seputar dunia mancing — Republik Mancing." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Republik Mancing</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
   <style>
     /* ---------- THEME (Hijau Fresh) ---------- */
     :root{
@@ -112,6 +113,26 @@
   .info-lomba {width: 100%;overflow: hidden;background: #000000;padding: 8px 0;color: #fff;font-weight: 700;position: relative;border-bottom: 2px solid #000000;}
   .running-text {white-space: nowrap;display: inline-block;animation: jalan 15s linear infinite;}.info-lomba:hover .running-text {animation-play-state: paused;}
   @keyframes jalan {from { transform: translateX(100%); }to   { transform: translateX(-100%); }}
+  /* ZOOM DETIK.COM */
+.card:hover img {
+  transform: scale(1.12);  /* zoom-in halus */}
+  .popup-overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center; align-items:center;
+    z-index:1000;}
+  .popup-overlay img {
+    max-width:90%; max-height:80%;
+    border-radius:8px;}
+  .popup-overlay:target {
+    display:flex;}
+
+    .ads-banner {width: 100%;max-width: 1000px;margin: 16px auto;padding: 0 12px;}
+    .ads-banner img {width: 100%;height: auto;border-radius: 8px;display: block;transition: opacity 0.3s ease;}
+    .ads-banner img:hover {opacity: 0.85;}
   </style>
 </head>
 <body>
@@ -136,16 +157,19 @@
             <span>Liputan • Event • Tips • Video</span>
           </div>
         </a>
-<nav class="main-nav" role="navigation" aria-label="Main">
-  <a href="index.html" class="hover-red">Home</a>
-  <a href="berita-utama-2.html"class="hover-red">Berita Utama</a>
-  <a href="liputan-event.html"class="hover-red">Liputan Event</a>
-  <a href="jadwal-event.html"class="hover-red">Jadwal Event</a>
-  <a href="galeri.html"class="hover-red">Galeri</a>
-  <a href="komunitas.html"class="hover-red">Komunitas</a>
-  <a href="channel.html"class="hover-red">Review</a>
-  <a href="tentang.html"class="hover-red">Tentang</a>
-</nav>
+ <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="hover-red"href="/">Home</a>
+      <a href="berita/berita-utama.html"class="hover-red">Berita Utama</a>
+      <a href="berita/liputan-event.html"class="hover-red">Liputan Event</a>
+      <a href="pages/jadwal-event.html"class="hover-red">Jadwal Event</a>
+      <a href="pages/galeri.html"class="hover-red">Galeri</a>
+      <a href="pages/komunitas.html"class="hover-red">Komunitas</a>
+      <a href="pages/channel.html"class="hover-red">Channel</a>
+      <a href="pages/tentang.html"class="hover-red">Tentang</a>
+    </nav>
+  </header>
 
 </div>
  <!-- INFO LOMBA BERJALAN -->
@@ -172,106 +196,35 @@
   </div>
 </div>
 </main>
-    <!-- HERO SLIDER (FULL WIDTH) -->
-    <div class="hero-wrap" aria-hidden="false">
-      <div class="hero-slider" id="heroSlider" role="region" aria-label="Berita Utama">
-        <div class="hero-track">
-          <!-- slide 1 -->
-          <a class="hero-slide" href="berita-utama-1.html" aria-label="Buka Berita 1">
-            <img src="https://i.postimg.cc/q71SRqd2/20250530140128-00-06-47-08-Still003.png" alt="Induk Empang Damai">
-            <div class="hero-caption">
-              <h2 class="hover-red">Induk 3,2 Kg Naik di Empang Damai — Lomba Spektakuler</h2>
-              <div class="hero-meta">22 Nov 2025 • Liputan</div>
-            </div>
-          </a>
-
-          <!-- slide 2 -->
-          <a class="hero-slide" href="berita-utama-2.html" aria-label="Buka Berita 2">
-            <img src="https://i.postimg.cc/Bn4WbDgJ/mancing-haappy-(3).png" alt="Teknik Babon">
-            <div class="hero-caption">
-              <h2 class="hover-red">Teknik Dasar Mancing Babon — Panduan Lengkap</h2>
-              <div class="hero-meta">20 Nov 2025 • Teknik</div>
-            </div>
-          </a>
-
-          <!-- slide 3 -->
-          <a class="hero-slide" href="berita-utama-3.html" aria-label="Buka Berita 3">
-            <img src="https://i.postimg.cc/hvrzxWtW/20250807110229-MTS-00-00-51-24-Still001.png" alt="Jadwal Kolam">
-            <div class="hero-caption">
-              <h2 class="hover-red">Jadwal Mancing Mingguan — 7 Kolam Terpopuler</h2>
-              <div class="hero-meta">10 Nov 2025 • Jadwal</div>
-            </div>
-          </a>
-
-          <!-- slide 4 -->
-          <a class="hero-slide" href="berita-utama-4.html" aria-label="Buka Berita 4">
-            <img src="https://i.postimg.cc/dtVWh4Dh/20250807110229-MTS-00-00-51-24-Still001.png" alt="Event Lomba">
-            <div class="hero-caption">
-              <h2 class="hover-red">Event Lomba Ikan Mas — Rekap & Juara</h2>
-              <div class="hero-meta">15 Nov 2025 • Event</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- arrows -->
-        <button class="hero-arrow left" aria-label="Sebelumnya" id="heroPrev">‹</button>
-        <button class="hero-arrow right" aria-label="Berikutnya" id="heroNext">›</button>
-
-        <!-- dots -->
-        <div class="hero-dots" role="tablist" aria-label="Indikator Slider">
-          <button data-slide="0" class="active" aria-label="Slide 1"></button>
-          <button data-slide="1" aria-label="Slide 2"></button>
-          <button data-slide="2" aria-label="Slide 3"></button>
-          <button data-slide="3" aria-label="Slide 4"></button>
-        </div>
-      </div>
-    </div>
+    <!-- HERO / HEADLINE -->
+  <section class="hero">
+    <h1>Selamat Datang di Republik Mancing</h1>
+    <p>Portal Informasi, Berita, Event dan Komunitas Pemancing Indonesia</p>
+  </section>
+         
 
     <!-- MAIN LAYOUT -->
     <div class="layout">
       <main class="content">
 
        
-        <!-- more articles -->
-         <h2>Liputan Event</h2>
-         <div class="grid-cards" style="margin-top:18px">
   
-  <!-- Artikel 1 -->
-  <a href="https://republikmancing.com/teknik-dasar-mancing-babon" style="text-decoration:none;color:inherit">
-    <article class="card">
-      <img src="https://i.postimg.cc/VkSQ0qKZ/Screenshot-20250810-145241-Facebook.jpg" alt="Liputan Empang Damai">
-      <h4 style="margin:10px 0 6px"class="hover-red">Teknik Dasar Mancing Babon — Hasilkan Strike Beruntun</h4>
-      <div class="small">20 Nov 2025 • Republik Mancing</div>
-    </article>
-  </a>
+   <!-- SECTION BERITA -->
+  <section class="hover-red">
+    <h2>Berita Terbaru</h2>
 
-  <!-- Artikel 2 -->
-  <a href="https://republikmancing.com/lomba-ikan-mas-rekap-juara" style="text-decoration:none;color:inherit">
-    <article class="card">
-      <img src="https://picsum.photos/400/300?random=10" alt="Event Koleksi">
-      <h4 style="margin:10px 0 6px"class="hover-red">Lomba Ikan Mas — Rekap & Juara</h4>
-      <div class="small">15 Nov 2025 • Event</div>
-    </article>
-  </a>
+    <div class="grid">
+      <a class="card" href="berita/berita-utama.html">
+        <img src="assets/img/berita/thumb1.jpg" alt="">
+        <h3>Judul Berita Utama</h3>
+      </a>
 
-  <!-- Artikel 3 -->
-  <a href="https://republikmancing.com/jadwal-mancing-mingguan" style="text-decoration:none;color:inherit">
-    <article class="card">
-      <img src="https://picsum.photos/400/300?random=11" alt="Jadwal Mancing">
-      <h4 style="margin:10px 0 6px"class="hover-red">Jadwal Mingguan Pemancingan Terpopuler</h4>
-      <div class="small">10 Nov 2025 • Jadwal</div>
-    </article>
-  </a>
-           
-        <!-- Artikel 4 -->
-  <a href="https://republikmancing.com/jadwal-mancing-mingguan" style="text-decoration:none;color:inherit">
-    <article class="card">
-      <img src="https://picsum.photos/400/300?random=12" alt="Jadwal Mancing">
-      <h4 style="margin:10px 0 6px"class="hover-red">Jadwal Mancing Tuan Muda Kemang</h4>
-      <div class="small">10 Nov 2025 • Jadwal</div>
-    </article>
-  </a>
-</div>
+      <a class="card" href="berita/liputan-event.html">
+        <img src="assets/img/event/event1.jpg" alt="">
+        <h3>Liputan Event Terbaru </h3>
+      </a>
+    </div>
+  </section>
  <!-- Video column -->
 <div class="card video-list">
   <div style="font-weight:800;margin-bottom:12px; font-size:18px">Video Terbaru</div>
@@ -341,8 +294,7 @@
           <div class="grid-cards">
             <div class="card"><img src="https://i.postimg.cc/VNMnwysh/Whats-App-Image-2025-10-30-at-18-56-32.jpg" alt="koleksi1"><div class="small" style="margin-top:8px"class="hover-red">Induk 2.4 kg — 5 Okt 2025</div></div>
             <div class="card"><img src="https://i.postimg.cc/dtVWh4Dh/20250807110229-MTS-00-00-51-24-Still001.png" alt="koleksi2"><div class="small" style="margin-top:8px"class="hover-red">Juara & Piala — 18 Sep 2025</div></div>
-            <div class="card"><img src="https://i.postimg.cc/hvrzxWtW/20250807110229-MTS-00-00-51-24-Still001.png" alt="koleksi3"><div class="small" style="margin-top:8px"class="hover-red">Tips Umpan — 6 Agu 2025</div></div>
-          <div class="card" style="overflow:hidden;border-radius:12px">
+           <div class="card" style="overflow:hidden;border-radius:12px">
            <div class="video-wrapper" style="position:relative;width:100%;padding-top:56.25%;">
            <iframe src="https://youtube.com/embed/wGSH3lUgYN0"frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen
            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px"></iframe></div>
@@ -350,8 +302,7 @@
            Bikin Melongo..‼️ Koleksi Joran Om Haji Bolang
            </div>
            </div>
-          </div>
-        </section>
+             </section>
 
         <!-- Mini event list dengan image popup + tombol WA -->
 <div class="card" id="event">
@@ -696,11 +647,3 @@ updateJam();
 </script>
  </body>
 </html>
-
-
-
-
-
-
-
-
