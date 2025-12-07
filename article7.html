@@ -23,6 +23,23 @@
     p{line-height:1.7}
     .footer{text-align:center;margin-top:40px;color:#777;font-size:13px}
     .back{display:inline-block;margin-top:8px;font-size:14px;color:#2e6d3e;text-decoration:none}
+    .gallery-slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-slider img {
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
   </style>
 </head>
 <body>
