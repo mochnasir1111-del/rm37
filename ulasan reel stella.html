@@ -1,100 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mancing Bareng HUT PT di Telaga Enjoy — Republik Mancing</title>
-  <meta name="description" content="Liputan lengkap: Mancing Bareng HUT PT di Telaga Enjoy. Gentak ikan nonstop, momen para juara, dan dokumentasi foto aksi terbaik." />
-  <meta property="og:title" content="Mancing Bareng HUT PT di Telaga Enjoy" />
-  <meta property="og:description" content="Liputan lengkap: Mancing Bareng HUT PT di Telaga Enjoy. Gentak ikan nonstop, momen para juara, dan dokumentasi foto aksi terbaik." />
-  <meta property="og:image" content="https://picsum.photos/1200/630?random=12" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>ekomendasi • Alat Pancing — Republik Mancing</title>
+  <meta name="description" content="Profil Om Benny, sosok pemimpin bijaksana dan dermawan yang menjadi panutan komunitas pemancing MMFC." />
+
   <style>
-    /* Minimal inline styles untuk preview mandiri */
-    :root{--accent:#2e6d3e;--muted:#666}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
-    .container{max-width:920px;margin:32px auto;padding:0 16px}
-    header.site-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-    header .brand{font-weight:700;color:var(--accent);font-size:20px;text-decoration:none}
-    nav.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:12px}
-    article.article{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,20,0.04)}
-    .article h1{font-size:28px;margin:6px 0 12px}
-    .meta{font-size:13px;color:var(--muted);margin-bottom:18px}
-    .hero{width:100%;height:auto;border-radius:8px;overflow:hidden;margin-bottom:18px}
-    .hero img{width:100%;display:block}
-    .article p{margin:12px 0}
-    .article h2{margin-top:20px}
-    .tips{background:#f7f8fa;padding:12px;border-left:4px solid var(--accent);border-radius:6px}
-    .share{display:flex;gap:8px;margin-top:18px}
-    .share a{padding:8px 12px;border-radius:6px;text-decoration:none;border:1px solid #eee;font-size:14px}
-    .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
-    .related .card{padding:12px;border:1px solid #eee;border-radius:8px}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:6px}
-    .winners{background:#f7f8fa;padding:12px;border-radius:8px;margin-top:12px}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:8px;text-align:left;border-bottom:1px solid #eee}
-    .caption{font-size:13px;color:var(--muted);margin-top:6px}
-    .note{font-size:14px;color:var(--muted);margin-top:10px}
-    footer{margin:40px 0 80px;color:var(--muted);font-size:13px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
-    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){.article h1{font-size:20px}; .gallery{grid-template-columns:1fr}}
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow:0 6px 18px rgba(16,24,40,.07);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.7}
 
-    .share {isplay: inline-block;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    .share-title {margin: 0 0 .5rem 0;font-size: .95rem;}
-    .share-buttons {display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
-    .share-btn{display:inline-flex;align-items:center;gap:.5rem;
-    padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);
-    background: #fff;box-shadow: 0 1px 2px rgba(0,0,0,.04);color: #111;cursor:pointer;}
-    .share-btn svg{display:block}
-    .share-btn .label{display:inline-block}
-    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
-    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
-    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
-    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
-    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
-    .share-btn.copy{background:#f3f4f6}
-    .share-btn:focus{outline:3px solid Highlight; outline-offset:2px}
-    .sr-only{position:relative}
-    @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+    /* HEADER */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+    .brand span{color:#c00}
+    .main-nav{margin-left:auto;display:flex;gap:16px}
+    .main-nav a{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+    .main-nav a:hover{color:#c00}
 
-      .article-container {
-  max-width: 850px;     /* lebar pas seperti detik */
-  margin: 0 auto;       /* center */
-  padding: 0 16px;      /* biar rapi di HP */
-}
-  .article-photo {
-  width: 100%;
-  max-width: 800px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-}
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
+    .sub-nav a:hover{color:#c00}
 
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    article.card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* ARTICLE */
+    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
+    h1{margin:12px 0 8px;font-size:1.8rem}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:16px}
+    .hero{width:100%;height:340px;object-fit:cover;border-radius:12px;margin-bottom:14px}
+    .caption{font-size:13px;color:var(--muted);margin-bottom:18px}
+
+    h2{margin-top:26px}
+    p{margin:12px 0}
+
+    blockquote{border-left:4px solid var(--accent);padding-left:14px;color:#334155;margin:18px 0;font-style:italic}
+
+    /* ZOOM */
+    img{transition:.35s}
+    img:hover{transform:scale(1.05)}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <a class="brand" href="index.html">Republik Mancing</a>
-      <div style="margin-left:auto;color:var(--muted);font-size:14px">Berita • Event • Galeri</div>
-    </header>
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Event
+
+<header class="topbar">
+  <div class="top-inner">
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="event.html">Event</a>
+      <a href="video.html">Video</a>
+      <a href="tentang.html">Tentang</a>
     </nav>
-      <article class="news-article">
-  <h1 class="title">Ulasan Reel Shimano Stella – Reel Impian Para Pemancing Ikan Mas</h1>
+  </div>
+</header>
 
-  <p class="meta" style="color:#777;font-size:14px;margin-bottom:20px;">
-    Ditulis pada: <strong>11 Desember 2025</strong> • Kategori: Peralatan Pancing
-  </p>
+<div class="subheader">
+  <nav class="sub-nav">
+   <a href="profil-angler-om_benny.html">Profil Angler</a>|
+    <a href="review_empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik</a>|
+    <a href="spot.html">Spot</a>|
+    <a href="rekomendasi gear joran.html">Alat Pancing</a>|
+    <a href="donasi-foto.html">Download Foto</a>|
+  </nav>
+</div>
+  <main class="container">
 
-  <!-- Thumbnail Optional -->
-  <figure style="margin-bottom:20px;">
+  <article class="card" itemscope itemtype="http://schema.org/Article">
+    <span class="kicker">Rekomendasi • Alat Pancing</span>
+    <h1>Rekomendasi Gear & Joran Terbaik untuk Pemancing Pemula</h1>
+    <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
+
     <img src="assets/img/galeri/ChatGPT Image Dec 11, 2025, 12_24_28 AM.png" alt="Reel Shimano Stella" style="width:100%;border-radius:8px;">
     <em>Ilustrasi Reel Shimano Stella (Foto: Republik Mancing)</em>
-  </figure>
 
   <p>
     Shimano Stella telah lama dianggap sebagai <strong>mahakarya teknologi</strong> di dunia peralatan pancing.  
@@ -185,7 +175,20 @@
   <div id="shareFeedback" aria-live="polite" class="sr-only" style="margin-top:.5rem"></div>
         <a class="btn" href="donasi-foto.html" title="Download paket foto (jika tersedia)">Download Paket Foto</a>
       </div>
-     
+        <section class="related">
+        <div class="card">
+          <h4><a href="rekomendasi gear joran.html">Rekomendasi Gear: Joran & Reel Untuk Ikan Mas</a></h4>
+          <p class="meta">2 Desember 2025 • Tips</p>
+        </div>
+        <div class="card">
+          <h4><a href="ulasan reel.html">Reel Murah Tapi Bukan Murahan</a></h4>
+          <p class="meta">28 November 2025 • Spot</p>
+        </div>
+        <div class="card">
+          <h4><a href="rekomendasi gear bawal.html">Rekomendasi Gear: Joran & Reel untuk Bawal</a></h4>
+          <p class="meta">15 November 2025 • Gear</p>
+        </div>
+      </section>
            <hr style="margin-top:22px">
       <section id="comments">
         <h3>Komentar</h3>
