@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Republik Mancing News</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+  <style>
+    /* ---------- RESET ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#c00;
+  --accent-2:#1e8f1e;
+  --muted:#6b6b6b;
+  --bg:#f5f6f7;
+  --card:#fff;
+  --max-width:1200px;
+  --shadow:0 6px 18px rgb(255, 253, 253);
+  --radius:10px;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+html,body{font-family:var(--font);background:var(--bg);color:#222}
+/* ---------- TOP BAR / NAV ---------- */
+.topbar{background:var(--card);box-shadow:var(--shadow);position:relative; /* penting */z-index:100;}
+.top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
+.brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
+.brand span{color:var(--accent)}
+.main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
+.main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
+.main-nav a:hover{background:#f0f6ff;color:var(--accent)}
+/* ---------- SUBHEADER ---------- */
+.subheader{
+  background:#fff;
+  border-bottom:2px solid var(--accent);
+  position:sticky;
+  top:0;
+  z-index:90;
+}
+
+.sub-nav{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
+.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+.sub-nav a:hover{color:var(--accent);}
+/* HAMBURGER */
+.hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:6px 8px}
+.hamburger span{display:block;width:22px;height:2px;background:#333;margin:4px 0;border-radius:2px}
+/* SEARCH */
+.search-area{margin-left:auto}
+.search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
+/* OFFCANVAS (mobile menu) */
+.offcanvas{position:fixed;top:0;left:-320px;width:300px;height:100vh;background:var(--card);box-shadow:6px 0 30px rgba(0,0,0,0.2);z-index:400;padding:18px;transition:left .28s ease}
+.off-nav{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.off-nav a{text-decoration:none;color:#111;font-weight:700;padding:8px;border-radius:6px}
+.offcanvas-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:350}
+.offcanvas.open{left:0}
+.offcanvas-backdrop.show{opacity:1;pointer-events:auto}
+.close-off{background:transparent;border:0;font-size:28px;line-height:1;cursor:pointer}
+/* BREAKING TICKER */
+.breaking-wrap{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:var(--max-width);margin:10px auto;background:transparent}
+.breaking-label{background:#ff3b3b;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700}
+.breaking-ticker{overflow:hidden;flex:1;position:relative;height:28px}
+.breaking-ticker .ticker-item{white-space:nowrap;padding-left:8px;position:absolute;left:100%;top:0;line-height:28px}
+/* ---------- LAYOUT ---------- */
+.container{max-width:var(--max-width);margin:18px auto;display:grid;grid-template-columns:2.2fr 1fr;gap:22px;padding:0 16px}
+/* LEFT COL */
+.left-col{display:flex;flex-direction:column;gap:18px}
+/* SLIDER */
+.slider{position:relative;background:transparent;border-radius:var(--radius);overflow:visible}
+.slider-track{position:relative;overflow:hidden;border-radius:10px}
+.slide{position:relative;display:none}
+.slide.active{display:block}
+.slide img{width:100%;height:auto;display:block;object-fit:cover}
+.slide-caption{position:absolute;left:18px;bottom:18px;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.45));color:#fff;padding:18px;border-radius:8px;max-width:70%}
+.slide-caption h2{font-size:20px;margin-bottom:6px}
+.slide-caption h2 a{color:#fff;text-decoration:none}
+.slide-caption p.lead{color:#f0f0f0;font-size:14px}
+/* slider nav */
+.slider-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px}
+.slider-nav.prev{left:12px}
+.slider-nav.next{right:12px}
+.slider-dots{display:flex;gap:8px;position:absolute;right:18px;bottom:18px}
+/* dots */
+.slider-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,0.6);cursor:pointer}
+.slider-dots button.active{background:#fff}
+/* NEWS GRID */
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.news-card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.news-card img{width:100%;height:170px;object-fit:cover}
+.card-body{padding:12px}
+.card-body h3{font-size:16px;margin-bottom:8px}
+.card-body h3 a{text-decoration:none;color:#0b3a66}
+.card-body p{color:var(--muted);font-size:14px}
+/* LIST NEWS */
+.list-news{background:transparent}
+.list-news h2{font-size:18px;margin-bottom:12px;color:#222}
+.list-item{display:flex;gap:12px;background:var(--card);padding:10px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:12px;align-items:center}
+.list-item img{width:120px;height:80px;object-fit:cover;border-radius:8px}
+.list-item h4{font-size:15px;margin-bottom:6px}
+.muted{color:var(--muted);font-size:13px}
+/* PAGINATION */
+.pagination{display:flex;gap:8px;justify-content:center;margin:10px 0}
+.pagination a{padding:8px 12px;background:var(--card);border-radius:8px;text-decoration:none;color:#111;box-shadow:var(--shadow)}
+.pagination a.page.active{background:var(--accent);color:#fff}
+/* RIGHT COL (SIDEBAR) */
+.right-col{display:flex;flex-direction:column;gap:12px}
+.widget{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow)}
+.widget h3{margin-bottom:10px;color:#111}
+.popular-list{list-style:none;padding-left:0}
+.popular-list li{margin-bottom:8px}
+.video-thumb img{width:100%;border-radius:8px;display:block}
+.ad-box{display:flex;align-items:center;justify-content:center;height:250px;color:var(--muted);font-weight:700;border:2px dashed #e6e6e6}
+/* FOOTER */
+.site-footer{background:var(--card);margin-top:28px;padding:16px 0;box-shadow:var(--shadow)}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 16px}
+.footer-inner a{text-decoration:none;color:#333;margin-left:14px}
+/* ARTICLE PAGE */
+.single-article{grid-template-columns:2.2fr 1fr}
+.article-content{background:var(--card);padding:18px;border-radius:10px;box-shadow:var(--shadow)}
+.article-content h1{font-size:26px;margin-bottom:8px}
+.article-share{display:flex;gap:8px;margin:8px 0}
+.article-share .share{padding:8px 12px;border-radius:8px;text-decoration:none;background:#f3f3f3;color:#111}
+.big-image img{width:100%;border-radius:8px}
+.article-body{margin-top:14px;line-height:1.7;color:#222}
+.related{margin-top:20px}
+.related ul{list-style:none;padding-left:0}
+   /* RESPONSIVE */
+   @media (max-width:980px){
+  .container{grid-template-columns:1fr;padding:0 12px}
+  .news-grid{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .search-area{display:none}
+  .breaking-wrap{padding:8px 12px}
+  .hamburger{display:block}
+  .slide-caption{position:static;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));padding:12px;margin-top:-60px;border-radius:0;max-width:100%}
+  .slider-nav{width:36px;height:36px;font-size:18px}
+  .slider-dots{left:50%;transform:translateX(-50%);right:auto;bottom:12px}}
+     .hover-red {transition: color .25s ease;}
+     .hover-red:hover {color: #d32f2f;cursor: pointer;}
+     /* --- ZOOM EFFECT ALA DETIK --- */
+    img {transition: transform .35s ease, filter .35s ease;display: block;}
+    img:hover {transform: scale(1.06);filter: brightness(0.9);}
+     /* Untuk kartu berita yang punya container */
+  .news-card img,
+  .article-card img,
+  .featured-img,
+  .slide img {transition: transform .35s ease, filter .35s ease;}
+  .news-card:hover img,
+  .article-card:hover img,
+  .slide:hover img {transform: scale(1.06);filter: brightness(0.9);}
+   .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fff;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
+   /* Running text (marquee style) */
+   .running-text {display: inline-block;padding-left: 100%;animation: jalan 30s linear infinite;}
+   @keyframes jalan {0%   { transform: translateX(0); }100% { transform: translateX(-100%); }}
+  /* Iklan */
+  .top-ad {width: 100%;background: #f7f7f7;padding: 8px 0;border-bottom: 1px solid #ffffff;}
+  .top-ad .container {display: flex;justify-content: center;align-items: center;}
+  .top-ad img {max-width: 100%;height: auto;display: block;}
+  /* ANIMASI */
+@keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
+    .hover-red {transition: color .25s ease;}
+    .hover-red:hover {color: #d32f2f;cursor: pointer;}
+  .card {display: flex;flex-direction: column;gap: 10px;border-radius: 8px;overflow: hidden;transition: transform 0.25s ease, box-shadow 0.25s ease;}
+  .card img {width: 100%;height: 155px;object-fit: cover;transition: transform 0.3s ease;}
+  a:hover .card {transform: scale(1.03);box-shadow: 0 8px 18px rgba(0,0,0,0.18);}
+  a:hover .card img {transform: scale(1.08);}
+  .hover-red {transition: color 0.2s ease;}
+  a:hover .hover-red {color: #d32f2f;}
+  .hover-red {transition: color .25s ease;   /* halus */}
+  .hover-red:hover {color: #d32f2f;cursor: pointer;}
+
+  .news-card img {width: 100%;display: block;transition: transform .3s ease;}
+  .news-card:hover img {transform: scale(1.05);}
+  .news-card:hover .title {color: #ff3939;}
+  .title {transition: color .2s ease;}
+
+  .search-area {position: relative;}
+  .search-results {position: absolute;width: 100%;background: #fff;border: 1px solid #ddd;border-top: none;max-height: 250px;overflow-y: auto;z-index: 50;}
+  .result-item {display: block;padding: 10px;font-size: 14px;border-bottom: 1px solid #eee;text-decoration: none;color: #333;}
+  .result-item:hover {background: #f4f4f4;}
+  .no-result {padding: 10px;font-size: 14px;color: #777;}
+
+    /* FRAME */
+  .video-frame{margin:25px auto;max-width:900px;border-radius:14px;overflow:hidden;background:#ffffff;border:1px solid #e5e7eb;box-shadow:0 6px 20px rgba(0,0,0,0.12);font-family:Inter,Arial;}
+/* HEADER TV NEWS */
+.video-frame-header{position:relative;background:#0a6c33; /* Biru gelap ala TV News */color:#fff;padding:14px 18px 16px;font-size:16px;font-weight:800;letter-spacing:0.7px;text-transform:uppercase;}
+/* Garis biru */
+.video-frame-header:before{content:"";position:absolute;bottom:0;left:0;width:100%;height:4px;background:#fdfeff;}
+/* Garis merah */
+.video-frame-header:after{content:""; position:absolute;bottom:0;left:0;width:42%;height:4px;background:#ff1e1e;}
+/* PLAYER */
+.news-video-player{position:relative;background:#000;}
+.news-video-player video{width:100%;display:block;}
+/* WATERMARK */
+.video-watermark{position:absolute;top:12px;left:12px;z-index:5;opacity:0.85;pointer-events:none;}
+.video-watermark img{height:40px;width:auto;}
+
+      .ad-responsive{width:100%;max-width:300px;margin:20px auto;text-align:center;}
+.ad-responsive a{display:block;}
+.ad-responsive img{width:100%;height:auto;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.15);transition:0.3s;}
+.ad-responsive img:hover{transform:scale(1.03);}
+/* OFFCANVAS MOBILE */
+.offcanvas {position: fixed; top: 0;right: -100%;width: 280px;height: 100%;background: #111;color: #fff;z-index: 9999;padding: 20px;transition: right 0.3s ease;}
+.offcanvas.active {right: 0;}
+.off-nav {
+  display: flex;flex-direction: column;
+  gap: 14px;margin-top: 40px;}
+.off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
+.close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
+/* TAMPILKAN HANYA DI MOBILE */
+@media (min-width: 900px) {
+  .offcanvas {display: none;}}
+   .menu-btn {font-size: 24px; background: none;border: none;cursor: pointer;display: none;}
+@media (max-width: 900px) {
+  .menu-btn {display: block;}}
+    /* TOPBAR */
+  .topbar{background:#111;color:#fff;}
+  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px 16px;}
+  .brand a{font-size:20px;font-weight:800;color:#fff;}
+  .brand span{color:#c00}
+  .main-nav{display:flex;gap:16px;margin-left:auto;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;}
+  .hover-red:hover{color:#c00}
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;}
+  .sub-nav a:hover{color:#c00;}
+    /* STICKY (OPSIONAL, KEREN) */
+  .subheader{position:sticky;top:52px; /* tinggi header */z-index:90;}
+     /* MOBILE */
+    @media(max-width:768px){
+  .main-nav{display:none;}}
+  /* ================= HEADER GLOBAL ================= */
+  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
+  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .brand span{color:#c00}
+  .main-nav{display:flex;gap:16px;margin-left:auto;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+  .hover-red:hover{color:#c00}
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover{color:#c00}
+   /* OFFCANVAS */
+  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+  .offcanvas.active{right:0}
+  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+  .off-nav a{color:#fff;text-decoration:none;}
+  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+    /* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+
+  .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .brand-logo img{width:34px;height:34px;object-fit:contain;}
+  </style>
+</head>
+<body>
+  <!-- TOP NAV -->
+<!-- HEADER UTAMA -->
+<!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
+    <div class="brand">
+     <a href="index.html" class="brand-logo">
+  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="event.html" class="hover-red">Event</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="tentang.html" class="hover-red">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SUBHEADER GLOBAL -->
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="review-empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik</a>|
+    <a href="spot.html">Spot</a>|
+    <a href="donasi-foto.html">Download Foto</a>|
+  </nav>
+</div>
+
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html">Beranda</a>
+    <a href="berita.html">Berita</a>
+    <a href="event.html">Event</a>
+    <a href="video.html">Video</a>
+    <a href="tentang.html">Tentang</a>
+  </nav>
+</div>
+<div class="offcanvas-backdrop" id="offBackdrop"></div>
+
+
+    <!-- INFO LOMBA BERJALAN -->
+   <div class="info-lomba">
+   <div class="running-text">
+    🎣 Lomba Ikan Mas Empang Damai — 28 Nov 2025 •  
+    🎣 Lomba Executive MMFC Feat CS 101 Joglo — 5 Des 2025 •  
+    🎣 MMFC Pantura Feat Telaga Joglo — 12 Des 2025 •  
+    🎣 Lomba Executive HUT MMFC — Segera Dibuka!
+  </div>
+   </div>
+    </header>
+    <!-- IKLAN TOP BANNER -->
+<div class="top-ad">
+  <div class="container">
+    <a href="#" target="_blank">
+      <img src="assets/img/galeri/1.png" alt="Iklan Top Banner">
+    </a>
+  </div>
+</div>
+<header class="site-header">
+</header>
+
+  <!-- MOBILE OFFCANVAS -->
+  <div class="offcanvas" id="offcanvas">
+    <button class="close-off" id="closeOff" aria-label="Tutup menu">×</button>
+    <nav class="off-nav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="teknik.html">Teknik</a>
+      <a href="spot.html">Spot</a>
+      <a href="video-detail.html">Video</a>
+      <a href="donasi-foto.html">Download Foto</a>
+      <a href="tentang.html">Tentang</a>
+    </nav>
+  </div>
+  <div class="offcanvas-backdrop" id="offBackdrop"></div>
+  <!-- BREAKING NEWS TICKER -->
+  <div class="breaking-wrap">
+    <div class="breaking-label">BREAKING</div>
+    <div class="breaking-ticker" id="breakingTicker" aria-live="polite">
+      <div class="ticker-item">Babon 12 kg tertangkap di Waduk — Tim lokal laporkan rekor baru.</div>
+      <div class="ticker-item">Lomba Mancing Nasional: pendaftaran dibuka sampai 10 Januari 2025.</div>
+      <div class="ticker-item">Rekomendasi reel 2025: 5 model terbaik untuk galatama.</div>
+    </div>
+  </div>
+  <!-- MAIN LAYOUT -->
+  <main class="container">
+    <!-- LEFT: MAIN CONTENT -->
+    <section class="left-col">
+    <!-- SLIDER / HERO -->
+      <div class="slider" id="heroSlider" aria-roledescription="carousel">
+        <button class="slider-nav prev" data-action="prev" aria-label="Sebelumnya">‹</button>
+        <div class="slider-track">
+           <article class="slide">
+            <img src="assets/img/berita/header.png" alt="Headline 1">
+            <div class="slide-caption">
+              <h2><a href="empang damai.html"class="hover-red">Pemancingan Ikan Mas Empang Damai by Telaga Silet Selalu Ramai, Jadi Primadona Baru Pecinta Mancing</a></h2>
+              <p class="lead">Panduan lengkap bagi pemancing yang ingin puas gentak.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <img src="assets/img/berita/DSCF6925.JPG" alt="Headline 2">
+            <div class="slide-caption">
+              <h2><a href="hut pt truba.html"class="hover-red">Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy: Peserta Full Happy — Gentak Ikan Nonstop</a></h2>
+              <p class="lead">Antusias Peserta dan Gentak Nonstop.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <img src="assets/img/event/DSCF6845.jpg" alt="Headline 3">
+            <div class="slide-caption">
+              <h2><a href="battle of creator.html"class="hover-red">Battle Of Creator 2025</a></h2>
+              <p class="lead">Mancing Bareng Senar Pancing & Duraking Duraflex: Pertempuran Seru Komunitas dan Konten Kreator.</p>
+            </div>
+          </article>
+        </div>
+        <button class="slider-nav next" data-action="next" aria-label="Berikutnya">›</button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+      <!-- GRID BERITA UTAMA -->
+      <section class="news-grid">
+       <article class="news-card">
+        <a href="hut pt truba.html" class="thumb">
+         <img src="assets/img/berita/DSCF6927.JPG" alt=""></a>
+          <h3><a href="hut pt truba.html" class="title">Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy: Peserta Full Happy</a></h3><p>Full gentak full enjoy</p>
+           </article>
+
+        <article class="news-card">
+          <a href="profil-angler2.html"class="thumb">
+          <img src="assets/img/mmfc/om ben.jpg" alt=""></a>
+            <h3><a href="profil-angler2.html"class="title">Profil Tokoh Komunitas Mancing</a></h3>
+            <p>Salah Satu Punggawa MMFC </p>
+        </article>
+        <article class="news-card">
+            <a href="ulasan reel stella.html"class="thumb">
+          <img src="assets/img/galeri/ChatGPT Image Dec 11, 2025, 12_24_28 AM.png" alt=""></a>
+            <h3><a href="ulasan reel stella.html"class="title">Ulasan Reel Shimano Stella </a></h3>
+            <p>Reel Impian Para Pemancing Ikan Mas</p>
+        </article>
+        <article class="news-card">
+           <a href="babon naik 16 kg.html"class="thumb">
+          <img src="assets/img/event/Hitam dan Merah Ilustratif Misteri Cerita Horor Thumbnail YouTube.png" alt=""></a>
+            <h3><a href="babon naik 16 kg.html"class="title">Babon naik 16 kg Di Menit Akhir</a></h3>
+            <p>Anniversary 2th New Ratu Mas Ayu Padalarang Bandung</p>
+        </article>
+          <article class="news-card">
+           <a href="totalWar.html"class="thumb">
+          <img src="assets/img/galeri/img6.jpeg" alt=""></a>
+            <h3><a href="totalWar.html"class="title">Total War Episode II</a></h3>
+            <p>Pemancingan Empang Damai by Telaga Silet</p>
+        </article>
+
+<div class="ad-responsive">
+  <a href="https://link-website-anda.com" target="_blank"> <h>Iklan</h>
+    <img src="assets/img/iklan/Screenshot_20251211-190322_WhatsApp.jpg" alt="Iklan Sponsor">
+  </a>
+</div>
+
+       <style>
+    .ad-responsive { width: 100%;max-width: 320px;height: 250px;background: #eaeaea;border: 1px solid #ccc;
+    margin: 20px 0;display: flex;justify-content: center;align-items: center;color: #555;font-size: 16px;}
+      </style>
+      </section>
+      <div class="video-frame">
+  <!-- HEADER STYLE TV NEWS -->
+  <div class="video-frame-header">
+    VIDEO – REPUBLIK MANCING
+  </div>
+  <div class="news-video-player">
+    <!-- Watermark -->
+    <div class="video-watermark">
+      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
+    </div>
+    <!-- Video -->
+    <video class="autoplay-news-video" controls muted playsinline poster="poster.jpg">
+      <source src="assets/mp4/h rama.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+      <!-- IKLAN TOP BANNER -->
+<div class="top-ad">
+  <div class="container">
+    <a href="#" target="_blank">
+      <img src="assets/img/iklan/Space Iklan.png" alt="Iklan Top Banner">
+    </a>
+  </div>
+</div>
+
+      <!-- LIST BERITA (linear) -->
+      <section class="list-news">
+        <h2>Berita Terbaru</h2>
+        <article class="list-item">
+           <a href="joki bekas.html"class="thumb">
+          <img src="assets/img/berita/joki.png" alt=""></a>
+            <h4><a href="joki bekas.html" class="title">Joki Bekas Merajai Total Di Setiap Empang</a></h4>
+            <p class="muted">3 jam lalu • oleh Sari</p>
+        </article>
+        <article class="list-item">
+          <a href="article.html">
+          <img src="assets/img/event/14mmfc.jpeg" alt=""></a>
+            <h4><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
+            <p class="muted">6 jam lalu • oleh RepublikMancing</p>
+ 
+        </article>
+        <article class="list-item">
+          <a href="ulasan reel.html">
+          <img src="assets/img/berita/reel magnesium.jpg" alt=""></a>
+            <h4><a href="ulasan reel.html">Ulasan Reel Magnesium</a></h4>
+            <p class="muted">2 tahun lalu • oleh Team RepublikMancing</p>
+        
+        </article>
+         <article class="list-item">
+          <a href="event jp.html">
+          <img src="assets/img/berita/img.png" alt=""></a>
+            <h4><a href="event jp.html">Event Pemancingan Jeruk Purut</a></h4>
+            <p class="muted">2 minggu lalu • oleh Godel</p>
+        </article>
+      </section>
+    </section>
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="right-col">
+      <!-- WIDGET: POPULER -->
+      <div class="widget">
+        <h3>Populer</h3>
+        <ol class="popular-list">
+          <li><a href="babon naik 16 kg.html">Babon 12kg Pecahkan Rekor</a></li>
+          <li><a href="joki bekas.html">Joki Bekas Merajai Total Di Setiap Empang</a></li>
+          <li><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></li>
+          <li><a href="cs 101.html">Event MMFC-CS 101 Joglo</a></li>
+        </ol>
+      </div>
+      <!-- WIDGET: VIDEO -->
+      <!-- Highlight Video -->
+          <div class="card">
+            <div style="font-weight:800;margin-bottom:8px">Highlight Video</div>
+            <iframe width="100%" height="170" src="https://www.youtube.com/embed/jqUyxauQJLg?si=RLcOtWVf3kludHZW" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
+            <div style="margin-top:10px"><a class="btn hover-red" href="https://www.youtube.com/RepublikMancing37">Kunjungi Channel</a></div>
+          </div>
+     <!-- WIDGET: BANNER IKLAN -->
+     <div class="widget ad-box">
+      <a href="https://contoh-iklan.com" target="_blank" rel="noopener">
+       <img src="assets/img/iklan/1.png" 
+         alt="Iklan" 
+         width="300" height="250"
+         style="border-radius:8px;"></a></div>
+               <!-- Iklan -->
+      <div class="card ads" id="iklan">
+     <div style="font-weight:800;margin-bottom:8px">Iklan</div>
+      <!-- Card content dengan image klikable -->
+     <a href="https://contoh-iklan.com"_blank" style="text-decoration:none;color:inherit">
+      <div style="background:#fafafa;padding:12px;border-radius:8px;text-align:center;cursor:pointer">
+      <!-- Image iklan -->
+      <img src="assets/img/iklan/2.png" alt="Iklan Republik Mancing" style="width:100%;border-radius:8px;margin-bottom:8px;object-fit:cover">
+      <div style="font-weight:700">Pasang Iklan di Republik Mancing</div>
+      <p class="small">Slot banner, sidebar, dan sponsor event. Hubungi: iklan@republikmancing.com</p>
+      <div style="margin-top:8px">
+        </div></div></a></div>
+        <!-- DATA PENGUNJUNG ARTIKEL -->
+      <div class="artikel-stats">
+     <div class="stat-item">👁️ <span id="viewCount">0</span> kali dibaca</div>
+    <div class="stat-item">❤️ <span id="likeCount">0</span> suka</div>
+     <div class="stat-item">📅 <span id="readDate"></span></div>
+      </div>
+      <!-- WIDGET: NEWSLETTER -->
+      <div class="widget">
+        <h3>Newsletter</h3>
+        <p>Dapatkan update harian langsung ke inbox.</p>
+        <form class="newsletter">
+          <input type="email" placeholder="Email kamu" aria-label="Email">
+          <button type="submit">Daftar</button>
+        </form>
+      </div>
+    </aside>
+  </main>
+ <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+    <!-- Kolom 1 -->
+    <div style="flex:1;min-width:220px">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+      <p style="margin:0;color:#bbb;line-height:1.6">
+        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
+        Hadir sejak 2020 untuk komunitas mancing Nusantara.
+      </p>
+    </div>
+    <!-- Kolom 2 -->
+    <div style="flex:1;min-width:180px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+        <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
+        <li><a href="#berita" style="color:#bbb;text-decoration:none">Berita</a></li>
+        <li><a href="#teknik" style="color:#bbb;text-decoration:none">Teknik</a></li>
+        <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+      </ul>
+    </div>
+    <!-- Kolom 3 -->
+    <div style="flex:1;min-width:240px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+      <p style="margin:0;color:#bbb;line-height:1.8">
+        Email: <strong>info@republikmancing.com</strong><br>
+        WhatsApp: <strong>+62 85693927647</strong><br>
+        Jakarta-Purbalingga—Indonesia
+      </p>
+    </div>
+    <!-- Kolom 4 -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="assets/img/icon/ig.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="assets/img/icon/ytt.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+      </div>
+    </div>
+  </div>
+  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+  <div style="text-align:center;color:#777;font-size:14px">
+    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
+<script>
+// --- Buat DOTS ---
+slides.forEach((_, i) => {
+  const btn = document.createElement("button");
+  btn.addEventListener("click", () => goTo(i));
+  dotsContainer.appendChild(btn);
+});
+function updateSlider() {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+  const dots = dotsContainer.querySelectorAll("button");
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+function goTo(i) {
+  index = i;
+  updateSlider();
+}
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlider();
+});
+// pertama kali tampilkan slide 1
+updateSlider();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("sliderDots");
+  let current = 0;
+  let autoPlayInterval;
+  // Generate dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);});
+  const dots = dotsContainer.querySelectorAll("button");
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");}
+  function nextSlide() {current = (current + 1) % slides.length;showSlide(current);}
+  function prevSlide() { current = (current - 1 + slides.length) % slides.length;showSlide(current);}
+  function goToSlide(i) {current = i;showSlide(current);restartAutoPlay();}
+  // Buttons
+  document.querySelector(".slider-nav.next").addEventListener("click", () => {nextSlide();restartAutoPlay();});
+  document.querySelector(".slider-nav.prev").addEventListener("click", () => {prevSlide();restartAutoPlay();});
+  function startAutoPlay() {autoPlayInterval = setInterval(nextSlide, 4000);}
+  function restartAutoPlay() {clearInterval(autoPlayInterval);startAutoPlay();}
+  showSlide(current);
+  startAutoPlay();
+});
+</script>
+</body>
+<script>
+// KEY unik untuk website RepublikMancing
+const KEY = "republimancing-visitor-counter-v1";
+// Hitung total
+fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("total-visitors").textContent = data.value.toLocaleString();});
+// Hitung per hari
+const todayKey = KEY + "-" + new Date().toISOString().slice(0,10);
+fetch(`https://api.countapi.xyz/hit/${todayKey}/today`)
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("today-visitors").textContent = data.value.toLocaleString();
+  });
+     // Data artikel kamu (bisa ditambah kapan saja)
+  const articles = [
+    {
+      title: "Ulasan Reel Shimano Stella",
+      url: "/berita/shimano-stella-ulasan",
+      keywords: "shimano stella ulasan review reel terbaik"
+    },
+    {
+      title: "Lomba Mancing MMFC Halal Bihalal",
+      url: "/berita/lomba-mancing-mmfc",
+      keywords: "lomba mancing mmfc halal bihalal"
+    },
+    {
+      title: "Spot Mancing Ikan Mas Mantap",
+      url: "/berita/spot-mancing-ikan-mas",
+      keywords: "spot mancing ikan mas kolam harian"
+    }
+  ];
+     // AUTO-PLAY SAAT SCROLL MASUK
+document.addEventListener("DOMContentLoaded", function () {
+  const videos = document.querySelectorAll(".autoplay-news-video");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+
+        if (entry.isIntersecting) {
+          vid.play().catch(()=>{});
+        } else {
+          vid.pause();
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  videos.forEach(v => observer.observe(v));
+});
+
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    if (query.length < 2) {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    const filtered = articles.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.keywords.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      searchResults.innerHTML = "<p class='no-result'>Tidak ada hasil ditemukan.</p>";
+    } else {
+      filtered.forEach(item => {
+        searchResults.innerHTML += `
+          <a href="${item.url}" class="result-item">${item.title}</a>
+  `;});}
+    searchResults.style.display = "block";
+  });
+  const offcanvas = document.getElementById('offcanvas');
+  const openBtn = document.getElementById('openOff');
+  const closeBtn = document.getElementById('closeOff');
+  openBtn.addEventListener('click', () => {
+    offcanvas.classList.add('active');
+  });
+  closeBtn.addEventListener('click', () => {
+    offcanvas.classList.remove('active');
+  });
+  // === TANGGAL DIBACA ===
+let today = new Date();
+let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
+document.getElementById("readDate").innerText = tgl;
+</script>
+</html>

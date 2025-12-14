@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review Empang — Republik Mancing</title>
+  <meta name="description" content="Review empang mancing: fasilitas, ikan, harga tiket, suasana, dan tips mancing dari lapangan." />
+
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1100px;
+      --shadow:0 6px 18px rgba(16,24,40,.07);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* ===== HEADER GLOBAL ===== */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+    .brand span{color:#c00}
+    .main-nav{margin-left:auto;display:flex;gap:16px}
+    .main-nav a{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+    .main-nav a:hover{color:#c00}
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
+    .sub-nav a:hover{color:#c00}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}}
+
+    /* CARD */
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+
+    /* REVIEW */
+    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
+    h1{margin:12px 0 6px;font-size:1.8rem}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .hero{width:100%;height:320px;border-radius:12px;object-fit:cover;margin-bottom:14px}
+
+    .rating{display:flex;align-items:center;gap:6px;margin:10px 0}
+    .star{color:#facc15;font-size:18px}
+
+    .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+    .info{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;font-size:14px}
+
+    /* PROS CONS */
+    .pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+    .pc div{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:14px}
+    .pc h4{margin-top:0}
+
+    /* SIDEBAR */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list a{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .list img{width:72px;height:50px;border-radius:8px;object-fit:cover}
+
+    /* ZOOM */
+    img{transition:.3s}
+    img:hover{transform:scale(1.05)}
+
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0;}
+   .gallery img{width:100%;border-radius:8px;}
+   .gallery figcaption{font-size:13px;color:#666;margin-top:6px;text-align:center;}
+    /* THUMBNAIL ARTIKEL */
+   .thumb{max-width:680px;        /* batas aman desktop */margin:20px auto;      /* center */text-align:center;}
+   .thumb img{width:100%;height:320px;          /* paksa tinggi */object-fit:cover;      /* potong rapi */border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+   .thumb figcaption{margin-top:8px;font-size:13px;color:#666;font-style:italic;}
+    .share-title{margin:0 0 .5rem 0;font-size:.95rem;}
+    .share-buttons{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+    .share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);color:#111;cursor:pointer;}
+    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
+    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
+    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
+    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
+    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
+    .share-btn.copy{background:#f3f4f6}
+    .sr-only{position:relative;left:-9999px}
+    @media (max-width:600px){.article h1{font-size:20px}}
+
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="event.html">Event</a>
+      <a href="video.html">Video</a>
+      <a href="tentang.html">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="review-empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik</a>|
+    <a href="spot.html">Spot</a>|
+    <a href="donasi-foto.html">Download Foto</a>|
+  </nav>
+</div>
+
+<main class="container">
+  <div class="layout">
+
+    <!-- REVIEW EMPANG -->
+    <article class="news-article">
+
+  <h1>Review Empang Telaga Enjoy, Spot Mancing Favorit di Jagakarsa</h1>
+
+  <div class="meta">
+    <span>Republik Mancing</span> • 
+    <span>Jagakarsa, Jakarta Selatan</span>
+  </div>
+
+  <!-- THUMBNAIL -->
+  <figure class="thumb">
+    <img src="assets/img/berita/DSCF6916.JPG" alt="Empang Telaga Enjoy Jagakarsa">
+    <figcaption>Suasana Empang Telaga Enjoy, Jagakarsa. ( Foto: RepublikMancing )</figcaption>
+  </figure>
+
+  <p>
+    Pemancingan <strong>Telaga Enjoy</strong> yang berlokasi di 
+    <strong>Jalan Assakinah, Kebagusan, Jagakarsa, Jakarta Selatan</strong>,
+    menjadi salah satu empang yang cukup dikenal di kalangan angler harian.
+    Dengan konsep nyaman dan pengelolaan yang tertib, empang ini rutin
+    menggelar mancing setiap pekan.
+  </p>
+
+  <h2>Jadwal Buka & Jumlah Lapak</h2>
+
+  <p>
+    Menurut keterangan pengelola empang, 
+    <strong>Bang Wawan (Anak Sedeng)</strong>, Telaga Enjoy dibuka secara rutin
+    <strong>setiap hari Kamis dan Minggu</strong>.
+  </p>
+
+  <blockquote>
+    “Kita buka rutin Kamis dan Minggu, total ada 44 lapak supaya pemancing
+    tetap nyaman dan adil,” ujar Bang Wawan (Anak Sedeng).
+  </blockquote>
+
+  <p>
+    Dengan total <strong>44 lapak aktif</strong>, jarak antar pemancing cukup
+    lega sehingga meminimalkan gesekan dan memberikan ruang gerak yang nyaman
+    bagi para angler.
+  </p>
+
+  <h2>Karakter Empang & Ikan</h2>
+
+  <p>
+    Telaga Enjoy memiliki karakter empang yang relatif stabil. Ikan cukup
+    responsif terhadap umpan, namun tetap membutuhkan racikan dan teknik yang
+    tepat. Kondisi ini menjadikan empang cocok untuk pemancing pemula hingga
+    angler berpengalaman.
+  </p>
+
+  <h2>Fasilitas Penunjang Kenyamanan</h2>
+
+  <!-- GALERI -->
+  <div class="gallery">
+    <figure>
+      <img src="assets/img/enjoy/DSCF6897.JPG" alt="Lapak Empang Telaga Enjoy">
+      <figcaption>Lapak duduk nyaman</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/enjoy/DSCF6910.JPG" alt="Parkiran Telaga Enjoy">
+      <figcaption>Area parkir luas</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/enjoy/DSCF6902.JPG" alt="Warung Empang Telaga Enjoy">
+      <figcaption>Warung makanan & minuman</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/enjoy/DSCF6904.JPG" alt="Toilet Empang Telaga Enjoy">
+      <figcaption>Fasilitas toilet</figcaption>
+    </figure>
+      <figure>
+      <img src="assets/img/enjoy/DSCF6901.JPG" alt="Mushola Empang Telaga Enjoy">
+      <figcaption>Fasilitas Mushola</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    Fasilitas yang tersedia di Telaga Enjoy terbilang lengkap, mulai dari
+    lapak yang nyaman, area parkir, warung makan,Mushola hingga toilet umum. Hal ini
+    membuat para pemancing bisa fokus menikmati aktivitas mancing tanpa
+    terganggu kebutuhan lainnya.
+  </p>
+   <h2>Lokasi Empang Telaga Enjoy</h2>
+
+<div class="map-embed">
+  <iframe
+    src="https://www.google.com/maps?q=Jalan%20Assakinah%20Kebagusan%20Jagakarsa&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+  <h2>Kesimpulan</h2>
+
+  <p>
+    Dengan konsep yang rapi, jadwal buka yang konsisten, serta fasilitas yang
+    memadai, <strong>Empang Telaga Enjoy</strong> layak menjadi salah satu spot
+    rekomendasi mancing di wilayah Jagakarsa dan sekitarnya.
+  </p>
+
+  <p class="end-note">
+    <strong>Republik Mancing</strong> merekomendasikan Telaga Enjoy sebagai
+    empang yang nyaman, ramah, dan cocok untuk berbagai kalangan angler.
+  </p>
+    <!-- BAGIKAN / SHARE WIDGET -->
+      <div class="share" aria-label="Bagikan artikel" id="shareWidget">
+        <h5 class="share-title">Bagikan</h5>
+        <div class="share-buttons" role="list">
+          <a role="listitem" class="share-btn facebook" id="shareFacebook" title="Bagikan ke Facebook" target="_blank" rel="noopener">
+            <!-- SVG icon Facebook -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2v-3h2.2V9.4c0-2.2 1.3-3.5 3.3-3.5.9 0 1.8.06 1.8.06v2h-1c-1 0-1.3.63-1.3 1.3V12h2.3l-.36 3h-1.94v7A10 10 0 0022 12z"/>
+            </svg>
+            <span class="label">Facebook</span>
+          </a>
+          <a role="listitem" class="share-btn x" id="shareX" title="Bagikan ke X (Twitter)" target="_blank" rel="noopener">
+            <!-- SVG icon X/Twitter -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M22 5.92c-.64.28-1.33.47-2.05.55.74-.44 1.3-1.13 1.57-1.96-.7.42-1.48.73-2.31.9A4.06 4.06 0 0015.5 4c-2.24 0-4.06 1.82-4.06 4.07 0 .32.04.63.11.93-3.37-.17-6.36-1.78-8.36-4.22-.35.6-.55 1.3-.55 2.05 0 1.42.72 2.67 1.81 3.4-.66-.02-1.28-.2-1.82-.5v.05c0 1.97 1.4 3.61 3.26 3.98-.34.09-.7.14-1.07.14-.26 0-.51-.02-.75-.07.51 1.6 2 2.77 3.77 2.8A8.13 8.13 0 012 19.54 11.48 11.48 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68v-.53c.8-.58 1.49-1.3 2.03-2.12-.73.32-1.52.53-2.34.63z"/>
+            </svg>
+            <span class="label">X</span>
+          </a>
+          <a role="listitem" class="share-btn instagram" id="shareInstagram" title="Instagram (buka profil / salin link)" target="_blank" rel="noopener">
+            <!-- SVG icon Instagram -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zm6.8-3.6a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2zM12 10.5A1.5 1.5 0 1110.5 12 1.5 1.5 0 0112 10.5z"/>
+            </svg>
+            <span class="label">Instagram</span>
+          </a>
+          <a role="listitem" class="share-btn whatsapp" id="shareWhatsApp" title="Bagikan ke WhatsApp" target="_blank" rel="noopener">
+            <!-- SVG icon WhatsApp -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M20.5 3.5A11 11 0 0012 1a11 11 0 00-9.9 6.1 11 11 0 001.2 10.9L1 23l4.4-2.2A11 11 0 0012 23a11 11 0 008.5-19.5zM12 21a9 9 0 01-4.6-1.2l-.3-.2-2.7 1.3 1.3-2.6-.2-.3A9 9 0 1112 21zM17 14c-.2-.1-1.2-.6-1.4-.7s-.4-.1-.6.1-.7.7-.9.8-.3.1-.5 0c-.2-.1-.8-.3-1.6-.9-.6-.6-1-1.4-1.2-1.6s0-.4.1-.5c.1-.1.2-.4.3-.6.1-.2 0-.5-.1-.7s-.6-1.5-.9-2c-.2-.4-.5-.3-.6-.3-.3 0-.5 0-.8 0s-1 .3-1.5.7c-.5.4-1 1-1 2s.8 2.4 1.2 3 .9 1.6 1.6 2.1 1.5 1 2.3 1.1c.8.1 1.6.1 2.2.1.7 0 1.2 0 1.6-.1s1-.4 1.1-.8c.1-.4.1-.8 0-.9-.1-.1-1-.6-1.2-.7z"/>
+            </svg>
+            <span class="label">WhatsApp</span>
+          </a>
+          <a role="listitem" class="share-btn telegram" id="shareTelegram" title="Bagikan ke Telegram" target="_blank" rel="noopener">
+            <!-- SVG icon Telegram -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M21 3L3 10.2c0 0 1.6 1.1 3.6 2.1l1.3.6 3.6 1.7 1.1 1.3c0 0 1.2 1.5 2.9.5 0 0 5.6-3.2 6.5-3.7L21 3z"/>
+            </svg>
+            <span class="label">Telegram</span>
+          </a>
+          <button class="share-btn copy" id="copyLink" title="Salin tautan ke clipboard">
+            <!-- SVG icon copy -->
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
+              <path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/>
+            </svg>
+            <span class="label">Salin Link</span>
+          </button>
+        </div>
+        <div id="shareFeedback" aria-live="polite" class="sr-only" style="margin-top:.5rem"></div>
+        <a class="btn" href="donasi-foto.html" title="Download paket foto (jika tersedia)">Download Paket Foto</a>
+      </div>
+</article>
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="card">
+        <h4>Review Empang Lainnya</h4>
+        <div class="list">
+          <a href="#"><img src="https://picsum.photos/120/80?1"><span>Empang Tirta Jaya</span></a>
+          <a href="#"><img src="https://picsum.photos/120/80?2"><span>Empang Mina Makmur</span></a>
+          <a href="#"><img src="https://picsum.photos/120/80?3"><span>Empang Barokah</span></a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+      <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+        <div style="flex:1;min-width:220px">
+          <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+          <p style="margin:0;color:#bbb;line-height:1.6">
+            Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
+            Hadir sejak 2020 untuk komunitas mancing Nusantara.
+          </p>
+        </div>
+        <div style="flex:1;min-width:180px">
+          <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+            <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
+            <li><a href="#event" style="color:#bbb;text-decoration:none">Event</a></li>
+            <li><a href="#koleksi" style="color:#bbb;text-decoration:none">Galeri</a></li>
+            <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+            <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+          </ul>
+        </div>
+        <div style="flex:1;min-width:240px">
+          <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+          <p style="margin:0;color:#bbb;line-height:1.8">
+            Email: <strong>info@republikmancing.com</strong><br>
+            WhatsApp: <strong>+62 85693927647</strong><br>
+            Jakarta-Purbalingga—Indonesia
+          </p>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+          <div style="display:flex;gap:12px;margin-top:8px;">
+            <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+            <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="assets/img/icon/ig.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+            <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="assets/img/icon/ytt.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+            <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Tiktok" style="width:32px;height:32px;object-fit:contain"></a>
+          </div>
+        </div>
+      </div>
+      <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+      <div style="text-align:center;color:#777;font-size:14px">
+        © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+      </div>
+    </footer>
+        <script>
+  (function() {
+    // Get current page url and title (fallback to document.location)
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title || '');
+
+    const fb = document.getElementById('shareFacebook');
+    const x = document.getElementById('shareX');
+    const ig = document.getElementById('shareInstagram');
+    const wa = document.getElementById('shareWhatsApp');
+    const tg = document.getElementById('shareTelegram');
+    const copyBtn = document.getElementById('copyLink');
+    const feedback = document.getElementById('shareFeedback');
+
+    // Facebook share dialog (opens in new window)
+    fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+    // X (Twitter) share
+    x.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+
+    // Instagram: no official web share for arbitrary links.
+    const instagramProfile = ''; // optional
+    if (instagramProfile) {
+      ig.href = `https://www.instagram.com/${instagramProfile}/`;
+    } else {
+      ig.href = `https://www.instagram.com/`;
+    }
+
+    // WhatsApp (works on mobile & web)
+    wa.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+
+    // Telegram
+    tg.href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+
+    // Copy to clipboard
+    copyBtn.addEventListener('click', function() {
+      const text = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          feedback.textContent = 'Tautan disalin ke clipboard';
+          copyBtn.innerHTML = '✓ <span class="label">Tersalin</span>';
+          setTimeout(() => {
+            copyBtn.innerHTML = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/></svg><span class="label">Salin Link</span>`;
+          }, 1500);
+        }).catch(err => {
+          feedback.textContent = 'Gagal menyalin tautan';
+        });
+      } else {
+        const input = document.createElement('input');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        try {
+          document.execCommand('copy');
+          feedback.textContent = 'Tautan disalin ke clipboard';
+        } catch (e) {
+          feedback.textContent = 'Browser tidak mendukung salin otomatis';
+        } finally {
+          input.remove();
+        }
+      }
+    });
+
+    // Accessibility: keyboard activation
+    const buttons = document.querySelectorAll('#shareWidget .share-btn, #shareWidget button');
+    buttons.forEach(b => {
+      b.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          b.click();
+        }
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>

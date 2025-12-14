@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lomba Mancing – Telagajeruk Purut 30 | Republik Mancing</title>
+  <style>
+    :root{
+      --accent:#1e8f1e;
+      --muted:#6b6b6b;
+      --bg:#f5f6f7;
+      --card:#fff;
+      --max-width:1100px;
+      --radius:10px;
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--font);background:var(--bg);color:#222;margin:0;padding:0}
+    .topbar{width:100%;background:#111;color:#fff;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
+    .top-inner{max-width:var(--max-width);margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+    .brand a{color:#fff;text-decoration:none;font-weight:700}
+    .main-nav a{color:#fff;text-decoration:none;margin-left:18px}
+
+    .container{max-width:var(--max-width);margin:28px auto;padding:0 16px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 18px rgba(18,24,40,0.06);overflow:hidden}
+    .article-hero{display:flex;flex-direction:column}
+    .hero-img{width:100%;height:320px;object-fit:cover;display:block}
+    .article-body{padding:22px}
+
+    h1{font-size:22px;margin-bottom:8px}
+    h2{font-size:18px;margin-top:18px}
+    p{color:#333;line-height:1.6;margin:10px 0}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+    /* hadiah grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+    .box{background:#fafafa;border-radius:8px;padding:12px;border:1px solid #eee}
+
+    /* tombol */
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+
+    /* responsive */
+    @media(min-width:760px){.article-hero{flex-direction:row}.hero-img{width:50%;height:420px}.article-body{width:50%}}
+
+    /* hover: link merah jika kursor di atas gambar */
+    .thumb img{transition:transform .3s ease}
+    .card:hover .thumb img{transform:scale(1.03)}
+    .card .title{transition:color .2s}
+    .card:hover .title{color:#ff3939}
+
+    .contact{margin-top:12px;font-size:15px}
+    footer{max-width:var(--max-width);margin:26px auto 60px;padding:0 16px;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="brand"><a href="index.html">Republik<span style="color:var(--accent)">Mancing</span></a></div>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Beranda</a>
+        <a href="berita.html">Berita</a>
+        <a href="event.html">Event</a>
+        <a href="teknik.html">Teknik</a>
+        <a href="spot.html">Spot</a>
+        <a href="video-detail.html">Video</a>
+        <a href="donasi-foto.html">Download Foto</a>
+        <a href="tentang.html">Tentang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="card article-card">
+      <div class="article-hero">
+        <a href="#" class="thumb"><img src="assets/img/berita/DSCF6927.JPG" alt="Telagajeruk Purut 30" class="hero-img"></a>
+        <div class="article-body">
+          <div class="meta">Minggu, 2 November 2025 • Telagajeruk Purut 30 (Empang Mas Yuli)</div>
+          <h1 class="title">Umpan Si Shio feat Umpan Kalagemet — Lomba Mancing Seru di Telagajeruk Purut 30</h1>
+          <p>Gelaran lomba mancing kolaborasi antara <strong>Umpan Si Shio</strong> dan <strong>Umpan Kalagemet</strong> kembali digelar di Pemancingan <em>Telagajeruk Purut 30 (Empang Mas Yuli)</em>. Dengan format <strong>2 joran per lapak</strong> dan total <strong>30 lapak</strong>, acara ini berhasil menghadirkan kompetisi yang ketat namun penuh keakraban antar peserta.</p>
+
+          <h2>Jadwal & Tiket</h2>
+          <p><strong>Waktu:</strong> 10:30 — 16:00 WIB<br>
+          <strong>Tiket:</strong> Rp800.000<br>
+          <strong>C:</strong> Rp100.000 • <strong>Bonling:</strong> Rp100.000</p>
+
+          <h2>Stock Ikan & Sistem</h2>
+          <p>Panitia menyiapkan <strong>280 kg ikan rame</strong> dan setiap lapak mendapatkan <strong>1 ikan super</strong>. Dengan jumlah tersebut, tarikan diprediksi berlangsung hampir nonstop selama lomba.</p>
+
+          <h2>Hadiah (Jika Lapak Full)</h2>
+          <div class="grid">
+            <div class="box"><strong>Juara 1</strong><br>Rp8.000.000 + C1 Rp2.000.000<br><strong>Total Rp10.000.000</strong></div>
+            <div class="box"><strong>Juara 2</strong><br>Rp3.000.000 + C2 Rp1.000.000<br><strong>Total Rp4.000.000</strong></div>
+            <div class="box"><strong>Juara 3</strong><br>Rp1.500.000</div>
+            <div class="box"><strong>Juara 4</strong><br>Rp800.000</div>
+            <div class="box"><strong>Total A</strong><br>Rp800.000</div>
+            <div class="box"><strong>Total B</strong><br>Rp800.000</div>
+            <div class="box"><strong>Total Gabungan</strong><br>Rp800.000</div>
+            <div class="box"><strong>Bonling</strong><br>Rp300.000 × 10 pemenang</div>
+          </div>
+
+          <h2>Umpan yang Disarankan</h2>
+          <p>Umpan Putih • Umpan Kuning • Kroto • Poa • Telor Jangkrik • Bending (Putih & Coklat)</p>
+
+          <h2>Pendaftaran & Lokasi</h2>
+          <p class="contact">Kontak pendaftaran: <strong>YuLi</strong> — <a href="tel:+6281316697012">0813 1669 7012</a></p>
+          <p>Lokasi: PR96+MFX, TPU Jeruk Purut, RT.7/RW.6, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560</p>
+
+          <h2>Business & Endorse</h2>
+          <p>For business/endorse: <a href="mailto:mochnasir1111@gmail.com">mochnasir1111@gmail.com</a></p>
+
+          <p>Terima kasih kepada semua yang sudah menyaksikan dan mendukung acara kami. Jangan lupa <strong>like, comment, share</strong>, dan <strong>subscribe</strong> agar selalu update dengan kegiatan mancing berikutnya.</p>
+
+          <p><a class="btn" href="hut pt truba.html">Buka Detail Event</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Republik Mancing — Semua hak dilindungi
+  </footer>
+</body>
+</html>

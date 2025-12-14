@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Anglers — Republik Mancing</title>
+  <meta name="description" content="Profil lengkap anglers Indonesia: latar belakang, spesialisasi teknik, prestasi, dan kisah di balik tarikan juara." />
+
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* HEADER GLOBAL */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+
+    /* CARD */
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* PROFIL */
+    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    h1{margin:12px 0 6px;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:12px}
+
+    .profile-grid{display:grid;grid-template-columns:180px 1fr;gap:18px;margin-top:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;object-fit:cover}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.85rem;margin-right:6px}
+
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .stat{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;text-align:center}
+    .stat strong{display:block;font-size:1.1rem}
+
+    /* SIDEBAR */
+    .related-list{display:flex;flex-direction:column;gap:12px}
+    .related-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
+
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+      .avatar{width:100%;height:260px}
+    }
+
+    /* ZOOM EFFECT */
+    img{transition:transform .35s ease, filter .35s ease}
+    img:hover{transform:scale(1.05);filter:brightness(.95)}
+
+      .hero-wrap{width:100%;aspect-ratio:16 / 9;   /* kunci 1920x1080 */overflow:hidden;border-radius:12px;margin-bottom:14px;}
+    .hero-wrap img.hero{width:100%;height:100%;object-fit:cover;      /* crop elegan ala Detik/Kompas */}
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="event.html" class="hover-red">Event</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="tentang.html" class="hover-red">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="review-empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik</a>|
+    <a href="spot.html">Spot</a>|
+    <a href="donasi-foto.html">Download Foto</a>|
+  </nav>
+</div>
+
+<main class="container">
+ <article class="card" itemscope itemtype="http://schema.org/Article">
+    <span class="kicker">Profil Angler • Tokoh Komunitas</span>
+    <h1 itemprop="headline">Om Benny, Jiwa Pemimpin yang Dihormati Keluarga Besar MMFC</h1>
+    <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
+
+   <div class="hero-wrap">
+  <img src="assets/img/mmfc/om ben.jpg"alt="Om Benny Ketua MMFC"class="hero"itemprop="image"></div>
+<div class="caption">
+  <em>Om Benny saat kegiatan komunitas MMFC. (Dok. Republik Mancing)</em>
+</div>
+
+
+    <div itemprop="articleBody">
+      <p>
+        Di balik solidnya komunitas <strong>MMFC</strong>, ada satu nama yang selalu disebut dengan penuh hormat: <strong>Om Benny</strong>.
+        Sosoknya bukan hanya dikenal sebagai pemancing senior, tetapi juga sebagai jiwa pemimpin yang sejak awal berdirinya MMFC
+        selalu dipercaya untuk mengemban amanah sebagai ketua hingga saat ini.
+      </p>
+
+      <p>
+        Kepercayaan tersebut bukan tanpa alasan. Di mata para anggota, Om Benny adalah figur yang tenang, bijaksana,
+        dan mampu menyatukan berbagai karakter dalam satu komunitas yang solid.
+        Dalam setiap keputusan, ia selalu mengedepankan musyawarah dan kebersamaan.
+      </p>
+
+      <h2>Dipercaya Memimpin Sejak Awal Berdiri</h2>
+      <p>
+        Sejak MMFC resmi berdiri, Om Benny selalu ditunjuk sebagai ketua.
+        Menariknya, ia sempat beberapa kali mengutarakan niat untuk pensiun dari jabatan tersebut.
+        Namun, para anggota MMFC menilai belum ada sosok yang mampu menggantikan peran kepemimpinan
+        Om Benny yang begitu arif dan merangkul semua kalangan.
+      </p>
+
+      <blockquote>
+        “Beliau bukan hanya ketua, tapi orang tua bagi kami semua,” ujar salah satu anggota MMFC.
+      </blockquote>
+
+      <h2>Dermawan dan Menjadi Teladan</h2>
+      <p>
+        Sosok Om Benny juga dikenal sangat dermawan.
+        Dalam setiap kegiatan sosial yang digelar komunitas, namanya hampir selalu berada di barisan terdepan.
+        Salah satunya saat <strong>Republik Mancing</strong> mengadakan acara santunan anak yatim,
+        Om Benny tanpa ragu memberikan donasi yang kemudian diikuti oleh para anggota MMFC lainnya.
+      </p>
+
+      <p>
+        Sikap tersebut secara tidak langsung menumbuhkan semangat kepedulian sosial di dalam komunitas.
+        Bagi Om Benny, mancing bukan hanya soal hobi dan prestasi, tetapi juga tentang bagaimana komunitas
+        bisa memberi manfaat bagi sesama.
+      </p>
+
+      <h2>Panutan Bagi Pemancing MMFC</h2>
+      <p>
+        Hingga hari ini, Om Benny tetap menjadi panutan bagi para pemancing,
+        khususnya keluarga besar MMFC.
+        Kepemimpinannya yang konsisten, sikap rendah hati, serta kepeduliannya terhadap anggota
+        menjadikan Om Benny figur yang sulit tergantikan.
+      </p>
+
+      <p>
+        Di tengah dunia pemancingan yang terus berkembang,
+        kehadiran sosok seperti Om Benny membuktikan bahwa kekuatan komunitas
+        tidak hanya terletak pada prestasi di empang, tetapi juga pada nilai kebersamaan dan kepedulian.
+      </p>
+    </div>
+  </article>
+<!-- LIST / GRID SEMUA ANGLERS -->
+<section class="container">
+<h2 style="margin-bottom:12px">Daftar Profil Anglers</h2>
+<p style="color:var(--muted);margin-bottom:18px">Kumpulan profil pemancing dari berbagai komunitas dan spesialisasi.</p>
+
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+
+
+<!-- CARD ANGLER -->
+<a href="profil angler Om Alif.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/mmfc/alif.png" alt="Om Alif" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Alif</h3>
+<div style="font-size:13px;color:var(--muted)">Angler MMFC</div>
+<div style="margin-top:6px">
+<span class="badge">🏆 Skill Mancing</span>
+</div>
+</div>
+</a>
+
+
+<!-- CARD ANGLER -->
+<a href="profil-angler-joki bekas.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/berita/joki.png" alt="Om Joki Bekas" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Joki Bekas</h3>
+<div style="font-size:13px;color:var(--muted)">Angler MMFC</div>
+<div style="margin-top:6px">
+<span class="badge">🎯 Akurasi Tinggi</span>
+</div>
+</div>
+</a>
+
+
+<!-- CARD ANGLER -->
+<a href="profil-angler-om bolang.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/mmfc/om bolang gentak.png" alt="Om Bolang" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Profil-Om Bolang</h3>
+<div style="font-size:13px;color:var(--muted)">Angler MMFC</div>
+<div style="margin-top:6px">
+<span class="badge">🌊 Strike Babon</span>
+</div>
+</div>
+</a>
+</main>
+   
+  <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+
+    <!-- Kolom 1 -->
+    <div style="flex:1;min-width:220px">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+      <p style="margin:0;color:#bbb;line-height:1.6">
+        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
+        Hadir sejak 2020 untuk komunitas mancing Nusantara.
+      </p>
+    </div>
+
+    <!-- Kolom 2 -->
+    <div style="flex:1;min-width:180px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+        <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
+        <li><a href="#berita" style="color:#bbb;text-decoration:none">Berita</a></li>
+        <li><a href="#teknik" style="color:#bbb;text-decoration:none">Teknik</a></li>
+        <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 3 -->
+    <div style="flex:1;min-width:240px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+      <p style="margin:0;color:#bbb;line-height:1.8">
+        Email: <strong>info@republikmancing.com</strong><br>
+        WhatsApp: <strong>+62 85693927647</strong><br>
+        Jakarta-Purbalingga—Indonesia
+      </p>
+    </div>
+
+    <!-- Kolom 4 -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="https://i.postimg.cc/MGTBvbc9/1.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="https://i.postimg.cc/6qs4jkMH/2.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="https://i.postimg.cc/LXZF4wmd/7.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="https://i.postimg.cc/02sJpqMr/3.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+
+  <div style="text-align:center;color:#777;font-size:14px">
+    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
+
+</body>
+</html>
