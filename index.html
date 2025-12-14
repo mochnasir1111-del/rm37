@@ -259,6 +259,16 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
+  /* === FIX YOUTUBE EMBED === */
+.news-video-player video{display:none;}
+.video-wrapper{position:relative;padding-top:56.25%;}
+.video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;}
+.video-frame-header{background:#111;color:#fff;font-weight:700;padding:8px 14px;font-size:14px;letter-spacing:.5px;border-left:5px solid #d40000;}
+.news-video-player{position:relative;background:#000;margin-bottom:20px;}
+.video-wrapper{position:relative;padding-top:56.25%; /* 16:9 */}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.video-watermark{position:absolute;top:10px;right:10px;z-index:5;opacity:.75;}
+.video-watermark img{height:34px;}
   </style>
 </head>
 <body>
@@ -434,20 +444,28 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       </section>
       <div class="video-frame">
   <!-- HEADER STYLE TV NEWS -->
-  <div class="video-frame-header">
-    VIDEO – REPUBLIK MANCING
+<div class="video-frame-header">
+  VIDEO – REPUBLIK MANCING
+</div>
+
+<div class="news-video-player">
+  <!-- Watermark -->
+  <div class="video-watermark">
+    <img src="assets/img/icon/rm.png" alt="Republik Mancing">
   </div>
-  <div class="news-video-player">
-    <!-- Watermark -->
-    <div class="video-watermark">
-      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
-    </div>
-    <!-- Video -->
-    <video class="autoplay-news-video" controls muted playsinline poster="poster.jpg">
-      <source src="https://www.youtube.com/republikmancing37" type="video/mp4">
-    </video>
+
+  <!-- YOUTUBE EMBED -->
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&rel=0"
+      title="Video Republik Mancing"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
   </div>
 </div>
+
       <!-- IKLAN TOP BANNER -->
 <div class="top-ad">
   <div class="container">
@@ -463,7 +481,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <article class="list-item">
            <a href="joki bekas.html"class="thumb">
           <img src="assets/img/berita/joki.png" alt=""></a>
-            <h4><a href="joki bekas.html" class="title">Joki Bekas Merajai Total Di Setiap Empang</a></h4>
+            <h4><a href="profil-angler-joki bekas.html" class="title">Joki Bekas Merajai Total Di Setiap Empang</a></h4>
             <p class="muted">3 jam lalu • oleh Sari</p>
         </article>
         <article class="list-item">
@@ -495,7 +513,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <h3>Populer</h3>
         <ol class="popular-list">
           <li><a href="babon naik 16 kg.html">Babon 12kg Pecahkan Rekor</a></li>
-          <li><a href="rekomendasi gear joran.html">Rekomendasi Geear Joran</a></li>
+          <li><a href="rekomendasi gear joran.html">Rekomendasi Memilih Piranti Mancing</a></li>
           <li><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></li>
           <li><a href="cs 101.html">Event MMFC-CS 101 Joglo</a></li>
         </ol>
@@ -747,6 +765,3 @@ let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
 document.getElementById("readDate").innerText = tgl;
 </script>
 </html>
-
-
-
