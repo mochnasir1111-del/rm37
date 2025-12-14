@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toko Affiliate — Republik Mancing</title>
+
+<style>
+/* =========================
+   TOKO REPUBLIK MANCING
+   ========================= */
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#f5f6f7;
+  color:#222;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:16px;
+}
+
+/* Header */
+.shop-header{
+  background:#111;
+  color:#fff;
+  padding:20px;
+  margin-bottom:20px;
+}
+.shop-header h1{
+  margin:0;
+  font-size:28px;
+}
+.shop-header p{
+  margin-top:6px;
+  opacity:.85;
+}
+
+/* Category Nav */
+.shop-nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.shop-nav a{
+  background:#fff;
+  border:1px solid #ddd;
+  padding:8px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:14px;
+  color:#333;
+}
+.shop-nav a.active,
+.shop-nav a:hover{
+  background:#d40000;
+  color:#fff;
+  border-color:#d40000;
+}
+
+/* Grid Produk */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+}
+
+.product-card{
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  display:flex;
+  flex-direction:column;
+}
+
+.product-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:12px;
+  flex:1;
+}
+
+.product-info h3{
+  font-size:16px;
+  margin:0 0 6px;
+}
+
+.product-info p{
+  font-size:13px;
+  color:#555;
+  margin:0 0 10px;
+}
+
+.product-info .price{
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.btn-buy{
+  display:block;
+  background:#d40000;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-buy:hover{
+  background:#b80000;
+}
+
+/* Info */
+.shop-note{
+  margin-top:30px;
+  background:#fff3cd;
+  border:1px solid #ffeeba;
+  padding:14px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* Responsive */
+@media(max-width:640px){
+  .shop-header h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER REPUBLIK MANCING -->
+<header class="rm-header">
+  <div class="container header-wrap">
+    <a href="index.html" class="logo">Republik<span>Mancing</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>|
+      <a href="berita.html">Berita</a>|
+      <a href="profil-angler2.html">Profil Angler</a>|
+      <a href="layout_toko_affiliate_republik_mancing.html" class="active">Toko</a>|
+    </nav>
+  </div>
+</header>
+
+<!-- HEADER TOKO -->
+<div class="shop-header">
+  <div class="container">
+    <h1>Toko Affiliate Republik Mancing</h1>
+    <p>Rekomendasi alat mancing pilihan redaksi Republik Mancing</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Navigasi Kategori -->
+  <nav class="shop-nav">
+    <a href="#" class="active">Semua</a>
+    <a href="#">Reel</a>
+    <a href="#">Joran</a>
+    <a href="#">Umpan</a>
+    <a href="#">Aksesoris</a>
+  </nav>
+
+  <!-- Grid Produk -->
+  <section class="product-grid">
+
+    <div class="product-card">
+      <img src="assets/img/produk/3dfa31499cf14745b60dd5f11eecfa4e~tplv-o3syd03w52-resize-jpeg_200_0.webp" alt="Shimano Stella">
+      <div class="product-info">
+        <h3>Shimano Stella FK 2500</h3>
+        <p>Reel kelas atas favorit pemancing profesional.</p>
+        <div class="price">Rp,355.000+</div>
+        <a href="https://www.tokopedia.com/sevenseasfishingtackle/shimano-fx-2019-1000-2000-2500-c3000-4000-spinning-reel-pancing-4000-b8971?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fshimano+stella+fx+2500%26search_i
+        d%3D20251214195839577BCC914F9E552EFDS6%26src%3Dsearch&t_id=1765742364133&t_st=2&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_resultE" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/produk/e22af5c1c55b4b8884416dd6385cb548~tplv-o3syd03w52-resize-jpeg_200_0.webp" alt="Joran Carbon">
+      <div class="product-info">
+        <h3>Joran SHIMANO MAJESTIC </h3>
+        <p>S66L S610ML2 S74MH2 S80M2 Spinning | Resmi - S66L2</p>
+        <div class="price">Rp,530.500+</div>
+        <a href="https://www.tokopedia.com/ifttower/joran-shimano-majestic-s66l-s610ml2-s74mh2-s80m2-spinning-resmi-1729591594918120007?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fjoran+shimano%26search_
+        id%3D20251214200350B3967A0E938DC22D0TOE%26src%3Dsearch&t_id=1765742364133&t_st=4&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Catatan -->
+  <div class="shop-note">
+    ⚠️ Catatan: Republik Mancing merupakan mitra affiliate. Harga dan stok mengikuti marketplace.
+  </div>
+
+</div>
+
+</body>
+</html>
