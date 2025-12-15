@@ -25,7 +25,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
 .brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
 .brand span{color:var(--accent)}
-.main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
+.main-nav{margin-right:400px; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
 .main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
 .main-nav a:hover{background:#f0f6ff;color:var(--accent)}
 /* ---------- SUBHEADER ---------- */
@@ -269,35 +269,101 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-watermark{position:absolute;top:10px;right:10px;z-index:5;opacity:.75;}
 .video-watermark img{height:34px;}
-    .menu-toggle{
+/* ================= HEADER BASE ================= */
+.topbar{
+  background:#000;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+.top-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand-logo{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+}
+
+.brand-logo img{
+  height:34px;
+  display:block;
+}
+
+.brand-logo span{
+  color:#ff2d2d;
+}
+
+/* ================= NAV DESKTOP ================= */
+.main-nav a{
+  margin-left:20px;
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+}
+
+.menu-btn{
   display:none;
-  font-size:26px;
   background:none;
   border:none;
+  font-size:26px;
   color:#fff;
   cursor:pointer;
 }
 
-.mobile-nav{
-  display:none;
-  position:absolute;
-  top:70px;
-  right:20px;
-  background:#111;
-  padding:16px;
-  border-radius:12px;
-}
+/* ================= MOBILE FIX TOTAL ================= */
+@media (max-width:768px){
 
-.mobile-nav a{
-  display:block;
-  color:#fff;
-  text-decoration:none;
-  margin:10px 0;
-}
+  .top-inner{
+    max-width:100%;
+    margin:0;
+    padding:10px 12px;
+  }
 
-@media(max-width:768px){
-  .menu-toggle{display:block}
-  .main-nav{display:none}
+  .brand-logo{
+    font-size:16px;
+  }
+
+  .brand-logo img{
+    height:28px;
+  }
+
+  .main-nav{
+    display:none;
+    position:absolute;
+    top:60px;
+    right:12px;
+    background:#111;
+    flex-direction:column;
+    padding:14px 16px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+
+  .main-nav a{
+    margin:8px 0;
+    font-size:15px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .main-nav.active{
+    display:flex;
+  }
 }
 
   </style>
@@ -308,22 +374,27 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 <!-- HEADER GLOBAL -->
 <header class="topbar">
   <div class="top-inner">
-    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
-
+    
     <div class="brand">
-     <a href="index.html" class="brand-logo">
-  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+      <a href="index.html" class="brand-logo">
+        <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">
+        Republik<span>Mancing</span>
+      </a>
     </div>
 
-    <nav class="main-nav">
-      <a href="index.html" class="hover-red">Beranda</a>
-      <a href="berita.html" class="hover-red">Berita</a>
-      <a href="event.html" class="hover-red">Event</a>
-      <a href="video.html" class="hover-red">Video</a>
-      <a href="tentang.html" class="hover-red">Tentang</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="event.html">Event</a>
+      <a href="video.html">Video</a>
+      <a href="tentang.html">Tentang</a>
     </nav>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
   </div>
 </header>
+
 
 <!-- SUBHEADER GLOBAL -->
 <div class="subheader">
@@ -377,13 +448,13 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   <div class="offcanvas" id="offcanvas">
     <button class="close-off" id="closeOff" aria-label="Tutup menu">×</button>
     <nav class="off-nav">
-      <a href="index.html">Beranda</a>
-      <a href="berita.html">Berita</a>
-      <a href="teknik.html">Teknik</a>
-      <a href="spot.html">Spot</a>
-      <a href="video-detail.html">Video</a>
-      <a href="donasi-foto.html">Download Foto</a>
-      <a href="tentang.html">Tentang</a>
+      <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="review-empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik</a>|
+    <a href="spot.html">Spot</a>|
+    <a href="rekomendasi gear joran.html">Alat Mancing</a>|
+    <a href="layout_toko_affiliate_republik_mancing.html">Toko Affiliate</a>|
+    <a href="donasi-foto.html">Download Foto</a>|
     </nav>
   </div>
   <div class="offcanvas-backdrop" id="offBackdrop"></div>
@@ -482,7 +553,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 <div class="news-video-player">
   <!-- Watermark -->
   <div class="video-watermark">
-    <img src="assets/img/icon/rm.png" alt="Republik Mancing">
+    <img src="assets/img/gicon/rm.png" alt="Republik Mancing">
   </div>
 
   <!-- YOUTUBE EMBED -->
@@ -510,13 +581,13 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       <section class="list-news">
         <h2>Berita Terbaru</h2>
         <article class="list-item">
-           <a href="profil-angler-joki bekas.html"class="thumb">
+           <a href="joki bekas.html"class="thumb">
           <img src="assets/img/berita/joki.png" alt=""></a>
             <h4><a href="profil-angler-joki bekas.html" class="title">Joki Bekas Merajai Total Di Setiap Empang</a></h4>
             <p class="muted">3 jam lalu • oleh Sari</p>
         </article>
         <article class="list-item">
-          <a href="hut mmfc 14th.html">
+          <a href="article.html">
           <img src="assets/img/event/14mmfc.jpeg" alt=""></a>
             <h4><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
             <p class="muted">6 jam lalu • oleh RepublikMancing</p>
@@ -698,6 +769,12 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(current);
   startAutoPlay();
 });
+const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+
+  btn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 </script>
 </body>
 <script>
@@ -794,14 +871,5 @@ document.addEventListener("DOMContentLoaded", function () {
 let today = new Date();
 let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
 document.getElementById("readDate").innerText = tgl;
-   const toggle = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('mobileNav');
-
-  toggle.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-  });
 </script>
 </html>
-
-
-
