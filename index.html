@@ -269,6 +269,37 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-watermark{position:absolute;top:10px;right:10px;z-index:5;opacity:.75;}
 .video-watermark img{height:34px;}
+    .menu-toggle{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+.mobile-nav{
+  display:none;
+  position:absolute;
+  top:70px;
+  right:20px;
+  background:#111;
+  padding:16px;
+  border-radius:12px;
+}
+
+.mobile-nav a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin:10px 0;
+}
+
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  .main-nav{display:none}
+}
+
   </style>
 </head>
 <body>
@@ -763,7 +794,14 @@ document.addEventListener("DOMContentLoaded", function () {
 let today = new Date();
 let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
 document.getElementById("readDate").innerText = tgl;
+   const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mobileNav');
+
+  toggle.addEventListener('click', () => {
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+  });
 </script>
 </html>
+
 
 
