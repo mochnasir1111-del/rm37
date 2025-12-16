@@ -1,154 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toko Affiliate — Republik Mancing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ekomendasi • Alat Pancing — Republik Mancing</title>
+  <meta name="description" content="Profil Om Benny, sosok pemimpin bijaksana dan dermawan yang menjadi panutan komunitas pemancing MMFC." />
 
-<style>
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow:0 6px 18px rgba(16,24,40,.07);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.7}
+
+    /* HEADER */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+    .brand span{color:#c00}
+    .main-nav{margin-left:auto;display:flex;gap:16px}
+    .main-nav a{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+    .main-nav a:hover{color:#c00}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
+    .sub-nav a:hover{color:#c00}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    article.card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* ARTICLE */
+    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
+    h1{margin:12px 0 8px;font-size:1.8rem}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:16px}
+    .hero{width:100%;height:340px;object-fit:cover;border-radius:12px;margin-bottom:14px}
+    .caption{font-size:13px;color:var(--muted);margin-bottom:18px}
+
+    h2{margin-top:26px}
+    p{margin:12px 0}
+
+    blockquote{border-left:4px solid var(--accent);padding-left:14px;color:#334155;margin:18px 0;font-style:italic}
+
+    /* ZOOM */
+    img{transition:.35s}
+    img:hover{transform:scale(1.05)}
 /* =========================
    TOKO REPUBLIK MANCING
    ========================= */
-body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  background:#f5f6f7;
-  color:#222;
-}
+/* =========================
+   FINAL PRODUCT CARD FIX
+   ========================= */
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:16px;
-}
-
-/* Header */
-.shop-header{
-  background:#111;
-  color:#fff;
-  padding:20px;
-  margin-bottom:20px;
-}
-.shop-header h1{
-  margin:0;
-  font-size:28px;
-}
-.shop-header p{
-  margin-top:6px;
-  opacity:.85;
-}
-
-/* Category Nav */
-.shop-nav{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-.shop-nav a{
-  background:#fff;
-  border:1px solid #ddd;
-  padding:8px 14px;
-  border-radius:20px;
-  text-decoration:none;
-  font-size:14px;
-  color:#333;
-}
-.shop-nav a.active,
-.shop-nav a:hover{
-  background:#d40000;
-  color:#fff;
-  border-color:#d40000;
-}
-
-/* Grid Produk */
+/* GRID */
 .product-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
   gap:16px;
+  align-items:stretch;
 }
 
+/* CARD */
 .product-card{
   background:#fff;
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  transition:.3s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-4px);
+}
+
+/* IMAGE */
+.product-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+/* CONTENT */
+.product-info{
+  padding:14px;
+  flex:1;
   display:flex;
   flex-direction:column;
 }
 
-.product-card img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-}
-
-.product-info{
-  padding:12px;
-  flex:1;
-}
-
-.product-info h3{
-  font-size:16px;
-  margin:0 0 6px;
-}
-
-.product-info p{
-  font-size:13px;
-  color:#555;
-  margin:0 0 10px;
-}
-
+/* PRICE */
 .product-info .price{
   font-weight:700;
+  margin-top:auto;
   margin-bottom:10px;
+  color:#111;
 }
 
+/* BUTTON */
 .btn-buy{
   display:block;
   background:#d40000;
   color:#fff;
   text-align:center;
   padding:10px;
-  border-radius:6px;
+  border-radius:8px;
   text-decoration:none;
   font-weight:600;
+  font-size:14px;
 }
 
 .btn-buy:hover{
   background:#b80000;
 }
 
-/* Info */
-.shop-note{
-  margin-top:30px;
-  background:#fff3cd;
-  border:1px solid #ffeeba;
-  padding:14px;
-  border-radius:6px;
-  font-size:14px;
+/* MOBILE */
+@media(max-width:640px){
+  .product-card img{
+    height:180px;
+  }
 }
 
-/* Responsive */
-@media(max-width:640px){
-  .shop-header h1{font-size:22px}
-}
 </style>
 </head>
 <body>
 
-<!-- HEADER REPUBLIK MANCING -->
-<header class="rm-header">
-  <div class="container header-wrap">
-    <a href="index.html" class="logo">Republik<span>Mancing</span></a>
+<header class="topbar">
+  <div class="top-inner">
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
     <nav class="main-nav">
-      <a href="index.html">Beranda</a>|
-      <a href="berita.html">Berita</a>|
-      <a href="profil-angler2.html">Profil Angler</a>|
-      <a href="layout_toko_affiliate_republik_mancing.html" class="active">Toko</a>|
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="event.html">Event</a>
+      <a href="video.html">Video</a>
+      <a href="tentang.html">Tentang</a>
     </nav>
   </div>
 </header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+  <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="laporan-lomba.html">Laporan Lomba</a>|
+    <a href="review-empang.html">Review Empang</a>|
+    <a href="teknik.html">Teknik Ikan Mas</a>|
+    <a href="umpan essen.html">Umpan & Racik</a>|
+    <a href="alat pancing.html">Piranti Pancing</a>|
+    <a href="spot.html">Spot Kolam</a>|
+    <a href="layout_toko_affiliate_republik_mancing.html">Toko Affiliate</a>
+  </nav>
+</div>
 
 <!-- HEADER TOKO -->
 <div class="shop-header">
@@ -167,6 +175,7 @@ body{
     <a href="#">Joran</a>
     <a href="#">Umpan</a>
     <a href="#">Aksesoris</a>
+    <a href="#">Senar</a>
   </nav>
 
   <!-- Grid Produk -->
@@ -193,6 +202,107 @@ body{
         id%3D20251214200350B3967A0E938DC22D0TOE%26src%3Dsearch&t_id=1765742364133&t_st=4&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
       </div>
     </div>
+    <div class="product-card">
+      <img src="assets/img/produk/senar mula.webp" alt="senar">
+      <div class="product-info">
+        <h3>Senar YGK MULA 150 Meter </h3>
+        <p>12 Lbs | 10 Lbs | 8 Lbs | 6 Lbs - BLUE, 10 lbs</p>
+        <div class="price">Rp,121.440+</div>
+        <a href="https://www.tokopedia.com/bhinnekapancing/senar-ygk-mula-150-meter-12-lbs-10-lbs-8-lbs-6-lbs-1731451262212343761?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Falat+pancing%26search_
+        id%3D20251216004412B83AAC23B952871F03N4%26src%3Dsearch&t_id=1765845887958&t_st=1&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/senar adun.webp" alt="Senar">
+      <div class="product-info">
+        <h3>Senar Pancing Nilon Monofilament Adun Fishing</h3>
+        <p>Line 100m Untuk Mancing Lomba Galapung & Galatama - Putih Bening 0.18mm</p>
+        <div class="price">Rp,38.500+</div>
+        <a href="https://www.tokopedia.com/adun-mancing/senar-pancing-nilon-monofilament-adun-fishing-line-100m-untuk-mancing-lomba-galapung-galatama-1729589767992085202?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Falat+pancing%26search_id%3D20251216004412B83AAC23B952871F03N4%26src%3Dsearch&t_
+        id=1765845887958&t_st=2&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/senar adun nilon.webp" alt="Senar">
+      <div class="product-info">
+        <h3>Senar Pancing Nilon Monofilament Adun Fishing</h3>
+        <p>Line 100m Untuk Mancing Lomba Galapung & Galatama - Putih Bening 0.18mm</p>
+        <div class="price">Rp,45.850+</div>
+        <a href="https://www.tokopedia.com/adun-mancing/senar-pancing-nilon-monofilament-adun-fishing-line-extensive-150m-1729647545889883858?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Falat+pancing%2Fsenar%26search_
+        id%3D2025121600562282CEC96096D42816ESVR%26src%3Dsearch&t_id=1765845887958&t_st=4&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/senar irv.webp" alt="Shimano Stella">
+      <div class="product-info">
+        <h3>Senar Pancing IRV</h3>
+        <p>nylon Monofilament Tournament Line - green, 0.22.</p>
+        <div class="price">Rp,60.000+</div>
+        <a href="https://www.tokopedia.com/irvan-ikan-channel/senar-pancing-irv-nylon-monofilament-tournament-line-1730729285251729405?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Falat+pancing%26search_
+        id%3D2025121601013126E359E83860DB2D4KNF%26src%3Dsearch&t_id=1765845887958&t_st=6&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/produk/tas pancing michigi.webp" alt="Joran Carbon">
+      <div class="product-info">
+        <h3>Tas Pancing MICHIGI 1 Set Joran Anti Air Lapisan </h3>
+        <p>Busa 80 100 120 Cm Mancing Galatama Jigging Casting - 80 Cm</p>
+        <div class="price">Rp,51.900+</div>
+        <a href="https://www.tokopedia.com/fishing-supply/tas-pancing-michigi-1-set-joran-anti-air-lapisan-busa-80-100-120-cm-mancing-galatama-jigging-casting-1729722777434163251?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Falat+pancing%26search_id%3D2025121601013126E359E83860DB2D4KNF%26src%3Dsearch&t
+        _id=1765845887958&t_st=7&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="assets/img/produk/essen zip it.webp" alt="senar">
+      <div class="product-info">
+        <h3>Zip It Essen Mancing Umpan Mancing Semua Jenis </h3>
+        <p>Dan Medan Nila Mas Lele Bawal Patin - Zip It No. 1</p>
+        <div class="price">Rp,100.000+</div>
+        <a href="https://www.tokopedia.com/umpanmancing/zip-it-essen-mancing-umpan-mancing-semua-jenis-dan-medan-nila-mas-lele-bawal-patin-1729697985245186980?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fessen+pancing%26search_id%3D20251216011509B83AAC23B952872FD5FL%26src%3Dsearch&t
+        _id=1765845887958&t_st=8&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/essen egy.webp" alt="Senar">
+      <div class="product-info">
+        <h3>ESEN JALITEUNG AKC</h3>
+        <p>( ANGGUR KAMPER CABE ) - 15ml</p>
+        <div class="price">Rp,100.000+</div>
+        <a href="https://www.tokopedia.com/jaliteung-store/esen-jaliteung-akc-anggur-kamper-cabe-1729626441477818391?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fessen+pancing+jaliteung%26search_id%3D20251216011845B3967A0E938DC23997UZ%26src%3Dsearch&t_
+        id=1765845887958&t_st=9&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/umpan jaliteung.webp" alt="Senar">
+      <div class="product-info">
+        <h3>Umpan Pancing Jaliteung Production KK PAHE</h3>
+        <p>Produk Asli Berkualitas Tinggi</p>
+        <div class="price">Rp,5.000+</div>
+        <a href="https://www.tokopedia.com/jaliteung-store/umpan-pancing-kk-pahe-jaliteung-product?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fessen+pancing+jaliteung%26search_id%3D20251216011845B3967A0E938DC23997UZ%26src%3Dsearch&t_
+        id=1765845887958&t_st=10&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+         <div class="product-card">
+      <img src="assets/img/iklan/Screenshot_20251211-190322_WhatsApp.jpg" alt="Senar">
+      <div class="product-info">
+        <h3>Neuroattractant Spray Fish Attractant Ikan Umpan</h3>
+        <p>Mancing Bukan Essen dari Always Strike Pancing</p>
+        <div class="price">Rp,256.000+</div>
+        <a href="https://www.tokopedia.com/umpanmancing/neuroattractant-spray-fish-attractant-ikan-umpan-mancing-bukan-essen-dari-always-strike-pancing-1729675270608948132?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fessen+pancing+neuro%26search_
+        id%3D20251216013052138BB0696595B33E0RFG%26src%3Dsearch&t_id=1765845887958&t_st=11&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
+     <div class="product-card">
+      <img src="assets/img/produk/oplosan braja.webp" alt="Senar">
+      <div class="product-info">
+        <h3>Essen Oplosan Brajamusti Wangi asem melati</h3>
+        <p>Cocok untuk Galatama / Harian Ikan Lele</p>
+        <div class="price">Rp,65.000+</div>
+        <a href="https://www.tokopedia.com/adun-mancing/essen-oplosan-brajamusti-wangi-asem-melati-cocok-untuk-galatama-harian-ikan-lele-1729589729996212946?extParam=ivf%3Dfalse%26keyword%3Dlink+affiliate%2Fessen+pancing+umpan%26search_
+        id%3D20251216013749B83AAC23B952870E9OWN%26src%3Dsearch&t_id=1765845887958&t_st=12&t_pp=search_result&t_efo=search_pure_goods_card&t_ef=goods_search&t_sm=&t_spt=search_result" target="_blank" rel="nofollow sponsored" class="btn-buy">Beli di Marketplace</a>
+      </div>
+    </div>
 
   </section>
 
@@ -202,6 +312,51 @@ body{
   </div>
 
 </div>
-
+<footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+    <!-- Kolom 1 -->
+    <div style="flex:1;min-width:220px">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+      <p style="margin:0;color:#bbb;line-height:1.6">
+        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
+        Hadir sejak 2020 untuk komunitas mancing Nusantara.
+      </p>
+    </div>
+    <!-- Kolom 2 -->
+    <div style="flex:1;min-width:180px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+        <li><a href="index.html" style="color:#bbb;text-decoration:none">Beranda</a></li>
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita</a></li>
+        <li><a href="teknik.html" style="color:#bbb;text-decoration:none">Teknik</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+      </ul>
+    </div>
+    <!-- Kolom 3 -->
+    <div style="flex:1;min-width:240px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+      <p style="margin:0;color:#bbb;line-height:1.8">
+        Email: <strong>info@republikmancing.com</strong><br>
+        WhatsApp: <strong>+62 85693927647</strong><br>
+        Jakarta-Purbalingga—Indonesia
+      </p>
+    </div>
+    <!-- Kolom 4 -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="assets/img/icon/ig.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="assets/img/icon/ytt.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+      </div>
+    </div>
+  </div>
+  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+  <div style="text-align:center;color:#777;font-size:14px">
+    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
 </body>
 </html>
