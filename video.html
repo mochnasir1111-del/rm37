@@ -79,6 +79,17 @@
   
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
+  /* ===== FOOTER ===== */
+.site-footer{background:#111;color:#ddd;margin-top:40px;}
+.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.footer-col h3,
+.footer-col h4{color:#fff;margin-bottom:12px;}
+.footer-col h3 span{color:#e53935;}
+.footer-col p{font-size:14px;line-height:1.6;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
+.footer-col a:hover{color:#e53935;}
   </style>
 </head>
 <body>
@@ -92,24 +103,25 @@
   <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
     </div>
 
-    <nav class="main-nav">
+   <nav class="main-nav">
       <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
-      <a href="event.html" class="hover-red">Event</a>
+      <a href="lomba.html" class="hover-red">Event & Lomba</a>
       <a href="video.html" class="hover-red">Video</a>
-      <a href="tentang.html" class="hover-red">Tentang</a>
     </nav>
   </div>
 </header>
 
-<!-- SUBHEADER GLOBAL -->
 <div class="subheader">
   <nav class="sub-nav">
-    <a href="profil-angler2.html">Profil Angler</a>|
+   <a href="profil-angler2.html">Profil Angler</a>|
+    <a href="laporan-lomba.html">Laporan Lomba</a>|
     <a href="review-empang.html">Review Empang</a>|
-    <a href="teknik.html">Teknik</a>|
-    <a href="spot.html">Spot</a>|
-    <a href="donasi-foto.html">Download Foto</a>|
+    <a href="teknik.html">Teknik Ikan Mas</a>|
+    <a href="umpan essen.html">Umpan & Racik</a>|
+    <a href="alat pancing.html">Piranti Pancing</a>|
+    <a href="spot.html">Spot Kolam</a>|
+    <a href="layout_toko_affiliate_republik_mancing.html">Toko Affiliate</a>
   </nav>
 </div>
 
@@ -119,9 +131,8 @@
   <nav class="off-nav">
     <a href="index.html">Beranda</a>
     <a href="berita.html">Berita</a>
-    <a href="event.html">Event</a>
+    <a href="event.html">Event & Lomba</a>
     <a href="video.html">Video</a>
-    <a href="tentang.html">Tentang</a>
   </nav>
 </div>
 <div class="offcanvas-backdrop" id="offBackdrop"></div>
@@ -222,41 +233,35 @@
     </div>
   </main>
 
- <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
-  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
-
-    <!-- Kolom 1 -->
-    <div style="flex:1;min-width:220px">
-      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
-      <p style="margin:0;color:#bbb;line-height:1.6">
-        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
-        Hadir sejak 2020 untuk komunitas mancing Nusantara.
-      </p>
+ <footer class="site-footer">
+  <div class="footer-container">
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Republik<span>Mancing</span></h3>
+      <p>Media informasi mancing & liputan lomba ikan mas, event kolam, teknik, dan komunitas angler Indonesia.</p>
     </div>
-
-    <!-- Kolom 2 -->
-    <div style="flex:1;min-width:180px">
-      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
-      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
-        <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
-        <li><a href="#berita" style="color:#bbb;text-decoration:none">Berita</a></li>
-        <li><a href="#teknik" style="color:#bbb;text-decoration:none">Teknik</a></li>
-        <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
-        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+    <!-- MENU -->
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="event.html">Event & Lomba</a></li>
+        <li><a href="video.html">Video</a></li>
+      </ul>
+    </div>
+    <!-- KATEGORI -->
+    <div class="footer-col">
+      <h4>Kategori</h4>
+      <ul>
+        <li><a href="laporan-lomba.html">Laporan Lomba</a></li>
+        <li><a href="hasil-lomba.html">Hasil & Juara</a></li>
+        <li><a href="teknik-ikan-mas.html">Teknik Ikan Mas</a></li>
+        <li><a href="review-empang.html">Review Empang</a></li>
       </ul>
     </div>
 
-    <!-- Kolom 3 -->
-    <div style="flex:1;min-width:240px">
-      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
-      <p style="margin:0;color:#bbb;line-height:1.8">
-        Email: <strong>info@republikmancing.com</strong><br>
-        WhatsApp: <strong>+62 85693927647</strong><br>
-        Jakarta-Purbalingga—Indonesia
-      </p>
-    </div>
-
-    <!-- Kolom 4 -->
+    <!-- SOSIAL -->
     <div style="flex:1;min-width:200px">
       <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
       <div style="display:flex;gap:12px;margin-top:8px;">
@@ -266,13 +271,11 @@
               <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
       </div>
     </div>
-
   </div>
 
-  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
-
-  <div style="text-align:center;color:#777;font-size:14px">
-    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © 2025 Republik Mancing · Semua Hak Dilindungi
   </div>
 </footer>
 </body>
