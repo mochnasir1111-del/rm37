@@ -531,13 +531,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
             <div style="margin-top:10px"><a class="btn hover-red" href="https://www.youtube.com/RepublikMancing37">Kunjungi Channel</a></div>
           </div>
      <!-- WIDGET: BANNER IKLAN -->
-     <div class="widget ad-box">
-      <a href="https://contoh-iklan.com" target="_blank" rel="noopener">
-       <img src="assets/img/iklan/1.png" 
-         alt="Iklan" 
-         width="300" height="250"
-         style="border-radius:8px;"></a></div>
-               <!-- Iklan -->
+     <!-- Iklan -->
       <div class="card ads" id="iklan">
      <div style="font-weight:800;margin-bottom:8px">Iklan</div>
       <!-- Card content dengan image klikable -->
@@ -549,12 +543,32 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       <p class="small">Slot banner, sidebar, dan sponsor event. Hubungi: iklan@republikmancing.com</p>
       <div style="margin-top:8px">
         </div></div></a></div>
-        <!-- DATA PENGUNJUNG ARTIKEL -->
-      <div class="artikel-stats">
-     <div class="stat-item">👁️ <span id="viewCount">0</span> kali dibaca</div>
-    <div class="stat-item">❤️ <span id="likeCount">0</span> suka</div>
-     <div class="stat-item">📅 <span id="readDate"></span></div>
-      </div>
+        <!-- SIDEBAR TOKO PANCING -->
+           <!-- SIDEBAR TOKO PANCING -->
+           <aside class="sidebar">
+         <div class="sidebar-box">
+        <h3>🎣 Toko Pancing Rekomendasi</h3>
+       <div class="toko-item">
+       <strong>Toko Adun Mancing(BAM)</strong>
+       <p>📍 Jl. Bintara Jaya VIII No.02, RT.003/RW.001,
+         Bintara Jaya, Kec. Bekasi Bar., Kota Bks, Jawa Barat 17136</p>
+       <p>📞 087888599905</p>
+       </div>
+    <div class="toko-item">
+      <strong>Toko Sobirin Fishing</strong>
+      <p>📍 Jl. Peruri VI No.79, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419</p>
+      <p>📞 087789241203</p>
+    </div>
+    <div class="toko-item">
+      <strong>Toko Pancing Restu Ibu</strong>
+      <p>📍 Jl. Raya Jagakarsa No.28 3, RT.1/RW.1, Jagakarsa, Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12620</p>
+      <p>📞 085810126344</p>
+    </div>
+    <a href="toko-pancing.html" class="btn-sidebar">
+      Lihat Semua Toko →
+    </a>
+  </div>
+</aside>
       <!-- WIDGET: NEWSLETTER -->
       <div class="widget">
         <h3>Newsletter</h3>
@@ -771,6 +785,7 @@ let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
 document.getElementById("readDate").innerText = tgl;
 </script>
 </html>
+
 
 
 
