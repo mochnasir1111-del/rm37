@@ -292,6 +292,12 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .btn-sidebar{display:block;text-align:center;margin-top:14px;padding:10px;
   background:#dc2626;color:#fff;text-decoration:none;border-radius:10px;font-size:14px;font-weight:600;}
 .btn-sidebar:hover{background:#b91c1c;}
+    .rm-search{position:relative;max-width:320px;}
+.rm-search input{width:100%;padding:8px 12px;border-radius:999px;border:1px solid #e5e7eb;font-size:14px;}
+.rm-search-results{display:none;position:absolute;top:110%;left:0;right:0;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:9999;overflow:hidden;}
+.rm-search-results a{display:block;padding:10px 14px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f1f5f9;}
+.rm-search-results a:hover{background:#f8fafc;}
+.rm-search-results .no-result{padding:12px;font-size:13px;color:#6b7280;}
   </style>
 </head>
 <body>
@@ -306,6 +312,16 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
      <a href="index.html" class="brand-logo">
   <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
     </div>
+     <div class="rm-search">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Cari kolam, lomba, angler…" 
+    autocomplete="off"
+  >
+  <div id="searchResults" class="rm-search-results"></div>
+</div>
+
     <nav class="main-nav">
       <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
@@ -330,6 +346,16 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 <!-- OFFCANVAS MOBILE -->
 <div class="offcanvas" id="offcanvas">
   <button class="close-off" id="closeOff">×</button>
+  <div class="rm-search">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Cari kolam, lomba, angler…" 
+    autocomplete="off"
+  >
+  <div id="searchResults" class="rm-search-results"></div>
+</div>
+
   <nav class="off-nav">
     <a href="index.html">Beranda</a>
     <a href="berita.html">Berita</a>
@@ -807,8 +833,52 @@ document.addEventListener("DOMContentLoaded", function () {
 let today = new Date();
 let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
 document.getElementById("readDate").innerText = tgl;
+  const articles = [
+  {
+    title: "Rekomendasi Pemancingan New Babon Bekasi",
+    url: "new-babon.html",
+    keywords: "new babon bekasi tiket sultan lomba"
+  },{
+    title: "Pemancingan Brigif Bandung Full Power",
+    url: "brigif-bandung.html",
+    keywords: "brigif bandung full power event"},{
+    title: "MY Fishing Indramayu Hadiah Mobil",
+    url: "my-fishing-indramayu.html",
+    keywords: "my fishing indramayu lomba eksekutif"}];
+    
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+  searchResults.innerHTML = "";
+
+  if (q.length < 2) {
+    searchResults.style.display = "none";
+    return;
+  }
+  const filtered = articles.filter(a =>
+    a.title.toLowerCase().includes(q) ||
+    a.keywords.toLowerCase().includes(q)
+  );
+
+  if (filtered.length === 0) {
+    searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
+  } else {
+    filtered.forEach(a => {
+      searchResults.innerHTML += `
+        <a href="${a.url}">${a.title}</a>
+      `;
+    });}
+  searchResults.style.display = "block";
+});
+// klik luar = nutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    searchResults.style.display = "none";}});
 </script>
 </html>
+
 
 
 
