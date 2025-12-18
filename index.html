@@ -804,6 +804,49 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+  
+const input = document.getElementById("searchInput");
+const resultsBox = document.getElementById("searchResults");
+
+input.addEventListener("input", function () {
+  const keyword = this.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
+
+  if (keyword.length < 2) {
+    resultsBox.style.display = "none";
+    return;
+  }
+
+  const results = RM_SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(keyword) ||
+    item.desc.toLowerCase().includes(keyword) ||
+    item.type.toLowerCase().includes(keyword)
+  );
+
+  if (results.length === 0) {
+    resultsBox.innerHTML = `<div class="no-result">Tidak ditemukan</div>`;
+  } else {
+    results.forEach(item => {
+      resultsBox.innerHTML += `
+        <a href="${item.url}">
+          <strong>${item.title}</strong><br>
+          <small>${item.type} • ${item.desc}</small>
+        </a>
+      `;
+    });
+  }
+
+  resultsBox.style.display = "block";
+});
+
+// klik luar = tutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    resultsBox.style.display = "none";
+  }
+});
 </script>
+
 </body>
 </html>
+
