@@ -8,8 +8,8 @@
   <script defer src="assets/js/main.js"></script>
   <style>
     /* ---------- RESET ---------- */
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
+ *{box-sizing:border-box;margin:0;padding:0}
+  :root{
   --accent:#c00;
   --accent-2:#1e8f1e;
   --muted:#6b6b6b;
@@ -19,23 +19,17 @@
   --shadow:0 6px 18px rgb(255, 253, 253);
   --radius:10px;
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-html,body{font-family:var(--font);background:var(--bg);color:#222}
-/* ---------- TOP BAR / NAV ---------- */
-.topbar{background:var(--card);box-shadow:var(--shadow);position:relative; /* penting */z-index:100;}
-.top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
-.brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
-.brand span{color:var(--accent)}
-.main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
-.main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
-.main-nav a:hover{background:#f0f6ff;color:var(--accent)}
-/* ---------- SUBHEADER ---------- */
-.subheader{
-  background:#fff;
-  border-bottom:2px solid var(--accent);
-  position:sticky;
-  top:0;
-  z-index:90;
-}
+   html,body{font-family:var(--font);background:var(--bg);color:#222}
+    /* ---------- TOP BAR / NAV ---------- */
+   .topbar{background:var(--card);box-shadow:var(--shadow);position:relative; /* penting */z-index:100;}
+   .top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
+   .brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
+   .brand span{color:var(--accent)}
+   .main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
+   .main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
+   .main-nav a:hover{background:#f0f6ff;color:var(--accent)}
+    /* ---------- SUBHEADER ---------- */
+   .subheader{background:#fff;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:90;}
 
 .sub-nav{
   max-width:var(--max-width);
@@ -166,7 +160,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .top-ad .container {display: flex;justify-content: center;align-items: center;}
   .top-ad img {max-width: 100%;height: auto;display: block;}
   /* ANIMASI */
-@keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
+    @keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
     .hover-red {transition: color .25s ease;}
     .hover-red:hover {color: #d32f2f;cursor: pointer;}
   .card {display: flex;flex-direction: column;gap: 10px;border-radius: 8px;overflow: hidden;transition: transform 0.25s ease, box-shadow 0.25s ease;}
@@ -214,13 +208,13 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .off-nav {
   display: flex;flex-direction: column;
   gap: 14px;margin-top: 40px;}
-.off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
-.close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
-/* TAMPILKAN HANYA DI MOBILE */
-@media (min-width: 900px) {
+  .off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
+  .close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
+  /* TAMPILKAN HANYA DI MOBILE */
+    @media (min-width: 900px) {
   .offcanvas {display: none;}}
    .menu-btn {font-size: 24px; background: none;border: none;cursor: pointer;display: none;}
-@media (max-width: 900px) {
+   @media (max-width: 900px) {
   .menu-btn {display: block;}}
     /* TOPBAR */
   .topbar{background:#111;color:#fff;}
@@ -261,7 +255,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
     /* MOBILE */
   .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
-@media(max-width:768px){
+   @media(max-width:768px){
   .main-nav{display:none}
   .menu-btn{display:block}}
 
@@ -295,10 +289,10 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .rm-search-results a:hover{background:#f8fafc;}
 .rm-search-results .no-result{padding:12px;font-size:13px;color:#6b7280;}
   </style>
-</head>
-<body>
-<!-- HEADER GLOBAL -->
-<header class="topbar">
+  </head>
+  <body>
+  <!-- HEADER GLOBAL -->
+  <header class="topbar">
   <div class="top-inner">
     <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
 
@@ -321,11 +315,11 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       <a href="berita.html" class="hover-red">Berita</a>
       <a href="lomba.html" class="hover-red">Event & Lomba</a>
       <a href="video.html" class="hover-red">Video</a>
-    </nav>
-  </div>
-</header>
-<div class="subheader">
-  <nav class="sub-nav">
+      </nav>
+      </div>
+      </header>
+   <div class="subheader">
+    <nav class="sub-nav">
     <a href="profil-angler2.html">Profil Angler</a>|
     <a href="laporan-lomba.html">Laporan Lomba</a>|
     <a href="review-empang.html">Review Empang</a>|
@@ -335,9 +329,9 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
      <a href="toko-pancing.html">Toko Pancing</a>|
     <a href="spot.html">Spot Kolam</a>|
     <a href="toko affiliate.html">Toko Affiliate</a>
-  </nav>
-</div>
-<!-- OFFCANVAS MOBILE -->
+   </nav>
+   </div>
+  <!-- OFFCANVAS MOBILE -->
 <div class="offcanvas" id="offcanvas">
   <button class="close-off" id="closeOff">×</button>
   <div class="rm-search">
@@ -369,7 +363,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
    </div>
     </header>
     <!-- IKLAN TOP BANNER -->
-<div class="top-ad">
+    <div class="top-ad">
   <div class="container">
     <a href="#" target="_blank">
       <img src="assets/img/galeri/1.png" alt="Iklan Top Banner">
@@ -475,10 +469,9 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       </section>
       <div class="video-frame">
   <!-- HEADER STYLE TV NEWS -->
-<div class="video-frame-header">
+   <div class="video-frame-header">
   VIDEO – REPUBLIK MANCING
 </div>
-
 <div class="news-video-player">
   <!-- Watermark -->
   <div class="video-watermark">
@@ -494,18 +487,16 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen>
     </iframe>
-  </div>
-</div>
-
+     </div>
+      </div>
       <!-- IKLAN TOP BANNER -->
-<div class="top-ad">
+    <div class="top-ad">
   <div class="container">
     <a href="#" target="_blank">
       <img src="assets/img/iklan/Space Iklan.png" alt="Iklan Top Banner">
     </a>
-  </div>
-</div>
-
+    </div>
+    </div>
       <!-- LIST BERITA (linear) -->
       <section class="list-news">
         <h2>Berita Terbaru</h2>
@@ -681,22 +672,18 @@ function updateSlider() {
 }
 function goTo(i) {
   index = i;
-  updateSlider();
-}
-nextBtn.addEventListener("click", () => {
+  updateSlider();}
+   nextBtn.addEventListener("click", () => {
   index = (index + 1) % slides.length;
-  updateSlider();
-});
-
-prevBtn.addEventListener("click", () => {
+  updateSlider();});
+   prevBtn.addEventListener("click", () => {
   index = (index - 1 + slides.length) % slides.length;
-  updateSlider();
-});
-// pertama kali tampilkan slide 1
-updateSlider();
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+  updateSlider();});
+   // pertama kali tampilkan slide 1
+   pdateSlider();
+   </script>
+   <script>
+   document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dotsContainer = document.getElementById("sliderDots");
   let current = 0;
@@ -721,15 +708,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function startAutoPlay() {autoPlayInterval = setInterval(nextSlide, 4000);}
   function restartAutoPlay() {clearInterval(autoPlayInterval);startAutoPlay();}
   showSlide(current);
-  startAutoPlay();
-});
-</script>
-</body>
-<script>
-// KEY unik untuk website RepublikMancing
-const KEY = "republimancing-visitor-counter-v1";
-// Hitung total
-fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
+  startAutoPlay();});
+   </script>
+   </body>
+    <script>
+   // KEY unik untuk website RepublikMancing
+  const KEY = "republimancing-visitor-counter-v1";
+  // Hitung total
+  fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
   .then(r => r.json())
   .then(data => {
     document.getElementById("total-visitors").textContent = data.value.toLocaleString();});
@@ -864,6 +850,7 @@ document.addEventListener("click", e => {
     searchResults.style.display = "none";}});
 </script>
 </html>
+
 
 
 
