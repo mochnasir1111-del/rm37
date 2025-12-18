@@ -716,71 +716,132 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==================================================
      SEARCH REPUBLIK MANCING
   ================================================== */
-  const articles = [
-    {
-      title: "Rekomendasi Pemancingan New Babon Bekasi",
-      url: "new-babon.html",
-      keywords: "new babon bekasi tiket sultan lomba"
-    },
-    {
-      title: "Pemancingan Brigif Bandung Full Power",
-      url: "brigif-bandung.html",
-      keywords: "brigif bandung full power event"
-    },
-    {
-      title: "MY Fishing Indramayu Hadiah Mobil",
-      url: "my-fishing-indramayu.html",
-      keywords: "my fishing", "indramayu", "lomba eksekutif"
-    },
-    {
-  title: "Profil Angler Om Alif MMFC",
-  url: "profil-om-alif.html",
-  type: "Profil Angler",
-  desc: "Angler muda MMFC dengan prestasi lomba ikan mas",
-  keywords: [
-    "om alif",
-    "alif mmfc",
-    "profil angler",
-    "pemancing muda",
-    "ikan mas",
-    "bekasi"
-  ]
-},
-  ];
+ 
+const RM_SEARCH_INDEX = [
 
-  const searchInput = document.getElementById("searchInput");
-  const searchResults = document.getElementById("searchResults");
+  /* ================== SPOT / KOLAM ================== */
+  {
+    title: "Pemancingan New Babon Bekasi",
+    url: "new-babon.html",
+    type: "Spot Kolam",
+    region: "Bekasi, Jawa Barat",
+    desc: "Kolam lomba 36 lapak, tiket sultan & eksekutif",
+    keywords: [
+      "new babon",
+      "pemancingan bekasi",
+      "tiket sultan",
+      "kolam lomba",
+      "ikan mas",
+      "setu",
+      "burangkeng"
+    ]
+  },
 
-  searchInput?.addEventListener("input", function () {
-    const q = this.value.toLowerCase();
-    searchResults.innerHTML = "";
+  {
+    title: "Pemancingan Brigif Bandung",
+    url: "brigif-bandung.html",
+    type: "Spot Kolam",
+    region: "Bandung, Jawa Barat",
+    desc: "Kolam full power favorit event besar",
+    keywords: [
+      "brigif bandung",
+      "pemancingan bandung",
+      "full power",
+      "event lomba"
+    ]
+  },
 
-    if (q.length < 2) {
-      searchResults.style.display = "none";
-      return;
-    }
+  /* ================== EVENT / LOMBA ================== */
+  {
+    title: "Event MY Fishing Indramayu Hadiah Mobil",
+    url: "my-fishing-indramayu.html",
+    type: "Event Lomba",
+    region: "Indramayu, Jawa Barat",
+    desc: "Lomba eksekutif dengan hadiah utama mobil",
+    keywords: [
+      "my fishing",
+      "indramayu",
+      "hadiah mobil",
+      "event eksekutif"
+    ]
+  },
 
-    const filtered = articles.filter(a =>
-      a.title.toLowerCase().includes(q) ||
-      a.keywords.toLowerCase().includes(q)
-    );
+  /* ================== PROFIL ANGLER ================== */
+  {
+    title: "Profil Angler Om Alif MMFC",
+    url: "profil-om-alif.html",
+    type: "Profil Angler",
+    region: "Bekasi",
+    desc: "Angler muda MMFC berprestasi di lomba ikan mas",
+    keywords: [
+      "om alif",
+      "alif mmfc",
+      "profil angler",
+      "pemancing muda",
+      "ikan mas"
+    ]
+  },
 
-    if (!filtered.length) {
-      searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
-    } else {
-      filtered.forEach(a => {
-        searchResults.innerHTML += `<a href="${a.url}" class="result-item">${a.title}</a>`;
-      });
-    }
+  /* ================== TOKO PANCING ================== */
+  {
+    title: "Toko Pancing Barokah Jaya",
+    url: "toko-barokah-jaya.html",
+    type: "Toko Pancing",
+    region: "Bekasi",
+    desc: "Umpan, essen, piranti lomba lengkap",
+    keywords: [
+      "toko pancing",
+      "essen",
+      "umpan ikan mas",
+      "bekasi"
+    ]
+  }
 
-    searchResults.style.display = "block";
-  });
+];
 
-  document.addEventListener("click", e => {
-    if (!e.target.closest(".rm-search")) {
-      searchResults.style.display = "none";
-    }
-  });
+const input = document.getElementById("searchInput");
+const resultsBox = document.getElementById("searchResults");
+
+input.addEventListener("input", function () {
+  const q = this.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
+
+  if (q.length < 2) {
+    resultsBox.style.display = "none";
+    return;
+  }
+
+  const results = RM_SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    item.desc.toLowerCase().includes(q) ||
+    item.type.toLowerCase().includes(q) ||
+    item.region.toLowerCase().includes(q) ||
+    item.keywords.some(k => k.toLowerCase().includes(q))
+  );
+
+  if (results.length === 0) {
+    resultsBox.innerHTML = `<div class="no-result">Tidak ditemukan</div>`;
+  } else {
+    results.forEach(item => {
+      resultsBox.innerHTML += `
+        <a href="${item.url}">
+          <strong>${item.title}</strong><br>
+          <small>${item.type} • ${item.region}</small>
+        </a>
+      `;
+    });
+  }
+
+  resultsBox.style.display = "block";
+});
+
+// klik di luar = tutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    resultsBox.style.display = "none";
+  }
+});
+
 
   /* ==================================================
      VIDEO AUTO PLAY SAAT SCROLL
@@ -823,6 +884,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
