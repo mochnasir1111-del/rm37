@@ -289,8 +289,8 @@
 .rm-search-results a:hover{background:#f8fafc;}
 .rm-search-results .no-result{padding:12px;font-size:13px;color:#6b7280;}
   </style>
-  </head>
-  <body>
+</head>
+ <body>
   <!-- HEADER GLOBAL -->
   <header class="topbar">
   <div class="top-inner">
@@ -373,21 +373,7 @@
 <header class="site-header">
 </header>
 
-  <!-- MOBILE OFFCANVAS -->
-  <div class="offcanvas" id="offcanvas">
-    <button class="close-off" id="closeOff" aria-label="Tutup menu">×</button>
-    <nav class="off-nav">
-      <a href="profil-angler2.html">Profil Angler</a>|
-    <a href="laporan-lomba.html">Laporan Lomba</a>|
-    <a href="review-empang.html">Review Empang</a>|
-    <a href="teknik.html">Teknik Ikan Mas</a>|
-    <a href="umpan essen.html">Umpan & Racik</a>|
-    <a href="alat pancing.html">Piranti Pancing</a>|
-     <a href="toko-pancing.html">Toko Pancing</a>|
-    <a href="spot.html">Spot Kolam</a>|
-    <a href="layout_toko_affiliate_republik_mancing.html">Toko Affiliate</a>
-    </nav>
-  </div>
+ </div>
   <div class="offcanvas-backdrop" id="offBackdrop"></div>
  
   <!-- MAIN LAYOUT -->
@@ -607,7 +593,7 @@
       </div>
     </aside>
   </main>
-<footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+ <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
   <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
     <!-- Kolom 1 -->
     <div style="flex:1;min-width:220px">
@@ -655,214 +641,169 @@
 </footer>
 
 <script>
-// --- Buat DOTS ---
-slides.forEach((_, i) => {
-  const btn = document.createElement("button");
-  btn.addEventListener("click", () => goTo(i));
-  dotsContainer.appendChild(btn);
-});
-function updateSlider() {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
-  });
-  const dots = dotsContainer.querySelectorAll("button");
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-}
-function goTo(i) {
-  index = i;
-  updateSlider();}
-   nextBtn.addEventListener("click", () => {
-  index = (index + 1) % slides.length;
-  updateSlider();});
-   prevBtn.addEventListener("click", () => {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlider();});
-   // pertama kali tampilkan slide 1
-   pdateSlider();
-   </script>
-   <script>
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==================================================
+     SLIDER / HERO
+  ================================================== */
   const slides = document.querySelectorAll(".slide");
   const dotsContainer = document.getElementById("sliderDots");
-  let current = 0;
-  let autoPlayInterval;
-  // Generate dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement("button");
-    dot.addEventListener("click", () => goToSlide(i));
-    dotsContainer.appendChild(dot);});
-  const dots = dotsContainer.querySelectorAll("button");
-  function showSlide(index) {
-    slides.forEach(s => s.classList.remove("active"));
-    dots.forEach(d => d.classList.remove("active"));
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");}
-  function nextSlide() {current = (current + 1) % slides.length;showSlide(current);}
-  function prevSlide() { current = (current - 1 + slides.length) % slides.length;showSlide(current);}
-  function goToSlide(i) {current = i;showSlide(current);restartAutoPlay();}
-  // Buttons
-  document.querySelector(".slider-nav.next").addEventListener("click", () => {nextSlide();restartAutoPlay();});
-  document.querySelector(".slider-nav.prev").addEventListener("click", () => {prevSlide();restartAutoPlay();});
-  function startAutoPlay() {autoPlayInterval = setInterval(nextSlide, 4000);}
-  function restartAutoPlay() {clearInterval(autoPlayInterval);startAutoPlay();}
-  showSlide(current);
-  startAutoPlay();});
-   </script>
-   </body>
-    <script>
-   // KEY unik untuk website RepublikMancing
-  const KEY = "republimancing-visitor-counter-v1";
-  // Hitung total
-  fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById("total-visitors").textContent = data.value.toLocaleString();});
-// Hitung per hari
-const todayKey = KEY + "-" + new Date().toISOString().slice(0,10);
-fetch(`https://api.countapi.xyz/hit/${todayKey}/today`)
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById("today-visitors").textContent = data.value.toLocaleString();
+  const nextBtn = document.querySelector(".slider-nav.next");
+  const prevBtn = document.querySelector(".slider-nav.prev");
+  let currentSlide = 0;
+  let sliderInterval;
+
+  if (slides.length) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("button");
+
+    function showSlide(i) {
+      slides.forEach(s => s.classList.remove("active"));
+      dots.forEach(d => d.classList.remove("active"));
+      slides[i].classList.add("active");
+      dots[i].classList.add("active");
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(i) {
+      currentSlide = i;
+      showSlide(i);
+      restartAutoPlay();
+    }
+
+    function startAutoPlay() {
+      sliderInterval = setInterval(nextSlide, 4000);
+    }
+
+    function restartAutoPlay() {
+      clearInterval(sliderInterval);
+      startAutoPlay();
+    }
+
+    nextBtn?.addEventListener("click", () => { nextSlide(); restartAutoPlay(); });
+    prevBtn?.addEventListener("click", () => { prevSlide(); restartAutoPlay(); });
+
+    showSlide(currentSlide);
+    startAutoPlay();
+  }
+
+  /* ==================================================
+     OFFCANVAS MOBILE MENU
+  ================================================== */
+  const offcanvas = document.getElementById("offcanvas");
+  document.getElementById("openOff")?.addEventListener("click", () => {
+    offcanvas.classList.add("active");
   });
-     // Data artikel kamu (bisa ditambah kapan saja)
+  document.getElementById("closeOff")?.addEventListener("click", () => {
+    offcanvas.classList.remove("active");
+  });
+
+  /* ==================================================
+     SEARCH REPUBLIK MANCING
+  ================================================== */
   const articles = [
     {
-      title: "Ulasan Reel Shimano Stella",
-      url: "/berita/shimano-stella-ulasan",
-      keywords: "shimano stella ulasan review reel terbaik"
+      title: "Rekomendasi Pemancingan New Babon Bekasi",
+      url: "new-babon.html",
+      keywords: "new babon bekasi tiket sultan lomba"
     },
     {
-      title: "Lomba Mancing MMFC Halal Bihalal",
-      url: "/berita/lomba-mancing-mmfc",
-      keywords: "lomba mancing mmfc halal bihalal"
+      title: "Pemancingan Brigif Bandung Full Power",
+      url: "brigif-bandung.html",
+      keywords: "brigif bandung full power event"
     },
     {
-      title: "Spot Mancing Ikan Mas Mantap",
-      url: "/berita/spot-mancing-ikan-mas",
-      keywords: "spot mancing ikan mas kolam harian"
+      title: "MY Fishing Indramayu Hadiah Mobil",
+      url: "my-fishing-indramayu.html",
+      keywords: "my fishing indramayu lomba eksekutif"
     }
   ];
-     // AUTO-PLAY SAAT SCROLL MASUK
-document.addEventListener("DOMContentLoaded", function () {
-  const videos = document.querySelectorAll(".autoplay-news-video");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const vid = entry.target;
-
-        if (entry.isIntersecting) {
-          vid.play().catch(()=>{});
-        } else {
-          vid.pause();
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  videos.forEach(v => observer.observe(v));
-});
 
   const searchInput = document.getElementById("searchInput");
   const searchResults = document.getElementById("searchResults");
 
-  searchInput.addEventListener("input", function () {
-    const query = this.value.toLowerCase();
+  searchInput?.addEventListener("input", function () {
+    const q = this.value.toLowerCase();
     searchResults.innerHTML = "";
 
-    if (query.length < 2) {
+    if (q.length < 2) {
       searchResults.style.display = "none";
       return;
     }
 
-    const filtered = articles.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.keywords.toLowerCase().includes(query)
+    const filtered = articles.filter(a =>
+      a.title.toLowerCase().includes(q) ||
+      a.keywords.toLowerCase().includes(q)
     );
 
-    if (filtered.length === 0) {
-      searchResults.innerHTML = "<p class='no-result'>Tidak ada hasil ditemukan.</p>";
+    if (!filtered.length) {
+      searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
     } else {
-      filtered.forEach(item => {
-        searchResults.innerHTML += `
-          <a href="${item.url}" class="result-item">${item.title}</a>
-  `;});}
+      filtered.forEach(a => {
+        searchResults.innerHTML += `<a href="${a.url}" class="result-item">${a.title}</a>`;
+      });
+    }
+
     searchResults.style.display = "block";
   });
-  const offcanvas = document.getElementById('offcanvas');
-  const openBtn = document.getElementById('openOff');
-  const closeBtn = document.getElementById('closeOff');
-  openBtn.addEventListener('click', () => {
-    offcanvas.classList.add('active');
-  });
-  closeBtn.addEventListener('click', () => {
-    offcanvas.classList.remove('active');
-  });
-  // === TANGGAL DIBACA ===
-let today = new Date();
-let tgl = today.getDate()+"-"+(today.getMonth()+1)+"-"+today.getFullYear();
-document.getElementById("readDate").innerText = tgl;
-  const articles = [
-  {
-    title: "Rekomendasi Pemancingan New Babon Bekasi",
-    url: "new-babon.html",
-    keywords: "new babon bekasi tiket sultan lomba"
-  },{
-    title: "Pemancingan Brigif Bandung Full Power",
-    url: "brigif-bandung.html",
-    keywords: "brigif bandung full power event"},{
-    title: "MY Fishing Indramayu Hadiah Mobil",
-    url: "my-fishing-indramayu.html",
-    keywords: "my fishing indramayu lomba eksekutif"}];
-    
-const searchInput = document.getElementById("searchInput");
-const searchResults = document.getElementById("searchResults");
 
-searchInput.addEventListener("input", function () {
-  const q = this.value.toLowerCase();
-  searchResults.innerHTML = "";
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".rm-search")) {
+      searchResults.style.display = "none";
+    }
+  });
 
-  if (q.length < 2) {
-    searchResults.style.display = "none";
-    return;
+  /* ==================================================
+     VIDEO AUTO PLAY SAAT SCROLL
+  ================================================== */
+  const videos = document.querySelectorAll(".autoplay-news-video");
+  if (videos.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.isIntersecting ? entry.target.play().catch(()=>{}) : entry.target.pause();
+      });
+    }, { threshold: 0.6 });
+
+    videos.forEach(v => observer.observe(v));
   }
-  const filtered = articles.filter(a =>
-    a.title.toLowerCase().includes(q) ||
-    a.keywords.toLowerCase().includes(q)
-  );
 
-  if (filtered.length === 0) {
-    searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
-  } else {
-    filtered.forEach(a => {
-      searchResults.innerHTML += `
-        <a href="${a.url}">${a.title}</a>
-      `;
-    });}
-  searchResults.style.display = "block";
+  /* ==================================================
+     VISITOR COUNTER
+  ================================================== */
+  const KEY = "republikmancing-visitor-v1";
+  fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
+    .then(r => r.json())
+    .then(d => document.getElementById("total-visitors").textContent = d.value.toLocaleString());
+
+  const todayKey = KEY + "-" + new Date().toISOString().slice(0,10);
+  fetch(`https://api.countapi.xyz/hit/${todayKey}/today`)
+    .then(r => r.json())
+    .then(d => document.getElementById("today-visitors").textContent = d.value.toLocaleString());
+
+  /* ==================================================
+     TANGGAL BACA
+  ================================================== */
+  const readDate = document.getElementById("readDate");
+  if (readDate) {
+    const t = new Date();
+    readDate.textContent = `${t.getDate()}-${t.getMonth()+1}-${t.getFullYear()}`;
+  }
+
 });
-// klik luar = nutup
-document.addEventListener("click", e => {
-  if (!e.target.closest(".rm-search")) {
-    searchResults.style.display = "none";}});
 </script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
