@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Umpan & Essen — Republik Mancing</title>
+  <meta name="description" content="Profil lengkap anglers Indonesia: latar belakang, spesialisasi teknik, prestasi, dan kisah di balik tarikan juara." />
+
+  <style>
+
+    /* HEADER GLOBAL */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+
+    /* CARD */
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* PROFIL */
+    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    h1{margin:12px 0 6px;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:12px}
+
+    .profile-grid{display:grid;grid-template-columns:180px 1fr;gap:18px;margin-top:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;object-fit:cover}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.85rem;margin-right:6px}
+
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .stat{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;text-align:center}
+    .stat strong{display:block;font-size:1.1rem}
+
+    /* SIDEBAR */
+    .related-list{display:flex;flex-direction:column;gap:12px}
+    .related-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
+
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+      .avatar{width:100%;height:260px}}
+    /* ZOOM EFFECT */
+    img{transition:transform .35s ease, filter .35s ease}
+    img:hover{transform:scale(1.05);filter:brightness(.95)}
+
+      .hero-wrap{width:100%;aspect-ratio:16 / 9;   /* kunci 1920x1080 */overflow:hidden;border-radius:12px;margin-bottom:14px;}
+    .hero-wrap img.hero{width:100%;height:100%;object-fit:cover;      /* crop elegan ala Detik/Kompas */}
+    /* ===== FOOTER ===== */
+.site-footer{background:#111;color:#ddd;margin-top:40px;}
+.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.footer-col h3,
+.footer-col h4{color:#fff;margin-bottom:12px;}
+.footer-col h3 span{color:#e53935;}
+.footer-col p{font-size:14px;line-height:1.6;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
+.footer-col a:hover{color:#e53935;}
+
+/* ===== TEMPLATE DETAIL ARTIKEL REPUBLIK MANCING ===== */
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#f5f6f7;color:#222}
+.container{max-width:820px;margin:auto;padding:16px}
+    .article{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .article-header h1{font-size:28px;line-height:1.3;margin-bottom:8px}
+    .meta{ font-size:13px; color:#666; margin-bottom:16px}
+    .meta span{margin-right:10px}
+    figure{margin:18px 0}
+    figure img{width:100%;max-height:320px;object-fit:cover;border-radius:8px}
+    figcaption{font-size:13px;color:#666;margin-top:6px}
+    p{font-size:15px;line-height:1.8;margin-bottom:16px}
+    .inline{max-width:48%}
+    .inline.left{float:left;margin:6px 16px 10px 0}
+    .inline.right{float:right;margin:6px 0 10px 16px}
+     h2{font-size:20px;margin-top:26px;border-left:4px solid #d40000;padding-left:10px}
+     blockquote{ border-left:4px solid #d40000; padding-left:14px; font-style:italic; color:#444; margin:20px 0}
+    .clear{clear:both}
+    .author-box{display:flex; gap:12px; margin-top:30px;padding-top:16px;border-top:1px solid #eee}
+    .author-box img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+    .author-box h4{margin:0;font-size:15px}
+    .author-box p{margin:4px 0 0;font-size:13px;color:#555}
+     @media(max-width:640px){
+    .article-header h1{font-size:22px}
+    .inline{float:none;max-width:100%;margin:12px 0}}
+     /* ===== CTA AFFILIATE ===== */
+    .cta-affiliate{margin:18px 0;text-align:center}
+    .cta-affiliate a{display:inline-block;background:#d40000;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 4px 10px rgba(212,0,0,.35)}
+    .cta-affiliate a:hover{opacity:.9}
+     /* ===== AUTO CTA STYLE ===== */
+    .auto-cta{margin:22px 0;padding:16px;background:#fff5f5;border:2px dashed #d40000;border-radius:10px;text-align:center}
+    .auto-cta strong{display:block;margin-bottom:6px}
+    .auto-cta a{display:inline-block;background:#d40000;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
+    .auto-cta a:hover{opacity:.9}
+     /* ===== STICKY CTA MOBILE ===== */
+    .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#d40000;padding:12px 16px;z-index:9999}
+    .sticky-cta a{display:block;text-align:center;color:#fff;font-size:15px;font-weight:700;text-decoration:none}
+    @media(max-width:768px){
+    .sticky-cta{display:block}
+    body{padding-bottom:60px}}
+     /* GRID */
+    .affiliate-grid{max-width:1200px;margin:30px auto;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:22px;}
+     /* CARD */
+    .product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+     /* IMAGE */
+    .product-card img{ width:100%;height:200px;object-fit:cover;}
+     /* BODY */
+    .product-body{padding:16px;text-align:center;}
+    .product-body h3{font-size:16px;margin:10px 0;}
+    .product-body p{font-size:14px;color:#555;line-height:1.6;}
+       /* TAG */
+    .product-tag{display:inline-block;font-size:12px;padding:4px 10px;background:#fff0f0;color:#d40000;border-radius:999px;font-weight:600;}
+      /* BUTTON GROUP */
+    .btn-group{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap;}
+    .product-link img{display:block;}
+    .product-title{text-decoration:none;color:#111;}
+    .product-title:hover{color:#dc2626;text-decoration:underline;}
+    .btn-buy{display:inline-block;margin-top:6px;padding:6px 12px;background:#16a34a;color:#fff;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none;}
+    .product-item img{width:64px;height:64px;object-fit:cover;border-radius:8px;flex-shrink:0;}
+    </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="lomba.html" class="hover-red">Event & Lomba</a>
+      <a href="video.html" class="hover-red">Video</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="toko affiliate.html">Toko Affiliate</a>
+      <a href="toko-pancing.html">Toko Pancing</a>
+      <a href="spot.html">Spot Kolam</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="alat pancing.html">Piranti Pancing</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="umpan essen.html">Umpan & Essence</a>
+      <a href="profil-angler2.html">Profil Angler</a>
+  </nav>
+</div>
+
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html">Beranda</a>
+    <a href="berita.html">Berita</a>
+    <a href="event.html">Event & Lomba</a>
+    <a href="video.html">Video</a>
+  </nav>
+</div>
+
+<div class="container">
+  <article class="article">
+    <span class="kicker">Umpan & Racik • Essence</span>
+    <h1>Review Essence Nusantara Edisi Limited: Karakter Soft, Total & Gacor di Berbagai Kolam</h1>
+    <div class="meta">Ditulis Redaksi Republik Mancing • Desember 2025</div>
+
+    <img src="assets/img/iklan/1.png" alt="Essence Nusantara Edisi Limited" class="hero">
+
+    <p><strong>RepublikMancing.com</strong> — Dunia lomba mancing ikan mas kembali diramaikan oleh kehadiran <strong>Essence Nusantara Edisi Limited</strong>, produk racikan terbaru yang disebut-sebut memiliki karakter <em>soft</em>, stabil, dan sangat aman dari risiko over dosis.</p>
+
+    <p>Essence ini menjadi perbincangan karena fleksibilitasnya di berbagai kondisi kolam, mulai dari kolam air baru hingga air tua, serta kemampuannya menjaga ikan tetap aktif di titik umpan.</p>
+
+    <div class="highlight">
+      <strong>Karakter Utama Essence Nusantara:</strong>
+      <ul>
+        <li>Karakter aroma <strong>soft & halus</strong></li>
+        <li>Aman digunakan hingga <strong>±30 tetes per adonan</strong></li>
+        <li>Tidak memicu ikan naik-naik atau menjauh</li>
+        <li>Stabil untuk ikan babon maupun ikan rame</li>
+      </ul>
+    </div>
+
+    <h2>Aman dari Over Dosis</h2>
+    <p>Salah satu keunggulan paling menonjol dari Essence Nusantara adalah sifatnya yang <strong>tidak mudah over dosis</strong>. Berdasarkan uji lapangan, essence ini masih bekerja optimal meski digunakan hingga 30 tetes, selama racikan umpan tetap seimbang.</p>
+
+    <p>Karakter ini membuat Essence Nusantara sangat ramah bagi pemancing lomba yang sering melakukan penyesuaian cepat di lapangan.</p>
+
+    <h2>Stabil di Berbagai Jenis Air</h2>
+    <p>Essence Nusantara telah diuji di sejumlah pemancingan dengan karakter air berbeda—mulai dari kolam bening, keruh, hingga kolam dengan tekanan lomba tinggi. Hasilnya, aroma essence tetap <strong>konsisten dan tidak pecah</strong>.</p>
+
+    <p>Baik ikan babon maupun ikan rame tetap merespons dengan agresif, terutama setelah titikan umpan yang tepat ditemukan.</p>
+
+    <div class="quote">
+      “Kalau udah ketemu titikan umpannya, ikan sama sekali nggak mau geser. Dari awal sampai akhir lomba, spot itu terus makan. Ini essence total, gacor.”  
+      — Pengguna Essence Nusantara
+    </div>
+
+    <h2>Dipakai Komunitas Kelas Atas</h2>
+    <p>Tak sedikit pemancing berpengalaman yang mulai mengandalkan Essence Nusantara. Salah satunya datang dari komunitas <strong>MMFC</strong>, yang dikenal sebagai komunitas pemancing kelas atas dengan standar lomba tinggi.</p>
+
+    <p>Penggunaan di level komunitas ini memperkuat reputasi Essence Nusantara sebagai essence yang bukan sekadar sensasional, tetapi benar-benar bekerja di lapangan.</p>
+
+    <h2>Kesimpulan</h2>
+    <p>Dengan karakter soft, daya tahan aroma yang stabil, serta keamanan dari over dosis, <strong>Essence Nusantara Edisi Limited</strong> layak dinobatkan sebagai <em>essence total/gacor</em>. Cocok untuk pemancing lomba yang mengutamakan konsistensi dan kontrol penuh atas umpan.</p>
+
+    <div class="cta">
+      <h3>Pembelian Essence Nusantara (Edisi Limited)</h3>
+      <p>Penjualan sementara hanya tersedia via WhatsApp. Stok terbatas.</p>
+      <a 
+     class="buy-buttons">
+  <strong>Info & Pemesanan:</strong><br>
+  <a class="btn-wa"
+     href="https://wa.me/6281774837771?text=Halo%20Admin%20Golek%20Essence,%20saya%20ingin%20order%20promo%20Essence%20Golek"
+     target="_blank">
+     🟢 Beli via WhatsApp
+  </a>
+
+  <a class="btn-shop shopee"
+     href="https://shopee.co.id/golekumpanessencegolekum?categoryId=100637&entryPoint=ShopByPDP&itemId=25962912698&upstream=search"
+     target="_blank">
+     🛍️ Shopee
+  </a>
+
+  <a class="btn-shop tokopedia"
+     href="https://www.tokopedia.com/umpangolekessence"
+     target="_blank">
+     🛒 Tokopedia
+  </a>
+
+  <a class="btn-shop tiktok"
+     href="https://www.tiktok.com/search?q=umpan%20golek%20essence&t=1766106739783"
+     target="_blank">
+     🎵 TikTok Shop
+  </a>
+</div>
+<section class="container">
+<h2 style="margin-bottom:12px">Rekomendasi Essence Serupa</h2>
+<aside class="sidebar">
+    <div class="sidebar-box">
+
+      <div class="product-item">
+  <a href="essence-nusantara.html" class="product-link">
+    <img src="assets/img/iklan/1.png" alt="Essence Nusantara">
+  </a>
+  <div>
+    <a href="essen rm.html" class="product-title">
+      <strong>Essence Nusantara</strong>
+    </a><br>
+    <small>Karakter Soft • Total</small><br>
+    <a href="https://wa.me/6285693927647?text=Order%20Essence%20Nusantara" target="_blank" class="btn-buy">Beli</a>
+       </div>
+      </div>
+      <div class="product-item">
+  <a href="essence-nusantara.html" class="product-link">
+    <img src="assets/img/iklan/1.png" alt="Essence Nusantara">
+  </a>
+  <div>
+    <a href="essen rm.html" class="product-title">
+      <strong>Essence Nusantara</strong>
+    </a><br>
+    <small>Karakter Soft • Total</small><br>
+    <a href="https://wa.me/6285693927647?text=Order%20Essence%20Nusantara" target="_blank" class="btn-buy">Beli</a>
+       </div>
+      </div>
+    </div>
+  </aside>
+</main>
+    <div class="tags">
+      #essennusantara #reviewessen #umpanikanmas #lombamancing #essengacor #republikmancing #MMFC
+   </div>
+  </article>
+    </div>
+  </article>
+</section>
+</div>
+  <!-- FOOTER GLOBAL -->
+<footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
+  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
+    <!-- Kolom 1 -->
+    <div style="flex:1;min-width:220px">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
+      <p style="margin:0;color:#bbb;line-height:1.6">
+        Media informasi mancing & 
+        liputan lomba ikan mas, event kolam, teknik,dokumentasi, dan komunitas angler Indonesia
+      </p>
+    </div>
+    <!-- Kolom 2 -->
+    <div style="flex:1;min-width:180px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
+        <li><a href="index.html" style="color:#bbb;text-decoration:none">Beranda</a></li>
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Kebijakan Privasi</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+      </ul>
+    </div>
+    <!-- Kolom 3 -->
+    <div style="flex:1;min-width:240px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
+      <p style="margin:0;color:#bbb;line-height:1.8">
+        Email: <strong>mochnasir1111@gmail.com</strong><br>
+        WhatsApp: <strong>+62 85693927647</strong><br>
+        Jakarta-Purbalingga—Indonesia
+      </p>
+    </div>
+    <!-- Kolom 4 -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="assets/img/icon/ig.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="assets/img/icon/ytt.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
+              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
+      </div>
+    </div>
+  </div>
+  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
+  <div style="text-align:center;color:#777;font-size:14px">
+    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
+</body>
+</html>
