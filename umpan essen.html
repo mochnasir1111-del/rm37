@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Review Umpan Dan Essen — Republik Mancing</title>
+  <title>Umpan & Essen — Republik Mancing</title>
   <meta name="description" content="Profil lengkap anglers Indonesia: latar belakang, spesialisasi teknik, prestasi, dan kisah di balik tarikan juara." />
 
   <style>
@@ -211,6 +211,67 @@ blockquote{
   .sticky-cta{display:block}
   body{padding-bottom:60px}
 }
+/* GRID */
+.affiliate-grid{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  gap:22px;
+}
+
+/* CARD */
+.product-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+/* IMAGE */
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+/* BODY */
+.product-body{
+  padding:16px;
+  text-align:center;
+}
+
+.product-body h3{
+  font-size:16px;
+  margin:10px 0;
+}
+
+.product-body p{
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* TAG */
+.product-tag{
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  background:#fff0f0;
+  color:#d40000;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* BUTTON GROUP */
+.btn-group{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
 
 </style>
 </head>
@@ -230,15 +291,15 @@ blockquote{
 
 <div class="subheader">
   <nav class="sub-nav">
-    <a href="toko affiliate.html">Toko Affiliate</a>
-      <a href="toko-pancing.html">Toko Pancing</a>|
-      <a href="spot.html">Spot Kolam</a>|
-      <a href="laporan-lomba.html">Laporan Lomba</a>|
-      <a href="review-empang.html">Review Empang</a>|
-      <a href="alat pancing.html">Piranti Pancing</a>|
-      <a href="teknik.html">Teknik Ikan Mas</a>|
-      <a href="umpan essen.html">Umpan & Essence</a>|
-      <a href="profil-angler2.html">Profil Angler</a>|
+   <a href="toko affiliate.html">Toko Affiliate</a>
+      <a href="toko-pancing.html">Toko Pancing</a>
+      <a href="spot.html">Spot Kolam</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="alat pancing.html">Piranti Pancing</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="umpan essen.html">Umpan & Essence</a>
+      <a href="profil-angler2.html">Profil Angler</a>
   </nav>
 </div>
 
@@ -252,6 +313,7 @@ blockquote{
     <a href="video.html">Video</a>
   </nav>
 </div>
+
 <div class="container">
   <article class="article">
     <span class="kicker">Umpan & Racik • Essence</span>
@@ -332,21 +394,54 @@ blockquote{
 </div>
 
 <div class="tags">#essencegolek #umpangolek #lombamancing #ikanmas #galatama #galapungan #reviewumpan</div>
-<script>
-(function(){
-  const article = document.querySelector('article');
-  if(!article) return;
+<section class="container">
+<h2 style="margin-bottom:12px">Rekomendasi Essence Serupa</h2>
+<aside class="sidebar">
+    <div class="sidebar-box">
 
-  const paras = article.querySelectorAll('p');
-  if(paras.length < 2) return;
+      <div class="product-item">
+        <img src="assets/img/umpan/essence-nusantara.jpg" alt="Essence Nusantara">
+        <div>
+          <strong>Essence Nusantara</strong>
+          <small>Karakter Soft • Total</small><br>
+          <a href="https://wa.me/6281774837771?text=Order%20Essence%20Nusantara" target="_blank">
+            Beli
+          </a>
+        </div>
+      </div>
 
-  const cta = document.createElement('div');
-  cta.className = 'auto-cta';
-  cta.innerHTML = '<strong>Rekomendasi Redaksi Republik Mancing</strong><p>Cek harga dan ketersediaan produk yang dibahas di artikel ini.</p><a href="#" target="_blank" rel="nofollow sponsored">🛒 Cek Harga Sekarang</a>';
+      <div class="product-item">
+        <img src="assets/img/umpan/kecombrang-napoleon.jpg" alt="Kecombrang Napoleon">
+        <div>
+          <strong>Kecombrang Napoleon</strong>
+          <small>Target Babon</small><br>
+          <a href="https://wa.me/6281774837771?text=Order%20Kecombrang%20Napoleon" target="_blank">
+            Beli
+          </a>
+        </div>
+      </div>
 
-  paras[1].after(cta);
-})();
-</script>
+      <div class="product-item">
+        <img src="assets/img/umpan/cabe-sereh-melati.jpg" alt="Cabe Sereh Melati">
+        <div>
+          <strong>Cabe Sereh Melati</strong>
+          <small>Stabil Air Tua</small><br>
+          <a href="https://wa.me/6281774837771?text=Order%20Cabe%20Sereh%20Melati" target="_blank">
+            Beli
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+    <div class="tags">
+      #essennusantara #reviewessen #umpanikanmas #lombamancing #essengacor #republikmancing #MMFC
+    </div>
+  </article>
+    </div>
+  </article>
+</section>
+</div>
 
 <!-- FOOTER GLOBAL -->
 <footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
@@ -395,12 +490,6 @@ blockquote{
     © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
   </div>
 </footer>
-
-<!-- STICKY CTA MOBILE -->
-<div class="sticky-cta">
-  <a href="#" target="_blank" rel="nofollow sponsored">🛒 Cek Harga & Rekomendasi</a>
-</div>
-
 </body>
 </html>
 
