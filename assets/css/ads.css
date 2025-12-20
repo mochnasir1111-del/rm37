@@ -1,0 +1,26 @@
+.ad-label{
+  font-size:11px;
+  color:#777;
+  text-align:center;
+  margin-bottom:6px;
+  text-transform:uppercase;
+}
+
+.top-ad,
+.home-ad-mid{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 16px;
+  text-align:center;
+}
+
+.ad-inner{
+  background:#eaeaea;
+  border:1px dashed #ccc;
+  min-height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#555;
+}

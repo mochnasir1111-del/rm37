@@ -1,0 +1,67 @@
+/* ===== TOPBAR ===== */
+.topbar{
+  background:#111;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+.top-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.brand a{
+  font-size:20px;
+  font-weight:800;
+  color:#fff;
+}
+
+.brand span{
+  color:#c00;
+}
+
+.main-nav{
+  margin-left:auto;
+  display:flex;
+  gap:16px;
+}
+
+.main-nav a{
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+}
+
+.main-nav a:hover{
+  color:#c00;
+}
+
+/* ===== SUBHEADER ===== */
+.subheader{
+  background:#1a1a1a;
+  border-top:1px solid #222;
+}
+
+.sub-nav{
+  max-width:1200px;
+  margin:auto;
+  padding:8px 16px;
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+}
+
+.sub-nav a{
+  font-size:13px;
+  color:#ddd;
+  white-space:nowrap;
+}
+
+.sub-nav a:hover{
+  color:#fff;
+}

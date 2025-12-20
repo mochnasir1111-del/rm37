@@ -1,0 +1,33 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Inter, Arial, sans-serif;
+  background:#f4f5f7;
+  color:#222;
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 16px;
+}
+
+.muted{
+  color:#777;
+  font-size:13px;
+}
