@@ -156,9 +156,11 @@
    .running-text {display: inline-block;padding-left: 100%;animation: jalan 30s linear infinite;}
    @keyframes jalan {0%   { transform: translateX(0); }100% { transform: translateX(-100%); }}
   /* Iklan */
-  .top-ad {width: 100%;background: #f7f7f7;padding: 8px 0;border-bottom: 1px solid #ffffff;}
-  .top-ad .container {display: flex;justify-content: center;align-items: center;}
-  .top-ad img {max-width: 100%;height: auto;display: block;}
+  .top-ad{background:#f8f9fa;padding:10px 0;margin-bottom:24px;}
+   .top-ad img{max-width:100%;height:auto;border-radius:8px;}
+   .ad-label{font-size:11px;color:#777;text-transform:uppercase;text-align:center;margin-bottom:6px;}
+   .ad-slot{margin:30px 0;padding:12px;background:#f8f9fa;border-radius:8px;text-align:center;}.ad-label{font-size:11px;color:#777;
+    margin-bottom:6px;text-transform:uppercase;}
   /* ANIMASI */
     @keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
     .hover-red {transition: color .25s ease;}
@@ -359,12 +361,16 @@
     🎣 Lomba Mancing Ikan Mas Telaga Jeruk Purut  — Gaplean & Lomba Mingguan!
   </div>
    </div>
-    </header>
-    <!-- IKLAN TOP BANNER -->
-    <div class="top-ad">
+     <!-- IKLAN DI BAWAH NAVIGASI -->
+<div class="top-ad ad-slot ad-under-nav">
+  <div class="ad-label">Iklan</div>
   <div class="container">
-    <a href="#" target="_blank">
-      <img src="assets/img/galeri/1.png" alt="Iklan Top Banner">
+    <a href="#" target="_blank" rel="sponsored noopener">
+      <img 
+        src="assets/img/galeri/1.png"
+        alt="Iklan Sponsor Republik Mancing"
+        loading="lazy"
+      >
     </a>
   </div>
 </div>
@@ -890,6 +896,7 @@ document.addEventListener("click", e => {
 </script>
 </body>
 </html>
+
 
 
 
