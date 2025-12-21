@@ -266,16 +266,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
-  /* === FIX YOUTUBE EMBED === */
-.news-video-player video{display:none;}
-.video-wrapper{position:relative;padding-top:56.25%;}
-.video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;}
-.video-frame-header{background:#111;color:#fff;font-weight:700;padding:8px 14px;font-size:14px;letter-spacing:.5px;border-left:5px solid #d40000;}
-.news-video-player{position:relative;background:#000;margin-bottom:20px;}
-.video-wrapper{position:relative;padding-top:56.25%; /* 16:9 */}
-.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
-.video-watermark{position:absolute;top:10px;right:10px;z-index:5;opacity:.75;}
-.video-watermark img{height:34px;}
+
 /* ================= GRID VIDEO ================= */
 .video-grid{margin: 48px auto;}
 .video-grid-header{font-size: 18px;font-weight: 800;text-transform: uppercase;border-left: 4px solid #e60012;padding-left: 12px;margin-bottom: 16px;color: #111;}
@@ -288,6 +279,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .video-item img{width: 110px;height: 70px;object-fit: cover;border-radius: 6px;}
 .video-meta h4{font-size: 14px;font-weight: 600;margin: 0 0 4px;}
   .video-meta span{font-size: 12px;color: #777;}
+  
    /* RESPONSIVE */
    @media (max-width: 900px){
   .video-grid-wrap{grid-template-columns: 1fr;}
@@ -402,10 +394,10 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
     <!-- INFO LOMBA BERJALAN -->
    <div class="info-lomba">
    <div class="running-text">
-    🎣 Lomba Ikan Mas Empang Damai — 28 Nov 2025 •  
-    🎣 Lomba Executive MMFC Feat CS 101 Joglo — 5 Des 2025 •  
-    🎣 MMFC Pantura Feat Telaga Joglo — 12 Des 2025 •  
-    🎣 Lomba Executive HUT MMFC — Segera Dibuka!
+    <h3> Lomba Ikan Mas Saung Ngendon-Pondok Labu — 28 Des 2025 •  
+     Lomba Executive Tengkele kusan - Depok — 28 Des 2025 •  
+     MMFC Pantura Feat Telaga Joglo — 12 Des 2025 •  
+     Lomba Executive HUT MMFC — Segera Dibuka!</h3>
   </div>
    </div>
    <!-- ================= IKLAN TOP ================= -->
@@ -520,56 +512,73 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div>
-
-   <!-- ================= GRID VIDEO ================= -->
 <section class="video-grid container">
   <div class="video-grid-header">
-    VIDEO TERBARU
+    <h2>VIDEO TERBARU</h2>
+    <a href="video.html" class="view-all">Lihat Semua ></a>
   </div>
 
   <div class="video-grid-wrap">
 
-    <!-- VIDEO UTAMA -->
     <article class="video-main">
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/wGSH3lUgYN0"
-          title="Video Utama Republik Mancing"
-          loading="lazy"
-          allowfullscreen></iframe>
+        <iframe 
+          src="https://www.youtube.com/embed/wGSH3lUgYN0" 
+          title="Video Utama Republik Mancing" 
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
       </div>
-      <h3>Mancing Bareng di Telaga Enjoy – Full Gentak!</h3>
+      <div class="video-main-info">
+        <h3>Bikin Melongo! - Koleksi Joran Dan Reel Om Bolang MMFC</h3>
+        <p>Review koleksi alat pancing sultan yang bikin geleng-geleng kepala.</p>
+      </div>
     </article>
 
-    <!-- LIST VIDEO -->
     <div class="video-list">
 
       <article class="video-item">
         <a href="#">
-          <img src="assets/img/berita/gondang.jpg" alt="">
+          <div class="thumb-wrap">
+            <img src="assets/img/berita/gondang.jpg" alt="Suasana Lomba Galatama">
+            <div class="play-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
           <div class="video-meta">
             <h4>Babak Final Lomba Galatama</h4>
-            <span>5 jam lalu</span>
+            <span class="date">5 jam lalu</span>
           </div>
         </a>
       </article>
 
       <article class="video-item">
         <a href="#">
-          <img src="assets/img/video/thumb2.jpg" alt="">
+          <div class="thumb-wrap">
+            <img src="assets/img/video/thumb2.jpg" alt="Empang Favorit Bekasi">
+             <div class="play-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
           <div class="video-meta">
             <h4>Review Empang Favorit Bekasi</h4>
-            <span>Kemarin</span>
+            <span class="date">Kemarin</span>
           </div>
         </a>
       </article>
 
       <article class="video-item">
         <a href="#">
-          <img src="assets/img/video/thumb3.jpg" alt="">
+          <div class="thumb-wrap">
+            <img src="assets/img/video/thumb3.jpg" alt="Racikan Umpan Ikan Mas">
+             <div class="play-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
           <div class="video-meta">
             <h4>Teknik Umpan Ikan Mas Harian</h4>
-            <span>2 hari lalu</span>
+            <span class="date">2 hari lalu</span>
           </div>
         </a>
       </article>
@@ -577,7 +586,6 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
     </div>
   </div>
 </section>
-
 <div class="ad-slot ad-video">
   <div class="ad-label">Iklan</div>
 </div>
