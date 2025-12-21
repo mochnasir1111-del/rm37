@@ -8,8 +8,8 @@
   <script defer src="assets/js/main.js"></script>
   <style>
     /* ---------- RESET ---------- */
- *{box-sizing:border-box;margin:0;padding:0}
-  :root{
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
   --accent:#c00;
   --accent-2:#1e8f1e;
   --muted:#6b6b6b;
@@ -19,17 +19,23 @@
   --shadow:0 6px 18px rgb(255, 253, 253);
   --radius:10px;
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-   html,body{font-family:var(--font);background:var(--bg);color:#222}
-    /* ---------- TOP BAR / NAV ---------- */
-   .topbar{background:var(--card);box-shadow:var(--shadow);position:relative; /* penting */z-index:100;}
-   .top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
-   .brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
-   .brand span{color:var(--accent)}
-   .main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
-   .main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
-   .main-nav a:hover{background:#f0f6ff;color:var(--accent)}
-    /* ---------- SUBHEADER ---------- */
-   .subheader{background:#fff;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:90;}
+html,body{font-family:var(--font);background:var(--bg);color:#222}
+/* ---------- TOP BAR / NAV ---------- */
+.topbar{position: sticky;top:0;z-index:10000;}
+.top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
+.brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
+.brand span{color:var(--accent)}
+.main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
+.main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
+.main-nav a:hover{background:#f0f6ff;color:var(--accent)}
+/* ---------- SUBHEADER ---------- */
+.subheader{
+  background:#fff;
+  border-bottom:2px solid var(--accent);
+  position:sticky;
+  top:0;
+  z-index:90;
+}
 
 .sub-nav{
   max-width:var(--max-width);
@@ -112,7 +118,6 @@
 .footer-col ul li{margin-bottom:8px;}
 .footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
 .footer-col a:hover{color:#e53935;}
-
 /* SOCIAL */
 .social a{display:inline-block;margin-right:10px;font-size:14px;}
 /* BOTTOM */
@@ -151,18 +156,17 @@
   .news-card:hover img,
   .article-card:hover img,
   .slide:hover img {transform: scale(1.06);filter: brightness(0.9);}
-  .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fcfcfc;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
+   .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fff;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
    /* Running text (marquee style) */
    .running-text {display: inline-block;padding-left: 100%;animation: jalan 30s linear infinite;}
    @keyframes jalan {0%   { transform: translateX(0); }100% { transform: translateX(-100%); }}
-  /* Iklan */
-  .top-ad{background:#f8f9fa;padding:10px 0;margin-bottom:24px;}
+   
+   .top-ad{background:#f8f9fa;padding:10px 0;margin-bottom:24px;}
    .top-ad img{max-width:100%;height:auto;border-radius:8px;}
    .ad-label{font-size:11px;color:#777;text-transform:uppercase;text-align:center;margin-bottom:6px;}
-   .ad-slot{margin:30px 0;padding:12px;background:#f8f9fa;border-radius:8px;text-align:center;}.ad-label{font-size:11px;color:#777;
-    margin-bottom:6px;text-transform:uppercase;}
+   .ad-slot{margin:30px 0;padding:12px;background:#f8f9fa;border-radius:8px;text-align:center;}.ad-label{font-size:11px;color:#777;margin-bottom:6px;text-transform:uppercase;}
   /* ANIMASI */
-    @keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
+@keyframes zoomIn {from { transform:scale(0.7); opacity:0; }to   { transform:scale(1); opacity:1; }}
     .hover-red {transition: color .25s ease;}
     .hover-red:hover {color: #d32f2f;cursor: pointer;}
   .card {display: flex;flex-direction: column;gap: 10px;border-radius: 8px;overflow: hidden;transition: transform 0.25s ease, box-shadow 0.25s ease;}
@@ -185,39 +189,43 @@
   .result-item:hover {background: #f4f4f4;}
   .no-result {padding: 10px;font-size: 14px;color: #777;}
 
-    /* FRAME */
-  .video-frame{margin:25px auto;max-width:900px;border-radius:14px;overflow:hidden;background:#ffffff;border:1px solid #e5e7eb;box-shadow:0 6px 20px rgba(0,0,0,0.12);font-family:Inter,Arial;}
-/* HEADER TV NEWS */
-.video-frame-header{position:relative;background:#0a6c33; /* Biru gelap ala TV News */color:#fff;padding:14px 18px 16px;font-size:16px;font-weight:800;letter-spacing:0.7px;text-transform:uppercase;}
-/* Garis biru */
-.video-frame-header:before{content:"";position:absolute;bottom:0;left:0;width:100%;height:4px;background:#fdfeff;}
-/* Garis merah */
-.video-frame-header:after{content:""; position:absolute;bottom:0;left:0;width:42%;height:4px;background:#ff1e1e;}
-/* PLAYER */
-.news-video-player{position:relative;background:#000;}
-.news-video-player video{width:100%;display:block;}
-/* WATERMARK */
-.video-watermark{position:absolute;top:12px;left:12px;z-index:5;opacity:0.85;pointer-events:none;}
-.video-watermark img{height:40px;width:auto;}
-
       .ad-responsive{width:100%;max-width:300px;margin:20px auto;text-align:center;}
 .ad-responsive a{display:block;}
 .ad-responsive img{width:100%;height:auto;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.15);transition:0.3s;}
 .ad-responsive img:hover{transform:scale(1.03);}
-/* OFFCANVAS MOBILE */
-.offcanvas {position: fixed; top: 0;right: -100%;width: 280px;height: 100%;background: #111;color: #fff;z-index: 9999;padding: 20px;transition: right 0.3s ease;}
-.offcanvas.active {right: 0;}
-.off-nav {
-  display: flex;flex-direction: column;
-  gap: 14px;margin-top: 40px;}
-  .off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
-  .close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
-  /* TAMPILKAN HANYA DI MOBILE */
-    @media (min-width: 900px) {
-  .offcanvas {display: none;}}
-   .menu-btn {font-size: 24px; background: none;border: none;cursor: pointer;display: none;}
-   @media (max-width: 900px) {
-  .menu-btn {display: block;}}
+/* OFFCANVAS FINAL (KANAN, MOBILE) */
+.offcanvas{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  z-index: 10002;
+  padding: 20px;
+  transition: right .3s ease;
+}
+
+.offcanvas.active{
+  right: 0;
+}
+
+.offcanvas-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 10001;
+}
+
+.offcanvas-backdrop.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
     /* TOPBAR */
   .topbar{background:#111;color:#fff;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px 16px;}
@@ -232,10 +240,9 @@
   .sub-nav a{font-size:14px;font-weight:600;color:#333;}
   .sub-nav a:hover{color:#c00;}
     /* STICKY (OPSIONAL, KEREN) */
-  .subheader{position:sticky;top:52px; /* tinggi header */z-index:90;}
-     /* MOBILE */
-    @media(max-width:768px){
-  .main-nav{display:none;}}
+  .subheader{position: sticky;top:52px;z-index:50;}
+
+    
   /* ================= HEADER GLOBAL ================= */
   .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
@@ -249,17 +256,13 @@
   .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
   .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
   .sub-nav a:hover{color:#c00}
-   /* OFFCANVAS */
-  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
-  .offcanvas.active{right:0}
-  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
-  .off-nav a{color:#fff;text-decoration:none;}
-  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+
     /* MOBILE */
-  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
-   @media(max-width:768px){
-  .main-nav{display:none}
-  .menu-btn{display:block}}
+  .menu-btn{background:none;border:none;font-size:26px;color:#fff;cursor:pointer;z-index:10001;   /* PALING PENTING */position:relative;}
+@media (max-width:768px){
+  .main-nav{display:none;}}
+  .topbar{position:sticky;top:0;z-index:10000;}
+  .top-inner{position:relative;z-index:10000;}
 
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
@@ -273,7 +276,23 @@
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-watermark{position:absolute;top:10px;right:10px;z-index:5;opacity:.75;}
 .video-watermark img{height:34px;}
-    /* SIDEBAR TOKO PANCING */
+/* ================= GRID VIDEO ================= */
+.video-grid{margin: 48px auto;}
+.video-grid-header{font-size: 18px;font-weight: 800;text-transform: uppercase;border-left: 4px solid #e60012;padding-left: 12px;margin-bottom: 16px;color: #111;}
+.video-grid-wrap{display: grid;grid-template-columns: 2fr 1fr;gap: 24px;}
+/* VIDEO UTAMA */
+.video-main h3{font-size: 18px;font-weight: 700;margin-top: 12px;}
+/* LIST VIDEO */
+.video-list{display: flex;flex-direction: column;gap: 12px;}
+.video-item a{display: flex;gap: 10px;text-decoration: none;color: #111;}
+.video-item img{width: 110px;height: 70px;object-fit: cover;border-radius: 6px;}
+.video-meta h4{font-size: 14px;font-weight: 600;margin: 0 0 4px;}
+  .video-meta span{font-size: 12px;color: #777;}
+   /* RESPONSIVE */
+   @media (max-width: 900px){
+  .video-grid-wrap{grid-template-columns: 1fr;}
+  .video-item img{width: 100px;height: 64px;}}
+   /* SIDEBAR TOKO PANCING */
 .sidebar{position:sticky;top:110px;}
 .sidebar-box{background:#f8fafc;border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.08);}
 .sidebar-box h3{font-size:16px;margin-bottom:14px;border-bottom:2px solid #dc2626;padding-bottom:6px;}
@@ -281,28 +300,58 @@
 .toko-item:last-child{border-bottom:none;}
 .toko-item strong{display:block;font-size:14px;margin-bottom:4px;}
 .toko-item p{font-size:13px;color:#374151;margin:2px 0;}
-.btn-sidebar{display:block;text-align:center;margin-top:14px;padding:10px;
-  background:#dc2626;color:#fff;text-decoration:none;border-radius:10px;font-size:14px;font-weight:600;}
+.btn-sidebar{display:block;text-align:center;margin-top:14px;padding:10px;background:#dc2626;color:#fff;text-decoration:none;border-radius:10px;font-size:14px;font-weight:600;}
 .btn-sidebar:hover{background:#b91c1c;}
-    .rm-search{position:relative;max-width:320px;}
+/* ===== TOPBAR ===== */
+.topbar{background:#111;position:sticky;top:0;z-index:10000;}
+.top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 16px;}
+.brand-logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:20px;text-decoration:none;}
+.brand-logo span{color:#c00;}
+.brand-logo img{width:32px;height:32px}
+/* MENU DESKTOP */
+.main-nav{margin-left:auto;display:flex;gap:18px;}
+.main-nav a{color:#fff;text-decoration:none;font-weight:600;}
+/* HAMBURGER */
+.menu-btn{display:none;font-size:26px;background:none;border:none;color:#fff;cursor:pointer;}
+/* ===== SUBHEADER ===== */
+.subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:56px;z-index:999;}
+.sub-nav{max-width:1200px;margin:auto;display:flex;gap:16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
+.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+/* ===== OFFCANVAS ===== */
+.offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:10001;padding:20px;transition:.3s ease;}
+.offcanvas.active{right:0;}
+.off-nav{display:flex;flex-direction:column;gap:16px;margin-top:40px;}
+.off-nav a{color:#fff;text-decoration:none;font-size:16px;font-weight:600;}
+.close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;}
+/* BACKDROP */
+.offcanvas-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;z-index:10000;}
+.offcanvas-backdrop.show{opacity:1;pointer-events:auto;}
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .main-nav{display:none;}
+  .menu-btn{display:block;}}
+.rm-search{position:relative;max-width:320px;}
 .rm-search input{width:100%;padding:8px 12px;border-radius:999px;border:1px solid #e5e7eb;font-size:14px;}
 .rm-search-results{display:none;position:absolute;top:110%;left:0;right:0;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:9999;overflow:hidden;}
 .rm-search-results a{display:block;padding:10px 14px;font-size:14px;color:#111;text-decoration:none;border-bottom:1px solid #f1f5f9;}
 .rm-search-results a:hover{background:#f8fafc;}
 .rm-search-results .no-result{padding:12px;font-size:13px;color:#6b7280;}
+
+ .ad-responsive { width: 100%;max-width: 320px;height: 250px;background: #eaeaea;border: 1px solid #ccc;
+    margin: 20px 0;display: flex;justify-content: center;align-items: center;color: #555;font-size: 16px;}
+    
   </style>
 </head>
- <body>
-  <!-- HEADER GLOBAL -->
-  <header class="topbar">
+<body>
+  <!-- TOP NAV -->
+<header class="topbar">
   <div class="top-inner">
-    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+    <button class="menu-btn" id="openOff" aria-label="Menu">☰</button>
 
-    <div class="brand">
-     <a href="index.html" class="brand-logo">
-  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
-    </div>
-     <div class="rm-search">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
+      Republik<span>Mancing</span>
+    </a><div class="rm-search">
   <input 
     type="text" 
     id="searchInput" 
@@ -311,26 +360,25 @@
   >
   <div id="searchResults" class="rm-search-results"></div>
 </div>
-
     <nav class="main-nav">
-      <a href="index.html" class="hover-red">Beranda</a>
+    <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
       <a href="video.html" class="hover-red">Video</a>
       <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
       <a href="kontak.html" class="hover-red">Kontak</a>
-      </nav>
-      </div>
-      </header>
-   <div class="subheader">
-    <nav class="sub-nav">
-      <a href="lomba.html">Jadwal Lomba</a>
+    </nav>
+  </div>
+</header>
+<div class="subheader">
+  <nav class="sub-nav">
+     <a href="lomba.html">Jadwal Lomba</a>
       <a href="laporan-lomba.html">Laporan Lomba</a>
       <a href="review-empang.html">Review Empang</a>
       <a href="teknik.html">Teknik Ikan Mas</a>
       <a href="spot.html">Spot Kolam</a>
-   </nav>
-   </div>
-  <!-- OFFCANVAS MOBILE -->
+  </nav>
+</div>
+<!-- OFFCANVAS -->
 <div class="offcanvas" id="offcanvas">
   <button class="close-off" id="closeOff">×</button>
   <div class="rm-search">
@@ -342,12 +390,11 @@
   >
   <div id="searchResults" class="rm-search-results"></div>
 </div>
-
   <nav class="off-nav">
    <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
       <a href="video.html" class="hover-red">Video</a>
-      <a href="profil-angler2.html" class="hover-red">Profil Angle</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
       <a href="kontak.html" class="hover-red">Kontak</a>
   </nav>
 </div>
@@ -355,31 +402,28 @@
     <!-- INFO LOMBA BERJALAN -->
    <div class="info-lomba">
    <div class="running-text">
-    🎣 Lomba Ikan Mas Galapung HUT Pemancingan Tabgha Kuciran Tangerang — Minggu 21 Des 2025 •  
-    🎣 Lomba Executive Telaga She Abang — Minggu 21 Des 2025 •  
-    🎣 Lomba Mancing Ikan Mas Pemancingan Tuan Muda Kemang — Minggu 28 Des 2025 •  
-    🎣 Lomba Mancing Ikan Mas Telaga Jeruk Purut  — Gaplean & Lomba Mingguan!
+    🎣 Lomba Ikan Mas Empang Damai — 28 Nov 2025 •  
+    🎣 Lomba Executive MMFC Feat CS 101 Joglo — 5 Des 2025 •  
+    🎣 MMFC Pantura Feat Telaga Joglo — 12 Des 2025 •  
+    🎣 Lomba Executive HUT MMFC — Segera Dibuka!
   </div>
    </div>
-     <!-- IKLAN DI BAWAH NAVIGASI -->
-<div class="top-ad ad-slot ad-under-nav">
+   <!-- ================= IKLAN TOP ================= -->
+<div class="top-ad">
   <div class="ad-label">Iklan</div>
-  <div class="container">
-    <a href="#" target="_blank" rel="sponsored noopener">
-      <img 
-        src="assets/img/galeri/1.png"
-        alt="Iklan Sponsor Republik Mancing"
-        loading="lazy"
-      >
-    </a>
-  </div>
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    data-ad-slot="1111111111"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
 </div>
-<header class="site-header">
-</header>
 
- </div>
-  <div class="offcanvas-backdrop" id="offBackdrop"></div>
- 
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
   <!-- MAIN LAYOUT -->
   <main class="container">
     <!-- LEFT: MAIN CONTENT -->
@@ -413,10 +457,12 @@
         <button class="slider-nav next" data-action="next" aria-label="Berikutnya">›</button>
         <div class="slider-dots" id="sliderDots"></div>
       </div>
-  
-      <!-- GRID BERITA UTAMA -->
-      <section class="news-grid">
-       <article class="news-card">
+
+      <!-- ================= GRID BERITA UTAMA ================= -->
+
+<main class="container">
+  <section class="news-grid">
+     <article class="news-card">
         <a href="hut pt truba.html" class="thumb">
          <img src="assets/img/berita/DSCF6927.JPG" alt=""></a>
           <h3><a href="hut pt truba.html" class="title">Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy: Peserta Full Happy</a></h3><p>Full gentak full enjoy</p>
@@ -427,12 +473,6 @@
           <img src="assets/img/mmfc/om ben.jpg" alt=""></a>
             <h3><a href="profil-angler2.html"class="title">Profil Tokoh Komunitas Mancing</a></h3>
             <p>Salah Satu Punggawa MMFC </p>
-        </article>
-        <article class="news-card">
-            <a href="ulasan reel stella.html"class="thumb">
-          <img src="assets/img/galeri/ChatGPT Image Dec 11, 2025, 12_24_28 AM.png" alt=""></a>
-            <h3><a href="ulasan reel stella.html"class="title">Ulasan Reel Shimano Stella </a></h3>
-            <p>Reel Impian Para Pemancing Ikan Mas</p>
         </article>
         <article class="news-card">
            <a href="babon naik 16 kg.html"class="thumb">
@@ -446,48 +486,102 @@
             <h3><a href="totalWar.html"class="title">Total War Episode II</a></h3>
             <p>Pemancingan Empang Damai by Telaga Silet</p>
         </article>
+  </section>
 
-<div class="ad-responsive">
-  <a href="https://link-website-anda.com" target="_blank"> <h>Iklan</h>
-    <img src="#" alt="Iklan Sponsor">
-  </a>
+  <aside class="right-col">
+     <div class="widget">
+        <div class="ad-label">SPONSORED AD</div>
+        <div class="ad-box">
+           <img src="assets/img/iklan/banner-lomba.jpg" alt="Iklan Lomba" style="width:100%">
+        </div>
+     </div>
+
+     <div class="widget">
+        <h3>Jadwal Terdekat</h3>
+        <ul class="popular-list">
+           <li><a href="lomba.html"class="hover-red">JadwalLomba Mancing Ikan Mas</a></li>
+           <li><a href="doblong.html"class="hover-red">Gaplean Ikan Mas</a></li>
+        </ul>
+     </div>
+  </aside>
+</main>
+     <!-- IKLAN TENGAH -->
+<div class="home-ad-mid container">
+  <div class="ad-label">Iklan</div>
+
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    data-ad-slot="2222222222"
+    data-ad-format="fluid"
+    data-ad-layout="in-article"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
-       <style>
-    .ad-responsive { width: 100%;max-width: 320px;height: 250px;background: #eaeaea;border: 1px solid #ccc;
-    margin: 20px 0;display: flex;justify-content: center;align-items: center;color: #555;font-size: 16px;}
-      </style>
-      </section>
-      <div class="video-frame">
-  <!-- HEADER STYLE TV NEWS -->
-   <div class="video-frame-header">
-  VIDEO – REPUBLIK MANCING
-</div>
-<div class="news-video-player">
-  <!-- Watermark -->
-  <div class="video-watermark">
-    <img src="assets/img/gicon/rm.png" alt="Republik Mancing">
+   <!-- ================= GRID VIDEO ================= -->
+<section class="video-grid container">
+  <div class="video-grid-header">
+    VIDEO TERBARU
   </div>
 
-  <!-- YOUTUBE EMBED -->
-  <div class="video-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/wGSH3lUgYN0?si=6pwqk8hIUMp950aW"
-      title="Video Republik Mancing"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-     </div>
+  <div class="video-grid-wrap">
+
+    <!-- VIDEO UTAMA -->
+    <article class="video-main">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/wGSH3lUgYN0"
+          title="Video Utama Republik Mancing"
+          loading="lazy"
+          allowfullscreen></iframe>
       </div>
-      <!-- IKLAN TOP BANNER -->
-    <div class="top-ad">
-  <div class="container">
-    <a href="#" target="_blank">
-      <img src="/" alt="Iklan Top Banner">
-    </a>
+      <h3>Mancing Bareng di Telaga Enjoy – Full Gentak!</h3>
+    </article>
+
+    <!-- LIST VIDEO -->
+    <div class="video-list">
+
+      <article class="video-item">
+        <a href="#">
+          <img src="assets/img/berita/gondang.jpg" alt="">
+          <div class="video-meta">
+            <h4>Babak Final Lomba Galatama</h4>
+            <span>5 jam lalu</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="video-item">
+        <a href="#">
+          <img src="assets/img/video/thumb2.jpg" alt="">
+          <div class="video-meta">
+            <h4>Review Empang Favorit Bekasi</h4>
+            <span>Kemarin</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="video-item">
+        <a href="#">
+          <img src="assets/img/video/thumb3.jpg" alt="">
+          <div class="video-meta">
+            <h4>Teknik Umpan Ikan Mas Harian</h4>
+            <span>2 hari lalu</span>
+          </div>
+        </a>
+      </article>
+
     </div>
-    </div>
+  </div>
+</section>
+
+<div class="ad-slot ad-video">
+  <div class="ad-label">Iklan</div>
+</div>
+
       <!-- LIST BERITA (linear) -->
       <section class="list-news">
         <h2>Berita Terbaru</h2>
@@ -502,14 +596,6 @@
           <img src="assets/img/event/14mmfc.jpeg" alt=""></a>
             <h4><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
             <p class="muted">6 jam lalu • oleh RepublikMancing</p>
- 
-        </article>
-        <article class="list-item">
-          <a href="ulasan reel.html">
-          <img src="assets/img/berita/reel magnesium.jpg" alt=""></a>
-            <h4><a href="ulasan reel.html">Ulasan Reel Magnesium</a></h4>
-            <p class="muted">2 tahun lalu • oleh Team RepublikMancing</p>
-        
         </article>
          <article class="list-item">
           <a href="event jp.html">
@@ -519,16 +605,17 @@
         </article>
       </section>
     </section>
-   
+
+    
     <!-- RIGHT: SIDEBAR -->
     <aside class="right-col">
       <!-- WIDGET: POPULER -->
       <div class="widget">
         <h3>Populer</h3>
         <ol class="popular-list">
-          <li><a href="spot.html">Spot Pilihan Pemancing Lomba</a></li>
+          <li><a href="babon naik 16 kg.html">Babon 12kg Pecahkan Rekor</a></li>
           <li><a href="rekomendasi gear joran.html">Rekomendasi Memilih Piranti Mancing</a></li>
-          <li><a href="toko affiliate.html">Toko Republik Mancing</a></li>
+          <li><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></li>
           <li><a href="cs 101.html">Event MMFC-CS 101 Joglo</a></li>
         </ol>
       </div>
@@ -539,13 +626,14 @@
             <iframe width="100%" height="170" src="https://www.youtube.com/embed/jqUyxauQJLg?si=RLcOtWVf3kludHZW" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
             <div style="margin-top:10px"><a class="btn hover-red" href="https://www.youtube.com/RepublikMancing37">Kunjungi Channel</a></div>
           </div>
-     <!-- WIDGET: BANNER IKLAN -->
     <!-- ===== IKLAN: SIDEBAR BERANDA ===== -->
 <div class="ad-slot ad-sidebar">
   <div class="ad-label">Iklan</div>
   <!-- Adsense / Ad Code -->
 </div>
 
+             
+           <!-- SIDEBAR TOKO PANCING -->
           <!-- SIDEBAR REFERENSI TOKO PANCING -->
 <aside class="sidebar">
   <div class="sidebar-box">
@@ -590,7 +678,14 @@
   </p>
 </div>
   </main>
- <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+   
+<!-- ===== IKLAN: SEBELUM FOOTER ===== -->
+<div class="ad-slot ad-footer">
+  <div class="ad-label">Iklan</div>
+  <!-- Adsense / Ad Code -->
+</div>
+
+       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
@@ -646,81 +741,7 @@
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ==================================================
-     SLIDER / HERO
-  ================================================== */
-  const slides = document.querySelectorAll(".slide");
-  const dotsContainer = document.getElementById("sliderDots");
-  const nextBtn = document.querySelector(".slider-nav.next");
-  const prevBtn = document.querySelector(".slider-nav.prev");
-  let currentSlide = 0;
-  let sliderInterval;
-
-  if (slides.length) {
-    slides.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.addEventListener("click", () => goToSlide(i));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = dotsContainer.querySelectorAll("button");
-
-    function showSlide(i) {
-      slides.forEach(s => s.classList.remove("active"));
-      dots.forEach(d => d.classList.remove("active"));
-      slides[i].classList.add("active");
-      dots[i].classList.add("active");
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function goToSlide(i) {
-      currentSlide = i;
-      showSlide(i);
-      restartAutoPlay();
-    }
-
-    function startAutoPlay() {
-      sliderInterval = setInterval(nextSlide, 4000);
-    }
-
-    function restartAutoPlay() {
-      clearInterval(sliderInterval);
-      startAutoPlay();
-    }
-
-    nextBtn?.addEventListener("click", () => { nextSlide(); restartAutoPlay(); });
-    prevBtn?.addEventListener("click", () => { prevSlide(); restartAutoPlay(); });
-
-    showSlide(currentSlide);
-    startAutoPlay();
-  }
-
-  /* ==================================================
-     OFFCANVAS MOBILE MENU
-  ================================================== */
-  const offcanvas = document.getElementById("offcanvas");
-  document.getElementById("openOff")?.addEventListener("click", () => {
-    offcanvas.classList.add("active");
-  });
-  document.getElementById("closeOff")?.addEventListener("click", () => {
-    offcanvas.classList.remove("active");
-  });
-
-  /* ==================================================
-     SEARCH REPUBLIK MANCING
-  ================================================== */
- 
+  
 const RM_SEARCH_INDEX = [
 
   /* ================== SPOT / KOLAM ================== */
@@ -743,7 +764,7 @@ const RM_SEARCH_INDEX = [
 
   {
     title: "Pemancingan Brigif Bandung",
-    url: "brigif.html",
+    url: "brigif-bandung.html",
     type: "Spot Kolam",
     region: "Bandung, Jawa Barat",
     desc: "Kolam full power favorit event besar",
@@ -758,7 +779,7 @@ const RM_SEARCH_INDEX = [
   /* ================== EVENT / LOMBA ================== */
   {
     title: "Event MY Fishing Indramayu Hadiah Mobil",
-    url: "my fishing.html",
+    url: "my-fishing-indramayu.html",
     type: "Event Lomba",
     region: "Indramayu, Jawa Barat",
     desc: "Lomba eksekutif dengan hadiah utama mobil",
@@ -773,7 +794,7 @@ const RM_SEARCH_INDEX = [
   /* ================== PROFIL ANGLER ================== */
   {
     title: "Profil Angler Om Alif MMFC",
-    url: "profil angler Om Alif.html",
+    url: "profil-om-alif.html",
     type: "Profil Angler",
     region: "Bekasi",
     desc: "Angler muda MMFC berprestasi di lomba ikan mas",
@@ -788,20 +809,161 @@ const RM_SEARCH_INDEX = [
 
   /* ================== TOKO PANCING ================== */
   {
-    title: "Toko Pancing Raja Fishing",
+    title: "Toko Pancing Raja Fising",
     url: "toko-pancing.html",
     type: "Toko Pancing",
-    region: "Kebagusan",
+    region: "ragunan,kebagusan,jagakarsa",
     desc: "Umpan, essen, piranti lomba lengkap",
     keywords: [
       "toko pancing",
       "essen",
       "umpan ikan mas",
-      "kebagusan"
+      "ragunan"
     ]
   }
 
 ];
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ================= OFFCANVAS ================= */
+  document.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById("openOff");
+  const closeBtn = document.getElementById("closeOff");
+  const offcanvas = document.getElementById("offcanvas");
+  const backdrop = document.getElementById("offBackdrop");
+
+  openBtn.onclick = () => {
+    offcanvas.classList.add("active");
+    backdrop.classList.add("show");
+  };
+
+  closeBtn.onclick = backdrop.onclick = () => {
+    offcanvas.classList.remove("active");
+    backdrop.classList.remove("show");
+  };
+});
+
+  /* ================= SLIDER ================= */
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("sliderDots");
+  const nextBtn = document.querySelector(".slider-nav.next");
+  const prevBtn = document.querySelector(".slider-nav.prev");
+  let current = 0;
+  let autoPlay;
+
+  if (slides.length && dotsContainer) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.addEventListener("click", () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("button");
+
+    function showSlide(i) {
+      slides.forEach(s => s.classList.remove("active"));
+      dots.forEach(d => d.classList.remove("active"));
+      slides[i].classList.add("active");
+      dots[i].classList.add("active");
+    }
+
+    function goTo(i) {
+      current = i;
+      showSlide(current);
+      restartAutoPlay();
+    }
+
+    function next() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prev() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAutoPlay() {
+      autoPlay = setInterval(next, 4000);
+    }
+
+    function restartAutoPlay() {
+      clearInterval(autoPlay);
+      startAutoPlay();
+    }
+
+    nextBtn?.addEventListener("click", () => { next(); restartAutoPlay(); });
+    prevBtn?.addEventListener("click", () => { prev(); restartAutoPlay(); });
+
+    showSlide(current);
+    startAutoPlay();
+  }
+
+  /* ================= VISITOR COUNTER ================= */
+  const KEY = "republikmancing-visitor-counter-v1";
+  fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
+    .then(r => r.json())
+    .then(d => document.getElementById("total-visitors").textContent = d.value.toLocaleString());
+
+  const todayKey = KEY + "-" + new Date().toISOString().slice(0,10);
+  fetch(`https://api.countapi.xyz/hit/${todayKey}/today`)
+    .then(r => r.json())
+    .then(d => document.getElementById("today-visitors").textContent = d.value.toLocaleString());
+
+  /* ================= TANGGAL BACA ================= */
+  const readDate = document.getElementById("readDate");
+  if (readDate) {
+    const t = new Date();
+    readDate.textContent = `${t.getDate()}-${t.getMonth()+1}-${t.getFullYear()}`;
+  }
+
+});
+
+const articles = [
+  {
+    title: "Rekomendasi Pemancingan New Babon Bekasi",
+    url: "new-babon.html",
+    keywords: "new babon bekasi tiket sultan lomba"
+  },{
+    title: "Pemancingan Brigif Bandung Full Power",
+    url: "brigif-bandung.html",
+    keywords: "brigif bandung full power event"},{
+    title: "MY Fishing Indramayu Hadiah Mobil",
+    url: "my-fishing-indramayu.html",
+    keywords: "my fishing indramayu lomba eksekutif"}];
+    
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+  searchResults.innerHTML = "";
+
+  if (q.length < 2) {
+    searchResults.style.display = "none";
+    return;
+  }
+  const filtered = articles.filter(a =>
+    a.title.toLowerCase().includes(q) ||
+    a.keywords.toLowerCase().includes(q)
+  );
+
+  if (filtered.length === 0) {
+    searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
+  } else {
+    filtered.forEach(a => {
+      searchResults.innerHTML += `
+        <a href="${a.url}">${a.title}</a>
+      `;
+    });}
+  searchResults.style.display = "block";
+});
+// klik luar = nutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    searchResults.style.display = "none";}});
 
 const input = document.getElementById("searchInput");
 const resultsBox = document.getElementById("searchResults");
@@ -847,75 +1009,6 @@ document.addEventListener("click", e => {
 });
 
 
-  /* ==================================================
-     VIDEO AUTO PLAY SAAT SCROLL
-  ================================================== */
-  const videos = document.querySelectorAll(".autoplay-news-video");
-  if (videos.length) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        entry.isIntersecting ? entry.target.play().catch(()=>{}) : entry.target.pause();
-      });
-    }, { threshold: 0.6 });
-
-    videos.forEach(v => observer.observe(v));
-  }
-
-  /* ==================================================
-     VISITOR COUNTER
-  ================================================== */
-  const KEY = "republikmancing-visitor-v1";
-  fetch(`https://api.countapi.xyz/hit/${KEY}/total`)
-    .then(r => r.json())
-    .then(d => document.getElementById("total-visitors").textContent = d.value.toLocaleString());
-
-  const todayKey = KEY + "-" + new Date().toISOString().slice(0,10);
-  fetch(`https://api.countapi.xyz/hit/${todayKey}/today`)
-    .then(r => r.json())
-    .then(d => document.getElementById("today-visitors").textContent = d.value.toLocaleString());
-
-  /* ==================================================
-     TANGGAL BACA
-  ================================================== */
-  const readDate = document.getElementById("readDate");
-  if (readDate) {
-    const t = new Date();
-    readDate.textContent = `${t.getDate()}-${t.getMonth()+1}-${t.getFullYear()}`;
-  }
-
-});
-  
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
