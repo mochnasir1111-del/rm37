@@ -85,6 +85,17 @@
   /* GOOGLE MAPS */
 .map-wrap{position:relative;width:100%;padding-top:56.25%; /* 16:9 */margin:18px 0;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);}
 .map-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+     /* SHARE TOP MEDIA */
+.share-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.share-label{font-size:13px;color:#6b7280;margin-right:4px;}
+.share-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;transition:.2s ease;}
+.share-btn img{width:18px;height:18px;}
+.share-btn:hover{transform:translateY(-2px);}
+/* warna khas */
+.share-btn.wa{background:#25D366}
+.share-btn.fb{background:#1877F2}
+.share-btn.x{background:#000}
+.share-btn.tg{background:#229ED9}
   </style>
 </head>
 <body>
@@ -123,7 +134,22 @@
   <div class="meta">
     Ditulis oleh <strong>Redaksi Republik Mancing</strong> • 4 Desember 2025 • 7 menit baca
   </div>
-
+  <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wasthup.jpg" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/faceebok.jpg" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twit.jpg" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.jpg" alt="Telegram"></a>
+</div>
   <!-- HERO IMAGE -->
   <img class="hero" src="artikel/si abang.png" alt="Pemancingan She Abang Bekasi">
 
@@ -252,13 +278,22 @@
                 <p>Pemancingan Galapung/Lomba Ikan Mas.</p>      </a>
               </div>
             </div>
-          <div class="share">
-            <span>Bagikan:</span>
-            <a class="btn" href="https://api.whatsapp.com/send?text=Spot%20Mancing%20Terbaik%20-%20https://republikmancing.com/spot.html" target="_blank">WhatsApp</a>
-            <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/spot.html" target="_blank">Facebook</a>
-            <a class="btn" href="https://twitter.com/intent/tweet?text=Spot%20Mancing%20Terbaik%20-%20https://republikmancing.com/spot.html" target="_blank">X</a>
-          </div>
-        </div>
+         <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wasthup.jpg" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/faceebok.jpg" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twit.jpg" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.jpg" alt="Telegram"></a>
+</div>
       </article>
       </main>
 <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
@@ -317,6 +352,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
