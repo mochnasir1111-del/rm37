@@ -428,20 +428,27 @@ namun cukup kuat saat menghadapi tarikan babon galatama.
           </div>
         </div>
 
-        <div style="height:18px"></div>
-
-        <div class="card">
-          <h4>Newsletter</h4>
-          <p style="color:var(--muted);font-size:0.95rem">Dapatkan tips mingguan langsung ke inbox.</p>
-          <form onsubmit="event.preventDefault();alert('Terima kasih! (demo)')">
-            <input type="email" placeholder="Email kamu" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef2f7;margin-top:8px" />
-            <div style="margin-top:8px"><button class="btn" type="submit">Langganan</button></div>
-          </form>
-        </div>
+        <!-- WIDGET: NEWSLETTER -->
+<div class="widget">
+  <h3>Newsletter</h3>
+  <p>Dapatkan update berita & liputan mancing dari Republik Mancing.</p>
+  <form class="newsletter" action="#" method="post">
+    <input 
+      type="email" 
+      name="email"
+      placeholder="mochnasir1111@gmail.com" 
+      required
+      aria-label="Email"
+    >
+    <button type="submit">Daftar</button>
+  </form>
+  <p style="font-size:12px;color:#777;margin-top:6px">
+    Kami tidak mengirim spam. Berhenti kapan saja.
+  </p>
+</div>
       </aside>
     </div>
   </main>
-
 
        <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
