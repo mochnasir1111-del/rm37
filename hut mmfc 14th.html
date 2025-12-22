@@ -44,6 +44,22 @@
     .share-btn:focus{outline:3px solid Highlight; outline-offset:2px}
     .sr-only{position:relative}
     @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+    .gallery-juara{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 24px 0;}
+.gallery-juara .g-item{
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;}
+.gallery-juara img{
+  width: 100%;
+  height: 160px;        /* KUNCI: batasi tinggi */
+  object-fit: cover;   /* potong rapi, tidak gepeng */
+  display: block;}
+.gallery-juara .g-caption{font-size: 13px;padding: 8px 6px;line-height: 1.4;color: #333;}
   </style>
 </head>
 <body>
@@ -438,5 +454,6 @@
   </script>
 </body>
 </html>
+
 
 
