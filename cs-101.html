@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pemancingan CS 101 Joglo</title>
+ 
+  <style>
+    /* Minimal inline styles untuk preview mandiri */
+    :root{--accent:#2e6d3e;--muted:#666}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
+    .container{max-width:920px;margin:32px auto;padding:0 16px}
+    header.site-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+    header .brand{font-weight:700;color:var(--accent);font-size:20px;text-decoration:none}
+    nav.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:12px}
+    article.article{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,20,0.04)}
+    .article h1{font-size:28px;margin:6px 0 12px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:18px}
+    .hero{width:100%;height:auto;border-radius:8px;overflow:hidden;margin-bottom:18px}
+    .hero img{width:100%;display:block}
+    .article p{margin:12px 0}
+    .article h2{margin-top:20px}
+    .tips{background:#f7f8fa;padding:12px;border-left:4px solid var(--accent);border-radius:6px}
+    .share{display:flex;gap:8px;margin-top:18px}
+    .share a{padding:8px 12px;border-radius:6px;text-decoration:none;border:1px solid #eee;font-size:14px}
+    .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+    .related .card{padding:12px;border:1px solid #eee;border-radius:8px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .winners{background:#f7f8fa;padding:12px;border-radius:8px;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;text-align:left;border-bottom:1px solid #eee}
+    .caption{font-size:13px;color:var(--muted);margin-top:6px}
+    .note{font-size:14px;color:var(--muted);margin-top:10px}
+    footer{margin:40px 0 80px;color:var(--muted);font-size:13px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.article h1{font-size:20px}; .gallery{grid-template-columns:1fr}}
+
+      .article-container {max-width: 850px;     /* lebar pas seperti detik */margin: 0 auto;       /* center */padding: 0 16px;      /* biar rapi di HP */}
+  .article-photo {width: 100%;max-width: 800px;display: block;margin: 20px auto;border-radius: 10px;}
+/* SHARE TOP MEDIA */
+.share-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.share-label{font-size:13px;color:#6b7280;margin-right:4px;}
+.share-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;transition:.2s ease;}
+.share-btn img{width:18px;height:18px;}
+.share-btn:hover{transform:translateY(-2px);}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="brand" href="index.html">Republik Mancing</a>
+      <div style="margin-left:auto;color:var(--muted);font-size:14px">Berita • Event • Galeri</div>
+    </header>
+    <nav class="breadcrumb">
+      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Event
+    </nav>
+        <article class="article-page">
+  <!-- HEADER IMAGE -->
+  <article class="article-container">
+  <!-- HEADER IMAGE -->
+    <h1 class="article-title">Pemancingan CS101 feat MMFC: Persaingan Panas, Induk & Total Ekor Meledak</h1>
+    <div class="meta">Oleh <strong>Redaksi Republik Mancing</strong> • Sabtu, 12 April 2025 • Pemancingan CS 101 JOGLO Jakarta Barat</div>
+
+   <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twitter.png" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
+   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
+  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+</div>
+  <img src="assets/img/event/cs101 (1).png" alt="Foto Lomba" class="article-photo">
+  <em>Suasana lomba mancing-CS Joglo (Foto: Republik Mancing)</em>
+  <!-- META -->
+   <p>
+  <div class="article-meta">
+    <span>Sabtu, 12 April 2025</span> • 
+    <span>Pukul 10.30 – 16.30</span> • 
+    <span>40 Lapak 1 Joran</span></p>
+  </div>
+  <p>
+    Gelaran <strong>Pemancingan CS101 feat MMFC</strong> kembali menjadi pusat perhatian dunia pemancingan 
+    setelah digelar pada <strong>Sabtu, 12 April 2025</strong>. Dengan format <strong>40 lapak 1 joran</strong>,
+    acara ini berlangsung panas sejak awal dan dipadati pemancing dari berbagai daerah.
+  </p>
+
+  <h2>🎫 Tiket & Sistem Lomba</h2>
+  <ul>
+    <li><strong>Tiket Utama:</strong> Rp 4.500.000</li>
+    <li><strong>Bonling 12 amplop:</strong> Rp 500.000 (Rp 1.500.000 / amplop)</li>
+    <li><strong>Tiket Komplit:</strong> Rp 5.000.000</li>
+    <li><strong>Executive (opsional):</strong> Rp 1.000.000</li>
+    <li><strong>Induk Terberat:</strong> Rp 300.000</li>
+    <li><strong>Total Ekor Ramai:</strong> Rp 300.000</li>
+    <li><strong>Induk Terbanyak:</strong> Rp 200.000</li>
+    <li><strong>Merah Ikan Ramai:</strong> Rp 200.000</li>
+  </ul>
+
+  <h2>🐟 Pelepasan Ikan</h2>
+  <ul>
+    <li><strong>Ikan Rame:</strong> 1.200 kg</li>
+    <li><strong>Ikan Induk:</strong> 100 kg</li>
+  </ul>
+
+  <p>
+    Total pelepasan mencapai <strong>1.300 kg</strong>, menciptakan arena pertarungan yang penuh aksi
+    dan persaingan ketat di tiap lapak.
+  </p>
+
+  <!-- PHOTO INLINE -->
+  <img src="assets/img/event/denipalm.png" alt="Suasana lomba CS101" class="article-photo">
+      <em>Moment strike babon- Om Deni Palem (Foto: Republik Mancing)</em>
+  <h2>🏆 Hadiah & Pembagian Poin</h2>
+
+  <h3>Juara Induk</h3>
+  <ul>
+    <li>1. Rp 28.500.000 + Executive 10.800.000 = <strong>Rp 39.300.000</strong></li>
+    <li>2. Rp 17.000.000</li>
+    <li>3. Rp 8.500.000</li>
+    <li>4. Rp 5.000.000</li>
+  </ul>
+
+  <h3>Poin Induk</h3>
+  <ul>
+    <li>A: Rp 4.500.000 + Executive 7.200.000 = <strong>Rp 11.700.000</strong></li>
+    <li>B: Rp 4.500.000</li>
+  </ul>
+
+  <h3>Poin Ikan Kuning</h3>
+  <ul>
+    <li>A: Rp 4.500.000 + 7.200.000 = <strong>Rp 11.700.000</strong></li>
+    <li>B: Rp 4.500.000</li>
+  </ul>
+
+  <h3>Total Ekor Ikan Rame</h3>
+  <ul>
+    <li>A1: Rp 14.000.000 + Executive 10.800.000 = <strong>Rp 24.800.000</strong></li>
+    <li>A2: Rp 5.000.000</li>
+    <li>B1: Rp 14.000.000</li>
+    <li>B2: Rp 5.000.000</li>
+  </ul>
+
+  <!-- PHOTO INLINE -->
+  <img src="assets/img/event/bayu segoro.png" alt="Pemenang induk CS101" class="article-photo">
+    <em>Moment strike babon- Om Bayu Segoro (Foto: Republik Mancing)</em>
+  <h2>📌 Nominasi Juara</h2>
+  <ul>
+    <li><strong>Induk 1:</strong> Om Ipink (Lapak 03) — 5,77 kg</li>
+    <li><strong>Induk 2:</strong> Baikale (Lapak 32) — 5,69 kg</li>
+    <li><strong>Induk 3:</strong> Putri Jaya (Lapak 25) — 5,66 kg</li>
+    <li><strong>Induk 4:</strong> Indik Indik (Lapak 12) — 5,65 kg</li>
+  </ul>
+
+  <h3>Poin Kategori</h3>
+  <ul>
+    <li><strong>Poin Induk Tunggal:</strong> Indik Indik (Lapak 12) — 4 ekor</li>
+    <li><strong>Total B1:</strong> Joki Bekas — 389 ekor</li>
+    <li><strong>Total B2:</strong> Kopi Manis — 380 ekor</li>
+  </ul>
+
+  <h2>🎽 Fasilitas Peserta</h2>
+  <p>
+    Semua peserta memperoleh <strong>T-Shirt edisi CS101 x MMFC (1 pcs per lapak)</strong> sebagai bentuk apresiasi 
+    dari panitia. Selain itu tersedia fasilitas umum seperti konsumsi dan area istirahat.
+  </p>
+
+  <h2>⚠️ Peraturan Resmi</h2>
+  <ul>
+    <li>Maksimal 3 rangkaian mata kail</li>
+    <li>Hanya diperbolehkan menggunakan 1 joran</li>
+    <li>Dilarang melempar umpan/boman sebelum lomba dimulai</li>
+    <li>Pelanggaran dikenai sanksi: 50 ekor rame tidak masuk hitungan</li>
+    <li>Induk pertama pelanggar tidak masuk timbangan</li>
+  </ul>
+
+  <p>
+    Dengan hadiah besar, aturan jelas, serta pelepasan ikan yang melimpah, event 
+    <strong>CS101 feat MMFC</strong> tahun ini dianggap sebagai salah satu lomba paling kompetitif dan meriah. 
+    Banyak peserta berharap acara ini berlanjut di edisi mendatang.
+  </p>
+ <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twitter.png" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
+   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
+  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+</div>
+</article>
+
+      <div class="related">
+        <div class="card">
+          <strong>Artikel Terkait</strong>
+          <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
+            <li><a href="mmfc halal bihalal.html">Halal Bihalal MMFC Di Telaga Kukusan</a></li>
+            <li><a href="hut mmfc 14th.html">Hut MMFC 14th</a></li>
+            <li><a href="totalWar.html">Total War Empang Damai By Telaga Silet</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Info Telaga</strong>
+          <p style="margin:8px 0 0;color:var(--muted)">Pemancingan CS 101 Joglo — Kontak Panitia: +62 812xxxxx (Pakde Eko ).</p>
+        </div>
+        <div class="card">
+          <strong>Saran untuk Pemancing</strong>
+          <p style="margin:8px 0 0;color:var(--muted)">Umpan yang digunakan,umpan dan kroto saja,dilarang menggunakan umpan pelet,bedingan pelet/mie,bamperan, dan selalu patuhi aturan yang sudah ditetapkan oleh panitia.</p>
+        </div>
+      </div>
+           <hr style="margin-top:22px">
+      <section id="comments">
+        <h3>Komentar</h3>
+        <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+        <form style="display:flex;flex-direction:column;gap:8px;max-width:520px;margin-top:12px">
+          <input type="text" placeholder="Nama" required style="padding:10px;border-radius:6px;border:1px solid #ddd">
+          <textarea placeholder="Tulis komentar..." rows="4" required style="padding:10px;border-radius:6px;border:1px solid #ddd"></textarea>
+          <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
+        </form>
+      </section>
+    </article>
+    <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+  </div>
+  <!-- Functionality -->
+<script>
+(function() {
+  // Get current page url and title (fallback to document.location)
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title || '');
+
+  const fb = document.getElementById('shareFacebook');
+  const x = document.getElementById('shareX');
+  const ig = document.getElementById('shareInstagram');
+  const wa = document.getElementById('shareWhatsApp');
+  const tg = document.getElementById('shareTelegram');
+  const copyBtn = document.getElementById('copyLink');
+  const feedback = document.getElementById('shareFeedback');
+
+  // Facebook share dialog (opens in new window)
+  fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+  // X (Twitter) share
+  x.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+
+  // Instagram: no official web share for arbitrary links.
+  // We'll open the profile URL if provided, otherwise fallback to Instagram home.
+  // If you prefer direct "share to Instagram" on mobile, users can paste the link manually.
+  const instagramProfile = ''; // <-- optional: masukkan username profil jika mau, misal 'republikmancing'
+  if (instagramProfile) {
+    ig.href = `https://www.instagram.com/${instagramProfile}/`;
+  } else {
+    ig.href = `https://www.instagram.com/`;
+  }
+
+  // WhatsApp (works on mobile & web)
+  wa.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+
+  // Telegram
+  tg.href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+
+  // Copy to clipboard
+  copyBtn.addEventListener('click', function() {
+    const text = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        feedback.textContent = 'Tautan disalin ke clipboard';
+        // small visual feedback
+        copyBtn.innerHTML = '✓ <span class="label">Tersalin</span>';
+        setTimeout(() => {
+          copyBtn.innerHTML = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/></svg><span class="label">Salin Link</span>`;
+        }, 1500);
+      }).catch(err => {
+        feedback.textContent = 'Gagal menyalin tautan';
+      });
+    } else {
+      // fallback older browsers
+      const input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        feedback.textContent = 'Tautan disalin ke clipboard';
+      } catch (e) {
+        feedback.textContent = 'Browser tidak mendukung salin otomatis';
+      } finally {
+        input.remove();
+      }
+    }
+  });
+
+  // Accessibility: announce focus
+  const buttons = document.querySelectorAll('#shareWidget .share-btn, #shareWidget button');
+  buttons.forEach(b => {
+    b.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        b.click();
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
