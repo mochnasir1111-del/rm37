@@ -46,9 +46,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 /* HAMBURGER */
 .hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:6px 8px}
 .hamburger span{display:block;width:22px;height:2px;background:#333;margin:4px 0;border-radius:2px}
-/* SEARCH */
-.search-area{margin-left:auto}
-.search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
+
 /* OFFCANVAS (mobile menu) */
 .offcanvas{position:fixed;top:0;left:-320px;width:300px;height:100vh;background:var(--card);box-shadow:6px 0 30px rgba(0,0,0,0.2);z-index:400;padding:18px;transition:left .28s ease}
 .off-nav{display:flex;flex-direction:column;gap:12px;margin-top:20px}
@@ -332,6 +330,17 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .widget-jadwal img {width: 52px;height: 52px;object-fit: cover;border-radius: 4px;}
 .widget-jadwal strong {display: block;font-size: 14px;}
 .widget-jadwal span {font-size: 12px;color: #666;}
+    /* ===== SEARCH RINGKAS ===== */
+.search-area{margin-left:auto;}
+.search-area input{width:200px;padding:6px 12px;font-size:14px;border:1px solid #e3e6ea;border-radius:999px;outline:none;transition:.2s ease;}
+.search-area input:focus{width:240px;border-color:#c00;box-shadow:0 0 0 2px rgba(204,0,0,.08);}
+
+@media (max-width:768px){
+  .search-area{width:100%;margin-left:0;}
+  .search-area input{width:100%;}}
+.search-area{position:relative;}
+.search-area::after{content:"🔍";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.6;}
+
   </style>
 </head>
 <body>
@@ -340,18 +349,19 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   <div class="top-inner">
     <button class="menu-btn" id="openOff" aria-label="Menu">☰</button>
 
-    <a href="index.html" class="brand-logo">
+     <a href="index.html" class="brand-logo">
       <img src="assets/img/icon/rm.png" alt="Republik Mancing">
-      Republik<span>Mancing</span>
-    </a><div class="rm-search">
-  <input 
-    type="text" 
-    id="searchInput" 
-    placeholder="Cari kolam, lomba, angler…" 
-    autocomplete="off"
-  >
-  <div id="searchResults" class="rm-search-results"></div>
-</div>
+      Republik<span>Mancing</span></a>
+    <form class="search-area"
+      action="https://www.google.com/search"
+      method="get"
+      target="_blank">
+  <input type="hidden" name="sitesearch" value="republikmancing.com">
+  <input
+    type="search"
+    name="q"
+    placeholder="Cari di Republik Mancing: mancing, ikan mas, lomba, MMFC, event">
+</form>
     <nav class="main-nav">
     <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
@@ -739,90 +749,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
 <script>
   
-const RM_SEARCH_INDEX = [
 
-  /* ================== SPOT / KOLAM ================== */
-  {
-    title: "Pemancingan New Babon Bekasi",
-    url: "new-babon.html",
-    type: "Spot Kolam",
-    region: "Bekasi, Jawa Barat",
-    desc: "Kolam lomba 36 lapak, tiket sultan & eksekutif",
-    keywords: [
-      "new babon",
-      "pemancingan bekasi",
-      "tiket sultan",
-      "kolam lomba",
-      "ikan mas",
-      "setu",
-      "burangkeng"
-    ]
-  },
-
-  {
-    title: "Pemancingan Brigif Bandung",
-    url: "brigif-bandung.html",
-    type: "Spot Kolam",
-    region: "Bandung, Jawa Barat",
-    desc: "Kolam full power favorit event besar",
-    keywords: [
-      "brigif bandung",
-      "pemancingan bandung",
-      "full power",
-      "event lomba"
-    ]
-  },
-
-  /* ================== EVENT / LOMBA ================== */
-  {
-    title: "Event MY Fishing Indramayu Hadiah Mobil",
-    url: "my-fishing-indramayu.html",
-    type: "Event Lomba",
-    region: "Indramayu, Jawa Barat",
-    desc: "Lomba eksekutif dengan hadiah utama mobil",
-    keywords: [
-      "my fishing",
-      "indramayu",
-      "hadiah mobil",
-      "event eksekutif"
-    ]
-  },
-
-  /* ================== PROFIL ANGLER ================== */
-  {
-    title: "Profil Angler Om Alif MMFC",
-    url: "profil-om-alif.html",
-    type: "Profil Angler",
-    region: "Bekasi",
-    desc: "Angler muda MMFC berprestasi di lomba ikan mas",
-    keywords: [
-      "om alif",
-      "alif mmfc",
-      "profil angler",
-      "pemancing muda",
-      "ikan mas"
-    ]
-  },
-
-  /* ================== TOKO PANCING ================== */
-  {
-    title: "Toko Pancing Raja Fising",
-    url: "toko-pancing.html",
-    type: "Toko Pancing",
-    region: "ragunan,kebagusan,jagakarsa",
-    desc: "Umpan, essen, piranti lomba lengkap",
-    keywords: [
-      "toko pancing",
-      "essen",
-      "umpan ikan mas",
-      "ragunan"
-    ]
-  }
-
-];
-
-
-document.addEventListener("DOMContentLoaded", function () {
 
   /* ================= OFFCANVAS ================= */
   document.addEventListener("DOMContentLoaded", () => {
@@ -917,98 +844,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-
-const articles = [
-  {
-    title: "Rekomendasi Pemancingan New Babon Bekasi",
-    url: "new-babon.html",
-    keywords: "new babon bekasi tiket sultan lomba"
-  },{
-    title: "Pemancingan Brigif Bandung Full Power",
-    url: "brigif-bandung.html",
-    keywords: "brigif bandung full power event"},{
-    title: "MY Fishing Indramayu Hadiah Mobil",
-    url: "my-fishing-indramayu.html",
-    keywords: "my fishing indramayu lomba eksekutif"}];
-    
-const searchInput = document.getElementById("searchInput");
-const searchResults = document.getElementById("searchResults");
-
-searchInput.addEventListener("input", function () {
-  const q = this.value.toLowerCase();
-  searchResults.innerHTML = "";
-
-  if (q.length < 2) {
-    searchResults.style.display = "none";
-    return;
-  }
-  const filtered = articles.filter(a =>
-    a.title.toLowerCase().includes(q) ||
-    a.keywords.toLowerCase().includes(q)
-  );
-
-  if (filtered.length === 0) {
-    searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
-  } else {
-    filtered.forEach(a => {
-      searchResults.innerHTML += `
-        <a href="${a.url}">${a.title}</a>
-      `;
-    });}
-  searchResults.style.display = "block";
-});
-// klik luar = nutup
-document.addEventListener("click", e => {
-  if (!e.target.closest(".rm-search")) {
-    searchResults.style.display = "none";}});
-
-const input = document.getElementById("searchInput");
-const resultsBox = document.getElementById("searchResults");
-
-input.addEventListener("input", function () {
-  const q = this.value.toLowerCase().trim();
-  resultsBox.innerHTML = "";
-
-  if (q.length < 2) {
-    resultsBox.style.display = "none";
-    return;
-  }
-
-  const results = RM_SEARCH_INDEX.filter(item =>
-    item.title.toLowerCase().includes(q) ||
-    item.desc.toLowerCase().includes(q) ||
-    item.type.toLowerCase().includes(q) ||
-    item.region.toLowerCase().includes(q) ||
-    item.keywords.some(k => k.toLowerCase().includes(q))
-  );
-
-  if (results.length === 0) {
-    resultsBox.innerHTML = `<div class="no-result">Tidak ditemukan</div>`;
-  } else {
-    results.forEach(item => {
-      resultsBox.innerHTML += `
-        <a href="${item.url}">
-          <strong>${item.title}</strong><br>
-          <small>${item.type} • ${item.region}</small>
-        </a>
-      `;
-    });
-  }
-
-  resultsBox.style.display = "block";
-});
-
-// klik di luar = tutup
-document.addEventListener("click", e => {
-  if (!e.target.closest(".rm-search")) {
-    resultsBox.style.display = "none";
-  }
-});
-
-
 </script>
 </body>
 </html>
+
 
 
 
