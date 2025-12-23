@@ -78,17 +78,138 @@
   
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
-    /* ===== FOOTER ===== */
-.site-footer{background:#111;color:#ddd;margin-top:40px;}
-.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
-.footer-col h3,
-.footer-col h4{color:#fff;margin-bottom:12px;}
-.footer-col h3 span{color:#e53935;}
-.footer-col p{font-size:14px;line-height:1.6;}
-.footer-col ul{list-style:none;padding:0;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
-.footer-col a:hover{color:#e53935;}
+   .ikanmas-wrap{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:24px;
+}
+
+.ikanmas-main h1{
+  font-size:28px;
+  margin-bottom:6px;
+}
+.desc{
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* CARD */
+.ikanmas-card{
+  display:flex;
+  gap:16px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:18px;
+}
+
+.tanggal{
+  width:72px;
+  text-align:center;
+  border-radius:12px;
+  padding:10px 0;
+  font-weight:800;
+}
+.tanggal span{font-size:28px;display:block}
+.tanggal small{font-size:13px}
+.merah{background:#c00;color:#fff}
+
+.isi h2{
+  font-size:18px;
+  margin:0 0 6px;
+}
+
+.lokasi{font-size:14px;color:#555}
+
+.detail{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(120px,1fr));
+  gap:6px;
+  padding:0;
+  margin:8px 0;
+  list-style:none;
+  font-size:14px;
+  color:#444;
+}
+
+.aksi{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.btn-wa{
+  background:#25d366;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+}
+.btn-map{
+  border:1px solid #ccc;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:14px;
+  text-decoration:none;
+  color:#333;
+}
+
+/* SIDEBAR */
+.ikanmas-sidebar{
+  position:sticky;
+  top:90px;
+  height:max-content;
+}
+
+.side-box{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:16px;
+}
+
+.side-box h3{
+  border-left:4px solid #c00;
+  padding-left:8px;
+  margin-bottom:10px;
+}
+
+.side-box ul{
+  padding-left:18px;
+  font-size:14px;
+}
+
+.hitam{
+  background:#111;
+  color:#fff;
+}
+.hitam a{
+  background:#c00;
+  color:#fff;
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 12px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.iklan{
+  text-align:center;
+  color:#777;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .ikanmas-wrap{
+    grid-template-columns:1fr;
+  }
+}
+
+
     </style>
    </head>
   <body>
@@ -149,84 +270,100 @@
     🎣 Lomba Executive HUT MMFC — Segera Dibuka!
   </div>
    </div>
-  <main class="container">
-    <h1>Kalender Lomba Mancing & Pendaftaran</h1>
-    <p style="color:var(--muted);margin-top:6px">Daftar lomba terdekat yang terverifikasi oleh Redaksi Republik Mancing. Klik tombol pendaftaran untuk mengisi form pendaftaran atau hubungi panitia via WhatsApp / email.</p>
-    <div class="grid">
-      <section>
-        <div class="card">
-          <!-- Lomba 1 -->
-          <article class="lomba">
-            <img src="assets/img/berita/event hliconia.jpg" alt="Lomba Mancing Nasional">
-            <div class="lomba-info">
-              <h3>Paket Lomba GT Lele Heliconia</h3>
-              <div class="meta">13 Desember 2025 Bekasi Utara</div>
-              <p>Yuk ikutan paket tgl 13 des 2025 Masih ada lapak yaaa
-<p></p>PENDAFTARAN Japri langsung ke:
-ADMIN KOLAM A (& TOKO):
-wa.me/08161481448
-ADMIN KOLAM B:
-wa.me/08170770867
-ADMIN SUPPORT:
-wa.me/089519590813</p>
-              <div class="actions">
-                
-                <!-- direct WhatsApp with prefilled message to panitia -->
-                <a class="btn primary" href="https://api.whatsapp.com/send?phone=6281234567890&text=Daftar%20Lomba%20Mancing%20Nasional%202025%20-%20Nama%3A%20%5BTulis%20Nama%5D" target="_blank" class="hover=red">Daftar (WhatsApp)</a>
-              </div>
-              <div style="margin-top:8px"><a class="map-link" href="https://www.google.com/maps/search/Waduk+Gajah+Mungkur" target="_blank">Lihat lokasi di Google Maps →</a></div>
-            </div>
-          </article>
-          <!-- Lomba 2 -->
-          <article style="margin-top:12px" class="lomba">
-            <img src="assets/img/berita/event damai1.jpg" alt="Festival Strike Mania">
-            <div class="lomba-info">
-              <h3>Festival Strike Mania 2025</h3>
-              <div class="meta">10 Januari 2026 • Bendungan Jatiluhur, Purwakarta</div>
-              <p>Festival dan kompetisi untuk pemancing rekreasional dan profesional. Ada kategori anak (junior), casting, dan umpan hidup.</p>
-              <div class="actions">
-                <a class="btn primary" href="https://api.whatsapp.com/send?phone=6281987654321&text=Daftar%20Festival%20Strike%20Mania%202025%20-%20Nama%3A%20%5BTulis%20Nama%5D" target="_blank">Daftar (WhatsApp)</a>
-                </div>
-              <div style="margin-top:8px"><a class="map-link" href="https://www.google.com/maps/search/Bendungan+Jatiluhur" target="_blank">Lihat lokasi di Google Maps →</a></div>
-            </div>
-          </article>
-          <!-- Lomba 3 -->
-          <article style="margin-top:12px" class="lomba">
-            <img src="assets/img/berita/galapung.jpeg" alt="Turnamen Casting Babon Series">
-            <div class="lomba-info">
-              <h3>Turnamen Casting Babon Series</h3>
-              <div class="meta">12 Maret 2026 • Sungai Bengawan Solo</div>
-              <p>Kompetisi khusus casting babon sungai. Juara dipilih berdasarkan berat total dan teknik casting.</p>
-              <div class="actions">
-                <a class="btn primary" href="https://api.whatsapp.com/send?phone=6281122334455&text=Daftar%20Turnamen%20Casting%20Babon%20Series%20-%20Nama%3A%20%5BTulis%20Nama%5D" target="_blank">Daftar (WhatsApp)</a>
-              </div>
-              <div style="margin-top:8px"><a class="map-link" href="https://www.google.com/maps/search/Sungai+Bengawan+Solo" target="_blank">Lihat lokasi di Google Maps →</a></div>
-            </div>
-          </article>
+ <section class="ikanmas-wrap">
+
+  <!-- KONTEN UTAMA -->
+  <main class="ikanmas-main">
+
+    <h1>Jadwal Lomba Ikan Mas Terbaru</h1>
+    <p class="desc">
+      Update jadwal lomba ikan mas harian, indukan, dan galatama dari berbagai
+      kolam di Indonesia. Terverifikasi oleh Redaksi Republik Mancing.
+    </p>
+
+    <!-- LOMBA 1 -->
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>27</span>
+        <small>DES</small>
+      </div>
+
+      <div class="isi">
+        <h2>Lomba Ikan Mas Tuan Muda</h2>
+        <p class="lokasi">📍 Kolam Tuan Muda, Kemang-Jakarta Selatan</p>
+
+        <ul class="detail">
+          <li>Sistem: Induk</li>
+          <li>HTM: Rp350.000</li>
+          <li>10:30-17:00 WIB</li>
+          <li>Peserta: 30 Lapak</li>
+        </ul>
+
+        <div class="aksi">
+          <a href="https://wa.me/628161481448" class="btn-wa" target="_blank">
+            Daftar WhatsApp
+          </a>
+          <a href="#" class="btn-map">Maps</a>
         </div>
-      </section>
-      <!-- SIDEBAR: Tips singkat & kontak panitia -->
-      <aside>
-        <div class="card">
-          <h4>Kontak Panitia</h4>
-          <p style="margin:8px 0;color:var(--muted)">Butuh bantuan pendaftaran atau informasi detail? Hubungi:</p>
-          <p style="margin:0"><strong>Admin Republik Mancing</strong></p>
-          <p style="margin:0.25rem 0">WA: <a href="https://api.whatsapp.com/send?phone=6281234567890" target="_blank">+62 812-3456-7890</a></p>
-          <p style="margin:0.25rem 0">Email: <a href="mailto:panitia@republikmancing.com">panitia@republikmancing.com</a></p>
+      </div>
+    </article>
+
+    <!-- LOMBA 2 -->
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>28</span>
+        <small>DES</small>
+      </div>
+
+      <div class="isi">
+        <h2>Lomba Eksekutive Tengkele Kukusan</h2>
+        <p class="lokasi">📍 Depok</p>
+
+        <ul class="detail">
+          <li>Sistem: Induk </li>
+           <li>HTM: Rp30.000.000</li>
+          <li>Mulai 10.30-16.30 WIB</li>
+          <li>Peserta: 50 Lapak</li>
+        </ul>
+
+        <div class="aksi">
+          <a href="#" class="btn-wa">Daftar WhatsApp</a>
+          <a href="#" class="btn-map">Maps</a>
         </div>
-        <div style="height:12px"></div>
-        <div class="card">
-          <h4>Tips Cepat Daftar</h4>
-          <ol style="margin:8px 0;padding-left:18px;color:var(--muted)">
-            <li>Siapkan identitas (KTP/SIM) dan nomor WA aktif.</li>
-            <li>Pilih kategori lomba sebelum mengisi form.</li>
-            <li>Simpan bukti pembayaran (jika ada biaya pendaftaran).</li>
-            <li>Tanyakan detail logistik pada panitia jika menggunakan kapal/boat.</li>
-          </ol>
-        </div>
-      </aside>
-    </div>
+      </div>
+    </article>
+
   </main>
+
+  <!-- SIDEBAR -->
+  <aside class="ikanmas-sidebar">
+
+    <div class="side-box">
+      <h3>🔥 Lomba Ikan Mas Terdekat</h3>
+      <ul>
+        <li>13 Des – Heliconia Cup</li>
+        <li>20 Des – Telaga Joglo</li>
+        <li>28 Des – Empang Damai</li>
+      </ul>
+    </div>
+
+    <div class="side-box hitam">
+      <h3>📢 Kirim Info Lomba Ikan Mas</h3>
+      <p>Pemilik kolam & EO bisa kirim jadwal lomba ikan mas ke redaksi.</p>
+      <a href="https://wa.me/6281234567890" class="btn-side">
+        WhatsApp Redaksi
+      </a>
+    </div>
+
+    <div class="side-box iklan">
+      <p>Slot Iklan Ikan Mas</p>
+      <small>300 x 250</small>
+    </div>
+
+  </aside>
+
+</section>
+
     
        <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
