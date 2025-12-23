@@ -28,12 +28,11 @@ body{margin:0;background:var(--bg);color:#111;line-height:1.6}
 .main-nav a{color:#fff;text-decoration:none;font-weight:600;font-size:14px}
 .main-nav a.active,
 .main-nav a:hover{color:var(--accent)}
-
-/* ===== SUBHEADER ===== */
-.subheader{background:#fff;border-bottom:2px solid var(--accent)}
-.sub-nav{max-width:1200px;margin:auto;padding:8px 16px;display:flex;gap:18px;overflow-x:auto}
-.sub-nav a{text-decoration:none;color:#333;font-weight:600;font-size:14px}
-.sub-nav a:hover{color:var(--accent)}
+  /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover{color:#c00}
 
 /* ===== LAYOUT ===== */
 .container{max-width:1200px;margin:auto;padding:24px 16px}
