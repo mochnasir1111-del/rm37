@@ -1,268 +1,208 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Berita Terbaru — Republik Mancing</title>
-  <meta name="description" content="Kumpulan berita terbaru dunia mancing, event, lomba, dan update dari seluruh Indonesia." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Styles (embedded supaya file tunggal) -->
-  <style>
-    :root{
-      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
-      --shadow: 0 6px 18px rgba(16,24,40,0.07);
-      --radius:12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
-    /* SEARCH */
-     .search-area{margin-left:auto}
-     .search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
+<title>Berita Mancing Terbaru — Republik Mancing</title>
+<meta name="description" content="Berita terbaru dunia mancing Indonesia: event, lomba galatama, komunitas, dan liputan pemancingan.">
 
-    /* header */
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
+<style>
+:root{
+  --accent:#c00;
+  --muted:#6b7280;
+  --bg:#fff;
+  --card:#f8fafc;
+  --shadow:0 6px 18px rgba(0,0,0,.06);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111;line-height:1.6}
 
-    /* GRID BERITA */
-    .news-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
-    h1{margin-bottom:14px;font-size:1.7rem}
+/* ===== HEADER ===== */
+.topbar{background:#111;color:#fff;position:sticky;top:0;z-index:100}
+.top-inner{max-width:1200px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:16px}
+.brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+.brand span{color:var(--accent)}
+.main-nav{margin-left:auto;display:flex;gap:18px}
+.main-nav a{color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.main-nav a.active,
+.main-nav a:hover{color:var(--accent)}
 
-    .news-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
-    .news-card{background:#fff;border-radius:12px;border:1px solid #eef2f7;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-    .news-card img{width:100%;height:180px;object-fit:cover}
-    .news-card div{padding:14px}
-    .news-card h3{margin:0 0 8px;font-size:1.1rem}
-    .news-card p{margin:0;color:var(--muted);font-size:0.9rem}
+/* ===== SUBHEADER ===== */
+.subheader{background:#fff;border-bottom:2px solid var(--accent)}
+.sub-nav{max-width:1200px;margin:auto;padding:8px 16px;display:flex;gap:18px;overflow-x:auto}
+.sub-nav a{text-decoration:none;color:#333;font-weight:600;font-size:14px}
+.sub-nav a:hover{color:var(--accent)}
 
-    /* SIDEBAR */
-    aside .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
-    .side-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
-    .side-item{display:flex;gap:10px;text-decoration:none;color:inherit}
-    .side-item img{width:88px;height:60px;border-radius:8px;object-fit:cover}
-    @media(max-width:880px){.news-layout{grid-template-columns:1fr}}
-    
-     /* --- ZOOM EFFECT ALA DETIK --- */
-    img {transition: transform .35s ease, filter .35s ease;display: block;}
-    img:hover {transform: scale(1.06);filter: brightness(0.9);}
-     /* Iklan */
-  .top-ad {width: 100%;background: #ffffff;padding: 8px 0;border-bottom: 1px solid #ffffff;}
-  .top-ad .container {display: flex;justify-content: center;align-items: center;}
-  .top-ad img {max-width: 100%;height: auto;display: block;}
-  /* ==================================================
-   HEADER UTAMA – REPUBLIK MANCING
-   ================================================== */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
-  .top-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:18px;}
-  /* BRAND */
-  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand span{color:#c00;}
-  /* NAV UTAMA */
-  .main-nav{margin-left:auto;display:flex;gap:16px;white-space:nowrap;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;padding:6px 4px;position:relative;}
-  .main-nav a:hover,
-  .main-nav a.active{color:#c00;}
-  /* ==================================================
-   SUBHEADER (MENU KEDUA)
-   ================================================== */
-  .subheader{background:#fff;border-bottom:2px solid #c00; position:sticky;top:52px;z-index:150;}
-  .sub-nav{ max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;}
-  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
-  .sub-nav a:hover,
-  .sub-nav a.active{color:#c00;}
-  /* ==================================================
-   MOBILE
-   ================================================== */
-  .menu-btn{display:none;font-size:22px;background:none;border:none; color:#fff;cursor:pointer;}
-  @media (max-width: 768px){
-  .main-nav{display:none;}
-  .menu-btn{display:block;}}
-/* ================= HEADER GLOBAL ================= */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
-  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
-  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand span{color:#c00}
-  .main-nav{display:flex;gap:16px;margin-left:auto;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
-  .hover-red:hover{color:#c00}
-   /* SUBHEADER */
-  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
-  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
-  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
-  .sub-nav a:hover{color:#c00}
-   /* OFFCANVAS */
-  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
-  .offcanvas.active{right:0}
-  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
-  .off-nav a{color:#fff;text-decoration:none;}
-  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
-    /* MOBILE */
-  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
-@media(max-width:768px){
-  .main-nav{display:none}
-  .menu-btn{display:block}}
-  
-  .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand-logo img{width:34px;height:34px;object-fit:contain;}
-  /* ===== FOOTER ===== */
-.site-footer{background:#111;color:#ddd;margin-top:40px;}
-.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
-.footer-col h3,
-.footer-col h4{color:#fff;margin-bottom:12px;}
-.footer-col h3 span{color:#e53935;}
-.footer-col p{font-size:14px;line-height:1.6;}
-.footer-col ul{list-style:none;padding:0;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
-.footer-col a:hover{color:#e53935;}
-  </style>
+/* ===== LAYOUT ===== */
+.container{max-width:1200px;margin:auto;padding:24px 16px}
+.news-layout{display:grid;grid-template-columns:1fr 320px;gap:28px}
+@media(max-width:900px){.news-layout{grid-template-columns:1fr}}
+
+h1{font-size:1.8rem;margin-bottom:18px}
+
+/* ===== NEWS LIST ===== */
+.news-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.news-card{background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden;border:1px solid #eee}
+.news-card a{text-decoration:none;color:inherit;display:block}
+.news-card img{width:100%;height:180px;object-fit:cover;transition:.3s}
+.news-card:hover img{transform:scale(1.05)}
+.news-body{padding:14px}
+.news-body h3{margin:0 0 6px;font-size:1.05rem}
+.news-meta{font-size:0.85rem;color:var(--muted)}
+
+/* ===== SIDEBAR ===== */
+aside .box{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:20px}
+.side-item{display:flex;gap:10px;text-decoration:none;color:inherit;margin-top:12px}
+.side-item img{width:88px;height:60px;border-radius:8px;object-fit:cover}
+.side-item strong{font-size:0.9rem}
+.side-date{font-size:0.8rem;color:var(--muted)}
+
+/* ===== FOOTER ===== */
+footer{background:#111;color:#ccc;margin-top:50px}
+.footer-wrap{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+footer h4{color:#fff}
+footer a{color:#bbb;text-decoration:none;font-size:14px}
+footer a:hover{color:var(--accent)}
+.copy{text-align:center;border-top:1px solid #222;padding:16px;font-size:14px;color:#777}
+</style>
 </head>
+
 <body>
- <header class="topbar">
+
+<!-- HEADER -->
+<header class="topbar">
   <div class="top-inner">
-    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
-
     <div class="brand">
-     <a href="index.html" class="brand-logo">
-  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+      <a href="index.html">Republik<span>Mancing</span></a>
     </div>
-
-  <nav class="main-nav">
-      <a href="index.html" class="hover-red">Beranda</a>
-      <a href="berita.html" class="hover-red">Berita</a>
-      <a href="video.html" class="hover-red">Video</a>
-      <a href="profil-angler2.html" class="hover-red">Profil Angle</a>
-        <a href="kontak.html" class="hover-red">Kontak</a>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html" class="active">Berita</a>
+      <a href="video.html">Video</a>
+      <a href="profil-angler2.html">Profil Angler</a>
+      <a href="kontak.html">Kontak</a>
     </nav>
   </div>
 </header>
 
+<!-- SUBMENU -->
 <div class="subheader">
   <nav class="sub-nav">
-   <a href="lomba.html">Jadwal Lomba</a>
-      <a href="laporan-lomba.html">Laporan Lomba</a>
-      <a href="review-empang.html">Review Empang</a>
-      <a href="teknik.html">Teknik Ikan Mas</a>
-      <a href="spot.html">Spot Kolam</a>
+    <a href="lomba.html">Jadwal Lomba</a>
+    <a href="laporan-lomba.html">Laporan Lomba</a>
+    <a href="review-empang.html">Review Empang</a>
+    <a href="teknik.html">Teknik Ikan Mas</a>
+    <a href="spot.html">Spot Kolam</a>
   </nav>
 </div>
 
-<!-- OFFCANVAS MOBILE -->
-<div class="offcanvas" id="offcanvas">
-  <button class="close-off" id="closeOff">×</button>
-  <nav class="off-nav">
-    <a href="index.html">Beranda</a>
-    <a href="berita.html">Berita</a>
-    <a href="event.html">Event & Lomba</a>
-    <a href="video.html">Video</a>
-  </nav>
-</div>
-<div class="offcanvas-backdrop" id="offBackdrop"></div>
-  </header>
-   <!-- IKLAN TOP BANNER -->
-<div class="top-ad">
-  <div class="container">
-    <a href="#" target="_blank">Iklan
-      <img src="#" alt="Iklan Top Banner">
-    </a>
-  </div>
-</div>
-  <main class="container">
-    <div class="news-layout">
-      
-      <!-- KONTEN UTAMA -->
-      <section>
-        <h1>Berita Terbaru</h1>
-        <div class="news-list">
-          <!-- 1 -->
-          <a href="hut pt truba.html" class="news-card">
-            <img src="assets/img/berita/DSCF6916.JPG" alt="berita utama" />
-            <div>
-              <h3>Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy</h3>
-              <p>6 Desember 2025 • 6 menit baca</p>
-            </div>
-          </a>
+<main class="container">
+<div class="news-layout">
 
-          <!-- 2 -->
-          <a href="cs 101.html" class="news-card">
-            <img src="assets/img/event/bolang.png" alt="lomba mancing" />
-            <div>
-              <h3>Pemancingan CS101 feat MMFC</h3>
-              <p>3 Desember 2025 • 4 menit baca</p>
-            </div>
-          </a>
-          <!-- 3 -->
-          <a href="mmfc halal bihalal.html" class="news-card">
-            <img src="assets/img/event/tgk.png" alt="komunitas mancing" />
-            <div>
-              <h3>Lomba Mancing Executive MMFC Halal Bihalal</h3>
-              <p>30 November 2025 • 5 menit baca</p>
-            </div>
-          </a>
-          <!-- 4 -->
-          <a href="hut mmfc 14th.html" class="news-card">
-            <img src="assets/img/event/14mmfc.jpeg" alt="rekomendasi alat mancing" />
-            <div>
+<!-- KONTEN -->
+<section>
+<h1>Berita Terbaru</h1>
+
+<div class="news-list">
+
+<article class="news-card">
+<a href="hut-pt-truba.html">
+<img src="assets/img/berita/DSCF6916.JPG" alt="Mancing Bareng HUT PT Truba Jaga Cita">
+<div class="news-body">
+<h3>Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy</h3>
+<div class="news-meta">6 Desember 2025 • 6 menit baca</div>
+</div>
+</a>
+</article>
+
+<article class="news-card">
+<a href="cs-101.html">
+<img src="assets/img/event/bolang.png" alt="Pemancingan CS101 feat MMFC">
+<div class="news-body">
+<h3>Pemancingan CS101 feat MMFC</h3>
+<div class="news-meta">3 Desember 2025 • 4 menit baca</div>
+</div>
+</a>
+</article>
+
+<article class="news-card">
+<a href="mmfc-halal-bihalal.html">
+<img src="assets/img/event/tgk.png" alt="Halal Bihalal MMFC">
+<div class="news-body">
+<h3>Lomba Executive MMFC Halal Bihalal</h3>
+<div class="news-meta">30 November 2025 • 5 menit baca</div>
+</div>
+</a>
+</article>
+ <article class="news-card">
+          <a href="hut mmfc 14th.html">
+            <img src="assets/img/event/14mmfc.jpeg" alt="ANNIVERSARY MMFCvke-14">
+            <div class="news-body">
               <h3>ANNIVERSARY MMFC ke-14:</h3>
-              <p>14 Tahun Tumbuh Bersama Dalam Kebersamaan & Persaudaraan Lewat Canda Tawa</p>
+              <div class="news-meta">30 November 2025 • 5 menit baca</div>
             </div>
           </a>
-             <!-- 5 -->
-          <a href="totalWar.html" class="news-card">
-            <img src="assets/img/galeri/img7.jpeg" alt="komunitas mancing" />
-            <div>
+        </article>
+         <article class="news-card"> 
+          <a href="totalWar.html">
+            <img src="assets/img/galeri/img7.jpeg" alt="Total War II">
+           <div class="news-body">
               <h3>Lomba Mancing Total War II</h3>
-              <p>Pemancingan Empang Damai by Telaga Silet</p>
+            <div class="news-meta">30 November 2025 • 5 menit baca</div>
             </div>
-          </a>
-          <!-- 6 -->
-          <a href="event jp.html" class="news-card">
-            <img src="assets/img/berita/jp.png" alt="rekomendasi alat mancing" />
-            <div>
+          </a></article>
+          
+          <article class="news-card">
+          <a href="event jp.html">
+            <img src="assets/img/berita/jp.png" alt="umpan shio">
+            <div class="news-body">
               <h3>Umpan Si Shio ft Kalagemet</h3>
-              <p>Pemancingan Jeruk Purut ( Bang Yuli )</p>
+             <div class="news-meta">30 November 2025 • 5 menit baca</div>
             </div>
-          </a>
-        </div>
-      </section>
-      <!-- SIDEBAR -->
-      <aside>
-        <div class="card">
-          <h3>Berita Populer</h3>
-          <div class="side-list">
-            <a class="side-item" href="babon naik 16 kg.html">
-              <img src="assets/img/event/Hitam dan Merah Ilustratif Misteri Cerita Horor Thumbnail YouTube.png" />
-              <div>
-                <strong>Babon 16 Kg Pecahkan Rekor, Hebohkan Pemancingan</strong>
-                <div style="font-size:0.85rem;color:var(--muted)">2 Desember 2024</div>
-              </div>
-            </a>
+          </a></article>
+</div>
+</section>
 
-            <a class="side-item" href="empang damai.html">
-              <img src="assets/img/galeri/img7.jpeg" />
-              <div>
-                <strong>Empang Damai By Telaga Silet</strong>
-                <div style="font-size:0.85rem;color:var(--muted)">27 November 2025</div>
-              </div>
-            </a>
-             <!-- WIDGET: VIDEO -->
-      <!-- Highlight Video -->
-          <div class="card">
-            <div style="font-weight:800;margin-bottom:8px">Highlight Video</div>
-            <iframe width="100%" height="170" src="https://youtube.com/embed/jqUyxauQJLg" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
-            <div style="margin-top:10px"><a class="btn hover-red" href="https://www.youtube.com/@republikmancing">Kunjungi Channel</a></div>
-          </div>
-      <!-- WIDGET: BANNER IKLAN -->
-      <div class="widget ad-box">
-        <p>Iklan 300x250</p>
-      </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
+<!-- SIDEBAR -->
+<aside>
 
-       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+<div class="box">
+<h3>Berita Populer</h3>
+
+<a class="side-item" href="babon-naik-16kg.html">
+<img src="assets/img/event/Hitam dan Merah Ilustratif Misteri Cerita Horor Thumbnail YouTube.png">
+<div>
+<strong>Babon 16 Kg Pecahkan Rekor</strong>
+<div class="side-date">2 Desember 2024</div>
+</div>
+</a>
+
+<a class="side-item" href="empang-damai.html">
+<img src="assets/img/galeri/img7.jpeg">
+<div>
+<strong>Empang Damai by Telaga Silet</strong>
+<div class="side-date">27 November 2025</div>
+</div>
+</a>
+</div>
+
+<div class="box">
+<h3>Highlight Video</h3>
+<iframe width="100%" height="170" src="https://youtube.com/embed/jqUyxauQJLg" allowfullscreen style="border-radius:8px"></iframe>
+</div>
+
+<div class="box">
+<strong>Iklan 300x250</strong>
+</div>
+
+</aside>
+
+</div>
+</main>
+
+ <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
@@ -290,14 +230,13 @@
     <div style="flex:1;min-width:220px">
       <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
       <ul style="list-style:none;padding:0;margin:0;line-height:2">
-        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+      <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
         <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
         <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
         <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
-        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="kebijakan-privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
         <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
         <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
-
       </ul>
     </div>
     <!-- SOSIAL -->
@@ -317,6 +256,5 @@
     © 2025 Republik Mancing. All Rights Reserved.
   </div>
 </footer>
-
 </body>
 </html>
