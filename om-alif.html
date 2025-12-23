@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Om Alif, Angler Muda MMFC dengan Mental Juara — Republik Mancing</title>
+  <meta name="description" content="Profil lengkap anglers Indonesia: latar belakang, spesialisasi teknik, prestasi, dan kisah di balik tarikan juara." />
+
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* HEADER GLOBAL */
+    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+
+    /* CARD */
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* PROFIL */
+    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    h1{margin:12px 0 6px;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:12px}
+
+    .profile-grid{display:grid;grid-template-columns:180px 1fr;gap:18px;margin-top:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;object-fit:cover}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.85rem;margin-right:6px}
+
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .stat{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;text-align:center}
+    .stat strong{display:block;font-size:1.1rem}
+
+    /* SIDEBAR */
+    .related-list{display:flex;flex-direction:column;gap:12px}
+    .related-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
+
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+      .avatar{width:100%;height:260px}}
+    /* ZOOM EFFECT */
+    img{transition:transform .35s ease, filter .35s ease}
+    img:hover{transform:scale(1.05);filter:brightness(.95)}
+
+      .inline-half{display:flex;gap:16px;margin:25px 0;align-items:flex-start;}
+   .inline-half img{width:50%;border-radius:6px;object-fit:cover;}
+   .inline-half .text{width:50%;}
+   .inline-half .caption{font-size:13px;color:#666;margin-top:6px;font-style:italic;}
+   /* versi gambar kanan */
+   .inline-half.right{flex-direction:row-reverse;}
+   /* RESPONSIVE MOBILE */
+   @media(max-width:640px){
+  .inline-half,
+  .inline-half.right{flex-direction:column;}
+  .inline-half img,
+  .inline-half .text{width:100%;}}
+   figure img{width:100%;max-height:420px;object-fit:cover;border-radius:6px;}
+     /* SHARE TOP MEDIA */
+.share-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.share-label{font-size:13px;color:#6b7280;margin-right:4px;}
+.share-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;transition:.2s ease;}
+.share-btn img{width:18px;height:18px;}
+.share-btn:hover{transform:translateY(-2px);}
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
+<main class="container">
+   <article class="card" itemscope itemtype="http://schema.org/Article">
+    <span class="kicker">Profil Angler • Tokoh Komunitas</span>
+    <h1 itemprop="headline">Om Alif, Angler Muda MMFC dengan Mental Juara </h1>
+    <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
+ <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twitter.png" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
+   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
+  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+</div>
+
+  <!-- HERO IMAGE -->
+ <figure>
+    <img src="assets/img/mmfc/alif.png" alt="Om Alif MMFC">
+    <figcaption>
+      Om Alif dikenal sebagai salah satu angler muda potensial di keluarga besar MMFC. (Dok. Republik Mancing)
+    </figcaption>
+  </figure>
+
+  <p>
+    Di tengah dominasi angler senior, nama <strong>Om Alif</strong>
+    muncul sebagai salah satu representasi generasi muda di komunitas
+    <strong>MMFC</strong>. Meski usianya relatif muda, Om Alif dikenal
+    memiliki karakter tenang, fokus, dan disiplin saat berada di lapangan.
+  </p>
+
+  <p>
+    Konsistensi menjadi ciri khasnya. Bagi Om Alif, memancing bukan
+    sekadar hobi, tetapi proses pembelajaran yang dijalani dengan serius
+    dan penuh komitmen.
+  </p>
+
+  <!-- INLINE 50% KIRI -->
+  <div class="inline-half">
+    <img src="assets/img/mmfc/alif1.png" alt="Om Alif saat memancing">
+    <div class="text">
+      <p>
+        Dalam berbagai sesi mancing bersama MMFC, Om Alif kerap tampil
+        stabil. Ia dikenal tidak mudah terpancing emosi dan mampu
+        menjaga ritme memancing sejak awal hingga akhir sesi.
+      </p>
+      <div class="caption">
+        Om Alif saat melakukan aktivitas memancing bersama komunitas MMFC. (Dok. Republik Mancing)
+      </div>
+    </div>
+  </div>
+
+  <h2>Belajar dari Proses dan Pengalaman</h2>
+
+  <p>
+    Perjalanan Om Alif di dunia mancing tidak instan. Ia banyak
+    belajar dari pengalaman di lapangan serta bimbingan para
+    senior MMFC yang telah lebih dulu malang melintang.
+  </p>
+
+  <blockquote>
+    “Setiap spot dan setiap ikan itu beda. Kita harus mau belajar
+    dan menyesuaikan diri,” ujar Om Alif.
+  </blockquote>
+
+  <p>
+    Filosofi tersebut membuat Om Alif terus berkembang,
+    baik dari sisi teknik, strategi, maupun mental bertanding.
+  </p>
+
+  <!-- INLINE 50% KANAN -->
+  <div class="inline-half right">
+    <img src="assets/img/mmfc/alif2.png" alt="Setting alat pancing Om Alif">
+    <div class="text">
+      <p>
+        Dalam hal perlengkapan, Om Alif dikenal cukup selektif.
+        Ia lebih mengutamakan kenyamanan dan keseimbangan set
+        dibanding sekadar mengejar merek atau harga.
+      </p>
+      <p>
+        Pendekatan ini mencerminkan kedewasaannya dalam
+        memahami esensi memancing.
+      </p>
+      <div class="caption">
+        Om Alif saat menyiapkan set alat pancing sebelum memulai sesi. (Dok. Republik Mancing)
+      </div>
+    </div>
+  </div>
+
+  <h2>Regenerasi di Tubuh MMFC</h2>
+
+  <p>
+    Kehadiran Om Alif menjadi simbol regenerasi positif di tubuh MMFC.
+    Sosoknya membuktikan bahwa angler muda mampu tampil kompetitif
+    tanpa meninggalkan etika dan nilai kebersamaan.
+  </p>
+
+  <p>
+    Banyak senior MMFC menilai, Om Alif memiliki potensi besar
+    untuk menjadi figur penting di masa depan komunitas.
+  </p>
+
+  <h2>Menjaga Etika dan Sportivitas</h2>
+
+  <p>
+    Di luar hasil tangkapan, Om Alif dikenal menjunjung tinggi
+    etika memancing. Ia percaya bahwa sikap di lapangan
+    adalah cerminan kualitas seorang angler.
+  </p>
+
+  <p>
+    Republik Mancing menilai, Om Alif adalah contoh nyata
+    angler muda yang tumbuh dengan nilai, proses, dan dedikasi.
+  </p>
+
+  <div class="tag">
+    Tag:
+    <a href="#">MMFC</a>
+    <a href="#">Profil Angler</a>
+    <a href="#">Om Alif</a>
+    <a href="#">Angler Muda</a>
+    <a href="#">Republik Mancing</a>
+  </div>
+</div>
+      <!-- SHARE BAR -->
+<div class="share-top">
+  <span class="share-label"></span>
+  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn fb" aria-label="Share Facebook">
+    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
+  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
+     target="_blank" class="share-btn x" aria-label="Share X">
+    <img src="assets/img/icon/twitter.png" alt="X"></a>
+  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
+     target="_blank" class="share-btn tg" aria-label="Share Telegram">
+    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
+   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
+  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+</div></article>
+ <!-- LIST / GRID SEMUA ANGLERS -->
+<section class="container">
+<h2 style="margin-bottom:12px">Daftar Profil Anglers</h2>
+<p style="color:var(--muted);margin-bottom:18px">Kumpulan profil pemancing dari berbagai komunitas dan spesialisasi.</p>
+
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+
+
+<!-- CARD ANGLER -->
+<a href="profil-angler-om bolang.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/mmfc/om bolang gentak.png" alt="Om Alif" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Bolang</h3>
+<div style="font-size:13px;color:var(--muted)">Pengurus MMFC Pusat</div>
+<div style="margin-top:6px">
+<span class="badge">🏆 Skill Mancing</span>
+</div>
+</div>
+</a>
+
+
+<!-- CARD ANGLER -->
+<a href="profil-angler-joki bekas.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/berita/joki.png" alt="Om Joki Bekas" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Joki Bekas</h3>
+<div style="font-size:13px;color:var(--muted)">Pengurus MMFC Pusat</div>
+<div style="margin-top:6px">
+<span class="badge">🎯 Akurasi Tinggi</span>
+</div>
+</div>
+</a>
+
+
+<!-- CARD ANGLER -->
+<a href="profil-angler2.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/mmfc/om ben.jpg" alt="Kang Danu" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Benny</h3>
+<div style="font-size:13px;color:var(--muted)">Ketua MMFC Pusat</div>
+<div style="margin-top:6px">
+<span class="badge">🌊All About Friend </span>
+</div>
+</div>
+</a>         
+      <a href="rangga.html" style="text-decoration:none;color:inherit">
+<div class="card" style="padding:14px">
+<img src="assets/img/mmfc/rangga gentak.png" alt="Kang Danu" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+<h3 style="margin:10px 0 4px">Om Rangga Siliwangi</h3>
+<div style="font-size:13px;color:var(--muted)">Wakil Ketua MMFC Pusat</div>
+<div style="margin-top:6px">
+<span class="badge">🌊 Speed & Skill</span>
+</div>
+</div>
+</a>
+</main>
+   
+ 
+       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>
+
+>
+
+
+
+
+
+
+
+
+
+
