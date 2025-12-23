@@ -8,79 +8,126 @@
   <!-- Styles (embedded supaya file tunggal) -->
   <style>
     :root{
-      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
-      --shadow: 0 6px 18px rgba(16,24,40,0.07);
-      --radius:12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
-    /* SEARCH */
-    .search-area{margin-left:auto}
-    .search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
-    /* header */
-    .site-header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.85);z-index:100;border-bottom:1px solid #eef2f7}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    .nav{display:flex;align-items:center;gap:16px}
-    .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
-    .nav-links{margin-left:12px;display:flex;gap:10px}
-    .nav-links a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
-    .nav-links a:hover{background:#f1f5f9;color:#063740}
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --accent:#c00;
+  --maxw:1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  line-height:1.6;
+}
 
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
-    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #eef2f7}
+/* ================= HEADER ================= */
+.topbar{
+  background:#111;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:200;
+}
+.top-inner{
+  max-width:var(--maxw);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:12px 16px;
+}
+.brand-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:800;
+  color:#fff;
+  text-decoration:none;
+}
+.brand-logo img{width:34px;height:34px}
+.brand-logo span{color:#c00}
 
-    .lomba{background:#fff;border-radius:10px;padding:12px;border:1px solid #eef2f7;display:flex;gap:12px;align-items:flex-start}
-    .lomba img{width:160px;height:100px;object-fit:cover;border-radius:8px}
-    .lomba-info{flex:1}
-    .lomba h3{margin:0 0 6px}
-    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
-    .actions{display:flex;gap:8px;margin-top:8px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid #e6eef0;background:#fff}
-    .primary{background:var(--accent);color:#fff;border:0}
-    .map-link{font-size:0.9rem;color:var(--muted);text-decoration:none}
-    aside .card{position:sticky;top:90px}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}.lomba img{width:120px;height:80px}}
-    /* --- POPUP OVERLAY STYLE --- */
-    .popup {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.8);display: none;justify-content: center;
-            align-items: center;z-index: 9999;}
-    .popup img {max-width: 90%;max-height: 90%;border-radius: 10px;box-shadow: 0 0 20px rgba(0,0,0,0.6);}
-    .close-btn {position: absolute;top: 30px;right: 40px;font-size: 40px;color: white;cursor: pointer;font-weight: bold;}
-    .lomba img {cursor: pointer;transition: .3s;}
-    .lomba img:hover {opacity: .85;}
-    .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fff;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
-   /* Running text (marquee style) */
-   .running-text {display: inline-block;padding-left: 100%;animation: jalan 30s linear infinite;}
-   @keyframes jalan {0%   { transform: translateX(0); }100% { transform: translateX(-100%); }}
-  /* ================= HEADER GLOBAL ================= */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
-  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
-  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand span{color:#c00}
-  .main-nav{display:flex;gap:16px;margin-left:auto;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
-  .hover-red:hover{color:#c00}
-   /* SUBHEADER */
-  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
-  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
-  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
-  .sub-nav a:hover{color:#c00}
-   /* OFFCANVAS */
-  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
-  .offcanvas.active{right:0}
-  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
-  .off-nav a{color:#fff;text-decoration:none;}
-  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
-    /* MOBILE */
-  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+.main-nav{
+  display:flex;
+  gap:16px;
+  margin-left:auto;
+}
+.main-nav a{
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
+}
+.main-nav a:hover{color:#c00}
+
+.menu-btn{
+  display:none;
+  font-size:24px;
+  background:none;
+  border:none;
+  color:#fff;
+}
+
 @media(max-width:768px){
   .main-nav{display:none}
-  .menu-btn{display:block}}
-  
-  .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand-logo img{width:34px;height:34px;object-fit:contain;}
-   .ikanmas-wrap{
-  max-width:1200px;
+  .menu-btn{display:block}
+}
+
+/* ================= SUBHEADER ================= */
+.subheader{
+  background:#fff;
+  border-bottom:2px solid #c00;
+  position:sticky;
+  top:52px;
+  z-index:90;
+}
+.sub-nav{
+  max-width:var(--maxw);
   margin:auto;
+  display:flex;
+  gap:18px;
+  padding:8px 16px;
+  overflow-x:auto;
+}
+.sub-nav a{
+  font-size:14px;
+  font-weight:600;
+  color:#333;
+  text-decoration:none;
+}
+.sub-nav a:hover{color:#c00}
+
+/* ================= RUNNING INFO ================= */
+.info-lomba{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#c00;
+  color:#fff;
+  padding:6px 0;
+  z-index:999;
+  overflow:hidden;
+}
+.running-text{
+  white-space:nowrap;
+  display:inline-block;
+  padding-left:100%;
+  animation:jalan 28s linear infinite;
+}
+@keyframes jalan{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* ================= IKAN MAS LAYOUT ================= */
+.ikanmas-wrap{
+  max-width:var(--maxw);
+  margin:30px auto 80px;
+  padding:0 16px;
   display:grid;
   grid-template-columns:1fr 320px;
   gap:24px;
@@ -95,7 +142,7 @@
   margin-bottom:20px;
 }
 
-/* CARD */
+/* CARD LOMBA */
 .ikanmas-card{
   display:flex;
   gap:16px;
@@ -112,17 +159,20 @@
   border-radius:12px;
   padding:10px 0;
   font-weight:800;
+  background:#c00;
+  color:#fff;
 }
 .tanggal span{font-size:28px;display:block}
 .tanggal small{font-size:13px}
-.merah{background:#c00;color:#fff}
 
 .isi h2{
   font-size:18px;
   margin:0 0 6px;
 }
-
-.lokasi{font-size:14px;color:#555}
+.lokasi{
+  font-size:14px;
+  color:#555;
+}
 
 .detail{
   display:grid;
@@ -157,13 +207,12 @@
   color:#333;
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
 .ikanmas-sidebar{
   position:sticky;
   top:90px;
   height:max-content;
 }
-
 .side-box{
   background:#fff;
   border:1px solid #eee;
@@ -171,45 +220,14 @@
   padding:14px;
   margin-bottom:16px;
 }
-
-.side-box h3{
-  border-left:4px solid #c00;
-  padding-left:8px;
-  margin-bottom:10px;
-}
-
-.side-box ul{
-  padding-left:18px;
-  font-size:14px;
-}
-
-.hitam{
-  background:#111;
-  color:#fff;
-}
-.hitam a{
-  background:#c00;
-  color:#fff;
-  display:inline-block;
-  margin-top:10px;
-  padding:6px 12px;
-  border-radius:8px;
-  text-decoration:none;
-}
-
-.iklan{
-  text-align:center;
-  color:#777;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .ikanmas-wrap{
-    grid-template-columns:1fr;
-  }
-}
-
-
+  .side-box h3{border-left:4px solid #c00;padding-left:8px;margin-bottom:10px;}
+  .side-box ul{padding-left:18px;font-size:14px;}
+  .hitam{background:#111;color:#fff;}
+  .hitam a{background:#c00;color:#fff;display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;text-decoration:none;}
+  .iklan{text-align:center;color:#777;font-size:14px;}
+     /* MOBILE */
+    @media(max-width:900px){
+  .ikanmas-wrap{grid-template-columns:1fr;}}
     </style>
    </head>
   <body>
@@ -247,21 +265,8 @@
   </nav>
 </div>
 
-<!-- OFFCANVAS MOBILE -->
-<div class="offcanvas" id="offcanvas">
-  <button class="close-off" id="closeOff">×</button>
-  <nav class="off-nav">
-    <a href="index.html" class="hover-red">Beranda</a>
-      <a href="berita.html" class="hover-red">Berita</a>
-      <a href="video.html" class="hover-red">Video</a>
-      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
-      <a href="kontak.html" class="hover-red">Kontak</a>
-  </nav>
-</div>
 <div class="offcanvas-backdrop" id="offBackdrop"></div>
-
-  </header>
-  <!-- INFO LOMBA BERJALAN -->
+    <!-- INFO LOMBA BERJALAN -->
    <div class="info-lomba">
    <div class="running-text">
     <h3> Lomba Ikan Mas Saung Ngendon-Pondok Labu — 28 Des 2025 •  
