@@ -295,19 +295,132 @@ body{
   padding:18px;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
   position:relative;
-  transition:.3s ease;}
-.daily-event-card:hover{transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,.12);}
-.daily-badge{position:absolute;top:14px;right:14px;background:#e60012;color:#fff;padding:4px 10px;font-size:11px;font-weight:700;border-radius:20px;}
-.daily-title{font-weight:700;margin:6px 0;}
-.daily-location{font-size:14px;color:#666;}
-.daily-info{list-style:none;padding:0;margin:10px 0;font-size:14px;}
-.daily-info li{margin-bottom:4px;}
-.daily-note{font-size:13px;color:#555;margin:10px 0;}
-.daily-btn{display:block;text-align:center;background:#e60012;color:#fff;padding:10px;border-radius:8px;text-decoration:none;font-weight:700;}
-.daily-btn:hover{background:#b8000e;}
+  transition:.3s ease;
+}
+
+.daily-event-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.daily-badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#e60012;
+  color:#fff;
+  padding:4px 10px;
+  font-size:11px;
+  font-weight:700;
+  border-radius:20px;
+}
+
+.daily-title{
+  font-weight:700;
+  margin:6px 0;
+}
+
+.daily-location{
+  font-size:14px;
+  color:#666;
+}
+
+.daily-info{
+  list-style:none;
+  padding:0;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.daily-info li{
+  margin-bottom:4px;
+}
+
+.daily-note{
+  font-size:13px;
+  color:#555;
+  margin:10px 0;
+}
+
+.daily-btn{
+  display:block;
+  text-align:center;
+  background:#e60012;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.daily-btn:hover{
+  background:#b8000e;
+}
+.btn-detail{
+  background:#222;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:13px;
+  text-decoration:none;
+}
+.btn-detail:hover{
+  background:#c00;
+}
+
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-box{
+  position:relative;
+  max-width:90%;
+  max-height:90%;
+}
+
+.popup-box img{
+  width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* Tombol X */
+.popup-close{
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  background:#c00;
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:26px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(255,0,0,.8);
+}
+
     </style>
    </head>
   <body>
+   <div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <span class="popup-close" onclick="closePopup()">✕</span>
+    <img id="popup-img" src="" alt="Detail Event">
+  </div>
+</div>
+
+
  <!-- HEADER GLOBAL -->
 <header class="topbar">
   <div class="top-inner">
@@ -350,6 +463,25 @@ body{
     </p>
 
     <!-- LOMBA 1 -->
+     <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>25</span>
+        <small>DES</small></div>
+      <div class="isi">
+        <h2> EVENT GALAPUNG.</h2>
+        <p class="lokasi">📍 Telaga Silet Bogor</p>
+        <ul class="detail">
+          <li>Sistem: Induk</li>
+          <li>HTM:Rp400.000/Komplit</li>
+          <li>13:00-17:00 WIB</li>
+          <li>Peserta:2 Joran 6 Lapak</li></ul>
+        <div class="aksi">
+          <a href="https://wa.me/6282177111411" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/yKGhq1iTDy5Z6dtE7" class="btn-map">Maps</a>
+          <a href="assets/img/event/silet.jpg" class="btn-detail" onclick="openPopup('assets/img/event/silet.jpg'); return false;">Lihat Detail</a>
+        </div>
+      </div>
+    </article>
      <article class="ikanmas-card">
       <div class="tanggal merah">
         <span>27</span>
@@ -451,7 +583,7 @@ body{
         <li>Pagi – Sore</li>
       </ul>
       <p class="daily-note">Event galapung rutin untuk hobi dan silaturahmi pemancing.</p>
-      <a href="saung.html" class="daily-btn">Lihat Detail</a>
+      <a href="artikel/saung.html" class="daily-btn">Lihat Detail</a>
     </div>
 
     <!-- EBENK -->
@@ -534,7 +666,7 @@ body{
     <div class="side-box hitam">
       <h3>📢 Kirim Info Lomba Ikan Mas</h3>
       <p>Pemilik kolam & EO bisa kirim jadwal lomba ikan mas ke redaksi.</p>
-      <a href="https://wa.me/6285693927647" class="btn-side">
+      <a href="https://wa.me/6286593927647" class="btn-side">
         WhatsApp Redaksi
       </a>
     </div>
@@ -571,9 +703,6 @@ body{
       <p><strong>🎯 Kategori:</strong> Lomba & Harian</p>
       <p class="event-note">Cocok untuk pemancing pemula & reguler.</p>
     </article>
-
-  
-
   </div>
 </section>
 
@@ -637,26 +766,24 @@ body{
   </div>
 </footer>
 <script>
-  const popup = document.getElementById('imgPopup');
-  const popupImg = document.getElementById('popupImg');
-  const closeBtn = document.querySelector('.close-btn');
-  // Klik gambar lomba → buka popup
-  document.querySelectorAll('.lomba img').forEach(img => {
-    img.addEventListener('click', () => {
-      popup.style.display = 'flex';
-      popupImg.src = img.src;
-    });
-  });
-  // Klik tombol close → tutup popup
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-  // Klik luar gambar → tutup popup
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
+const popup = document.getElementById("popup");
+
+function openPopup(img){
+  popup.style.display="flex";
+  document.getElementById("popup-img").src = img;
+}
+
+function closePopup(){
+  popup.style.display="none";
+}
+
+/* klik area hitam → tutup */
+popup.addEventListener("click", function(e){
+  if(e.target === popup){
+    closePopup();
+  }
+});
 </script>
+
 </body>
 </html>
