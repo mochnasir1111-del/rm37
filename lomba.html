@@ -355,6 +355,47 @@
   cursor:pointer;
   box-shadow:0 0 10px rgba(255,0,0,.8);
 }
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.popup-box{
+  position:relative;
+  max-width:90%;
+  max-height:90%;
+}
+
+.popup-box img{
+  width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* Tombol X merah */
+.popup-close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  background:#e60012;
+  color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:24px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(230,0,18,.9);
+}
 
     </style>
    </head>
@@ -407,9 +448,8 @@
       Update jadwal lomba ikan mas harian, indukan, dan galatama dari berbagai
       kolam di Indonesia. Terverifikasi oleh Redaksi Republik Mancing.
     </p>
-
     <!-- LOMBA 1 -->
-     <article class="ikanmas-card">
+    <article class="ikanmas-card">
       <div class="tanggal merah">
         <span>25</span>
         <small>DES</small></div>
@@ -521,7 +561,7 @@
   <div class="daily-grid-wrap">
 
     <!-- SAUNG NGENDON -->
-      <div class="daily-event-card">
+     <div class="daily-event-card">
       <span class="daily-badge">HARIAN</span>
       <h3>🎣 Galapung Ikan Mas</h3>
       <p class="daily-title">Panco 5 Fishing</p>
@@ -532,9 +572,10 @@
         <li>Sesi 1-13.00=17.00 wib – Sesi 2: 20.00-24.00 wib</li>
       </ul>
       <p class="daily-note">Event galapung rutin untuk hobi dan silaturahmi pemancing.</p>
-      <a href="assets/img/event/panco.jpeg" class="daily-btn">Lihat Detail</a>
+      <a href="assets/img/event/panco.jpeg" class="daily-btn" onclick="openPopup('assets/img/event/panco.jpeg'); return false;">Lihat Detail</a>
     </div>
-     <div class="daily-event-card">
+
+    <div class="daily-event-card">
       <span class="daily-badge">HARIAN</span>
       <h3>🎣 Galapung Ikan Mas</h3>
       <p class="daily-title">Saung Ngendon – Kolam B</p>
@@ -612,7 +653,6 @@
 </section>
 
   </main>
-
   <!-- SIDEBAR -->
   <aside class="ikanmas-sidebar">
 
@@ -729,21 +769,33 @@
 </footer>
 <script>
 const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
 
+/* Untuk klik tombol "Lihat Detail" */
 function openPopup(img){
-  popup.style.display="flex";
-  document.getElementById("popup-img").src = img;
+  popup.style.display = "flex";
+  popupImg.src = img;
 }
 
 function closePopup(){
-  popup.style.display="none";
+  popup.style.display = "none";
 }
 
-/* klik area hitam → tutup */
+/* Klik area hitam → close */
 popup.addEventListener("click", function(e){
   if(e.target === popup){
     closePopup();
   }
+});
+
+/* ------------------------------
+   Support script lama (klik gambar .lomba)
+   ------------------------------ */
+document.querySelectorAll(".lomba img").forEach(img => {
+  img.addEventListener("click", function(){
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
 });
 </script>
 
