@@ -7,75 +7,21 @@
   <meta name="description" content="Daftar lomba mancing terbaru, lokasi, tanggal, dan link pendaftaran cepat (form / WhatsApp / email)." />
   <!-- Styles (embedded supaya file tunggal) -->
   <style>
-    :root{
-  --bg:#ffffff;
-  --muted:#6b7280;
-  --accent:#c00;
-  --maxw:1200px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:#0f172a;
-  line-height:1.6;
-}
-
+    :root{--bg:#ffffff;--muted:#6b7280;--accent:#c00;--maxw:1200px;font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6;}
 /* ================= HEADER ================= */
-.topbar{
-  background:#1e8f1e;;
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:200;
-}
-.top-inner{
-  max-width:var(--maxw);
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:20px;
-  padding:12px 16px;
-}
-.brand-logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:20px;
-  font-weight:800;
-  color:#fff;
-  text-decoration:none;
-}
-.brand-logo img{width:34px;height:34px}
-.brand-logo span{color:#c00}
-
-.main-nav{
-  display:flex;
-  gap:16px;
-  margin-left:auto;
-}
-.main-nav a{
-  font-size:14px;
-  font-weight:600;
-  color:#fff;
-  text-decoration:none;
-}
+ .topbar{background:#1e8f1e;; color:#fff;position:sticky; top:0;z-index:200;}
+ .top-inner{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+ .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+ .brand-logo img{width:34px;height:34px}
+ .brand-logo span{color:#c00}
+ .main-nav{display:flex;gap:16px;margin-left:auto;}
+ .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
 .main-nav a:hover{color:#c00}
-
-.menu-btn{
-  display:none;
-  font-size:24px;
-  background:none;
-  border:none;
-  color:#fff;
-}
-
+.menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
 @media(max-width:768px){
   .main-nav{display:none}
-  .menu-btn{display:block}
-}
-
+  .menu-btn{display:block}}
 /* ================= SUBHEADER ================= */
 .subheader{
   background:#fff;
@@ -497,6 +443,7 @@ body{
         <div class="aksi">
           <a href="https://wa.me/6282177111411" class="btn-wa" target="_blank">Daftar WhatsApp</a>
           <a href="https://maps.app.goo.gl/yKGhq1iTDy5Z6dtE7" class="btn-map">Maps</a>
+           <a href="assets/img/event/sk.jpg" class="btn-detail" onclick="openPopup('assets/img/event/sk.jpg'); return false;">Lihat Detail</a>
         </div>
       </div>
     </article>
@@ -542,6 +489,7 @@ body{
         <div class="aksi">
           <a href="https://wa.me/628119003264" class="btn-wa" target="_blank"> Daftar WhatsApp</a>
           <a href="https://maps.app.goo.gl/smK2ajWwUb2e5cxUA" class="btn-map">Maps</a>
+           <a href="assets/img/event/al.jpg" class="btn-detail" onclick="openPopup('assets/img/event/al.jpg'); return false;">Lihat Detail</a>
         </div></div></article>
          <!-- LOMBA 2 -->
     <article class="ikanmas-card">
