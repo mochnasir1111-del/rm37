@@ -1,125 +1,816 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pemancingan Ikan Mas Empang Damai by Telaga Silet — Republik Mancing</title>
-  <meta name="description" content="Empang Damai by Telaga Silet selalu ramai menjadi primadona baru pecinta mancing. Suasana nyaman, ikan aktif, event rutin, dan peluang strike tinggi." />
-  <meta property="og:title" content="Empang Damai by Telaga Silet Selalu Ramai" />
-  <meta property="og:description" content="Primadona baru pecinta mancing, ramai setiap hari, ikan sehat dan tarikan brutal." />
-  <meta property="og:image" content="https://picsum.photos/1200/630?random=51" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lomba Mancing — Republik Mancing</title>
+  <meta name="description" content="Daftar lomba mancing terbaru, lokasi, tanggal, dan link pendaftaran cepat (form / WhatsApp / email)." />
+  <!-- Styles (embedded supaya file tunggal) -->
   <style>
-    body{font-family:Inter,system-ui;background:#f8f8f8;margin:0;color:#222}
-    .container{max-width:900px;margin:auto;padding:20px}
-    header{display:flex;align-items:center;margin-bottom:20px}
-    header a{font-weight:700;color:#2e6d3e;text-decoration:none;font-size:20px}
-    .breadcrumb{font-size:13px;color:#666;margin-bottom:10px}
-    .article{background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.05)}
-    .article h1{font-size:28px;margin:0 0 12px;color:#1a5f2c}
-    .meta{font-size:13px;color:#777;margin-bottom:16px}
-    .hero img{width:100%;border-radius:10px;margin-bottom:18px}
-    h2{margin-top:24px;color:#1a5f2c}
-    p{line-height:1.7}
-    .footer{text-align:center;margin-top:40px;color:#777;font-size:13px}
-    .back{display:inline-block;margin-top:8px;font-size:14px;color:#2e6d3e;text-decoration:none}
+    :root{--bg:#ffffff;--muted:#6b7280;--accent:#c00;--maxw:1200px;font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6;}
+/* ================= HEADER ================= */
+ .topbar{background:#1e8f1e;; color:#fff;position:sticky; top:0;z-index:200;}
+ .top-inner{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+ .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+ .brand-logo img{width:34px;height:34px}
+ .brand-logo span{color:#c00}
+ .main-nav{display:flex;gap:16px;margin-left:auto;}
+ .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+.main-nav a:hover{color:#c00}
+.menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+/* ================= SUBHEADER ================= */
+.subheader{
+  background:#fff;
+  border-bottom:2px solid #c00;
+  position:sticky;
+  top:52px;
+  z-index:90;
+}
+.sub-nav{
+  max-width:var(--maxw);
+  margin:auto;
+  display:flex;
+  gap:18px;
+  padding:8px 16px;
+  overflow-x:auto;
+}
+.sub-nav a{
+  font-size:14px;
+  font-weight:600;
+  color:#333;
+  text-decoration:none;
+}
+.sub-nav a:hover{color:#c00}
 
-    /* SHARE TOP MEDIA */
-.share-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.share-label{font-size:13px;color:#6b7280;margin-right:4px;}
-.share-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;transition:.2s ease;}
-.share-btn img{width:18px;height:18px;}
-.share-btn:hover{transform:translateY(-2px);}
 
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <a href="index.html">Republik Mancing</a>
-    </header>
+/* ================= IKAN MAS LAYOUT ================= */
+.ikanmas-wrap{
+  max-width:var(--maxw);
+  margin:30px auto 80px;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:24px;
+}
 
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Empang Damai Telaga Silet
+.ikanmas-main h1{
+  font-size:28px;
+  margin-bottom:6px;
+}
+.desc{
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* CARD LOMBA */
+.ikanmas-card{
+  display:flex;
+  gap:16px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:18px;
+}
+
+.tanggal{
+  width:72px;
+  text-align:center;
+  border-radius:12px;
+  padding:10px 0;
+  font-weight:800;
+  background:#c00;
+  color:#fff;
+}
+.tanggal span{font-size:28px;display:block}
+.tanggal small{font-size:13px}
+
+.isi h2{
+  font-size:18px;
+  margin:0 0 6px;
+}
+.lokasi{
+  font-size:14px;
+  color:#555;
+}
+
+.detail{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(120px,1fr));
+  gap:6px;
+  padding:0;
+  margin:8px 0;
+  list-style:none;
+  font-size:14px;
+  color:#444;
+}
+
+.aksi{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.btn-wa{
+  background:#25d366;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+}
+.btn-map{
+  border:1px solid #ccc;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:14px;
+  text-decoration:none;
+  color:#333;
+}
+
+/* ================= SIDEBAR ================= */
+.ikanmas-sidebar{
+  position:sticky;
+  top:90px;
+  height:max-content;
+}
+.side-box{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:16px;
+}
+  .side-box h3{border-left:4px solid #c00;padding-left:8px;margin-bottom:10px;}
+  .side-box ul{padding-left:18px;font-size:14px;}
+  .hitam{background:#111;color:#fff;}
+  .hitam a{background:#c00;color:#fff;display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;text-decoration:none;}
+  .iklan{text-align:center;color:#777;font-size:14px;}
+     /* MOBILE */
+    @media(max-width:900px){
+  .ikanmas-wrap{grid-template-columns:1fr;}}
+ 
+
+.daily-badge{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #e60012;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+  letter-spacing: .5px;
+}
+
+.daily-event-card h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+.daily-location{
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.daily-info{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.daily-info li{
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.daily-note{
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.daily-btn{
+  display: inline-block;
+  text-decoration: none;
+  background: #e60012;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.daily-btn:hover{
+  background: #b9000f;
+}
+.daily-grid{
+  margin:50px auto;
+  max-width:1100px;
+  padding:0 16px;
+}
+
+.daily-grid-title{
+  font-size:22px;
+  font-weight:800;
+  border-left:5px solid #e60012;
+  padding-left:12px;
+  margin-bottom:20px;
+  color:#111;
+}
+
+.daily-grid-wrap{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:20px;
+}
+
+.daily-event-card{
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  position:relative;
+  transition:.3s ease;
+}
+
+.daily-event-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.daily-badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#e60012;
+  color:#fff;
+  padding:4px 10px;
+  font-size:11px;
+  font-weight:700;
+  border-radius:20px;
+}
+
+.daily-title{
+  font-weight:700;
+  margin:6px 0;
+}
+
+.daily-location{
+  font-size:14px;
+  color:#666;
+}
+
+.daily-info{
+  list-style:none;
+  padding:0;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.daily-info li{
+  margin-bottom:4px;
+}
+
+.daily-note{
+  font-size:13px;
+  color:#555;
+  margin:10px 0;
+}
+
+.daily-btn{
+  display:block;
+  text-align:center;
+  background:#e60012;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.daily-btn:hover{
+  background:#b8000e;
+}
+.btn-detail{
+  background:#222;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:13px;
+  text-decoration:none;
+}
+.btn-detail:hover{
+  background:#c00;
+}
+
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-box{
+  position:relative;
+  max-width:90%;
+  max-height:90%;
+}
+
+.popup-box img{
+  width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* Tombol X */
+.popup-close{
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  background:#c00;
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:26px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(255,0,0,.8);
+}
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.popup-box{
+  position:relative;
+  max-width:90%;
+  max-height:90%;
+}
+
+.popup-box img{
+  width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* Tombol X merah */
+.popup-close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  background:#e60012;
+  color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:24px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(230,0,18,.9);
+}
+
+    .share-top{
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.share-label{
+  font-size:13px;
+  font-weight:600;
+  color:#666;
+}
+.share-btn img{
+  width:28px;
+  height:28px;
+  transition:.2s;
+}
+.share-btn:hover img{
+  transform:scale(1.15);
+}
+
+
+    </style>
+   </head>
+  <body>
+   <div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <span class="popup-close" onclick="closePopup()">✕</span>
+    <img id="popup-img" src="" alt="Detail Event">
+  </div>
+</div>
+
+
+ <!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
+    <div class="brand">
+     <a href="index.html" class="brand-logo">
+  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
     </nav>
+  </div>
+</header>
 
-    <article class="article">
-      <h1>Pemancingan Ikan Mas Empang Damai by Telaga Silet Selalu Ramai, Jadi Primadona Baru Pecinta Mancing</h1>
-      <div class="meta">Oleh <strong>Admin Republik Mancing</strong> • 7 Desember 2025-Empang Damai By Telaga Silet</div>
-          <!-- SHARE BAR -->
-<div class="share-top">
-  <span class="share-label"></span>
-  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
-    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn fb" aria-label="Share Facebook">
-    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
-  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn x" aria-label="Share X">
-    <img src="assets/img/icon/twitter.png" alt="X"></a>
-  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
-     target="_blank" class="share-btn tg" aria-label="Share Telegram">
-    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
-   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
-  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
-</div><div class="hero">
-        <img src="assets/img/berita/img3.jpeg" alt="Empang Damai Telaga Silet Ramai Pemancing">
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
+ <section class="ikanmas-wrap">
+  <!-- KONTEN UTAMA -->
+  <main class="ikanmas-main">
+    <h1>Jadwal Lomba Ikan Mas Terbaru</h1>
+    <p class="desc">
+      Update jadwal lomba ikan mas harian, indukan, dan galatama dari berbagai
+      kolam di Indonesia. Terverifikasi oleh Redaksi Republik Mancing.
+    </p>
+    <div class="share-top">
+  <span class="share-label">Bagikan:</span>
+
+  <!-- WhatsApp -->
+  <a class="share-btn wa"
+     target="_blank"
+     href="https://api.whatsapp.com/send?text=EVENT%20GALAPUNG%20-%20Telaga%20Silet%20Bogor%20%7C%20https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp">
+  </a>
+
+  <!-- Facebook -->
+  <a class="share-btn fb"
+     target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/fb.png" alt="Facebook">
+  </a>
+
+  <!-- X (Twitter) -->
+  <a class="share-btn x"
+     target="_blank"
+     href="https://twitter.com/intent/tweet?text=EVENT%20GALAPUNG%20Telaga%20Silet%20Bogor&url=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/twitter.png" alt="X">
+  </a>
+
+  <!-- Telegram -->
+  <a class="share-btn tg"
+     target="_blank"
+     href="https://t.me/share/url?url=https://republikmancing.com/jadwal-lomba.html&text=EVENT%20GALAPUNG%20Telaga%20Silet%20Bogor">
+    <img src="assets/img/icon/telegram.png" alt="Telegram">
+  </a>
+
+  <!-- LinkedIn -->
+  <a class="share-btn in"
+     target="_blank"
+     href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/linkedin.png" alt="LinkedIn">
+  </a>
+</div>
+
+    <!-- LOMBA 1 -->
+    
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>25</span>
+        <small>DES</small></div>
+      <div class="isi">
+        <h2> EVENT GALAPUNG.</h2>
+        <p class="lokasi">📍 Telaga Silet Bogor</p>
+        <ul class="detail">
+          <li>Sistem: Induk</li>
+          <li>HTM:Rp400.000/Komplit</li>
+          <li>13:00-17:00 WIB</li>
+          <li>Peserta:2 Joran 54 Lapak</li></ul>
+        <div class="aksi">
+          <a href="https://wa.me/6285882797515" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/gZdEriCBbKeG1Lpw9" class="btn-map">Maps</a>
+          <a href="assets/img/event/silet.jpg" class="btn-detail" onclick="openPopup('assets/img/event/silet.jpg'); return false;">Lihat Detail</a>
+        </div>
       </div>
-     <em>Suasana Di Pemancingan Empang Damai by Telaga Silet, Bekasi ( Foto: Republik Mancing )</em>
-      <p><strong>Republik Mancing.com —</strong> Dalam beberapa bulan terakhir, nama <strong>Empang Damai by Telaga Silet</strong> semakin sering disebut para angler Jabodetabek. Pemancingan yang satu ini hampir tak pernah sepi. Dari pagi, siang, hingga sore hari, deretan pemancing tampak memenuhi pinggiran kolam, menunggu momen gentak ikan mas yang terkenal agresif di sini.</p>
-
-      <h2>Suasana Nyaman, Air Bersih & Ikan Aktif</h2>
-      <p>Empang Damai memiliki air kolam yang jernih dan terawat. Kondisi ikan mas di sini dikenal sehat dan aktif, sehingga peluang strike sangat tinggi. Banyak pemancing yang merasa puas karena sensasi tarikan ikan benar-benar terasa kuat.</p>
-
-      <blockquote style="background:#f1f6f1;padding:14px;border-left:4px solid #2e6d3e;border-radius:6px;margin:20px 0;font-size:15px;line-height:1.6">
-        “Ini empang lain dari yang lain. Ikan masnya lincah banget, dan kalau narik itu bikin nagih. Beberapa kali baru lempar, tak lama langsung ada dug! gentakannya.” — Om Dedi, pemancing senior.
-      </blockquote>
-
-      <h2>Selalu Ramai, Jadi Tempat Favorit Para Angler</h2>
-      <p>Setiap akhir pekan, Empang Damai selalu dipadati pengunjung. Banyak peserta yang datang dari luar kota khusus untuk merasakan tarikan ikan mas Telaga Silet. Tak sedikit yang kembali lagi karena merasakan pengalaman mancing yang memuaskan.</p>
-
-      <h2>Event Rutin & Hadiah Menarik</h2>
-      <p>Pihak pengelola rutin mengadakan lomba ikan mas, mabar komunitas, dan promo khusus di tanggal tertentu. Format lombanya seru, transparan, dan hadiahnya cukup besar, membuat banyak angler menantikan event berikutnya.</p>
-
-      <h2>Fasilitas Lengkap & Nyaman</h2>
-      <p>Selain spot mancing yang luas, Empang Damai menyediakan fasilitas seperti gazebo, warung kopi, mushola, hingga tempat parkir yang aman dan nyaman. Para pengunjung juga bisa menikmati area foto untuk dokumentasi.</p>
-
-      <h2>Primadona Baru Pecinta Mancing</h2>
-      <p>Dengan kualitas spot yang konsisten, ikan aktif, serta suasana nyaman, Empang Damai by Telaga Silet secara resmi menjadi salah satu empang ikan mas terbaik yang wajib dikunjungi para pecinta mancing. Bagi yang mencari sensasi tarikan brutal ikan mas, tempat ini benar-benar tidak boleh dilewatkan.</p>
-        <h2>Galeri Moment Gentak & Suasana Lapak</h2>
-
-<div class="gallery-slider">
-  <img src="assets/img/galeri/img2.jpeg" alt="Gentak ikan mas">
-  <img src="assets/img/galeri/img3.jpeg" alt="Peserta strike">
-  <img src="assets/img/galeri/img6.jpeg" alt="Suasana lapak">
-  <img src="assets/img/galeri/img7.jpeg" alt="Empang damai">
-</div>
-
-    
-    <!-- SHARE BAR -->
-<div class="share-top">
-  <span class="share-label"></span>
-  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
-    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn fb" aria-label="Share Facebook">
-    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
-  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn x" aria-label="Share X">
-    <img src="assets/img/icon/twitter.png" alt="X"></a>
-  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
-     target="_blank" class="share-btn tg" aria-label="Share Telegram">
-    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
-   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
-  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
-</div>
-    
     </article>
-    <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+    
+     <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>27</span>
+        <small>DES</small></div>
+      <div class="isi">
+        <h2> EVENT CRAZY RICH 21.</h2>
+        <p class="lokasi">📍 New Telaga Syakila-Gandul Cinere</p>
+        <ul class="detail">
+          <li>Sistem: Induk</li>
+          <li>HTM:Rp8.000.000/Komplit</li>
+          <li>10:30-16:00 WIB</li>
+          <li>Peserta:1 Joran 36 Lapak</li></ul>
+        <div class="aksi">
+          <a href="https://wa.me/6282177111411" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/yKGhq1iTDy5Z6dtE7" class="btn-map">Maps</a>
+           <a href="assets/img/event/sk.jpg" class="btn-detail" onclick="openPopup('assets/img/event/sk.jpg'); return false;">Lihat Detail</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>27</span>
+        <small>DES</small></div>
+      <div class="isi">
+        <h2>Lomba Ikan Mas Tuan Muda</h2>
+        <p class="lokasi">📍 Kolam Tuan Muda, Kemang-Jakarta Selatan</p>
+        <ul class="detail">
+          <li>Sistem: Induk</li>
+          <li>HTM: Rp350.000</li>
+          <li>10:30-17:00 WIB</li>
+          <li>Peserta: 30 Lapak</li></ul>
+        <div class="aksi">
+          <a href="https://wa.me/6285693062978" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/ixFpuDVzmaTrFmc69" class="btn-map">Maps</a>
+           <a href="assets/img/event/tm.jpg" class="btn-detail" onclick="openPopup('assets/img/event/tm.jpg'); return false;">Lihat Detail</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- LOMBA 2 -->
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>28</span>
+        <small>DES</small>
+      </div>
+
+      <div class="isi">
+        <h2>Lomba Eksekutive Tengkele Kukusan</h2>
+        <p class="lokasi">📍 Depok</p>
+
+        <ul class="detail">
+          <li>Sistem: Induk </li>
+           <li>HTM: ALL In Rp35.000.000</li>
+          <li>Mulai 10.30-16.30 WIB</li>
+          <li>Peserta: 1 Joran 50 Lapak</li>
+        </ul>
+
+        <div class="aksi">
+          <a href="https://wa.me/628119003264" class="btn-wa" target="_blank"> Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/smK2ajWwUb2e5cxUA" class="btn-map">Maps</a>
+           <a href="assets/img/event/al.jpg" class="btn-detail" onclick="openPopup('assets/img/event/al.jpg'); return false;">Lihat Detail</a>
+        </div></div></article>
+         <!-- LOMBA 2 -->
+    <article class="ikanmas-card">
+      <div class="tanggal merah">
+        <span>28</span>
+        <small>DES</small>
+      </div>
+
+      <div class="isi">
+        <h2>Lomba Paket Bulanan Saaung Ngendon</h2>
+        <p class="lokasi">📍 Pd Labu</p>
+
+        <ul class="detail">
+          <li>Sistem: Induk </li>
+           <li>HTM:  Rp1.200.000</li>
+          <li>Mulai 10.30-16.00 WIB</li>
+          <li>Peserta: 1 Joran 40 Lapak</li>
+        </ul>
+
+        <div class="aksi">
+          <a href="https://wa.me/6281296544418" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://maps.app.goo.gl/K1b3BDGygNomHiAB9" class="btn-map">Maps</a>
+        </div>
+      </div>
+    </article>
+   <section class="daily-grid">
+  <h2 class="daily-grid-title">🎯 Lomba Harian Rutin</h2>
+
+  <div class="daily-grid-wrap">
+
+    <!-- SAUNG NGENDON -->
+     <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Galapung Ikan Mas</h3>
+      <p class="daily-title">Panco 5 Fishing</p>
+      <p class="daily-location">📍 Munjul Cipayung, Jakarta Timur</p>
+      <ul class="daily-info">
+        <li>Kamis-Selasa</li>
+        <li>Galapung Ikan Mas</li>
+        <li>Sesi 1-13.00=17.00 wib – Sesi 2: 20.00-24.00 wib</li>
+      </ul>
+      <p class="daily-note">Event galapung rutin untuk hobi dan silaturahmi pemancing.</p>
+      <a href="assets/img/event/panco.jpeg" class="daily-btn" onclick="openPopup('assets/img/event/panco.jpeg'); return false;">Lihat Detail</a>
+    </div>
+
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Galapung Ikan Mas</h3>
+      <p class="daily-title">Saung Ngendon – Kolam B</p>
+      <p class="daily-location">📍 Pondok Labu, Jakarta Selatan</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>Galapung Ikan Mas</li>
+        <li>Pagi – Sore</li>
+      </ul>
+      <p class="daily-note">Event galapung rutin untuk hobi dan silaturahmi pemancing.</p>
+      <a href="artikel/saung.html" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- EBENK -->
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Gaplean Ikan Mas</h3>
+      <p class="daily-title">Pemancingan Ebenk</p>
+      <p class="daily-location">📍 Pondok Pinang</p>
+      <ul class="daily-info">
+        <li>Senin – Minggu</li>
+        <li>Ikan Mas & Induk</li>
+        <li>Full Day</li>
+      </ul>
+      <p class="daily-note">Lomba harian dengan suasana santai dan sportif.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- TABGHA -->
+    <div class="daily-event-card">
+      <span class="daily-badge">2 SESI</span>
+      <h3>🎣 Galapung Ikan Mas</h3>
+      <p class="daily-title">Pemancingan Tabgha</p>
+      <p class="daily-location">📍 Tangerang</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>2 Sesi</li>
+        <li>Pagi & Sore</li>
+      </ul>
+      <p class="daily-note">Cocok untuk pemancing yang ingin main dua kali sehari.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- TIRTA GADOG -->
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Galatama Ikan Mas</h3>
+      <p class="daily-title">Tirta Gadog</p>
+      <p class="daily-location">📍 Bogor</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>Galatama</li>
+        <li>Siang</li>
+      </ul>
+      <p class="daily-note">Arena galatama favorit dengan ikan berkualitas.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- RATU MAS AYU -->
+    <div class="daily-event-card">
+      <span class="daily-badge">SIANG & MALAM</span>
+      <h3>🎣 Galatama Ikan Mas</h3>
+      <p class="daily-title">New Ratu Mas Ayu</p>
+      <p class="daily-location">📍 Padalarang, Bandung</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>2 Sesi</li>
+        <li>Siang & Malam</li>
+      </ul>
+      <p class="daily-note">Pilihan utama galatama Bandung dan sekitarnya.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+  </div>
+</section>
+<div class="share-top">
+  <span class="share-label">Bagikan:</span>
+
+  <!-- WhatsApp -->
+  <a class="share-btn wa"
+     target="_blank"
+     href="https://api.whatsapp.com/send?text=EVENT%20GALAPUNG%20-%20Telaga%20Silet%20Bogor%20%7C%20https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/wa.png" alt="WhatsApp">
+  </a>
+
+  <!-- Facebook -->
+  <a class="share-btn fb"
+     target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/fb.png" alt="Facebook">
+  </a>
+
+  <!-- X (Twitter) -->
+  <a class="share-btn x"
+     target="_blank"
+     href="https://twitter.com/intent/tweet?text=EVENT%20GALAPUNG%20Telaga%20Silet%20Bogor&url=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/twitter.png" alt="X">
+  </a>
+
+  <!-- Telegram -->
+  <a class="share-btn tg"
+     target="_blank"
+     href="https://t.me/share/url?url=https://republikmancing.com/jadwal-lomba.html&text=EVENT%20GALAPUNG%20Telaga%20Silet%20Bogor">
+    <img src="assets/img/icon/telegram.png" alt="Telegram">
+  </a>
+
+  <!-- LinkedIn -->
+  <a class="share-btn in"
+     target="_blank"
+     href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/jadwal-lomba.html">
+    <img src="assets/img/icon/linkedin.png" alt="LinkedIn">
+  </a>
+</div>
+
+  </main>
+  <!-- SIDEBAR -->
+  <aside class="ikanmas-sidebar">
+
+    <div class="side-box">
+      <h3>🔥 Lomba Ikan Mas Terdekat</h3>
+      <ul>
+        <li>25 Des – New Telaga Syakila</li>
+         <li>28 Des – PMC DDM Kranji</li>
+        <li>4 Jan 2026 – Galapung Telaga Alkautshar</li>
+      </ul>
+    </div>
+
+    <div class="side-box hitam">
+      <h3>📢 Kirim Info Lomba Ikan Mas</h3>
+      <p>Pemilik kolam & EO bisa kirim jadwal lomba ikan mas ke redaksi.</p>
+      <a href="https://wa.me/6286593927647" class="btn-side">
+        WhatsApp Redaksi
+      </a>
+    </div>
+
+    <div class="side-box iklan">
+      <p>Slot Iklan Ikan Mas</p>
+      <small>300 x 250</small>
+    </div>
+<section class="upcoming-events">
+  <h2>🏆 Lomba Yang Akan Datang</h2>
+
+  <div class="event-list">
+
+    <article class="event-item">
+      <h3>🎣 Lomba Ikan Mas </h3>
+      <p><strong>📅 Tanggal:</strong> Kamis, 25 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan Deplu – Jakarta</p>
+      <p><strong>🎯 Kategori:</strong> Induk & Rame</p>
+      <p class="event-note">Event mancing silaturahmi, terbuka untuk umum.</p>
+    </article>
+
+    <article class="event-item">
+      <h3>🎣 Lomba Ikan Mas Special Akhir Pekan</h3>
+      <p><strong>📅 Tanggal:</strong> Sabtu, 27 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan New Babon – Bekasi</p>
+      <p><strong>🎯 Kategori:</strong> Babon & Rame</p>
+      <p class="event-note">Event Mancing Untuk Para Master.</p>
+    </article>
+
+    <article class="event-item">
+      <h3>🎣 Lomba Mancing Ikan Mas</h3>
+      <p><strong>📅 Tanggal:</strong> Minggu, 28 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan Jeruk Purut  – Jak-Sel</p>
+      <p><strong>🎯 Kategori:</strong> Lomba & Harian</p>
+      <p class="event-note">Cocok untuk pemancing pemula & reguler.</p>
+    </article>
+  </div>
+</section>
+
+  </aside>
+
+</section>
+
+    
+       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
@@ -147,7 +838,7 @@
     <div style="flex:1;min-width:220px">
       <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
       <ul style="list-style:none;padding:0;margin:0;line-height:2">
-       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
         <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
         <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
         <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
@@ -173,67 +864,37 @@
     © 2025 Republik Mancing. All Rights Reserved.
   </div>
 </footer>
-  </div>
-  <!-- Functionality -->
 <script>
-(function() {
-  // Get current page url and title (fallback to document.location)
-  const pageUrl = encodeURIComponent(window.location.href);
-  const pageTitle = encodeURIComponent(document.title || '');
-  const fb = document.getElementById('shareFacebook');
-  const x = document.getElementById('shareX');
-  const ig = document.getElementById('shareInstagram');
-  const wa = document.getElementById('shareWhatsApp');
-  const tg = document.getElementById('shareTelegram');
-  const copyBtn = document.getElementById('copyLink');
-  const feedback = document.getElementById('shareFeedback');
-  // Facebook share dialog (opens in new window)
-  fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-  // X (Twitter) share
-  x.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-  // Instagram: no official web share for arbitrary links.
-  // We'll open the profile URL if provided, otherwise fallback to Instagram home.
-  // If you prefer direct "share to Instagram" on mobile, users can paste the link manually.
-  const instagramProfile = ''; // <-- optional: masukkan username profil jika mau, misal 'republikmancing'
-  if (instagramProfile) {
-    ig.href = `https://www.instagram.com/${instagramProfile}/`;} else {
-    ig.href = `https://www.instagram.com/`;}
-  // WhatsApp (works on mobile & web)
-  wa.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
-  // Telegram
-  tg.href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
 
-  // Copy to clipboard
-  copyBtn.addEventListener('click', function() {
-    const text = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => {
-        feedback.textContent = 'Tautan disalin ke clipboard';
-        // small visual feedback
-        copyBtn.innerHTML = '✓ <span class="label">Tersalin</span>';
-        setTimeout(() => {
-          copyBtn.innerHTML = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/></svg><span class="label">Salin Link</span>`;
-        }, 1500);
-      }).catch(err => {
-        feedback.textContent = 'Gagal menyalin tautan';
-      });
-    } else {
-      // fallback older browsers
-      const input = document.createElement('input');
-      input.value = text;
-      document.body.appendChild(input);
-      input.select();
-      try {
-        document.execCommand('copy');
-        feedback.textContent = 'Tautan disalin ke clipboard';} catch (e) {
-        feedback.textContent = 'Browser tidak mendukung salin otomatis';} finally {
-        input.remove();}}});
-  // Accessibility: announce focus
-  const buttons = document.querySelectorAll('#shareWidget .share-btn, #shareWidget button');
-  buttons.forEach(b => {
-    b.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        b.click();}});});})();
+/* Untuk klik tombol "Lihat Detail" */
+function openPopup(img){
+  popup.style.display = "flex";
+  popupImg.src = img;
+}
+
+function closePopup(){
+  popup.style.display = "none";
+}
+
+/* Klik area hitam → close */
+popup.addEventListener("click", function(e){
+  if(e.target === popup){
+    closePopup();
+  }
+});
+
+/* ------------------------------
+   Support script lama (klik gambar .lomba)
+   ------------------------------ */
+document.querySelectorAll(".lomba img").forEach(img => {
+  img.addEventListener("click", function(){
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
+});
 </script>
+
 </body>
 </html>
