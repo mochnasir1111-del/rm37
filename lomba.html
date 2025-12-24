@@ -206,6 +206,158 @@ body{
      /* MOBILE */
     @media(max-width:900px){
   .ikanmas-wrap{grid-template-columns:1fr;}}
+ 
+
+.daily-badge{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #e60012;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+  letter-spacing: .5px;
+}
+
+.daily-event-card h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+.daily-location{
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.daily-info{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.daily-info li{
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.daily-note{
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.daily-btn{
+  display: inline-block;
+  text-decoration: none;
+  background: #e60012;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.daily-btn:hover{
+  background: #b9000f;
+}
+.daily-grid{
+  margin:50px auto;
+  max-width:1100px;
+  padding:0 16px;
+}
+
+.daily-grid-title{
+  font-size:22px;
+  font-weight:800;
+  border-left:5px solid #e60012;
+  padding-left:12px;
+  margin-bottom:20px;
+  color:#111;
+}
+
+.daily-grid-wrap{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:20px;
+}
+
+.daily-event-card{
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  position:relative;
+  transition:.3s ease;
+}
+
+.daily-event-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.daily-badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#e60012;
+  color:#fff;
+  padding:4px 10px;
+  font-size:11px;
+  font-weight:700;
+  border-radius:20px;
+}
+
+.daily-title{
+  font-weight:700;
+  margin:6px 0;
+}
+
+.daily-location{
+  font-size:14px;
+  color:#666;
+}
+
+.daily-info{
+  list-style:none;
+  padding:0;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.daily-info li{
+  margin-bottom:4px;
+}
+
+.daily-note{
+  font-size:13px;
+  color:#555;
+  margin:10px 0;
+}
+
+.daily-btn{
+  display:block;
+  text-align:center;
+  background:#e60012;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.daily-btn:hover{
+  background:#b8000e;
+}
+
+
     </style>
    </head>
   <body>
@@ -340,6 +492,88 @@ body{
         </div>
       </div>
     </article>
+   <section class="daily-grid">
+  <h2 class="daily-grid-title">🎯 Lomba Harian Rutin</h2>
+
+  <div class="daily-grid-wrap">
+
+    <!-- SAUNG NGENDON -->
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Galapung Ikan Mas</h3>
+      <p class="daily-title">Saung Ngendon – Kolam B</p>
+      <p class="daily-location">📍 Pondok Labu, Jakarta Selatan</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>Galapung Ikan Mas</li>
+        <li>Pagi – Sore</li>
+      </ul>
+      <p class="daily-note">Event galapung rutin untuk hobi dan silaturahmi pemancing.</p>
+      <a href="artikel/saung.html" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- EBENK -->
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Gaplean Ikan Mas</h3>
+      <p class="daily-title">Pemancingan Ebenk</p>
+      <p class="daily-location">📍 Pondok Pinang</p>
+      <ul class="daily-info">
+        <li>Senin – Minggu</li>
+        <li>Ikan Mas & Induk</li>
+        <li>Full Day</li>
+      </ul>
+      <p class="daily-note">Lomba harian dengan suasana santai dan sportif.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- TABGHA -->
+    <div class="daily-event-card">
+      <span class="daily-badge">2 SESI</span>
+      <h3>🎣 Galapung Ikan Mas</h3>
+      <p class="daily-title">Pemancingan Tabgha</p>
+      <p class="daily-location">📍 Tangerang</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>2 Sesi</li>
+        <li>Pagi & Sore</li>
+      </ul>
+      <p class="daily-note">Cocok untuk pemancing yang ingin main dua kali sehari.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- TIRTA GADOG -->
+    <div class="daily-event-card">
+      <span class="daily-badge">HARIAN</span>
+      <h3>🎣 Galatama Ikan Mas</h3>
+      <p class="daily-title">Tirta Gadog</p>
+      <p class="daily-location">📍 Bogor</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>Galatama</li>
+        <li>Siang</li>
+      </ul>
+      <p class="daily-note">Arena galatama favorit dengan ikan berkualitas.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+    <!-- RATU MAS AYU -->
+    <div class="daily-event-card">
+      <span class="daily-badge">SIANG & MALAM</span>
+      <h3>🎣 Galatama Ikan Mas</h3>
+      <p class="daily-title">New Ratu Mas Ayu</p>
+      <p class="daily-location">📍 Padalarang, Bandung</p>
+      <ul class="daily-info">
+        <li>Setiap Hari</li>
+        <li>2 Sesi</li>
+        <li>Siang & Malam</li>
+      </ul>
+      <p class="daily-note">Pilihan utama galatama Bandung dan sekitarnya.</p>
+      <a href="#" class="daily-btn">Lihat Detail</a>
+    </div>
+
+  </div>
+</section>
 
   </main>
 
@@ -358,7 +592,7 @@ body{
     <div class="side-box hitam">
       <h3>📢 Kirim Info Lomba Ikan Mas</h3>
       <p>Pemilik kolam & EO bisa kirim jadwal lomba ikan mas ke redaksi.</p>
-      <a href="https://wa.me/6285693927647" class="btn-side">
+      <a href="https://wa.me/6286593927647" class="btn-side">
         WhatsApp Redaksi
       </a>
     </div>
@@ -367,6 +601,39 @@ body{
       <p>Slot Iklan Ikan Mas</p>
       <small>300 x 250</small>
     </div>
+<section class="upcoming-events">
+  <h2>🏆 Lomba Yang Akan Datang</h2>
+
+  <div class="event-list">
+
+    <article class="event-item">
+      <h3>🎣 Lomba Ikan Mas </h3>
+      <p><strong>📅 Tanggal:</strong> Kamis, 25 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan Deplu – Jakarta</p>
+      <p><strong>🎯 Kategori:</strong> Induk & Rame</p>
+      <p class="event-note">Event mancing silaturahmi, terbuka untuk umum.</p>
+    </article>
+
+    <article class="event-item">
+      <h3>🎣 Lomba Ikan Mas Special Akhir Pekan</h3>
+      <p><strong>📅 Tanggal:</strong> Sabtu, 27 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan New Babon – Bekasi</p>
+      <p><strong>🎯 Kategori:</strong> Babon & Rame</p>
+      <p class="event-note">Event Mancing Untuk Para Master.</p>
+    </article>
+
+    <article class="event-item">
+      <h3>🎣 Lomba Mancing Ikan Mas</h3>
+      <p><strong>📅 Tanggal:</strong> Minggu, 28 Desember 2025</p>
+      <p><strong>📍 Lokasi:</strong> Pemancingan Jeruk Purut  – Jak-Sel</p>
+      <p><strong>🎯 Kategori:</strong> Lomba & Harian</p>
+      <p class="event-note">Cocok untuk pemancing pemula & reguler.</p>
+    </article>
+
+  
+
+  </div>
+</section>
 
   </aside>
 
