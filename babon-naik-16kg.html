@@ -43,16 +43,11 @@
   @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
   @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
   /* Animasi Kedip untuk Tombol Sawer */
-@keyframes sawerPulse {
+  @keyframes sawerPulse {
   0% { transform: scale(1); filter: brightness(1); }
   50% { transform: scale(1.1); filter: brightness(1.4); }
-  100% { transform: scale(1); filter: brightness(1); }
-}
-
-.rm-sawer-btn img {
-  animation: sawerPulse 1s infinite;
-}
-
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
   </style>
 </head>
 <body>
@@ -315,6 +310,7 @@ function nativeShare(){
 </script>
 </body>
 </html>
+
 
 
 
