@@ -39,13 +39,39 @@
 
       .article-container {max-width: 850px;     /* lebar pas seperti detik */margin: 0 auto;       /* center */padding: 0 16px;      /* biar rapi di HP */}
   .article-photo {width: 100%;max-width: 800px;display: block;margin: 20px auto;border-radius: 10px;}
-/* SHARE TOP MEDIA */
-.share-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.share-label{font-size:13px;color:#6b7280;margin-right:4px;}
-.share-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;transition:.2s ease;}
-.share-btn img{width:18px;height:18px;}
-.share-btn:hover{transform:translateY(-2px);}
-
+ /* ACTIONS BAR */
+.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
+  .rm-view span,.rm-btn span{font-size:14px;color:#555}
+  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
+  .rm-sawer-btn{color:#e60012}
+  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
+  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
+  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rm-head b{font-size:18px;color:#111}
+  .rm-head span{cursor:pointer;font-size:18px}
+  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
+  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
+  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
+  .qris{max-width:100%;margin:12px 0}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
+  /* Animasi Kedip untuk Tombol Sawer */
+  @keyframes sawerPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
   </style>
 </head>
 <body>
@@ -64,25 +90,20 @@
     <h1 class="article-title">Pemancingan CS101 feat MMFC: Persaingan Panas, Induk & Total Ekor Meledak</h1>
     <div class="meta">Oleh <strong>Redaksi Republik Mancing</strong> • Sabtu, 12 April 2025 • Pemancingan CS 101 JOGLO Jakarta Barat</div>
 
-   <!-- SHARE BAR -->
-<div class="share-top">
-  <span class="share-label"></span>
-  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
-    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn fb" aria-label="Share Facebook">
-    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
-  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn x" aria-label="Share X">
-    <img src="assets/img/icon/twitter.png" alt="X"></a>
-  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
-     target="_blank" class="share-btn tg" aria-label="Share Telegram">
-    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
-   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
-  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
-</div>
+    <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
   <img src="assets/img/event/cs101 (1).png" alt="Foto Lomba" class="article-photo">
   <em>Suasana lomba mancing-CS Joglo (Foto: Republik Mancing)</em>
   <!-- META -->
@@ -192,25 +213,20 @@
     <strong>CS101 feat MMFC</strong> tahun ini dianggap sebagai salah satu lomba paling kompetitif dan meriah. 
     Banyak peserta berharap acara ini berlanjut di edisi mendatang.
   </p>
- <!-- SHARE BAR -->
-<div class="share-top">
-  <span class="share-label"></span>
-  <a href="https://api.whatsapp.com/send?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba%20-%20https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn wa" aria-label="Share WhatsApp">
-    <img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn fb" aria-label="Share Facebook">
-    <img src="assets/img/icon/fb.png" alt="Facebook"></a>
-  <a href="https://twitter.com/intent/tweet?text=Teknik%20Mancing%20Ikan%20Mas%20Lomba&url=https://republikmancing.com/teknik.html"
-     target="_blank" class="share-btn x" aria-label="Share X">
-    <img src="assets/img/icon/twitter.png" alt="X"></a>
-  <a href="https://t.me/share/url?url=https://republikmancing.com/teknik.html&text=Teknik%20Mancing%20Ikan%20Mas%20Lomba"
-     target="_blank" class="share-btn tg" aria-label="Share Telegram">
-    <img src="assets/img/icon/telegram.png" alt="Telegram"></a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://republikmancing.com/teknik.html"
-   target="_blank" class="share-btn in" aria-label="Share LinkedIn">
-  <img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
-</div>
+   <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
 </article>
 
       <div class="related">
@@ -231,6 +247,8 @@
           <p style="margin:8px 0 0;color:var(--muted)">Umpan yang digunakan,umpan dan kroto saja,dilarang menggunakan umpan pelet,bedingan pelet/mie,bamperan, dan selalu patuhi aturan yang sudah ditetapkan oleh panitia.</p>
         </div>
       </div>
+     
+
            <hr style="margin-top:22px">
       <section id="comments">
         <h3>Komentar</h3>
@@ -297,6 +315,37 @@
   </div>
 </footer>
   </div>
+  <!-- SHARE MODAL -->
+<div id="rmShare" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
+    <p style="color:#555;font-size:14px;margin:8px 0 16px;">Pilih platform untuk membagikan artikel ini:</p>
+    <div class="rm-share-icons">
+      <a id="wa" target="_blank" aria-label="WhatsApp"><img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+      <a id="fb" target="_blank" aria-label="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook"></a>
+      <a id="tg" target="_blank" aria-label="Telegram"><img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+      <a id="tw" target="_blank" aria-label="X"><img src="assets/img/icon/twitter.png" alt="X / Twitter"></a>
+      <a id="ln" target="_blank" aria-label="LinkedIn"><img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+      <button onclick="nativeShare()" class="rm-native"><img src="assets/img/icon/gl.jpg" alt="Share"></button>
+      <button class="rm-btn" onclick="openShare()"> <img src="assets/img/icon/link.jpg" alt="Bagikan Link"> </button>
+    </div>
+  </div>
+</div>
+
+<!-- SAWER MODAL -->
+<div id="rmSawer" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+
+<img src="assets/img/icon/qr.jpeg" class="qris">
+
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
+</div>
   <!-- Functionality -->
 <script>
 (function() {
@@ -374,11 +423,49 @@
       }
     });
   });
-
 })();
+
+  /* ===============================
+   VIEW & LIKE SYSTEM
+================================ */
+let views = Number(localStorage.getItem("rmView")) || 0;
+let likes = Number(localStorage.getItem("rmLike")) || 0;
+/* Tambah view 1x per load */
+views++;
+localStorage.setItem("rmView", views);
+/* Render ke semua tempat */
+function renderCounters(){
+  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
+renderCounters();
+
+/* Like button */
+function likeArticle(){
+  likes++;
+  localStorage.setItem("rmLike", likes);
+  renderCounters();}
+/* OPEN/CLOSE SHARE MODAL */
+function openShare(){
+  let url = encodeURIComponent(location.href);
+  let title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text=" + title + "%20" + url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
+  rmShare.style.display = "flex";}
+function closeShare(){ rmShare.style.display = "none"; }
+/* OPEN/CLOSE SAWER MODAL */
+function openSawer(){ rmSawer.style.display = "flex"; }
+function closeSawer(){ rmSawer.style.display = "none"; }
+/* NATIVE SHARE */
+function nativeShare(){
+  if(navigator.share){
+    navigator.share({title:document.title,url:location.href});
+  } else {
+    alert("Fitur share tidak tersedia di browser ini.");}}
 </script>
 </body>
 </html>
+
 
 
 
