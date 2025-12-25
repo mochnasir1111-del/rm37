@@ -4,8 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Republik Mancing News</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <script defer src="assets/js/main.js"></script>
   <style>
@@ -48,7 +47,9 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 /* HAMBURGER */
 .hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:6px 8px}
 .hamburger span{display:block;width:22px;height:2px;background:#333;margin:4px 0;border-radius:2px}
-
+/* SEARCH */
+.search-area{margin-left:auto}
+.search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
 /* OFFCANVAS (mobile menu) */
 .offcanvas{position:fixed;top:0;left:-320px;width:300px;height:100vh;background:var(--card);box-shadow:6px 0 30px rgba(0,0,0,0.2);z-index:400;padding:18px;transition:left .28s ease}
 .off-nav{display:flex;flex-direction:column;gap:12px;margin-top:20px}
@@ -57,13 +58,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .offcanvas.open{left:0}
 .offcanvas-backdrop.show{opacity:1;pointer-events:auto}
 .close-off{background:transparent;border:0;font-size:28px;line-height:1;cursor:pointer}
-  /* === Widget Jadwal dengan Thumbnail === */
-.widget-jadwal ul {list-style: none;padding: 0;margin: 0;}
-.widget-jadwal li {border-bottom: 1px solid #eee;}
-.widget-jadwal a {display: flex;gap: 10px;padding: 8px 0;text-decoration: none;color: #111;}
-.widget-jadwal img {width: 52px;height: 52px;object-fit: cover;border-radius: 4px;}
-.widget-jadwal strong {display: block;font-size: 14px;}
-.widget-jadwal span {font-size: 12px;color: #666;}
+
 /* ---------- LAYOUT ---------- */
 .container{max-width:var(--max-width);margin:18px auto;display:grid;grid-template-columns:2.2fr 1fr;gap:22px;padding:0 16px}
 /* LEFT COL */
@@ -200,33 +195,45 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .ad-responsive img{width:100%;height:auto;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.15);transition:0.3s;}
 .ad-responsive img:hover{transform:scale(1.03);}
 /* OFFCANVAS FINAL (KANAN, MOBILE) */
-.offcanvas{position: fixed;top: 0;right: -100%;width: 280px;height: 100vh;background: #111;color: #fff;z-index: 10002;padding: 20px;transition: right .3s ease;}
-.offcanvas.active{right: 0;}
-.offcanvas-backdrop{position: fixed;inset: 0;background: rgba(0,0,0,.45);opacity: 0;pointer-events: none;transition: opacity .25s ease;z-index: 10001;}
-.offcanvas-backdrop.show{opacity: 1;pointer-events: auto;}
-/* Font utama isi artikel */
-.article,
-.slide-caption,
-.article p,
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.lead {font-family: 'Inter', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;}
-/* Judul di slider */
-.slide-caption h2 a{font-weight:700;letter-spacing:0.2px;line-height:1.3;}
-/* Lead / ringkasan */
-.slide-caption .lead{font-size:14px;color:#ccc;font-weight:500;}
-.article h1,
-.slide-caption h2{letter-spacing:-0.4px;}
+.offcanvas{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  z-index: 10002;
+  padding: 20px;
+  transition: right .3s ease;
+}
+
+.offcanvas.active{
+  right: 0;
+}
+
+.offcanvas-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 10001;
+}
+
+.offcanvas-backdrop.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
     /* TOPBAR */
   .topbar{background:#111;color:#fff;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;}
   .brand span{color:#c00}
   .main-nav{display:flex;gap:16px;margin-left:auto;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;}
+  .main-nav a{font-size:14px;font-weight:600;color:#ffffff;}
   .hover-red:hover{color:#c00}
    /* SUBHEADER */
   .subheader{background:#fff;border-bottom:2px solid #c00;}
@@ -285,8 +292,8 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 /* ===== TOPBAR ===== */
 .topbar{background:#111;position:sticky;top:0;z-index:10000;}
 .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 16px;}
-.brand-logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:20px;text-decoration:none;}
-.brand-logo span{color:#c00;}
+.brand-logo{display:flex;align-items:center;gap:8px;color:#81A253;font-weight:800;font-size:20px;text-decoration:none;}
+.brand-logo span{color:rgb(255, 255, 255);}
 .brand-logo img{width:32px;height:32px}
 /* MENU DESKTOP */
 .main-nav{margin-left:auto;display:flex;gap:18px;}
@@ -319,33 +326,33 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
  .ad-responsive { width: 100%;max-width: 320px;height: 250px;background: #eaeaea;border: 1px solid #ccc;
     margin: 20px 0;display: flex;justify-content: center;align-items: center;color: #555;font-size: 16px;}
-  
-    /* ===== SEARCH RINGKAS ===== */
-.search-area{margin-left:auto;}
-.search-area input{width:200px;padding:6px 12px;font-size:14px;border:1px solid #e3e6ea;border-radius:999px;outline:none;transition:.2s ease;}
-.search-area input:focus{width:240px;border-color:#c00;box-shadow:0 0 0 2px rgba(204,0,0,.08);}
+    .brand-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:'Anton', sans-serif;
+  font-size:26px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#9EDC4A; /* hijau ikan Republik Mancing */
+}
 
-@media (max-width:768px){
-  .search-area{width:100%;margin-left:0;}
-  .search-area input{width:100%;}}
-.search-area{position:relative;}
-.search-area::after{content:"🔍";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.6;}
+.brand-logo img{
+  height:42px;
+  width:auto;
+}
 
-.brand-logo{display:flex;align-items:center;gap:12px;font-family:'Anton', sans-serif;font-size:26px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:#9EDC4A; /* hijau ikan Republik Mancing */}
-.brand-logo img{height:42px;width:auto;}
-.brand-logo span{color:#ffffff; /* kata Mancing putih */}
+.brand-logo span{
+  color:#ffffff; /* kata Mancing putih */
+}
+
 /* Hover efek profesional */
-.brand-logo:hover{opacity:0.85;}
+.brand-logo:hover{
+  opacity:0.85;
+}
 
-/* HEADLINE BERITA */
-.slide-caption h2 a{font-family: 'Inter','Roboto',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;font-weight: 800;font-size: 17px;line-height: 1.35;color: #111;text-decoration: none;display: block;}
-/* hover merah khas Republik Mancing */
-.slide-caption h2 a:hover{color: #e10600;text-decoration: underline;}
-/* Ringkasan berita */
-.slide-caption .lead{font-family: 'Inter','Roboto',system-ui;font-size: 13.5px;color: #666;line-height: 1.5;margin-top: 4px;}
-/* Card berita */
-.slide{background:#fff;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,0.06);overflow:hidden;transition:transform .2s, box-shadow .2s;}
-.slide:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.12);}
+    
   </style>
 </head>
 <body>
@@ -354,20 +361,18 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   <div class="top-inner">
     <button class="menu-btn" id="openOff" aria-label="Menu">☰</button>
 
-     <a href="index.html" class="brand-logo">
-  <img src="assets/img/icon/rm.png" alt="Republik Mancing">
-  Republik<span>Mancing</span></a>
-
-    <form class="search-area"
-      action="https://www.google.com/search"
-      method="get"
-      target="_blank">
-  <input type="hidden" name="sitesearch" value="republikmancing.com">
-  <input
-    type="search"
-    name="q"
-    placeholder="Cari di Republik Mancing: mancing, ikan mas, lomba, MMFC, event">
-</form>
+    <a href="index.html" class="brand-logo">
+      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
+      Republik<span>Mancing</span>
+    </a><div class="rm-search">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Cari kolam, lomba, angler…" 
+    autocomplete="off"
+  >
+  <div id="searchResults" class="rm-search-results"></div>
+</div>
     <nav class="main-nav">
     <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
@@ -443,21 +448,21 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
            <article class="slide">
             <img src="assets/img/berita/header.png" alt="Headline 1">
             <div class="slide-caption">
-              <h2><a href="empang-damai.html"class="hover-red">Pemancingan Ikan Mas Empang Damai by Telaga Silet Selalu Ramai, Jadi Primadona Baru Pecinta Mancing</a></h2>
+              <h2><a href="empang damai.html"class="hover-red">Pemancingan Ikan Mas Empang Damai by Telaga Silet Selalu Ramai, Jadi Primadona Baru Pecinta Mancing</a></h2>
               <p class="lead">Panduan lengkap bagi pemancing yang ingin puas gentak.</p>
             </div>
           </article>
           <article class="slide">
             <img src="assets/img/berita/DSCF6925.JPG" alt="Headline 2">
             <div class="slide-caption">
-              <h2><a href="hut-pt-truba.html"class="hover-red">Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy: Peserta Full Happy — Gentak Ikan Nonstop</a></h2>
+              <h2><a href="hut pt truba.html"class="hover-red">Mancing Bareng HUT PT Truba Jaga Cita di Telaga Enjoy: Peserta Full Happy — Gentak Ikan Nonstop</a></h2>
               <p class="lead">Antusias Peserta dan Gentak Nonstop.</p>
             </div>
           </article>
           <article class="slide">
             <img src="assets/img/event/DSCF6845.jpg" alt="Headline 3">
             <div class="slide-caption">
-              <h2><a href="battle-of-creator.html"class="hover-red">Battle Of Creator 2025</a></h2>
+              <h2><a href="battle of creator.html"class="hover-red">Battle Of Creator 2025</a></h2>
               <p class="lead">Mancing Bareng Senar Pancing & Duraking Duraflex: Pertempuran Seru Komunitas dan Konten Kreator.</p>
             </div>
           </article>
@@ -465,7 +470,8 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <button class="slider-nav next" data-action="next" aria-label="Berikutnya">›</button>
         <div class="slider-dots" id="sliderDots"></div>
       </div>
-     <!-- ================= GRID BERITA UTAMA ================= -->
+
+      <!-- ================= GRID BERITA UTAMA ================= -->
 
 <main class="container">
   <section class="news-grid">
@@ -515,8 +521,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
            <img src="assets/img/iklan/banner-lomba.jpg" alt="Iklan Lomba" style="width:100%">
         </div>
      </div>
-
-     <div class="widget widget-jadwal">
+ <div class="widget widget-jadwal">
   <h3>Jadwal Harian Pemancingan</h3>
   <ul class="schedule-list">
     <li>
@@ -606,13 +611,13 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <article class="list-item">
           <a href="article.html">
           <img src="assets/img/event/14mmfc.jpeg" alt=""></a>
-            <h4><a href="hut-mmfc-14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
+            <h4><a href="hut mmfc 14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
             <p class="muted">6 jam lalu • oleh RepublikMancing</p>
         </article>
          <article class="list-item">
           <a href="event jp.html">
           <img src="assets/img/berita/img.png" alt=""></a>
-            <h4><a href="event-jp.html">Event Pemancingan Jeruk Purut</a></h4>
+            <h4><a href="event jp.html">Event Pemancingan Jeruk Purut</a></h4>
             <p class="muted">2 minggu lalu • oleh Godel</p>
         </article>
       </section>
@@ -754,7 +759,90 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
 <script>
   
+const RM_SEARCH_INDEX = [
 
+  /* ================== SPOT / KOLAM ================== */
+  {
+    title: "Pemancingan New Babon Bekasi",
+    url: "new-babon.html",
+    type: "Spot Kolam",
+    region: "Bekasi, Jawa Barat",
+    desc: "Kolam lomba 36 lapak, tiket sultan & eksekutif",
+    keywords: [
+      "new babon",
+      "pemancingan bekasi",
+      "tiket sultan",
+      "kolam lomba",
+      "ikan mas",
+      "setu",
+      "burangkeng"
+    ]
+  },
+
+  {
+    title: "Pemancingan Brigif Bandung",
+    url: "brigif-bandung.html",
+    type: "Spot Kolam",
+    region: "Bandung, Jawa Barat",
+    desc: "Kolam full power favorit event besar",
+    keywords: [
+      "brigif bandung",
+      "pemancingan bandung",
+      "full power",
+      "event lomba"
+    ]
+  },
+
+  /* ================== EVENT / LOMBA ================== */
+  {
+    title: "Event MY Fishing Indramayu Hadiah Mobil",
+    url: "my-fishing-indramayu.html",
+    type: "Event Lomba",
+    region: "Indramayu, Jawa Barat",
+    desc: "Lomba eksekutif dengan hadiah utama mobil",
+    keywords: [
+      "my fishing",
+      "indramayu",
+      "hadiah mobil",
+      "event eksekutif"
+    ]
+  },
+
+  /* ================== PROFIL ANGLER ================== */
+  {
+    title: "Profil Angler Om Alif MMFC",
+    url: "profil-om-alif.html",
+    type: "Profil Angler",
+    region: "Bekasi",
+    desc: "Angler muda MMFC berprestasi di lomba ikan mas",
+    keywords: [
+      "om alif",
+      "alif mmfc",
+      "profil angler",
+      "pemancing muda",
+      "ikan mas"
+    ]
+  },
+
+  /* ================== TOKO PANCING ================== */
+  {
+    title: "Toko Pancing Raja Fising",
+    url: "toko-pancing.html",
+    type: "Toko Pancing",
+    region: "ragunan,kebagusan,jagakarsa",
+    desc: "Umpan, essen, piranti lomba lengkap",
+    keywords: [
+      "toko pancing",
+      "essen",
+      "umpan ikan mas",
+      "ragunan"
+    ]
+  }
+
+];
+
+
+document.addEventListener("DOMContentLoaded", function () {
 
   /* ================= OFFCANVAS ================= */
   document.addEventListener("DOMContentLoaded", () => {
@@ -846,7 +934,98 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   if (readDate) {
     const t = new Date();
     readDate.textContent = `${t.getDate()}-${t.getMonth()+1}-${t.getFullYear()}`;
-  };
+  }
+
+});
+
+const articles = [
+  {
+    title: "Rekomendasi Pemancingan New Babon Bekasi",
+    url: "new-babon.html",
+    keywords: "new babon bekasi tiket sultan lomba"
+  },{
+    title: "Pemancingan Brigif Bandung Full Power",
+    url: "brigif-bandung.html",
+    keywords: "brigif bandung full power event"},{
+    title: "MY Fishing Indramayu Hadiah Mobil",
+    url: "my-fishing-indramayu.html",
+    keywords: "my fishing indramayu lomba eksekutif"}];
+    
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+  searchResults.innerHTML = "";
+
+  if (q.length < 2) {
+    searchResults.style.display = "none";
+    return;
+  }
+  const filtered = articles.filter(a =>
+    a.title.toLowerCase().includes(q) ||
+    a.keywords.toLowerCase().includes(q)
+  );
+
+  if (filtered.length === 0) {
+    searchResults.innerHTML = "<div class='no-result'>Tidak ada hasil ditemukan</div>";
+  } else {
+    filtered.forEach(a => {
+      searchResults.innerHTML += `
+        <a href="${a.url}">${a.title}</a>
+      `;
+    });}
+  searchResults.style.display = "block";
+});
+// klik luar = nutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    searchResults.style.display = "none";}});
+
+const input = document.getElementById("searchInput");
+const resultsBox = document.getElementById("searchResults");
+
+input.addEventListener("input", function () {
+  const q = this.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
+
+  if (q.length < 2) {
+    resultsBox.style.display = "none";
+    return;
+  }
+
+  const results = RM_SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    item.desc.toLowerCase().includes(q) ||
+    item.type.toLowerCase().includes(q) ||
+    item.region.toLowerCase().includes(q) ||
+    item.keywords.some(k => k.toLowerCase().includes(q))
+  );
+
+  if (results.length === 0) {
+    resultsBox.innerHTML = `<div class="no-result">Tidak ditemukan</div>`;
+  } else {
+    results.forEach(item => {
+      resultsBox.innerHTML += `
+        <a href="${item.url}">
+          <strong>${item.title}</strong><br>
+          <small>${item.type} • ${item.region}</small>
+        </a>
+      `;
+    });
+  }
+
+  resultsBox.style.display = "block";
+});
+
+// klik di luar = tutup
+document.addEventListener("click", e => {
+  if (!e.target.closest(".rm-search")) {
+    resultsBox.style.display = "none";
+  }
+});
+
+
 </script>
 </body>
 </html>
