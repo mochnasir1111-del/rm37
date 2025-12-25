@@ -1,136 +1,105 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Berita Mancing Terbaru — Republik Mancing</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berita Terbaru — Republik Mancing</title>
+  <meta name="description" content="Kumpulan berita terbaru dunia mancing, event, lomba, dan update dari seluruh Indonesia." />
 
-<meta name="description" content="Berita terbaru dunia mancing Indonesia: event, lomba galatama, komunitas, dan liputan pemancingan.">
+  <!-- Styles (embedded supaya file tunggal) -->
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+    /* SEARCH */
+     .search-area{margin-left:auto}
+     .search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
 
-<style>
-/* ================================
-   REPUBLIK MANCING – CORE DESIGN
-   ================================ */
-/* ROOT */
-:root{
-  --accent:#e10600;      /* Merah Republik */
-  --green:#9EDC4A;       /* Hijau logo */
-  --bg:#f5f6f7;
-  --card:#ffffff;
-  --text:#111;
-  --muted:#6b6b6b;
-  --radius:12px;
-  --shadow:0 6px 18px rgba(0,0,0,.06);
+    /* header */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
 
-  --font-body:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-  --font-logo:'Anton',sans-serif;
+    /* GRID BERITA */
+    .news-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+    h1{margin-bottom:14px;font-size:1.7rem}
+
+    .news-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+    .news-card{background:#fff;border-radius:12px;border:1px solid #eef2f7;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .news-card img{width:100%;height:180px;object-fit:cover}
+    .news-card div{padding:14px}
+    .news-card h3{margin:0 0 8px;font-size:1.1rem}
+    .news-card p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* SIDEBAR */
+    aside .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+    .side-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+    .side-item{display:flex;gap:10px;text-decoration:none;color:inherit}
+    .side-item img{width:88px;height:60px;border-radius:8px;object-fit:cover}
+    @media(max-width:880px){.news-layout{grid-template-columns:1fr}}
+    
+     /* --- ZOOM EFFECT ALA DETIK --- */
+    img {transition: transform .35s ease, filter .35s ease;display: block;}
+    img:hover {transform: scale(1.06);filter: brightness(0.9);}
+     /* Iklan */
+  .top-ad {width: 100%;background: #ffffff;padding: 8px 0;border-bottom: 1px solid #ffffff;}
+  .top-ad .container {display: flex;justify-content: center;align-items: center;}
+  .top-ad img {max-width: 100%;height: auto;display: block;}
+  /* ==================================================
+   HEADER UTAMA – REPUBLIK MANCING
+   ================================================== */
+  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
+  .top-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:18px;}
+  /* BRAND */
+  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .brand span{color:#c00;}
+  /* NAV UTAMA */
+  .main-nav{margin-left:auto;display:flex;gap:16px;white-space:nowrap;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;padding:6px 4px;position:relative;}
+  .main-nav a:hover,
+  .main-nav a.active{color:#c00;}
+  /* ==================================================
+   SUBHEADER (MENU KEDUA)
+   ================================================== */
+  .subheader{background:#fff;border-bottom:2px solid #c00; position:sticky;top:52px;z-index:150;}
+  .sub-nav{ max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover,
+  .sub-nav a.active{color:#c00;}
+  /* ==================================================
+   MOBILE
+   ================================================== */
+  .menu-btn{display:none;font-size:22px;background:none;border:none; color:#fff;cursor:pointer;}
+  @media (max-width: 768px){
+  .main-nav{display:none;}
+  .menu-btn{display:block;}}
+
+.ads-slot{
+  margin:24px 0;
+  text-align:center;
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  font-family:var(--font-body);
-  background:var(--bg);
-  color:var(--text);
+.ads-label{
+  display:block;
+  font-size:12px;
+  color:#999;
+  margin-bottom:6px;
 }
-
-/* ================================
-   HEADER
-================================ */
-.topbar{
-  background:#000;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-
-.top-inner{
-  max-width:1200px;
+.ads-box{
+  max-width:728px;
+  height:90px;
   margin:auto;
-  padding:12px 16px;
+  background:#f4f5f7;
+  border:1px dashed #ccc;
+  border-radius:10px;
   display:flex;
   align-items:center;
-  gap:20px;
+  justify-content:center;
+  color:#aaa;
 }
-
-/* LOGO */
-.brand-logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family:var(--font-logo);
-  font-size:26px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:var(--green);
-}
-.brand-logo span{color:#fff;}
-.brand-logo img{
-  height:38px;
-  width:auto;
-}
-
-/* NAV */
-.main-nav{
-  margin-left:auto;
-  display:flex;
-  gap:18px;
-}
-.main-nav a{
-  font-weight:600;
-  font-size:14px;
-  color:#fff;
-  text-decoration:none;
-}
-.main-nav a.active,
-.main-nav a:hover{
-  color:var(--green);
-}
-
-/* ================================
-   SUB MENU
-================================ */
-.subheader{
-  background:#fff;
-  border-bottom:3px solid var(--accent);
-  position:sticky;
-  top:64px;
-  z-index:90;
-}
-.sub-nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  gap:18px;
-  padding:10px 16px;
-  overflow-x:auto;
-}
-.sub-nav a{
-  font-size:14px;
-  font-weight:700;
-  color:#333;
-  text-decoration:none;
-}
-.sub-nav a:hover{color:var(--accent);}
-
-/* ================================
-   LAYOUT
-================================ */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:24px 16px;
-}
-.news-layout{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:28px;
-}
-@media(max-width:900px){
-  .news-layout{grid-template-columns:1fr;}
-}
-
 /* ================================
    NEWS CARD
 ================================ */
@@ -167,99 +136,16 @@ html,body{
   font-size:13px;
   color:var(--muted);
 }
-
-/* ================================
-   SIDEBAR
-================================ */
-aside .box{
-  background:var(--card);
-  padding:16px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  margin-bottom:20px;
-}
-.side-item{
-  display:flex;
-  gap:10px;
-  text-decoration:none;
-  color:inherit;
-  margin-top:12px;
-}
-.side-item img{
-  width:80px;
-  height:60px;
-  border-radius:8px;
-  object-fit:cover;
-}
-.side-item strong{
-  font-size:14px;
-  font-weight:700;
-}
-.side-date{
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* ================================
-   ADS SPACE
-================================ */
-.ads-slot{
-  margin:24px 0;
-  text-align:center;
-}
-.ads-label{
-  display:block;
-  font-size:12px;
-  color:#999;
-  margin-bottom:6px;
-}
-.ads-box{
-  max-width:728px;
-  height:90px;
-  margin:auto;
-  background:#f4f5f7;
-  border:1px dashed #ccc;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#aaa;
-}
-
-/* ================================
-   FOOTER
-================================ */
-footer{
-  background:#111;
-  color:#bbb;
-  margin-top:50px;
-}
-footer h4{color:#fff;}
-footer a{color:#bbb;text-decoration:none;}
-footer a:hover{color:var(--accent);}
-.copy{
-  text-align:center;
-  border-top:1px solid #222;
-  padding:16px;
-  font-size:13px;
-  color:#777;
-}
-
-
-</style>
+  </style>
 </head>
-
 <body>
-<!-- TOP NAV -->
-<header class="topbar">
+ <header class="topbar">
   <div class="top-inner">
-
-    <a href="index.html" class="brand-logo">
-      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
-      REPUBLIK<span>MANCING</span>
-    </a>
-
-    <nav class="main-nav">
+    <button class="menu-btn" id="openOff">☰</button>
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+     <nav class="main-nav">
       <a href="index.html">Beranda</a>
       <a href="berita.html" class="active">Berita</a>
       <a href="video.html">Video</a>
