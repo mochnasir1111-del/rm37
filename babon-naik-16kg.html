@@ -48,6 +48,16 @@
   50% { transform: scale(1.1); filter: brightness(1.4); }
   100% { transform: scale(1); filter: brightness(1); }}
   .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
   </style>
 </head>
 <body>
@@ -67,8 +77,8 @@
       <div class="meta">Oleh <strong>Redaksi Republik Mancing</strong> • Padalarang, Bandung • 6 Desember 2025 </div>
  <!-- ACTIONS BAR -->
     <div class="rm-actions">
-      <div class="rm-view">👁 <span id="rmView">0</span></div>
-      <button class="rm-btn" onclick="likeArticle()">👍 <span id="rmLike">0</span></button>
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
@@ -138,8 +148,9 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
 
       <!-- ACTIONS BAR -->
     <div class="rm-actions">
-      <div class="rm-view">👁 <span id="rmView">0</span></div>
-      <button class="rm-btn" onclick="likeArticle()">👍 <span id="rmLike">0</span></button>
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
@@ -261,29 +272,35 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
     <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
-    <img src="assets/qris-republikmancing.png" class="qris" alt="QRIS">
-    <p>DANA / OVO / GoPay:<br><b>085693927647</b></p>
-  </div>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+
+<img src="assets/img/icon/qr.jpeg" class="qris">
+
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
 </div>
-
 <script>
-/* ELEMENT REFERENCES */
-const rmShare = document.getElementById("rmShare");
-const rmSawer = document.getElementById("rmSawer");
-const wa = document.getElementById("wa");
-const fb = document.getElementById("fb");
-const tg = document.getElementById("tg");
+/* ===============================
+   VIEW & LIKE SYSTEM
+================================ */
+let views = Number(localStorage.getItem("rmView")) || 0;
+let likes = Number(localStorage.getItem("rmLike")) || 0;
+/* Tambah view 1x per load */
+views++;
+localStorage.setItem("rmView", views);
+/* Render ke semua tempat */
+function renderCounters(){
+  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
+renderCounters();
 
-/* VIEW COUNTER */
-document.getElementById("rmView").innerText = (localStorage.rmView = (Number(localStorage.rmView||0)+1));
-document.getElementById("rmLike").innerText = localStorage.rmLike || 0;
-
-/* LIKE BUTTON */
+/* Like button */
 function likeArticle(){
-  localStorage.rmLike = Number(localStorage.rmLike||0)+1;
-  document.getElementById("rmLike").innerText = localStorage.rmLike;
-}
-
+  likes++;
+  localStorage.setItem("rmLike", likes);
+  renderCounters();}
 /* OPEN/CLOSE SHARE MODAL */
 function openShare(){
   let url = encodeURIComponent(location.href);
@@ -291,27 +308,20 @@ function openShare(){
   wa.href = "https://wa.me/?text=" + title + "%20" + url;
   fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
-  rmShare.style.display = "flex";
-}
+  rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
-
 /* OPEN/CLOSE SAWER MODAL */
 function openSawer(){ rmSawer.style.display = "flex"; }
 function closeSawer(){ rmSawer.style.display = "none"; }
-
 /* NATIVE SHARE */
 function nativeShare(){
   if(navigator.share){
     navigator.share({title:document.title,url:location.href});
   } else {
-    alert("Fitur share tidak tersedia di browser ini.");
-  }
-}
+    alert("Fitur share tidak tersedia di browser ini.");}}
 </script>
 </body>
 </html>
-
-
 
 
 
