@@ -29,18 +29,8 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
 .main-nav a:hover{background:#f0f6ff;color:var(--accent)}
 /* ---------- SUBHEADER ---------- */
-.subheader{
-  background:#fff;
-  border-bottom:2px solid var(--accent);
-  position:sticky;
-  top:0;
-  z-index:90;
-}
-
-.sub-nav{
-  max-width:var(--max-width);
-  margin:0 auto;
-  display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
+.subheader{ background:#fff;border-bottom:2px solid var(--accent);position:sticky; top:0;z-index:90;}
+.sub-nav{max-width:var(--max-width);margin:0 auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
 .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
 .sub-nav a:hover{color:var(--accent);}
 /* HAMBURGER */
@@ -86,7 +76,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .news-card img{width:100%;height:170px;object-fit:cover}
 .card-body{padding:12px}
 .card-body h3{font-size:16px;margin-bottom:8px}
-.card-body h3 a{text-decoration:none;color:#0b3a66}
+.card-body h3 a{text-decoration:none;color:#222}
 .card-body p{color:var(--muted);font-size:14px}
 /* LIST NEWS */
 .list-news{background:transparent}
@@ -194,38 +184,10 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .ad-responsive img{width:100%;height:auto;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.15);transition:0.3s;}
 .ad-responsive img:hover{transform:scale(1.03);}
 /* OFFCANVAS FINAL (KANAN, MOBILE) */
-.offcanvas{
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: #111;
-  color: #fff;
-  z-index: 10002;
-  padding: 20px;
-  transition: right .3s ease;
-}
-
-.offcanvas.active{
-  right: 0;
-}
-
-.offcanvas-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.45);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-  z-index: 10001;
-}
-
-.offcanvas-backdrop.show{
-  opacity: 1;
-  pointer-events: auto;
-}
-
+.offcanvas{position: fixed;top: 0;right: -100%;width: 280px;height: 100vh;background: #111;color: #fff;z-index: 10002;padding: 20px;transition: right .3s ease;}
+.offcanvas.active{right: 0;}
+.offcanvas-backdrop{position: fixed;inset: 0;background: rgba(0,0,0,.45);opacity: 0;pointer-events: none;transition: opacity .25s ease;z-index: 10001;}
+.offcanvas-backdrop.show{opacity: 1;pointer-events: auto;}
     /* TOPBAR */
   .topbar{background:#111;color:#fff;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px 16px;}
@@ -241,8 +203,6 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .sub-nav a:hover{color:#c00;}
     /* STICKY (OPSIONAL, KEREN) */
   .subheader{position: sticky;top:52px;z-index:50;}
-
-    
   /* ================= HEADER GLOBAL ================= */
   .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
@@ -256,24 +216,20 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
   .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
   .sub-nav a:hover{color:#c00}
-
     /* MOBILE */
   .menu-btn{background:none;border:none;font-size:26px;color:#fff;cursor:pointer;z-index:10001;   /* PALING PENTING */position:relative;}
 @media (max-width:768px){
   .main-nav{display:none;}}
   .topbar{position:sticky;top:0;z-index:10000;}
   .top-inner{position:relative;z-index:10000;}
-
   .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand-logo img{width:34px;height:34px;object-fit:contain;}
-
 /* ================= GRID VIDEO ================= */
 .video-grid{margin: 48px auto;}
 .video-grid-header{font-size: 18px;font-weight: 800;text-transform: uppercase;border-left: 4px solid #e60012;padding-left: 12px;margin-bottom: 16px;color: #111;}
 .video-grid-wrap{display: grid;grid-template-columns: 2fr 1fr;gap: 24px;}
 /* VIDEO UTAMA */
 .video-main h3{font-size: 18px;font-weight: 700;margin-top: 12px;}
-  
    /* RESPONSIVE */
    @media (max-width: 900px){
   .video-grid-wrap{grid-template-columns: 1fr;}
@@ -328,46 +284,26 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
     /* ================================
    WIDGET JADWAL LOMBA / HARIAN
 ================================ */
-
-.widget-jadwal{
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-  padding:14px;
-  margin-bottom:20px;
-}
-
-.widget-jadwal h3{
-  font-size:16px;
-  font-weight:800;
-  margin-bottom:12px;
-  border-left:4px solid var(--rm-red);
-  padding-left:10px;
-}
-
+.widget-jadwal{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:14px;margin-bottom:20px;}
+.widget-jadwal h3{font-size:16px;font-weight:800;margin-bottom:12px;border-left:4px solid var(--rm-red);padding-left:10px;}
 /* List */
-.schedule-list{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
+.schedule-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
 /* Item */
-.schedule-list li a{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  text-decoration:none;
-  color:#111;
-  background:#f8f9fa;
-  padding:10px;border-radius:10px;transition:.2s ease;}
+.schedule-list li a{display:flex;gap:12px;align-items:center;text-decoration:none; color:#111; background:#f8f9fa;padding:10px;border-radius:10px;transition:.2s ease;}
 .schedule-list li a:hover{background:#eef6e8;}
 /* Thumbnail */
 .schedule-list img{width:60px;height:60px;object-fit:cover;border-radius:8px;flex-shrink:0;}
 /* Text */
 .schedule-list strong{font-size:14px;display:block;line-height:1.3;}
 .schedule-list span{font-size:12px;color:#666;}
+/* Judul berita di homepage & list */
+a.title {color: #000000;text-decoration: none;font-weight: 700;}
+a.title:hover {color: #c00; }
+.slider {width: 100%;overflow: hidden;}
+    .slide {position: relative;width: 100%;height: 420px;}
+    @media (max-width: 768px) {
+   .slide {height: 260px; }}
+   .slide img {width: 100%;height: 100%;object-fit: cover;display: block;}
   </style>
 </head>
 <body>
@@ -461,18 +397,12 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <button class="slider-nav prev" data-action="prev" aria-label="Sebelumnya">‹</button>
         <div class="slider-track">
           <article class="slide">
-  <img src="assets/img/event/5.png" alt="Event Spektakuler Rebut 4 Mobil">
-  <div class="slide-caption">
-    <h2>
-      <a href="tengkele.html" class="hover-red">
-        EVENT SPEKTAKULER! Rebut 4 Unit Mobil
-      </a>
-    </h2>
-    <p class="lead">
-      Turnamen mancing paling bergengsi • HTM Rp35.000.000
-    </p>
-  </div>
-</article>
+          <img src="assets/img/event/5.png" alt="Event Spektakuler Rebut 4 Mobil">
+           <div class="slide-caption">
+           <h2><a href="tengkele.html" class="hover-red">EVENT SPEKTAKULER! Rebut 4 Unit Mobil</a></h2>
+           <p class="lead">Turnamen mancing paling bergengsi • HTM Rp35.000.000</p>
+            </div>
+             </article>
 
            <article class="slide">
             <img src="assets/img/berita/header.png" alt="Headline 1">
@@ -503,48 +433,40 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 
 <main class="container">
   <section class="news-grid">
-    <article class="news-card">
+     <article class="news-card">
         <a href="tengkele.html" class="thumb">
          <img src="assets/img/event/tengkele.png" alt=""></a>
-          <h3><a href="tengkele.html" class="title">Event Spektakuler Akhir Tahun – Rebut 4 Unit Mobil •</a></h3>
-       <p> Turnamen mancing paling dinanti di Indonesia hadir! Hanya 50 peserta, live on Youtube bersama RepublikMancing37. Pertama kali di Indonesia:Lomba Pelampungan Ikan Mas.</p>
+          <h4><a href="tengkele.html" class="title">Event Spektakuler Akhir Tahun Rebut 4 Unit Mobil •</a></h4>
            </article>
-     <article class="news-card">
+           <article class="news-card">
         <a href="hut-pt-truba.html" class="thumb">
          <img src="assets/img/berita/DSCF6927.JPG" alt=""></a>
-          <h3><a href="hut-pt-truba.html" class="title">Kegiatan Mancing Bersama HUT PT Truba Jaga Cita di Telaga Enjoy</a></h3>
-       <p>Kegiatan mancing bersama digelar dalam rangka HUT PT Truba Jaga Cita di Telaga Enjoy dengan suasana kebersamaan antar peserta.</p>
-           </article>
-
+          <h4><a href="hut-pt-truba.html" class="title">Kegiatan Mancing Bersama HUT PT Truba Jaga Cita di Telaga Enjoy</a></h4></article>
+       
         <article class="news-card">
           <a href="profil-angler2.html"class="thumb">
           <img src="assets/img/mmfc/om ben.jpg" alt=""></a>
-            <h3><a href="profil-angler2.html"class="title">Profil Tokoh Komunitas Mancing MMFC</a></h3>
-            <p>Ulasan singkat mengenai tokoh komunitas mancing MMFC yang aktif dalam kegiatan dan pengembangan komunitas. </p>
-        </article>
+            <h4><a href="profil-angler2.html"class="title">Profil Tokoh Komunitas Mancing MMFC</a></h3></article>
         <article class="news-card">
            <a href="babon-naik-16kg.html"class="thumb">
           <img src="assets/img/event/Hitam dan Merah Ilustratif Misteri Cerita Horor Thumbnail YouTube.png" alt=""></a>
-            <h3><a href="babon-naik-16kg.html"class="title">Babon naik 16 kg Di Menit Akhir</a></h3>
-            <p>Anniversary 2th New Ratu Mas Ayu Padalarang Bandung</p>
+            <h4><a href="babon-naik-16kg.html"class="title">Babon naik 16 kg Di Menit Akhir Pemancingan New Ratu Mas Ayu Heboh</a></h4>
         </article>
           <article class="news-card">
            <a href="totalWar.html"class="thumb">
           <img src="assets/img/galeri/img6.jpeg" alt=""></a>
-            <h3><a href="totalWar.html"class="title">Total War Episode II Di Pemancingan Empang Damai</a></h3>
-            <p>Total War Episode II merupakan kegiatan mancing yang digelar di Pemancingan Empang Damai by Telaga Silet.</p>
+            <h4><a href="totalWar.html"class="title">Total War Episode II Di Pemancingan Empang Damai Strike 1000 Ekor Mendapatkan Medali</a></h4>
           </article>
               <article class="news-card">
            <a href="my-fishing.html"class="thumb">
           <img src="assets/img/mmfc/my fishing.png" alt=""></a>
-            <h3><a href="my-fishing.html"class="title">Pemancingan New My Fishing-Indramayu</a></h3>
-            <p>Ulasan singkat Pemancingan New My Fishing di Indramayu sebagai salah satu lokasi mancing ikan mas di Jawa Barat.</p>
+            <h4><a href="my-fishing.html"class="title">Pemancingan New My Fishing-Indramayu Fasilitasnya Memanjakan Para Angler</a></h4>
+           
         </article>
         <article class="news-card">
            <a href="kedondong.html"class="thumb">
           <img src="assets/img/galeri/kedondong.jpeg" alt=""></a>
-            <h3><a href="kedondong.html"class="title">Pemancingan Kedondong Jagakarsa, Spot Mancing Favorit di Jakarta Selatan</a></h3>
-            <p>Pemancingan Kedondong Jagakarsa menawarkan dua kolam mancing yang kerap digunakan untuk lomba dan kegiatan komunitas di Jakarta Selatan.</p>
+            <h4><a href="kedondong.html"class="title">Pemancingan Kedondong Jagakarsa, Spot Mancing Ikan Mas Favorit di Jakarta Selatan </a></h4>   
         </article>
   </section>
 
@@ -608,8 +530,8 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 </div>
 <section class="video-grid container">
   <div class="video-grid-header">
-    <h2>VIDEO TERBARU</h2>
-    <a href="video.html" class="view-all">Lihat Semua ></a>
+    <h3>VIDEO TERBARU</h3>
+    <a href="video.html" class="title">Lihat Semua ></a>
   </div>
 
   <div class="video-grid-wrap">
@@ -625,7 +547,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         </iframe>
       </div>
       <div class="video-main-info">
-        <h3>Bikin Melongo! - Koleksi Joran Dan Reel Om Bolang MMFC</h3>
+        <h4>Bikin Melongo! - Koleksi Joran Dan Reel Om Bolang MMFC</h4>
         <p>Review koleksi alat pancing sultan yang bikin geleng-geleng kepala.</p>
       </div>
     </article>
@@ -640,20 +562,17 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
         <article class="list-item">
            <a href="joki bekas.html"class="thumb">
           <img src="assets/img/berita/joki.png" alt=""></a>
-            <h4><a href="profil-angler-joki bekas.html" class="title">Joki Bekas Merajai Total Di Setiap Empang</a></h4>
-            <p class="muted">3 jam lalu • oleh Sari</p>
+            <h4><a href="profil-angler-joki bekas.html" class="title">Profil Angler, Joki Bekas Merajai Total Di Setiap Empang</a></h4>
         </article>
         <article class="list-item">
           <a href="article.html">
           <img src="assets/img/event/14mmfc.jpeg" alt=""></a>
-            <h4><a href="hut-mmfc-14th.html">Anniversary MMFC Ke 14 Tahun</a></h4>
-            <p class="muted">6 jam lalu • oleh RepublikMancing</p>
+            <h4><a href="hut-mmfc-14th.html" class="title">Liputan Khusus, Anniversary MMFC Ke 14 Tahun</a></h4>
         </article>
          <article class="list-item">
           <a href="event jp.html">
           <img src="assets/img/berita/img.png" alt=""></a>
-            <h4><a href="event-jp.html">Event Pemancingan Jeruk Purut</a></h4>
-            <p class="muted">2 minggu lalu • oleh Godel</p>
+            <h4><a href="event-jp.html" class="title">Lomba Mancing Ikan Mas Pemancingan Jeruk Purut</a></h4>
         </article>
       </section>
     </section>
@@ -665,10 +584,10 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
       <div class="widget">
         <h3>Populer</h3>
         <ol class="popular-list">
-          <li><a href="babon-naik-16kg.html">Babon 16 Kg Pecahkan Rekor, Hebohkan Pemancingan</a></li>
-          <li><a href="rekomendasi gear joran.html">Tips & Rekomendasi Memilih Piranti Mancing</a></li>
-          <li><a href="hut-mmfc-14th.html">Anniversary MMFC Ke 14 Tahun</a></li>
-          <li><a href="cs-101.html">Event MMFC-CS 101 Joglo</a></li>
+          <li><a href="babon-naik-16kg.html" class="title">Babon 16 Kg Pecahkan Rekor, Hebohkan Pemancingan</a></li>
+          <li><a href="rekomendasi-gear-joran.html" class="title">Tips & Rekomendasi Memilih Piranti Mancing</a></li>
+          <li><a href="hut-mmfc-14th.html" class="title">Anniversary MMFC Ke 14 Tahun</a></li>
+          <li><a href="cs-101.html" class="title">Event MMFC-CS 101 Joglo</a></li>
         </ol>
       </div>
       <!-- WIDGET: VIDEO -->
@@ -676,7 +595,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
           <div class="card">
             <div style="font-weight:800;margin-bottom:8px">Highlight Video</div>
             <iframe width="100%" height="170" src="https://www.youtube.com/embed/jqUyxauQJLg?si=RLcOtWVf3kludHZW" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
-            <div style="margin-top:10px"><a class="btn hover-red" href="https://www.youtube.com/RepublikMancing37">Kunjungi Channel</a></div>
+            <div style="margin-top:10px"><a class="title" href="https://www.youtube.com/RepublikMancing37" >Kunjungi Channel</a></div>
           </div>
     <!-- ===== IKLAN: SIDEBAR BERANDA ===== -->
 <div class="ad-slot ad-sidebar">
@@ -1063,13 +982,4 @@ document.addEventListener("click", e => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
