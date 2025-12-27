@@ -3,9 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Republik Mancing News</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Title & Meta SEO -->
+  <title>Republik Mancing News – Berita & Jadwal Lomba Ikan Mas Terbaru</title>
+  <meta name="description" content="Portal pemancingan Indonesia: berita mancing, jadwal lomba ikan mas, review empang, laporan lomba, teknik ikan mas, spot kolam, dan komunitas angler Nusantara. Update harian untuk pemancing di seluruh Indonesia." />
+  <meta name="keywords" content="lomba ikan mas, berita mancing, review empang, teknik ikan mas, spot kolam, komunitas angler, jadwal lomba" />
+  <meta name="author" content="Republik Mancing" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.republikmancing.com/index.html" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- JavaScript -->
   <script defer src="assets/js/main.js"></script>
+  <!-- Optional: Open Graph / Social Sharing -->
+  <meta property="og:title" content="Republik Mancing News – Berita & Jadwal Lomba Ikan Mas Terbaru" />
+  <meta property="og:description" content="Portal pemancingan Indonesia: berita mancing, jadwal lomba ikan mas, review empang, laporan lomba, teknik ikan mas, spot kolam, dan komunitas angler Nusantara. Update harian untuk pemancing di seluruh Indonesia." />
+  <meta property="og:url" content="https://www.republikmancing.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Republik Mancing News – Berita & Jadwal Lomba Ikan Mas Terbaru" />
+  <meta name="twitter:description" content="Portal pemancingan Indonesia: berita mancing, jadwal lomba ikan mas, review empang, laporan lomba, teknik ikan mas, spot kolam, dan komunitas angler Nusantara. Update harian untuk pemancing di seluruh Indonesia." />
+  <meta name="twitter:image" content="assets/img/og-image.jpg" />
   <style>
     /* ---------- RESET ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -148,9 +169,11 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .slide:hover img {transform: scale(1.06);filter: brightness(0.9);}
    .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fff;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
    /* Running text (marquee style) */
-   .running-text {display: inline-block;padding-left: 100%;animation: jalan 30s linear infinite;}
-   @keyframes jalan {0%   { transform: translateX(0); }100% { transform: translateX(-100%); }}
-   
+   .info-lomba {overflow: hidden;background: #e42525; padding: 5px 0;}
+   .running-text ul {display: flex;list-style: none;white-space: nowrap;animation: scroll-left 40s linear infinite;}
+    .running-text li {margin-right: 50px; /* Jarak antar item */}
+   /* Animasi scroll horizontal */
+     @keyframes scroll-left {0% { transform: translateX(100%); }100% { transform: translateX(-100%); }} 
    .top-ad{background:#f8f9fa;padding:10px 0;margin-bottom:24px;}
    .top-ad img{max-width:100%;height:auto;border-radius:8px;}
    .ad-label{font-size:11px;color:#777;text-transform:uppercase;text-align:center;margin-bottom:6px;}
@@ -307,11 +330,13 @@ a.title:hover {color: #c00; }
   </style>
 </head>
 <body>
+  <!-- ================= IKLAN TOP ================= -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
+     crossorigin="anonymous"></script>
   <!-- TOP NAV -->
 <header class="topbar">
   <div class="top-inner">
     <button class="menu-btn" id="openOff" aria-label="Menu">☰</button>
-
     <a href="index.html" class="brand-logo">
       <img src="assets/img/icon/rm.png" alt="Republik Mancing">
       Republik<span>Mancing</span>
@@ -362,19 +387,17 @@ a.title:hover {color: #c00; }
       <a href="kontak.html" class="hover-red">Kontak</a>
   </nav>
 </div>
-<div class="offcanvas-backdrop" id="offBackdrop"></div>
-    <!-- INFO LOMBA BERJALAN -->
-   <div class="info-lomba">
-   <div class="running-text">
-    <h3> Lomba Ikan Mas Saung Ngendon-Pondok Labu — 28 Des 2025 •  
-     Lomba Executive Tengkele kusan - Depok — 28 Des 2025 •  
-     MMFC Pantura Feat Telaga Joglo — 12 Des 2025 •  
-     Lomba Executive HUT MMFC — Segera Dibuka!</h3>
+<div class="info-lomba">
+  <div class="running-text">
+    <ul>
+      <li>Lomba Ikan Mas Saung Ngendon-Pondok Labu — 28 Des 2025</li>
+      <li>Lomba Executive Tengkele Kukusan - Depok — 28 Des 2025</li>
+      <li>Event Crazy Rich 21 Di Pemancingan Telaga Sakila — Sabtu 17 Des 2025 HTM Rp8.000.000</li>
+      <li>Lomba Mancing Bulan Januari 2026 — Segera Dibuka!</li>
+    </ul>
   </div>
-   </div>
-   <!-- ================= IKLAN TOP ================= -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
-     crossorigin="anonymous"></script>
+</div>
+
   <!-- MAIN LAYOUT -->
   <main class="container">
     <!-- LEFT: MAIN CONTENT -->
@@ -457,13 +480,8 @@ a.title:hover {color: #c00; }
         </article>
   </section>
 
-  <aside class="right-col">
-     <div class="widget">
-        <div class="ad-label">SPONSORED AD</div>
-        <div class="ad-box">
-           <img src="assets/img/iklan/banner-lomba.jpg" alt="Iklan Lomba" style="width:100%">
-        </div>
-     </div>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
+     crossorigin="anonymous"></script>
 
      <div class="widget widget-jadwal">
   <h3>Jadwal Harian Pemancingan</h3>
@@ -503,7 +521,7 @@ a.title:hover {color: #c00; }
      <!-- IKLAN TENGAH -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
      crossorigin="anonymous"></script>
-      
+</div>
 <section class="video-grid container">
   <div class="video-grid-header">
     <h3>VIDEO TERBARU</h3>
@@ -623,10 +641,9 @@ a.title:hover {color: #c00; }
 </div>
   </main>
    
-<!-- ===== IKLAN: SEBELUM FOOTER ===== -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
      crossorigin="anonymous"></script>
-  
+     
        <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
@@ -954,5 +971,4 @@ document.addEventListener("click", e => {
 </script>
 </body>
 </html>
-
 
