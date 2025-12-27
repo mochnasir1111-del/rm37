@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rekomendasi • Alat Pancing — Republik Mancing</title>
+  <meta name="description" content="Pilihan alat mancing terbaik versi kalian." />
+
+   <style>
+    /* Minimal inline styles untuk preview mandiri */
+    :root{--accent:#2e6d3e;--muted:#666}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
+    .container{max-width:920px;margin:32px auto;padding:0 16px}
+    header.site-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+    header .brand{font-weight:700;color:var(--accent);font-size:20px;text-decoration:none}
+    nav.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:12px}
+    article.article{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,20,0.04)}
+    .article h1{font-size:28px;margin:6px 0 12px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:18px}
+    .hero{width:100%;height:auto;border-radius:8px;overflow:hidden;margin-bottom:18px}
+    .hero img{width:100%;display:block}
+    .article p{margin:12px 0}
+    .article h2{margin-top:20px}
+    .tips{background:#f7f8fa;padding:12px;border-left:4px solid var(--accent);border-radius:6px}
+    .share{display:flex;gap:8px;margin-top:18px}
+    .share a{padding:8px 12px;border-radius:6px;text-decoration:none;border:1px solid #eee;font-size:14px}
+    .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+    .related .card{padding:12px;border:1px solid #eee;border-radius:8px}
+    footer{margin:40px 0 80px;color:var(--muted);font-size:13px}
+    @media (max-width:600px){.article h1{font-size:20px}}
+    .article-thumb img.thumb-small {
+  width: 100%; /* Atur sesuai keinginan: 30%, 40%, 50% */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center */
+}
+
+      /* ACTIONS BAR */
+.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
+  .rm-view span,.rm-btn span{font-size:14px;color:#555}
+  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
+  .rm-sawer-btn{color:#e60012}
+  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
+  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
+  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rm-head b{font-size:18px;color:#111}
+  .rm-head span{cursor:pointer;font-size:18px}
+  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
+  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
+  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
+  .qris{max-width:100%;margin:12px 0}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
+  /* Animasi Kedip untuk Tombol Sawer */
+  @keyframes sawerPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
+  
+.article-photo {
+    max-width: 100%;
+    width: 800px;       /* ukuran ideal */
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="brand" href="index.html">Republik Mancing</a>
+      <div style="margin-left:auto;color:var(--muted);font-size:14px">Update Lomba • Spot • Tips</div>
+    </header>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Teknik & Umpan
+    </nav>
+  <main class="container">
+
+  <article class="card" itemscope itemtype="http://schema.org/Article">
+    <span class="kicker">Rekomendasi • Alat Pancing</span>
+    <h1>Rekomendasi Gear & Joran Terbaik untuk Pemancing Pemula</h1>
+    <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
+<!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
+  
+  <img src="assets/img/galeri/perlengkapan.png" alt="Joran Pemancing Pemula" class="article-photo">
+ <em>Gear mancing lengkap mulai dari joran, reel, hingga tackle box, cocok untuk pemancing pemula. (Dok. Republik Mancing)</em>
+  <p class="article-meta">Republik Mancing • Panduan Gear Pemula</p>
+
+  <p>
+    Untuk pemula yang baru masuk ke dunia pemancingan, memilih perlengkapan yang tepat
+    adalah langkah awal yang sangat penting. Berikut panduan lengkap gear dasar yang
+    wajib dimiliki agar proses belajar memancing lebih mudah dan menyenangkan.
+  </p>
+
+  <hr>
+
+  <!-- GEAR 1 -->
+  <h2>1. Joran untuk Pemancing Pemula</h2>
+  <img src="assets/img/galeri/reel joran.png" alt="Joran Pemancing Pemula" class="article-photo">
+   <em>Ilustrasi perlengkapan mancing pemula—joran, reel, dan tackle box premium. (Foto: Republik Mancing)</em>
+
+  <p>
+    Joran yang ideal untuk pemula adalah joran yang ringan, fleksibel, namun tetap
+    kuat menghadapi tarikan ikan kecil hingga sedang. Joran dengan panjang 150–180 cm
+    dan action medium adalah pilihan aman untuk belajar teknik dasar memancing.
+  </p>
+
+  <ul>
+    <li>Panjang ideal: 150–180 cm</li>
+    <li>Material: Carbon composite / fiberglass</li>
+    <li>Action: Medium atau Medium-Light</li>
+    <li>Handle nyaman (EVA foam atau cork)</li>
+  </ul>
+
+  <hr>
+
+  <!-- GEAR 2 -->
+  <h2>2. Reel Spinning yang Mudah Digunakan</h2>
+  <img src="assets/img/galeri/reel spining 1.png" alt="Reel Spinning Pemula" class="article-photo">
+   <em>Ilustrasi Reel Spinning yang direkomendasikan untuk pemancing pemula. (Foto: Republik Mancing)</em>
+  <p>
+    Reel spinning menjadi pilihan terbaik untuk pemancing pemula karena mudah dipakai,
+    minim risiko kusut senar, dan cocok di banyak kondisi kolam. Reel ukuran 1000–2500
+    sudah sangat cukup untuk belajar kontrol tali dan tarikan ikan.
+  </p>
+
+  <ul>
+    <li>Ukuran reel: 1000–2500</li>
+    <li>Gear ratio: 5.0–5.3</li>
+    <li>Drag: 4–7 kg</li>
+    <li>Bobot ringan (200–260 gram)</li>
+  </ul>
+
+  <hr>
+
+  <!-- GEAR 3 -->
+  <h2>3. Perlengkapan Wajib dalam Tackle Box</h2>
+  <img src="assets/img/galeri/takle box 1.png" alt="Tackle Box Pemancing Pemula" class="article-photo">
+
+  <p>
+    Selain joran dan reel, pemancing pemula wajib membawa perlengkapan pendukung untuk
+    menghadapi kondisi tak terduga di lapangan, seperti senar putus atau kail yang harus
+    diganti. Pastikan tackle box kamu terisi perlengkapan dasar berikut:
+  </p>
+
+  <ul>
+    <li>Kili-kili dan snap</li>
+    <li>Kail kecil–sedang</li>
+    <li>Pelampung ringan</li>
+    <li>Timah kecil</li>
+    <li>Gunting/cutter</li>
+    <li>Cadangan senar</li>
+  </ul>
+
+  <hr>
+
+  <h2>Kesimpulan</h2>
+  <p>
+    Gear pemancing pemula tidak harus mahal. Yang terpenting, perlengkapan harus
+    nyaman, ringan, dan mudah dipakai. Dengan joran medium, reel spinning ukuran kecil,
+    serta tackle box dasar, siapa pun bisa mulai belajar memancing dengan baik dan
+    menikmati setiap tarikan.
+  </p>
+    <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
+  </article>
+</main>
+    
+<footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+      <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+<!-- SHARE MODAL -->
+<div id="rmShare" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
+    <p style="color:#555;font-size:14px;margin:8px 0 16px;">Pilih platform untuk membagikan artikel ini:</p>
+    <div class="rm-share-icons">
+      <a id="wa" target="_blank" aria-label="WhatsApp"><img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+      <a id="fb" target="_blank" aria-label="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook"></a>
+      <a id="tg" target="_blank" aria-label="Telegram"><img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+      <a id="tw" target="_blank" aria-label="X"><img src="assets/img/icon/twitter.png" alt="X / Twitter"></a>
+      <a id="ln" target="_blank" aria-label="LinkedIn"><img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+      <button onclick="nativeShare()" class="rm-native"><img src="assets/img/icon/gl.jpg" alt="Share"></button>
+      <button class="rm-btn" onclick="openShare()"> <img src="assets/img/icon/link.jpg" alt="Bagikan Link"> </button>
+    </div>
+  </div>
+</div>
+
+<!-- SAWER MODAL -->
+<div id="rmSawer" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+
+<img src="assets/img/icon/qr.jpeg" class="qris">
+
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
+</div>
+<script>
+/* ===============================
+   VIEW & LIKE SYSTEM
+================================ */
+let views = Number(localStorage.getItem("rmView")) || 0;
+let likes = Number(localStorage.getItem("rmLike")) || 0;
+/* Tambah view 1x per load */
+views++;
+localStorage.setItem("rmView", views);
+/* Render ke semua tempat */
+function renderCounters(){
+  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
+renderCounters();
+
+/* Like button */
+function likeArticle(){
+  likes++;
+  localStorage.setItem("rmLike", likes);
+  renderCounters();}
+/* OPEN/CLOSE SHARE MODAL */
+function openShare(){
+  let url = encodeURIComponent(location.href);
+  let title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text=" + title + "%20" + url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
+  rmShare.style.display = "flex";}
+function closeShare(){ rmShare.style.display = "none"; }
+/* OPEN/CLOSE SAWER MODAL */
+function openSawer(){ rmSawer.style.display = "flex"; }
+function closeSawer(){ rmSawer.style.display = "none"; }
+/* NATIVE SHARE */
+function nativeShare(){
+  if(navigator.share){
+    navigator.share({title:document.title,url:location.href});
+  } else {
+    alert("Fitur share tidak tersedia di browser ini.");}}
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
