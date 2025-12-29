@@ -158,17 +158,37 @@ iframe{
   filter:brightness(.95);
 }
  
-     .share-title{margin:0 0 .5rem 0;font-size:.95rem;}
-    .share-buttons{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
-    .share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);color:#111;cursor:pointer;}
-    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
-    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
-    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
-    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
-    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
-    .share-btn.copy{background:#f3f4f6}
-    .sr-only{position:relative;left:-9999px}
-    @media (max-width:600px){.article h1{font-size:20px}}
+    .laporan-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.laporan-card{
+  display:block;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.1);
+  text-decoration:none;
+  color:#000;
+}
+
+.laporan-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.laporan-card div{
+  padding:12px;
+}
+
+.laporan-card h3{
+  margin:0 0 4px;
+  font-size:16px;
+}
+
   </style>
 </head>
 <body>
@@ -178,8 +198,8 @@ iframe{
     <button class="menu-btn">☰</button>
     <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
     <nav class="main-nav">
-      <a href="index.html" class="hover-red">Beranda</a>
-      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="laporan lomba.html/index" class="hover-red">Beranda</a>
+      <a href="laporan lomba/berita.html" class="hover-red">Berita</a>
       <a href="video.html" class="hover-red">Video</a>
       <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
       <a href="kontak.html" class="hover-red">Kontak</a>
@@ -208,148 +228,31 @@ iframe{
       <a href="kontak.html" class="hover-red">Kontak</a>
   </nav>
 </div>
+  <div class="offcanvas-backdrop" id="offBackdrop"></div>
   <article class="rm-article">
 <main class="container">
+<h1>📋 Laporan Lomba Mancing</h1>
 
-<h1>Lomba Mancing Telaga Enjoy Jagakarsa Berlangsung Meriah</h1>
- <h2>Video Highlight Lomba</h2>
+<div class="laporan-list">
 
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;margin-top:14px;box-shadow:0 8px 24px rgba(0,0,0,.15)">
-  <iframe 
-    src="https://www.youtube.com/embed/jqUyxauQJLg?si=RLcOtWVf3kludHZW"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
-
-<p style="font-size:14px;color:#666;margin-top:8px">
-Video dokumentasi lomba mancing Telaga Enjoy Jagakarsa bersama Republik Mancing.
-</p>
-
-<div class="rm-meta">
-  <span>🗓 Kamis, 12 Desember 2025</span>
-  <span>✍️ Tim Republik Mancing</span>
-  <span>📍 Jagakarsa, Jakarta Selatan</span>
-</div>
-
-<!-- THUMBNAIL -->
-<figure class="rm-thumb">
-  <img src="assets/img/enjoy/babon1.jpg" alt="Lomba Mancing Telaga Enjoy">
-  <figcaption>Moment DAVID EB Narik Babon Juara ( Foto: Republik Mancing )</figcaption>
-</figure>
-
-<p class="rm-lead">
-Empang <strong>Telaga Enjoy</strong> kembali menjadi magnet para pemancing
-Jakarta dan sekitarnya. Lomba mancing yang digelar rutin ini diikuti oleh
-puluhan anglers dari berbagai komunitas dengan atmosfer kompetitif
-namun tetap menjunjung tinggi sportivitas.
-</p>
-
-<div class="rm-box">
-<strong>📌 Data Lomba</strong>
-<ul>
-  <li>🎣 Jumlah Lapak: 44 Lapak</li>
-  <li>📅 Hari: Kamis</li>
-  <li>👥 Peserta: Anglers Jabodetabek</li>
-  <li>🏆 Sistem: Ikan Terberat</li>
-</ul>
-</div>
-
-<h2>Atmosfer & Jalannya Lomba</h2>
-<p>
-Sejak pagi hari, area empang mulai dipadati peserta yang bersiap di lapak
-masing-masing. Setelah aba-aba dimulai, konsentrasi penuh terlihat dari
-para anglers yang mengandalkan racikan umpan andalan mereka.
-</p>
-
-<p>
-Beberapa strike besar terjadi di pertengahan lomba, memancing perhatian
-peserta lain dan penonton. Suasana semakin hidup ketika ikan-ikan
-berukuran jumbo berhasil dinaikkan ke daratan.
-</p>
-
-<div class="rm-quote">
-“Lomba ini kami buka rutin setiap Kamis dan Minggu. Selain kompetisi,
-kami ingin Telaga Enjoy jadi tempat silaturahmi para pemancing,”
-ujar Bang Wawan, pengelola Empang Telaga Enjoy.
-</div>
-
-<h2>Hasil & Evaluasi Panitia</h2>
-<p>
-Hingga akhir lomba, panitia mencatat beberapa nama anglers yang berhasil
-menorehkan hasil terbaik. Panitia mengapresiasi kedisiplinan peserta serta
-kondisi empang yang tetap terjaga selama kegiatan berlangsung.
-</p>
- 
-<h2>Galeri Lomba</h2>
-<div class="rm-gallery">
-  <img src="assets/img/enjoy/babon1.jpg" alt="Strike ikan lomba">
-  <img src="assets/img/enjoy/babon mocel.jpg" alt="Penimbangan ikan">
-  <img src="assets/img/enjoy/grandprize.jpg" alt="Suasana lapak lomba">
-  <img src="assets/img/enjoy/juara.JPG" alt="Peserta lomba">
-</div>
-
-<p class="rm-penutup">
-Dengan konsistensi event dan pengelolaan empang yang baik, Telaga Enjoy
-semakin mengukuhkan diri sebagai salah satu spot lomba favorit
-para anglers di wilayah Jakarta Selatan.
-</p>
-
-<div class="rm-tag">
-  <a href="#">#RepublikMancing</a>
-  <a href="#">#LombaMancing</a>
-  <a href="#">#TelagaEnjoy</a>
-  <a href="#">#EventMancing</a>
-</div>
-<!-- BAGIKAN / SHARE WIDGET -->
-<div class="share" aria-label="Bagikan artikel" id="shareWidget">
-  <h5 class="share-title">Bagikan</h5>
-  <div class="share-buttons" role="list">
-    <a role="listitem" class="share-btn facebook" id="shareFacebook" title="Bagikan ke Facebook" target="_blank" rel="noopener">
-      <!-- SVG icon Facebook -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2v-3h2.2V9.4c0-2.2 1.3-3.5 3.3-3.5.9 0 1.8.06 1.8.06v2h-1c-1 0-1.3.63-1.3 1.3V12h2.3l-.36 3h-1.94v7A10 10 0 0022 12z"/>
-      </svg>
-      <span class="label">Facebook</span>
-    </a>
-    <a role="listitem" class="share-btn x" id="shareX" title="Bagikan ke X (Twitter)" target="_blank" rel="noopener">
-      <!-- SVG icon X/Twitter -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M22 5.92c-.64.28-1.33.47-2.05.55.74-.44 1.3-1.13 1.57-1.96-.7.42-1.48.73-2.31.9A4.06 4.06 0 0015.5 4c-2.24 0-4.06 1.82-4.06 4.07 0 .32.04.63.11.93-3.37-.17-6.36-1.78-8.36-4.22-.35.6-.55 1.3-.55 2.05 0 1.42.72 2.67 1.81 3.4-.66-.02-1.28-.2-1.82-.5v.05c0 1.97 1.4 3.61 3.26 3.98-.34.09-.7.14-1.07.14-.26 0-.51-.02-.75-.07.51 1.6 2 2.77 3.77 2.8A8.13 8.13 0 012 19.54 11.48 11.48 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68v-.53c.8-.58 1.49-1.3 2.03-2.12-.73.32-1.52.53-2.34.63z"/>
-      </svg>
-      <span class="label">X</span>
-    </a>
-    <a role="listitem" class="share-btn instagram" id="shareInstagram" title="Instagram (buka profil / salin link)" target="_blank" rel="noopener">
-      <!-- SVG icon Instagram -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zm6.8-3.6a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2zM12 10.5A1.5 1.5 0 1110.5 12 1.5 1.5 0 0112 10.5z"/>
-      </svg>
-      <span class="label">Instagram</span>
-    </a>
-    <a role="listitem" class="share-btn whatsapp" id="shareWhatsApp" title="Bagikan ke WhatsApp" target="_blank" rel="noopener">
-      <!-- SVG icon WhatsApp -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M20.5 3.5A11 11 0 0012 1a11 11 0 00-9.9 6.1 11 11 0 001.2 10.9L1 23l4.4-2.2A11 11 0 0012 23a11 11 0 008.5-19.5zM12 21a9 9 0 01-4.6-1.2l-.3-.2-2.7 1.3 1.3-2.6-.2-.3A9 9 0 1112 21zM17 14c-.2-.1-1.2-.6-1.4-.7s-.4-.1-.6.1-.7.7-.9.8-.3.1-.5 0c-.2-.1-.8-.3-1.6-.9-.6-.6-1-1.4-1.2-1.6s0-.4.1-.5c.1-.1.2-.4.3-.6.1-.2 0-.5-.1-.7s-.6-1.5-.9-2c-.2-.4-.5-.3-.6-.3-.3 0-.5 0-.8 0s-1 .3-1.5.7c-.5.4-1 1-1 2s.8 2.4 1.2 3 .9 1.6 1.6 2.1 1.5 1 2.3 1.1c.8.1 1.6.1 2.2.1.7 0 1.2 0 1.6-.1s1-.4 1.1-.8c.1-.4.1-.8 0-.9-.1-.1-1-.6-1.2-.7z"/>
-      </svg>
-      <span class="label">WhatsApp</span>
-    </a>
-    <a role="listitem" class="share-btn telegram" id="shareTelegram" title="Bagikan ke Telegram" target="_blank" rel="noopener">
-      <!-- SVG icon Telegram -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M21 3L3 10.2c0 0 1.6 1.1 3.6 2.1l1.3.6 3.6 1.7 1.1 1.3c0 0 1.2 1.5 2.9.5 0 0 5.6-3.2 6.5-3.7L21 3z"/>
-      </svg>
-      <span class="label">Telegram</span>
-    </a>
-    <button class="share-btn copy" id="copyLink" title="Salin tautan ke clipboard">
-      <!-- SVG icon copy -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/>
-      </svg>
-      <span class="label">Salin Link</span>
-    </button>
+<a href="telaga-enjoy-12-des-2025.html" class="laporan-card">
+  <img src="assets/img/enjoy/babon1.jpg">
+  <div>
+    <h3>Telaga Enjoy Jagakarsa</h3>
+    <p>Kamis, 12 Desember 2025</p>
   </div>
-  <hr style="margin-top:22px">
+</a>
+
+<a href="pmc-tuan-muda-27-des-2025.html" class="laporan-card">
+  <img src="assets/img/event/tm1.JPG">
+  <div>
+    <h3>PMC Tuan Muda – Kemang</h3>
+    <p>Sabtu, 27 Desember 2025</p>
+  </div>
+</a>
+
+</div>
+ <hr style="margin-top:22px">
       <section id="comments">
         <h3>Komentar</h3>
         <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
@@ -360,9 +263,9 @@ para anglers di wilayah Jakarta Selatan.
         </form>
       </section>
 </article>
-   
-   
+</main>
 
+ 
        <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
@@ -419,6 +322,7 @@ para anglers di wilayah Jakarta Selatan.
 </footer>
 </body>
 </html>
+
 
 
 
