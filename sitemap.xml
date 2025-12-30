@@ -14,64 +14,65 @@
   </url>
 
   <url>
-    <loc>https://www.republikmancing.com/event</loc>
+    <loc>https://www.republikmancing.com/laporan-lomba</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.republikmancing.com/galeri</loc>
+    <loc>https://www.republikmancing.com/lomba</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.republikmancing.com/kontak.html</loc>
+    <loc>https://www.republikmancing.com/kontak</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/spot.html</loc>
+    <loc>https://www.republikmancing.com/spot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/review-empang.html</loc>
+    <loc>https://www.republikmancing.com/review-empang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/teknik.html</loc>
+    <loc>https://www.republikmancing.com/teknik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/toko-pancing.html</loc>
+    <loc>https://www.republikmancing.com/toko-pancing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/toko affiliate.html</loc>
+    <loc>https://www.republikmancing.com/toko-affiliate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/video.html</loc>
+    <loc>https://www.republikmancing.com/video</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
    <url>
-    <loc>https://www.republikmancing.com/profil-angler2.html</loc>
+    <loc>https://www.republikmancing.com/profil-angler2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
 </urlset>
+
 
