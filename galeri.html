@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laporan Lomba — Republik Mancing</title>
+  <meta name="description" content="Profil lengkap anglers Indonesia: latar belakang, spesialisasi teknik, prestasi, dan kisah di balik tarikan juara." />
+
+  <style>
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* HEADER GLOBAL */
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+
+    /* CARD */
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* PROFIL */
+    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    h1{margin:12px 0 6px;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:12px}
+
+    .profile-grid{display:grid;grid-template-columns:180px 1fr;gap:18px;margin-top:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;object-fit:cover}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.85rem;margin-right:6px}
+
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .stat{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;text-align:center}
+    .stat strong{display:block;font-size:1.1rem}
+
+    /* SIDEBAR */
+    .related-list{display:flex;flex-direction:column;gap:12px}
+    .related-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
+
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+      .avatar{width:100%;height:260px}}
+    /* ZOOM EFFECT */
+    img{transition:transform .35s ease, filter .35s ease}
+    img:hover{transform:scale(1.05);filter:brightness(.95)}
+
+      .hero-wrap{width:100%;aspect-ratio:16 / 9;   /* kunci 1920x1080 */overflow:hidden;border-radius:12px;margin-bottom:14px;}
+    .hero-wrap img.hero{width:100%;height:100%;object-fit:cover;      /* crop elegan ala Detik/Kompas */}
+    /* ===== FOOTER ===== */
+.site-footer{background:#111;color:#ddd;margin-top:40px;}
+.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.footer-col h3,
+.footer-col h4{color:#fff;margin-bottom:12px;}
+.footer-col h3 span{color:#e53935;}
+.footer-col p{font-size:14px;line-height:1.6;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
+.footer-col a:hover{color:#e53935;}
+/* =========================
+   FINAL IMAGE CONTROL
+   Republik Mancing
+========================= */
+
+/* --- THUMBNAIL BERITA --- */
+.rm-thumb{
+  margin:20px 0;
+}
+
+.rm-thumb img{
+  width:100%;
+  max-height:420px;          /* ⬅️ batas tinggi */
+  object-fit:cover;         /* crop elegan */
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.rm-thumb figcaption{
+  font-size:13px;
+  color:#6b7280;
+  margin-top:6px;
+  font-style:italic;
+}
+
+/* --- VIDEO EMBED --- */
+iframe{
+  border-radius:14px;
+}
+
+/* --- GALERI LOMBA --- */
+.rm-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin:20px 0;
+}
+
+.rm-gallery img{
+  width:100%;
+  height:160px;             /* ⬅️ kunci ukuran */
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media(max-width:640px){
+  .rm-thumb img{
+    max-height:260px;
+  }
+
+  .rm-gallery img{
+    height:140px;
+  }
+}
+
+/* --- ZOOM HALUS (MEDIA STYLE) --- */
+.rm-thumb img,
+.rm-gallery img{
+  transition:transform .35s ease, filter .35s ease;
+}
+
+.rm-thumb img:hover,
+.rm-gallery img:hover{
+  transform:scale(1.04);
+  filter:brightness(.95);
+}
+ 
+    .laporan-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.laporan-card{
+  display:block;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.1);
+  text-decoration:none;
+  color:#000;
+}
+
+.laporan-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.laporan-card div{
+  padding:12px;
+}
+
+.laporan-card h3{
+  margin:0 0 4px;
+  font-size:16px;
+}
+
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="laporan lomba.html/index" class="hover-red">Beranda</a>
+      <a href="laporan lomba/berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+     <a href="event.html">Jadwal Lomba</a>
+      <a href="galeri.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
+
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angle</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+  </nav>
+</div>
+  <div class="offcanvas-backdrop" id="offBackdrop"></div>
+  <article class="rm-article">
+<main class="container">
+<h1>📋 Laporan Lomba Mancing</h1>
+
+<div class="laporan-list">
+
+<a href="telaga-enjoy-12-des-2025.html" class="laporan-card">
+  <img src="assets/img/enjoy/babon1.jpg">
+  <div>
+    <h3>Telaga Enjoy Jagakarsa</h3>
+    <p>Kamis, 12 Desember 2025</p>
+  </div>
+</a>
+
+<a href="pmc-tuan-muda-27-des-2025.html" class="laporan-card">
+  <img src="assets/img/event/tm1.JPG">
+  <div>
+    <h3>PMC Tuan Muda – Kemang</h3>
+    <p>Sabtu, 27 Desember 2025</p>
+  </div>
+</a>
+
+</div>
+ <hr style="margin-top:22px">
+      <section id="comments">
+        <h3>Komentar</h3>
+        <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+        <form style="display:flex;flex-direction:column;gap:8px;max-width:520px;margin-top:12px">
+          <input type="text" placeholder="Nama" required style="padding:10px;border-radius:6px;border:1px solid #ddd">
+          <textarea placeholder="Tulis komentar..." rows="4" required style="padding:10px;border-radius:6px;border:1px solid #ddd"></textarea>
+          <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
+        </form>
+      </section>
+</article>
+</main>
+
+ 
+       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
