@@ -91,7 +91,7 @@
     </nav>
     
    <main class="container article-page">
-  <article class="event-article">
+  <article class="card"itemscopeitemtype="http://schema.org/Article"data-id="tengkele"data-title="SPEKTAKULER! Event Akhir Tahun – Rebut 4 Unit Mobil">
     <h1>SPEKTAKULER! Event Akhir Tahun – Rebut 4 Unit Mobil</h1>
      <!-- IKLAN SETELAH JUDUL -->
     <div class="article-ad">
@@ -119,7 +119,7 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -204,7 +204,7 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -300,11 +300,10 @@
 <div id="rmSawer" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
     <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
    <p>Scan QR dengan DANA / OVO / GoPay</p>
-
-<img src="assets/img/icon/qr.jpeg" class="qris">
-
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
 <div class="rm-pay-icons">
   <img src="assets/img/icon/dana.jpg">
   <img src="assets/img/icon/ovo.jpg">
@@ -340,7 +339,15 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -348,6 +355,11 @@ function nativeShare(){
     navigator.share({title:document.title,url:location.href});
   } else {
     alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
@@ -355,3 +367,4 @@ function nativeShare(){
 
 </body>
 </html>
+
