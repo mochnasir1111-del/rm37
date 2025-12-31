@@ -274,7 +274,7 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -452,7 +452,21 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+
+  rmSawer.style.display = "flex";
+}
+
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -464,8 +478,11 @@ function nativeShare(){
     function sawerWA(){
   const id = localStorage.getItem("rm_sawer_article_id");
   const title = localStorage.getItem("rm_sawer_article_title");
+
   const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
-  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
+
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");
+}
 </script>
 </body>
 </html>
