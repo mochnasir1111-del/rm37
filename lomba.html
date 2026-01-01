@@ -211,191 +211,49 @@
   transition: .2s;
 }
 
-.daily-btn:hover{
-  background: #b9000f;
-}
-.daily-grid{
-  margin:50px auto;
-  max-width:1100px;
-  padding:0 16px;
-}
-
-.daily-grid-title{
-  font-size:22px;
-  font-weight:800;
-  border-left:5px solid #e60012;
-  padding-left:12px;
-  margin-bottom:20px;
-  color:#111;
-}
-
-.daily-grid-wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:20px;
-}
-
-.daily-event-card{
-  background:#fff;
-  border-radius:14px;
-  padding:18px;
-  box-shadow:0 8px 24px rgba(0,0,0,.06);
-  position:relative;
-  transition:.3s ease;
-}
-
-.daily-event-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 30px rgba(0,0,0,.12);
-}
-
-.daily-badge{
-  position:absolute;
-  top:14px;
-  right:14px;
-  background:#e60012;
-  color:#fff;
-  padding:4px 10px;
-  font-size:11px;
-  font-weight:700;
-  border-radius:20px;
-}
-
-.daily-title{
-  font-weight:700;
-  margin:6px 0;
-}
-
-.daily-location{
-  font-size:14px;
-  color:#666;
-}
-
-.daily-info{
-  list-style:none;
-  padding:0;
-  margin:10px 0;
-  font-size:14px;
-}
-
-.daily-info li{
-  margin-bottom:4px;
-}
-
-.daily-note{
-  font-size:13px;
-  color:#555;
-  margin:10px 0;
-}
-
-.daily-btn{
-  display:block;
-  text-align:center;
-  background:#e60012;
-  color:#fff;
-  padding:10px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
-}
-
-.daily-btn:hover{
-  background:#b8000e;
-}
-.btn-detail{
-  background:#222;
-  color:#fff;
-  padding:6px 14px;
-  border-radius:6px;
-  font-size:13px;
-  text-decoration:none;
-}
-.btn-detail:hover{
-  background:#c00;
-}
-
-.popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.popup-box{
-  position:relative;
-  max-width:90%;
-  max-height:90%;
-}
-
-.popup-box img{
-  width:100%;
-  max-height:90vh;
-  object-fit:contain;
-  border-radius:10px;
-}
-
+.daily-btn:hover{background: #b9000f;}
+.daily-grid{margin:50px auto; max-width:1100px;padding:0 16px;}
+.daily-grid-title{font-size:22px;font-weight:800;border-left:5px solid #e60012;padding-left:12px;margin-bottom:20px;color:#111;}
+.daily-grid-wrap{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px,1fr));gap:20px;}
+.daily-event-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,.06);position:relative;transition:.3s ease;}
+.daily-event-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.12);}
+.daily-badge{position:absolute;top:14px;right:14px;background:#e60012;color:#fff;padding:4px 10px;font-size:11px;font-weight:700;border-radius:20px;}
+.daily-title{font-weight:700;margin:6px 0;}
+.daily-location{font-size:14px; color:#666;}
+.daily-info{ list-style:none;padding:0; margin:10px 0;font-size:14px;}
+.daily-info li{margin-bottom:4px;}
+.daily-note{ font-size:13px; color:#555;margin:10px 0;}
+.daily-btn{display:block;text-align:center;background:#e60012;color:#fff;padding:10px;border-radius:8px;text-decoration:none;font-weight:700;}
+.daily-btn:hover{background:#b8000e;}
+.btn-detail{background:#222;color:#fff;padding:6px 14px;border-radius:6px;font-size:13px;text-decoration:none;}
+.btn-detail:hover{background:#c00;}
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:9999;}
+.popup-box{position:relative;max-width:90%;max-height:90%;}
+.popup-box img{width:100%;max-height:90vh;object-fit:contain;border-radius:10px;}
 /* Tombol X */
 .popup-close{
   position:absolute;
-  top:-15px;
-  right:-15px;
-  background:#c00;
-  color:#fff;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  font-size:26px;
-  font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 0 10px rgba(255,0,0,.8);
-}
-.popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:99999;
-}
-
-.popup-box{
-  position:relative;
-  max-width:90%;
-  max-height:90%;
-}
-
-.popup-box img{
-  width:100%;
-  max-height:90vh;
-  object-fit:contain;
-  border-radius:10px;
-}
-
+  top:-15px; right:-15px;background:#c00;color:#fff;width:36px;height:36px;border-radius:50%;font-size:26px;
+  font-weight:bold;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 10px rgba(255,0,0,.8);}
+.popup-overlay{position:fixed; inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:99999;}
+.popup-box{position:relative;max-width:90%;max-height:90%;}
+.popup-box img{width:100%;max-height:90vh;object-fit:contain; border-radius:10px;}
 /* Tombol X merah */
-.popup-close{
-  position:absolute;
-  top:-14px;
-  right:-14px;
-  background:#e60012;
-  color:#fff;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:24px;
-  font-weight:900;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 0 15px rgba(230,0,18,.9);
-}
+.popup-close{position:absolute;top:-14px;right:-14px;background:#e60012;color:#fff;width:38px;height:38px;
+  border-radius:50%;font-size:24px;font-weight:900;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 15px rgba(230,0,18,.9);}
+  .rm-sidebar {width: 100%;position: sticky;top: 90px;}
+/* Box umum */
+.side-box {background: #0b1b22;padding: 12px;margin-bottom: 18px;border-radius: 10px;box-shadow: 0 6px 14px rgba(0,0,0,.4);color: #fff;}
+/* Iklan */
+.side-box.iklan {text-align: center;border: 2px dashed #e10600;}
+.side-box.iklan p {font-weight: bold;margin-bottom: 6px;color: #ffcc00;}
+/* Upcoming Event */
+.upcoming-events h2 {font-size: 16px;margin-bottom: 10px;border-bottom: 2px solid #e10600;padding-bottom: 6px;}
+.upcoming-events img {width: 100%;border-radius: 8px;margin-bottom: 10px;}
+.event-info strong {display: block;font-size: 15px;margin-bottom: 4px;}
+.event-info p {font-size: 13px;color: #ccc;margin-bottom: 10px;}
+.event-info a {display: block;text-align: center;background: #e10600;padding: 8px;border-radius: 6px;text-decoration: none;color: #fff;font-weight: bold;transition: 0.3s;}
+.event-info a:hover {background: #ff2a2a;}
 /* ACTIONS BAR */
 .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
@@ -485,13 +343,12 @@
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -515,9 +372,9 @@
           <a href="https://maps.app.goo.gl/kh44TLC1cUzmLbN79" class="btn-map">Maps</a>
            <a href="assets/img/event/tgk.jpeg" class="btn-detail" onclick="openPopup('assets/img/event/tgk.jpeg'); return false;">Lihat Detail</a>
         </div>
-      </div></article
-
-    <article class="ikanmas-card">
+      </div></article>
+       <!-- LOMBA 2 -->
+     <article class="ikanmas-card">
       <div class="tanggal merah">
         <span>13</span>
         <small>JAN-26</small></div>
@@ -530,9 +387,9 @@
           <li>10:30-16:00 WIB</li>
           <li>Peserta: 1 Joran/36 Lapak</li></ul>
         <div class="aksi">
-          <a href="https://wa.me/6282177111411" class="btn-wa" target="_blank">Daftar WhatsApp</a>
+          <a href="https://wa.me/6281804144217"class="btn-wa" target="_blank">Daftar WhatsApp</a>
           <a href="https://maps.app.goo.gl/cmdQdZJEfSbMVZxLA" class="btn-map">Maps</a>
-           <a href="/" class="btn-detail" onclick="openPopup('assets/img/event/tm.jpg'); return false;">Lihat Detail</a>
+           <a href="assets/img/event/MJ.jpeg" class="btn-detail" onclick="openPopup('assets/img/event/MJ.jpeg'); return false;">Lihat Detail</a>
         </div>
       </div>
     </article>
@@ -678,13 +535,12 @@
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+    <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -709,12 +565,26 @@
       </a>
     </div>
 
-    <div class="side-box iklan">
-      <p>Slot Iklan Ikan Mas</p>
-      <small>300 x 250</small>
+    <aside class="rm-sidebar">
+
+  <!-- IKLAN -->
+  <div class="side-box iklan">
+    <p>Slot Iklan Ikan Mas</p>
+    <small>300 x 250</small>
+  </div>
+
+  <!-- UPCOMING EVENT -->
+  <div class="side-box upcoming-events">
+    <h2>🏆 Lomba Yang Akan Datang</h2>
+    <img src="assets/img/event/MJ.jpeg" alt="Event Mancing Terbaru">
+    <div class="event-info">
+      <strong>Event Galatama Ikan Mas</strong>
+      <p>Januari 2026 • Open Angler</p>
+      <a href="#">Lihat Detail</a>
     </div>
-<section class="upcoming-events">
-  <h2>🏆 Lomba Yang Akan Datang</h2>
+  </div>
+
+</aside>
 
   <div class="event-list">
 
@@ -808,11 +678,10 @@
 <div id="rmSawer" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
-    <p>Nikmati artikel gratis! Dengan dukunganmu, kami bisa terus berbagi tips, trik, dan berita terbaru seputar dunia mancing ikan mas.</p>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
    <p>Scan QR dengan DANA / OVO / GoPay</p>
-
-<img src="assets/img/icon/qris.jpeg" class="qris">
-
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
 <div class="rm-pay-icons">
   <img src="assets/img/icon/dana.jpg">
   <img src="assets/img/icon/ovo.jpg">
@@ -879,7 +748,15 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -887,6 +764,11 @@ function nativeShare(){
     navigator.share({title:document.title,url:location.href});
   } else {
     alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
