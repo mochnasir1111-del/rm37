@@ -327,6 +327,11 @@ a.title:hover {color: #c00; }
     @media (max-width: 768px) {
    .slide {height: 260px; }}
    .slide img {width: 100%;height: 100%;object-fit: cover;display: block;}
+    
+    .rm-stats-live {background: linear-gradient(135deg,#0b1b22,#001e2b);color: #fff;padding: 18px;border-radius: 12px;box-shadow: 0 10px 25px rgba(0,0,0,.4);}
+    .rm-stats-live h3 {text-align:center;margin-bottom:14px;border-bottom:2px solid #e10600;padding-bottom:8px;}
+    .stat-row {display:flex;justify-content:space-between;padding:10px 12px;background:rgba(255,255,255,0.07);margin-bottom:10px;border-radius:8px;font-size:14px;}
+    .stat-row b {font-size:20px;color:#ffcc00;}
   </style>
 </head>
 <body>
@@ -726,6 +731,24 @@ a.title:hover {color: #c00; }
     </a> 
   </div>
 </aside>
+      <div class="rm-stats-live">
+  <h3>📊 Statistik Live Republik Mancing</h3>
+  <div class="stat-row">
+    <span>Pengunjung Online</span>
+    <b id="liveUsers">0</b>
+  </div>
+  <div class="stat-row">
+    <span>Artikel Hari Ini</span>
+    <b id="todayNews">0</b>
+  </div>
+  <div class="stat-row">
+    <span>Event Bulan Ini</span>
+    <b id="monthEvents">0</b>
+  </div>
+  <div class="stat-row">
+    <span>Total Angler Terdaftar</span>
+    <b id="totalAngler">0</b>
+  </div></div>
 <!-- WIDGET: NEWSLETTER -->
 <div class="widget">
   <h3>Newsletter</h3>
@@ -1072,10 +1095,37 @@ document.addEventListener("click", e => {
   }
 });
 
+<script>
+let liveUsers = 35;
+let todayNews = 12;
+let monthEvents = 9;
+let totalAngler = 5820;
+
+function animateStat(id, target) {
+  let el = document.getElementById(id);
+  let count = 0;
+  let interval = setInterval(() => {
+    count++;
+    el.innerText = count;
+    if (count >= target) clearInterval(interval);
+  }, 20);
+}
+
+animateStat("liveUsers", liveUsers);
+animateStat("todayNews", todayNews);
+animateStat("monthEvents", monthEvents);
+animateStat("totalAngler", totalAngler);
+
+setInterval(() => {
+  liveUsers += Math.floor(Math.random() * 4);
+  document.getElementById("liveUsers").innerText = liveUsers;
+}, 4000);
+</script>
 
 </script>
 </body>
 </html>
+
 
 
 
