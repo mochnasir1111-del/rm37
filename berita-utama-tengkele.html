@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <!-- Google tag (gtag.js) -->
+   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TQSG1MEQ8B"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,31 +9,138 @@
   gtag('js', new Date());
   gtag('config', 'G-TQSG1MEQ8B');
 </script>
-
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Profesor Mancing Juara Pajero! Event Spektakuler Tengkele Kukusan – Republik Mancing</title>
-<meta name="description" content="Event spektakuler akhir tahun di Pemancingan Tengkele Kukusan memperebutkan mobil Pajero Sport, Toyota Ayla dan Sigra. Profesor Mancing keluar sebagai juara utama." />
-<meta property="og:title" content="Profesor Mancing Juara Pajero di Event Spektakuler Tengkele Kukusan" />
-<meta property="og:description" content="Turnamen elite akhir tahun di Tengkele Kukusan dengan hadiah mobil dan ratusan juta rupiah. Diikuti angler top nasional, Profesor Mancing keluar sebagai pemenang." />
-<meta property="og:image" content="https://republikmancing.com/assets/img/event/DSCF7028.JPG" />
-<link rel="stylesheet" href="assets/css/style.css">
+  <title>Direktori & Ulasan Toko Pancing — Republik Mancing</title>
+  <meta name="description" content="Direktori toko pancing rekomendasi lengkap dengan ulasan, alamat, dan nomor kontak pilihan untuk anglers Jabodetabek." />
 
   <style>
-    body{font-family:Inter,system-ui;background:#f8f8f8;margin:0;color:#222}
-    .container{max-width:900px;margin:auto;padding:20px}
-    header{display:flex;align-items:center;margin-bottom:20px}
-    header a{font-weight:700;color:#4E8F2B;text-decoration:none;font-size:20px}
-    .breadcrumb{font-size:13px;color:#666;margin-bottom:10px}
-    .article{background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.05)}
-    .article h1{font-size:28px;margin:0 0 12px;color:#000000}
-    .meta{font-size:13px;color:#777;margin-bottom:16px}
-    .hero img{width:100%;border-radius:10px;margin-bottom:18px}
-    h2{margin-top:24px;color:#000000}
-    p{line-height:1.7}
-    .footer{text-align:center;margin-top:40px;color:#777;font-size:13px}
-    .back{display:inline-block;margin-top:8px;font-size:14px;color:#000000;text-decoration:none}
- /* ACTIONS BAR */
+     :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1100px;
+      --shadow:0 6px 18px rgba(16,24,40,.07);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* ===== HEADER GLOBAL ===== */
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+    .brand span{color:#c00}
+    .main-nav{margin-left:auto;display:flex;gap:16px}
+    .main-nav a{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+    .main-nav a:hover{color:#c00}
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
+    .sub-nav a:hover{color:#c00}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}}
+
+    /* CARD */
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+
+    /* REVIEW */
+    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
+    h1{margin:12px 0 6px;font-size:1.8rem}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .hero{width:100%;height:320px;border-radius:12px;object-fit:cover;margin-bottom:14px}
+
+    .rating{display:flex;align-items:center;gap:6px;margin:10px 0}
+    .star{color:#facc15;font-size:18px}
+
+    .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+    .info{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;font-size:14px}
+
+    /* PROS CONS */
+    .pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+    .pc div{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:14px}
+    .pc h4{margin-top:0}
+
+    /* SIDEBAR */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list a{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .list img{width:72px;height:50px;border-radius:8px;object-fit:cover}
+
+    /* ZOOM */
+    img{transition:.3s}
+    img:hover{transform:scale(1.05)}
+
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0;}
+   .gallery img{width:100%;border-radius:8px;}
+   .gallery figcaption{font-size:13px;color:#666;margin-top:6px;text-align:center;}
+    /* THUMBNAIL ARTIKEL */
+   .thumb{max-width:680px;        /* batas aman desktop */margin:20px auto;      /* center */text-align:center;}
+   .thumb img{width:100%;height:320px;          /* paksa tinggi */object-fit:cover;      /* potong rapi */border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+   .thumb figcaption{margin-top:8px;font-size:13px;color:#666;font-style:italic;}
+    .share-title{margin:0 0 .5rem 0;font-size:.95rem;}
+    .share-buttons{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+    .share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);color:#111;cursor:pointer;}
+    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
+    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
+    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
+    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
+    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
+    .share-btn.copy{background:#f3f4f6}
+    .sr-only{position:relative;left:-9999px}
+    @media (max-width:600px){.article h1{font-size:20px}}
+        /* ===== FOOTER ===== */
+.site-footer{background:#111;color:#ddd;margin-top:40px;}
+.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.footer-col h3,
+.footer-col h4{color:#fff;margin-bottom:12px;}
+.footer-col h3 span{color:#e53935;}
+.footer-col p{font-size:14px;line-height:1.6;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
+.footer-col a:hover{color:#e53935;}
+/* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+  /* OFFCANVAS MOBILE */
+.offcanvas {position: fixed; top: 0;right: -100%;width: 280px;height: 100%;background: #111;color: #fff;z-index: 9999;padding: 20px;transition: right 0.3s ease;}
+.offcanvas.active {right: 0;}
+.off-nav {
+  display: flex;flex-direction: column;
+  gap: 14px;margin-top: 40px;}
+.off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
+.close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
+/* TAMPILKAN HANYA DI MOBILE */
+@media (min-width: 900px) {
+  .offcanvas {display: none;}}
+   .menu-btn {font-size: 24px; background: none;border: none;cursor: pointer;display: none;}
+@media (max-width: 900px) {
+  .menu-btn {display: block;}}
+  
+
+    /* REVIEW BOX */
+    .review-box{background:#f8fafc;border-radius:14px;padding:18px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .review-box h3{margin:0 0 6px;font-size:1.1rem}
+    .review-meta{font-size:13px;color:#6b7280;margin-bottom:8px}
+    .review-box ul{margin:10px 0 0 18px}
+
+    /* SIDEBAR */
+    .sidebar{position:sticky;top:110px}
+    .sidebar-box{background:#f8fafc;border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .sidebar-box h3{font-size:16px;margin-bottom:14px;border-bottom:2px solid #dc2626;padding-bottom:6px}
+    .toko-item{padding:10px 0;border-bottom:1px dashed #e5e7eb}
+    .toko-item:last-child{border-bottom:none}
+    .toko-item strong{display:block;font-size:14px;margin-bottom:4px}
+    .toko-item p{font-size:13px;color:#374151;margin:2px 0}
+    .btn-sidebar{display:block;text-align:center;margin-top:14px;padding:10px;background:#dc2626;color:#fff;border-radius:10px;font-size:14px;font-weight:600}
+    .btn-sidebar:hover{background:#b91c1c}
+     /* ACTIONS BAR */
 .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
   .rm-view span,.rm-btn span{font-size:14px;color:#555}
@@ -67,62 +174,57 @@
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
     
-   /* ACTIONS BAR */
-.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
-  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
-  .rm-view span,.rm-btn span{font-size:14px;color:#555}
-  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
-  .rm-sawer-btn{color:#e60012}
-  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
-  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
-  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .rm-head b{font-size:18px;color:#111}
-  .rm-head span{cursor:pointer;font-size:18px}
-  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
-  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
-  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
-  .qris{max-width:100%;margin:12px 0}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
-  /* Animasi Kedip untuk Tombol Sawer */
-  @keyframes sawerPulse {
-  0% { transform: scale(1); filter: brightness(1); }
-  50% { transform: scale(1.1); filter: brightness(1.4); }
-  100% { transform: scale(1); filter: brightness(1); }}
-  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
-  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
-  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
-  .rm-pay-icons img:hover{transform:scale(1.1);}
-   /* QRIS */
-  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
-  /* Icon pembayaran */
-  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
-  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
-  /* efek hover biar lebih hidup */
-  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
-  /* FOTO UTAMA */
-.article-thumb{max-width: 900px;margin: 20px auto;text-align: center;}
-.article-thumb:not(.gallery) img{width: 100%;max-height: 520px;object-fit: cover;border-radius: 10px;box-shadow: 0 6px 18px rgba(0,0,0,.15);}
-/* GALERI DOORPRIZE */
-.article-thumb.gallery{display: grid;grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));gap: 12px;}
-.article-thumb.gallery img{width: 100%; height: 130px;object-fit: cover;border-radius: 8px;box-shadow: 0 3px 8px rgba(0,0,0,.15);}
-.article-thumb em{grid-column: 1 / -1; display: block;margin-top: 10px;font-size: 13px;color: #666;}
-.rm-video{position: relative;padding-bottom: 56.25%; /* 16:9 aspect ratio */height: 0;overflow: hidden;border-radius: 12px;margin: 30px 0;box-shadow: 0 8px 20px rgba(0,0,0,.15);}
-.rm-video iframe{position: absolute;top:0;left:0;width:100%; height:100%;border:0;}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="index.html">Republik Mancing</a>
-    </header>
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a></nav>
+  <!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+   <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
 
-<article class="card"itemscopeitemtype="http://schema.org/Article"data-id="berita-utama-tengkele"data-title="Profesor Mancing Juara Pajero! Event Spektakuler Tengkele Kukusan Pecahkan Rekor Hadiah Akhir Tahun">
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
 
-<h1>Profesor Mancing Juara Pajero! Event Spektakuler Tengkele Kukusan Pecahkan Rekor Hadiah Akhir Tahun</h1>
-<!-- ACTIONS BAR -->
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+  </nav>
+</div>
+<main class="container">
+ <span class="kicker">Toko Pancing-Rekomndasi</span>
+<div class="layout">
+
+  <!-- KONTEN UTAMA / BERITA -->
+
+  <article class="article">
+    <h1>Rekomendasi & Ulasan Toko Pancing Pilihan Anglers Jabodetabek</h1>
+    <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Direktori Toko Pancing</div>
+    <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -135,103 +237,85 @@
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
-<figure class="article-thumb">
-  <img src="assets/img/event/DSCF7028.JPG" alt="Event Spektakuler Tengkele Kukusan">
-  <em>Suasana event spektakuler akhir tahun di Pemancingan Tengkele Kukusan. (Foto: Republik Mancing)</em>
-</figure>
-
-<p><strong>REPUBLIK MANCING – Kukusan.</strong> Event mancing paling spektakuler di penghujung tahun sukses digelar di <strong>Pemancingan Tengkele Kukusan</strong>. Turnamen elite ini diikuti para angler top nasional dan memperebutkan hadiah utama <strong>mobil Pajero Sport</strong> dengan total hadiah mencapai <strong>ratusan juta rupiah</strong>.</p>
-
-<p>Nama-nama besar dunia mancing tanah air turun langsung ke arena, di antaranya <strong>Jas Jis Jus (Surabaya)</strong>, <strong>Pak H. TN (Cirata)</strong>, <strong>H. Doble D (Bandung)</strong>, <strong>H. Dollar (Indramayu)</strong>, serta puluhan angler elite dari berbagai kota lainnya.</p>
-
-<h2>3 Ton Ikan & 46 Angler Elite</h2>
-
-<p>Panitia menurunkan <strong>3 ton ikan lomba</strong> induk <strong>500 kg ikan induk</strong> untuk memastikan kualitas pertarungan benar-benar kelas atas. Total <strong>46 peserta</strong> hadir dari 50 slot yang tersedia, dengan tiket masuk mencapai <strong>Rp35.000.000 (komplit)</strong>.</p>
-
-<p>Menurut owner Pemancingan Tengkele Kukusan, <strong>Om Al Tengkele</strong>, meski ada beberapa peserta yang berhalangan hadir, <strong>hadiah utama tetap mobil Pajero Sport</strong>.</p>
-
-<h2>Profesor Mancing Rebut Pajero Sport</h2>
-
-<p>Setelah melalui duel sengit dan adu strategi tingkat tinggi, <strong>Profesor Mancing</strong> tampil sebagai yang terbaik dan resmi keluar sebagai <strong>Juara 1 peraih mobil Pajero Sport</strong>.</p>
-
-<h2>Daftar Juara Resmi</h2>
-
-<table class="rm-table">
-<tr><th>Kategori</th><th>Pemenang</th><th>Hadiah</th></tr>
-<tr><td>Juara 1</td><td><strong>Profesor Mancing</strong></td><td>Mobil Pajero Sport</td></tr>
-<tr><td>Juara 2</td><td><strong>Prabu</strong></td><td>Mobil Toyota Ayla</td></tr>
-<tr><td>Juara 3</td><td><strong>Ervan Katumburi</strong></td>
-<tr><td>Juara 4</td><td><strong>Alexis Berkah</strong></td>
-<tr><td>Total A1</td><td><strong>Odet</strong></td><td>Mobil Daihatsu Sigra</td></tr>
-<tr><td>Total B1</td><td><strong>Fatih Fishing</strong></td><td>Mobil Daihatsu Sigra</td></tr>
-
-<tr><td>Total A2</td><td colspan="2">WR Fishing</td></tr>
-<tr><td>Total A3</td><td colspan="2">Rajawali</td></tr>
-<tr><td>Total B2</td><td colspan="2">Om Alif</td></tr>
-<tr><td>Total B3</td><td colspan="2">CGR/Cadel</td></tr>
-<tr><td>Total Induk A</td><td colspan="2">Cep Gugun</td></tr>
-<tr><td>Total Induk B</td><td colspan="2">Joki Bekas</td></tr>
-<tr><td>Total Merah A</td><td colspan="2">Odet</td></tr>
-<tr><td>Total Merah B</td><td colspan="2">Fatih Fishing</td></tr>
-</table>
-
-<h2>Momen Strike Spektakuler</h2>
-<!-- VIDEO LIPUTAN EVENT (YouTube Live) -->
-<div class="rm-video">
-  <iframe 
-    src="https://www.youtube.com/embed/pLX8PlIrmJY" 
-    title="Live Event Tengkele Kukusan - Republik Mancing"
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+<img src="assets/img/produk/raja fishing.jpg" alt="Toko Pancing Rekomendasi Republik Mancing" class="hero">
+<em>Toko Pancing Raja Fishing-Kebagusan-Jakarta Selatan ( Foto: Raja Fishing )</em>
+<p>
+Memilih toko pancing yang tepat menjadi salah satu faktor penting bagi para anglers. Mulai dari ketersediaan alat, kualitas umpan, hingga pelayanan, semuanya berpengaruh terhadap kenyamanan dan hasil mancing. Berikut adalah ulasan toko pancing rekomendasi versi Republik Mancing.
+</p>
+<div class="review-box">
+  <h3>Toko Adun Mancing (BAM)</h3>
+  <div class="review-meta">📍 Bekasi Barat • ⭐⭐⭐⭐☆</div>
+  <p>
+  Dikenal sebagai salah satu toko pancing terlengkap di wilayah Bekasi, Toko Adun Mancing menyediakan berbagai kebutuhan mancing harian hingga lomba. Pelayanan ramah dan stok umpan selalu fresh menjadi nilai tambah.
+  </p>
+  <ul>
+    <li>Alamat: Jl. Bintara Jaya VIII No.02, Bekasi Barat</li>
+    <li>Telepon: 0878-8859-9905</li>
+  </ul>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4704.685422643177!2d106.9504710757316!3d-6.238770061093875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d351ab0786d%3A0xa5128c024d0e470b!2sToko%20Adun%20Mancing%20(BAM)!5e1!3m2!1sid!2sid!4v1765975338375!5m2!1sid!2sid" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
-<ul>
-<li>Strike brutal ikan induk di wilayah A membuat joran melengkung ekstrem dan penonton bersorak.</li>
-<li>Tarikan panjang lebih dari 5 menit di wilayah A lapak pojok mengubah peta klasemen sementara.</li>
-<li>Profesor Mancing memastikan kemenangan lewat strike krusial di sesi penentuan.</li>
-</ul>
-
-<h2>Event Spektakuler Penutup Tahun</h2>
-
-<p>Dengan hadiah mobil, ikan jumbo, dan partisipasi angler nasional, Event Tengkele Kukusan resmi menjadi salah satu <strong>turnamen ikan mas paling bergengsi di Indonesia tahun ini</strong>.</p>
-<h2>Disponsori Om EL – Yang Penting Strike</h2>
-
-<p>Event spektakuler akhir tahun ini juga semakin meriah berkat dukungan sponsor utama 
-<strong>Om EL – Yang Penting Strike</strong>. Dukungan ini membuat kualitas hadiah, ikan lomba, 
-serta fasilitas untuk peserta dan kedi benar-benar berada di level premium.</p>
-
-<p>Tidak hanya memperebutkan hadiah utama mobil dan total ratusan juta rupiah, panitia juga 
-menyediakan <strong>doorprize spesial</strong> untuk para kedi dan angler sebagai bentuk apresiasi 
-atas partisipasi mereka di event besar ini.</p>
-
-<p>Beragam doorprize bernilai tinggi dibagikan langsung di lokasi, di antaranya:</p>
-
-<ul>
-  <li>📺 TV LED 43 inch</li>
-  <li>🧊 Kulkas</li>
-  <li>🔥 Kompor gas</li>
-  <li>💧 Dispenser</li>
-  <li>🎁 Dan berbagai hadiah menarik lainnya</li>
-</ul>
-
-<p>Suasana pembagian doorprize berlangsung meriah dan penuh kegembiraan, menambah kesan bahwa 
-event Tengkele Kukusan bukan hanya soal lomba, tetapi juga tentang kebersamaan dan apresiasi 
-kepada seluruh insan dunia mancing.</p>
-<figure class="article-thumb gallery">
-  <img src="assets/img/event/tv1.JPG" alt="Doorprize Event Tengkele Kukusan">
-  <img src="assets/img/event/tv2.JPG" alt="Doorprize Event Tengkele Kukusan">
-  <img src="assets/img/event/dispencer.JPG" alt="Doorprize Event Tengkele Kukusan">
-  <img src="assets/img/event/helm.JPG" alt="Doorprize Event Tengkele Kukusan">
-  <img src="assets/img/event/kulkas.JPG" alt="Doorprize Event Tengkele Kukusan">
-  <em>Deretan doorprize spektakuler untuk kedi dan angler, mulai dari TV 43 inci, kulkas, hingga peralatan rumah tangga. (Foto: Republik Mancing)</em>
-</figure>
-
-<p><strong>Ikuti terus update dan liputan eksklusifnya hanya di RepublikMancing.com 🎣</strong></p>
-
-</article>
-<!-- ACTIONS BAR -->
+<div class="review-box">
+  <h3>Toko Sobirin Fishing</h3>
+  <div class="review-meta">📍 Ciputat Timur • ⭐⭐⭐⭐☆</div>
+  <p>
+  Toko Sobirin Fishing menjadi rujukan para pemancing Tangerang Selatan. Selain perlengkapan lengkap, toko ini juga dikenal sebagai tempat berbagi informasi spot dan teknik mancing.
+  </p>
+  <ul>
+    <li>Alamat: Jl. Peruri VI No.79, Ciputat Timur</li>
+    <li>Telepon: 0877-8924-1203</li>
+  </ul> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4703.943200280392!2d106.75516987573249!3d-6.320916761854253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69efe4f0d7f8fd%3A0x875f0d94b32e9119!2sSOBIRIN%20FISHING%20(TOKO%20PANCING%20)!5e1!3m2!1sid!2sid!4v1765975503349!5m2!1sid!2sid" 
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div class="review-box">
+  <h3>Toko Pancing Restu Ibu</h3>
+  <div class="review-meta">📍 Jagakarsa • ⭐⭐⭐⭐☆</div>
+  <p>
+  Berlokasi strategis di Jakarta Selatan, Toko Pancing Restu Ibu menjadi pilihan para anglers yang mencari perlengkapan praktis dan umpan siap pakai. Cocok untuk pemancing harian dan komunitas sekitar.
+  </p>
+  <ul>
+    <li>Alamat: Jl. Raya Jagakarsa No.28, Jakarta Selatan</li>
+    <li>Telepon: 0858-1012-6344</li>
+  </ul>
+</div>
+   <div class="review-box">
+  <h3>RAJA FISHING</h3>
+  <div class="review-meta">📍 Kebagusan • ⭐⭐⭐⭐☆</div>
+  <p>
+  Berlokasi strategis di Jakarta Selatan, Toko RAJA FISHING menjadi pilihan para anglers yang mencari perlengkapan mancing dengan berbagai merek terkenal,Raja Fishing juga menyediakan
+    umpan siap pakai. Cocok untuk pemancing harian dan komunitas sekitar.
+  </p>
+  <ul>
+    <li>Jl. Kebagusan Raya No.5 7, RT.9/RW.5, Kebagusan, Ps. Minggu, Kota Jakarta Selatan.</li>
+    <li>Telepon: 0812-9909-225</li>
+  </ul>
+</div>
+    <div class="review-box">
+  <h3>Toko Betawi Fishing</h3>
+  <div class="review-meta">📍 Kemang Utara • ⭐⭐⭐⭐☆</div>
+  <p>
+  Berlokasi strategis di Jakarta Selatan, Toko Betawi Fishing menjadi pilihan para anglers di daera sekita Kemang yang menyediakan
+    umpan siap pakai. Cocok untuk pemancing harian dan komunitas sekitar.
+  </p>
+  <ul><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75272.60927043714!2d106.74233582574448!3d-6.255163000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3003c9d3869%3A0xfa53343ac0b66ab9!2stoko%20pancing%20putra%20betawi!5e1!3m2!1sid!2sid!4v1765985358166!5m2!1sid!2sid" 
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <li>Jl. Kemang Utara E No.23 8, RT.8/RW.1, Bangka, Kec. Mampang Prpt., Kota Jakarta Selatan.</li>
+    <li>Telepon: 0815-8599-0529</li>
+  </ul>
+</div>
+    <div class="review-box">
+  <h3>Toko Adan Fishing</h3>
+  <div class="review-meta">📍 Ragunan • ⭐⭐⭐⭐☆</div>
+  <p>
+  Berlokasi strategis di Jakarta Selatan, Toko Adan Fishing menjadi pilihan para anglers di daera sekitar Ragunan,Pasar Minggu yang menyediakan
+    umpan siap pakai. Cocok untuk pemancing harian dan komunitas sekitar.
+  </p>
+  <ul>
+    <li>Jl. Raya Ragunan No.18 3, RT.5/RW.5, Jati Padang, Ps. Minggu, Kota Jakarta Selatan.</li>
+    <li>Telepon:  0813-8988-3897</li>
+  </ul>
+  <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -244,29 +328,67 @@ kepada seluruh insan dunia mancing.</p>
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
-
-  <hr style="margin-top:32px">
-<div style="max-width:800px;margin:40px auto 0 auto;padding:0 10px">
-  <section id="comments">
-    <h3>Komentar</h3>
-    <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
-
-    <form style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
-      <input type="text" placeholder="Nama" required
-        style="padding:12px;border-radius:8px;border:1px solid #ddd">
-
-      <textarea placeholder="Tulis komentar..." rows="4" required
-        style="padding:12px;border-radius:8px;border:1px solid #ddd"></textarea>
-
-      <button type="submit"
-        style="padding:12px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer">
-        Kirim Komentar
-      </button>
-    </form>
-  </section>
+      <hr style="margin-top:22px">
+      <section id="comments">
+        <h3>Komentar</h3>
+        <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+        <form style="display:flex;flex-direction:column;gap:8px;max-width:520px;margin-top:12px">
+          <input type="text" placeholder="Nama" required style="padding:10px;border-radius:6px;border:1px solid #ddd">
+          <textarea placeholder="Tulis komentar..." rows="4" required style="padding:10px;border-radius:6px;border:1px solid #ddd"></textarea>
+          <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
+        </form>
+      </section>
 </div>
-</article>
+
+  </article>
+
+  <!-- SIDEBAR TOKO -->
+
+  <aside class="sidebar">
+    <div class="sidebar-box">
+      <h3>🎣 Pilihan Toko Pancing</h3>
+  <div class="toko-item">
+    <strong>Toko Adun Mancing (BAM)</strong>
+    <p>📍 Bekasi Barat</p>
+    <p>📞 0878-8859-9905</p>
+  </div>
+
+  <div class="toko-item">
+    <strong>Toko Sobirin Fishing</strong>
+    <p>📍 Ciputat Timur</p>
+    <p>📞 0877-8924-1203</p>
+  </div>
+
+  <div class="toko-item">
+    <strong>Toko Pancing Restu Ibu</strong>
+    <p>📍 Jagakarsa</p>
+    <p>📞 0858-1012-6344</p>
+  </div>
+   <div class="toko-item">
+    <strong>Toko Raja Fishing</strong>
+    <p>📍 Kebagusan</p>
+    <p>📞 0812-9909-225</p>
+  </div>
+   <div class="toko-item">
+    <strong>Toko Betawi Fishing</strong>
+    <p>📍 Kemang Utara</p>
+    <p>📞 0815-8599-0529</p>
+  </div>
+       <div class="toko-item">
+    <strong>Toko Adan Fishing</strong>
+    <p>📍 Ragunan</p>
+    <p>📞 0813-8988-3897</p>
+  </div>
    
+  <a href="toko-pancing.html" class="btn-sidebar">Lihat Direktori Toko →</a>
+</div>
+
+  </aside>
+
+</div>
+</main>
+ 
+    
        <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
@@ -416,6 +538,17 @@ function nativeShare(){
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
