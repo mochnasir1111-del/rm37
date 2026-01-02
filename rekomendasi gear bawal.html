@@ -16,7 +16,7 @@
     body{margin:0;background:var(--bg);color:#0f172a;line-height:1.7}
 
     /* HEADER */
-    .topbar{background:#1e8f1e;color:#fff;position:sticky;top:0;z-index:200}
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200}
     .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
     .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
     .brand span{color:#c00}
@@ -49,6 +49,39 @@
     /* ZOOM */
     img{transition:.35s}
     img:hover{transform:scale(1.05)}
+     /* ACTIONS BAR */
+.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
+  .rm-view span,.rm-btn span{font-size:14px;color:#555}
+  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
+  .rm-sawer-btn{color:#e60012}
+  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
+  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
+  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rm-head b{font-size:18px;color:#111}
+  .rm-head span{cursor:pointer;font-size:18px}
+  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
+  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
+  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
+  .qris{max-width:100%;margin:12px 0}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
+  /* Animasi Kedip untuk Tombol Sawer */
+  @keyframes sawerPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
   </style>
 </head>
 <body>
@@ -68,15 +101,11 @@
 
 <div class="subheader">
   <nav class="sub-nav">
-  <a href="toko affiliate.html">Toko Affiliate</a>
-      <a href="toko-pancing.html">Toko Pancing</a>
-      <a href="spot.html">Spot Kolam</a>
+  <a href="lomba.html">Jadwal Lomba</a>
       <a href="laporan-lomba.html">Laporan Lomba</a>
       <a href="review-empang.html">Review Empang</a>
-      <a href="alat pancing.html">Piranti Pancing</a>
       <a href="teknik.html">Teknik Ikan Mas</a>
-      <a href="umpan essen.html">Umpan & Essence</a>
-      <a href="profil-angler2.html">Profil Angler</a>
+      <a href="spot.html">Spot Kolam</a>
   </nav>
 </div>
   <main class="container">
@@ -85,7 +114,19 @@
     <span class="kicker">Rekomendasi • Alat Pancing</span>
     <h1>Rekomendasi Gear & Joran Terbaik untuk Pemancing Pemula</h1>
     <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
-
+<!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
         <img src="assets/img/galeri/gear bawal.png" alt="Rekomendasi gear joran dan reel untuk ikan bawal">
       </div>
       <div class="caption"><em>Foto: Ilustrasi joran, reel dan tackle box yang direkomendasikan untuk mancing bawal (Dok. Republik Mancing)</em></div>
@@ -189,57 +230,19 @@
       <style>
   img { max-width: 100%; width: 500px; height:auto; }
 </style>
-
-      <!-- BAGIKAN / SHARE WIDGET -->
-<div class="share" aria-label="Bagikan artikel" id="shareWidget">
-  <h5 class="share-title">Bagikan</h5>
-  <div class="share-buttons" role="list">
-    <a role="listitem" class="share-btn facebook" id="shareFacebook" title="Bagikan ke Facebook" target="_blank" rel="noopener">
-      <!-- SVG icon Facebook -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2v-3h2.2V9.4c0-2.2 1.3-3.5 3.3-3.5.9 0 1.8.06 1.8.06v2h-1c-1 0-1.3.63-1.3 1.3V12h2.3l-.36 3h-1.94v7A10 10 0 0022 12z"/>
-      </svg>
-      <span class="label">Facebook</span>
-    </a>
-    <a role="listitem" class="share-btn x" id="shareX" title="Bagikan ke X (Twitter)" target="_blank" rel="noopener">
-      <!-- SVG icon X/Twitter -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M22 5.92c-.64.28-1.33.47-2.05.55.74-.44 1.3-1.13 1.57-1.96-.7.42-1.48.73-2.31.9A4.06 4.06 0 0015.5 4c-2.24 0-4.06 1.82-4.06 4.07 0 .32.04.63.11.93-3.37-.17-6.36-1.78-8.36-4.22-.35.6-.55 1.3-.55 2.05 0 1.42.72 2.67 1.81 3.4-.66-.02-1.28-.2-1.82-.5v.05c0 1.97 1.4 3.61 3.26 3.98-.34.09-.7.14-1.07.14-.26 0-.51-.02-.75-.07.51 1.6 2 2.77 3.77 2.8A8.13 8.13 0 012 19.54 11.48 11.48 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68v-.53c.8-.58 1.49-1.3 2.03-2.12-.73.32-1.52.53-2.34.63z"/>
-      </svg>
-      <span class="label">X</span>
-    </a>
-    <a role="listitem" class="share-btn instagram" id="shareInstagram" title="Instagram (buka profil / salin link)" target="_blank" rel="noopener">
-      <!-- SVG icon Instagram -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zm6.8-3.6a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2zM12 10.5A1.5 1.5 0 1110.5 12 1.5 1.5 0 0112 10.5z"/>
-      </svg>
-      <span class="label">Instagram</span>
-    </a>
-    <a role="listitem" class="share-btn whatsapp" id="shareWhatsApp" title="Bagikan ke WhatsApp" target="_blank" rel="noopener">
-      <!-- SVG icon WhatsApp -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M20.5 3.5A11 11 0 0012 1a11 11 0 00-9.9 6.1 11 11 0 001.2 10.9L1 23l4.4-2.2A11 11 0 0012 23a11 11 0 008.5-19.5zM12 21a9 9 0 01-4.6-1.2l-.3-.2-2.7 1.3 1.3-2.6-.2-.3A9 9 0 1112 21zM17 14c-.2-.1-1.2-.6-1.4-.7s-.4-.1-.6.1-.7.7-.9.8-.3.1-.5 0c-.2-.1-.8-.3-1.6-.9-.6-.6-1-1.4-1.2-1.6s0-.4.1-.5c.1-.1.2-.4.3-.6.1-.2 0-.5-.1-.7s-.6-1.5-.9-2c-.2-.4-.5-.3-.6-.3-.3 0-.5 0-.8 0s-1 .3-1.5.7c-.5.4-1 1-1 2s.8 2.4 1.2 3 .9 1.6 1.6 2.1 1.5 1 2.3 1.1c.8.1 1.6.1 2.2.1.7 0 1.2 0 1.6-.1s1-.4 1.1-.8c.1-.4.1-.8 0-.9-.1-.1-1-.6-1.2-.7z"/>
-      </svg>
-      <span class="label">WhatsApp</span>
-    </a>
-    <a role="listitem" class="share-btn telegram" id="shareTelegram" title="Bagikan ke Telegram" target="_blank" rel="noopener">
-      <!-- SVG icon Telegram -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M21 3L3 10.2c0 0 1.6 1.1 3.6 2.1l1.3.6 3.6 1.7 1.1 1.3c0 0 1.2 1.5 2.9.5 0 0 5.6-3.2 6.5-3.7L21 3z"/>
-      </svg>
-      <span class="label">Telegram</span>
-    </a>
-    <button class="share-btn copy" id="copyLink" title="Salin tautan ke clipboard">
-      <!-- SVG icon copy -->
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" focusable="false">
-        <path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/>
-      </svg>
-      <span class="label">Salin Link</span>
-    </button>
-  </div>
-  <div id="shareFeedback" aria-live="polite" class="sr-only" style="margin-top:.5rem"></div>
-        <a class="btn" href="donasi-foto.html" title="Download paket foto (jika tersedia)">Download Paket Foto</a>
-      </div>
+<!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
       <section class="related">
         <div class="card">
           <h4><a href="ulasan reel stella.html">Ulasan Reel Shimano Stella</a></h4>
@@ -265,134 +268,149 @@
           <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
         </form>
       </section>
+    
     </article>
-<footer style="background:#111;color:#ddd;padding:40px 20px;margin-top:40px">
-  <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:30px;">
-    <!-- Kolom 1 -->
-    <div style="flex:1;min-width:220px">
-      <h3 style="color:#fff;font-size:20px;margin-bottom:10px;font-weight:800">Republik Mancing</h3>
-      <p style="margin:0;color:#bbb;line-height:1.6">
-        Portal berita, liputan event, dokumentasi, dan hiburan pemancingan dari seluruh Indonesia.
-        Hadir sejak 2020 untuk komunitas mancing Nusantara.
+ <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
       </p>
     </div>
-    <!-- Kolom 2 -->
-    <div style="flex:1;min-width:180px">
-      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Navigasi</h4>
-      <ul style="list-style:none;padding:0;margin:0;line-height:1.9;color:#bbb">
-        <li><a href="/" style="color:#bbb;text-decoration:none">Beranda</a></li>
-        <li><a href="#berita" style="color:#bbb;text-decoration:none">Berita</a></li>
-        <li><a href="#teknik" style="color:#bbb;text-decoration:none">Teknik</a></li>
-        <li><a href="/tentang-kami" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
-        <li><a href="#kontak" style="color:#bbb;text-decoration:none">Kontak</a></li>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
       </ul>
     </div>
-    <!-- Kolom 3 -->
-    <div style="flex:1;min-width:240px">
-      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Kontak Redaksi</h4>
-      <p style="margin:0;color:#bbb;line-height:1.8">
-        Email: <strong>info@republikmancing.com</strong><br>
-        WhatsApp: <strong>+62 85693927647</strong><br>
-        Jakarta-Purbalingga—Indonesia
-      </p>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan-privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
     </div>
-    <!-- Kolom 4 -->
+    <!-- SOSIAL -->
     <div style="flex:1;min-width:200px">
-      <h4 style="color:#fff;margin-bottom:10px;font-size:16px;font-weight:700">Ikuti Kami</h4>
-      <div style="display:flex;gap:12px;margin-top:8px;">
-       <a href="https://www.facebook.com/robben.bralink" target="_blank" title="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
-              <a href="https://www.instagram.com/republikmancing37/" target="_blank" title="Instagram"><img src="assets/img/icon/ig.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain"></a>
-              <a href="https://www.youtube.com/c/RepublikMancing37" target="_blank" title="YouTube"><img src="assets/img/icon/ytt.png" alt="YouTube" style="width:32px;height:32px;object-fit:contain"></a>
-              <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" target="_blank" title="Tiktok"><img src="assets/img/icon/tt.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain"></a>
-      </div>
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
     </div>
   </div>
-  <hr style="border:0;border-top:1px solid #333;margin:30px 0">
-  <div style="text-align:center;color:#777;font-size:14px">
-    © 2026 Republik Mancing. Seluruh hak cipta dilindungi.
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div></footer>
+
+<!-- SHARE MODAL -->
+<div id="rmShare" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
+    <p style="color:#555;font-size:14px;margin:8px 0 16px;">Pilih platform untuk membagikan artikel ini:</p>
+    <div class="rm-share-icons">
+      <a id="wa" target="_blank" aria-label="WhatsApp"><img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+      <a id="fb" target="_blank" aria-label="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook"></a>
+      <a id="tg" target="_blank" aria-label="Telegram"><img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+      <a id="tw" target="_blank" aria-label="X"><img src="assets/img/icon/twitter.png" alt="X / Twitter"></a>
+      <a id="ln" target="_blank" aria-label="LinkedIn"><img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+      <button onclick="nativeShare()" class="rm-native"><img src="assets/img/icon/gl.jpg" alt="Share"></button>
+      <button class="rm-btn" onclick="openShare()"> <img src="assets/img/icon/link.jpg" alt="Bagikan Link"> </button>
+    </div>
   </div>
-</footer>
- </div>
-  </div>
-      <!-- Functionality -->
+</div>
+
+<!-- SAWER MODAL -->
+<div id="rmSawer" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
+</div>
 <script>
-(function() {
-  // Get current page url and title (fallback to document.location)
-  const pageUrl = encodeURIComponent(window.location.href);
-  const pageTitle = encodeURIComponent(document.title || '');
+/* ===============================
+   VIEW & LIKE SYSTEM
+================================ */
+let views = Number(localStorage.getItem("rmView")) || 0;
+let likes = Number(localStorage.getItem("rmLike")) || 0;
+/* Tambah view 1x per load */
+views++;
+localStorage.setItem("rmView", views);
+/* Render ke semua tempat */
+function renderCounters(){
+  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
+renderCounters();
 
-  const fb = document.getElementById('shareFacebook');
-  const x = document.getElementById('shareX');
-  const ig = document.getElementById('shareInstagram');
-  const wa = document.getElementById('shareWhatsApp');
-  const tg = document.getElementById('shareTelegram');
-  const copyBtn = document.getElementById('copyLink');
-  const feedback = document.getElementById('shareFeedback');
+/* Like button */
+function likeArticle(){
+  likes++;
+  localStorage.setItem("rmLike", likes);
+  renderCounters();}
+/* OPEN/CLOSE SHARE MODAL */
+function openShare(){
+  let url = encodeURIComponent(location.href);
+  let title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text=" + title + "%20" + url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
+  rmShare.style.display = "flex";}
+function closeShare(){ rmShare.style.display = "none"; }
+/* OPEN/CLOSE SAWER MODAL */
+function openSawer(btn){
+  const article = btn.closest("article");
 
-  // Facebook share dialog (opens in new window)
-  fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
 
-  // X (Twitter) share
-  x.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
 
-  // Instagram: no official web share for arbitrary links.
-  // We'll open the profile URL if provided, otherwise fallback to Instagram home.
-  // If you prefer direct "share to Instagram" on mobile, users can paste the link manually.
-  const instagramProfile = ''; // <-- optional: masukkan username profil jika mau, misal 'republikmancing'
-  if (instagramProfile) {
-    ig.href = `https://www.instagram.com/${instagramProfile}/`;
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+
+  rmSawer.style.display = "flex";
+}
+
+function closeSawer(){ rmSawer.style.display = "none"; }
+/* NATIVE SHARE */
+function nativeShare(){
+  if(navigator.share){
+    navigator.share({title:document.title,url:location.href});
   } else {
-    ig.href = `https://www.instagram.com/`;
-  }
-
-  // WhatsApp (works on mobile & web)
-  wa.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
-
-  // Telegram
-  tg.href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
-
-  // Copy to clipboard
-  copyBtn.addEventListener('click', function() {
-    const text = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => {
-        feedback.textContent = 'Tautan disalin ke clipboard';
-        // small visual feedback
-        copyBtn.innerHTML = '✓ <span class="label">Tersalin</span>';
-        setTimeout(() => {
-          copyBtn.innerHTML = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/></svg><span class="label">Salin Link</span>`;
-        }, 1500);
-      }).catch(err => {
-        feedback.textContent = 'Gagal menyalin tautan';
-      });
-    } else {
-      // fallback older browsers
-      const input = document.createElement('input');
-      input.value = text;
-      document.body.appendChild(input);
-      input.select();
-      try {
-        document.execCommand('copy');
-        feedback.textContent = 'Tautan disalin ke clipboard';
-      } catch (e) {
-        feedback.textContent = 'Browser tidak mendukung salin otomatis';
-      } finally {
-        input.remove();
-      }
-    }
-  });
-
-  // Accessibility: announce focus
-  const buttons = document.querySelectorAll('#shareWidget .share-btn, #shareWidget button');
-  buttons.forEach(b => {
-    b.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        b.click();
-      }
-    });
-  });
-
-})();
+    alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
