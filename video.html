@@ -192,7 +192,38 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-       <div class="meta" data-timestamp="2025-12-03T00:00:00Z">Diunggah oleh <strong>Republik Mancing</strong> • <span class="realtime">3 Desember 2025</span> • Durasi 12:56</div>
+     <div class="meta" data-timestamp="2025-12-03T00:00:00Z">
+  Diunggah oleh <strong>Republik Mancing</strong> • <span class="realtime">3 Desember 2025</span> • Durasi 12:56
+</div>
+
+<script>
+function updateRealtime() {
+  const metas = document.querySelectorAll('.meta');
+  metas.forEach(meta => {
+    const span = meta.querySelector('.realtime');
+    const timestamp = new Date(meta.getAttribute('data-timestamp'));
+    const now = new Date();
+    const diff = now - timestamp;
+    
+    let text = '';
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) text = `${days} hari lalu`;
+    else if (hours > 0) text = `${hours} jam lalu`;
+    else if (minutes > 0) text = `${minutes} menit lalu`;
+    else text = `Baru saja`;
+
+    span.textContent = text;
+  });
+}
+
+updateRealtime();              // update pertama
+setInterval(updateRealtime, 60000);  // update tiap 1 menit
+</script>
+
 
           <div class="actions">
             <a class="btn" href="#">💬 1.2K</a>
@@ -348,29 +379,6 @@
 </footer>
 </body>
   <!<script>
-function updateRealtime() {
-  const metas = document.querySelectorAll('.meta');
-  metas.forEach(meta => {
-    const span = meta.querySelector('.realtime');
-    const timestamp = new Date(meta.getAttribute('data-timestamp'));
-    const now = new Date();
-    const diff = now - timestamp; // selisih ms
-    
-    let text = '';
-    const seconds = Math.floor(diff / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    
-    if (days > 0) text = `${days} hari lalu`;
-    else if (hours > 0) text = `${hours} jam lalu`;
-    else if (minutes > 0) text = `${minutes} menit lalu`;
-    else text = `Baru saja`;
-    
-    span.textContent = text;
-  });
-}
-
 // update pertama kali & interval tiap 1 menit
 updateRealtime();
 setInterval(updateRealtime, 60000);
