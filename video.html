@@ -175,10 +175,10 @@
         <div class="video-wrap">
           <div class="embed" role="region" aria-label="Video player">
             <!-- Ganti src ke embed YouTube yang sebenarnya -->
-            <iframe src="https://www.youtube.com/embed/S4Xcoa5sJpo" title="Adu Tarikan Ikan Babon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/CFe1owIHIFA?si=qnQLz1xDNPy255b2" title="Profesor Mancing Rebut Pajero Sport Di Event Spektakuler Akhir Tahun | Tengkele Kukusan Ft YPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
 
-          <h1 class="video-title">Adu Sengit Dengan Konten Creator_Puas Narikin Ikan</h1>
+          <h1 class="video-title">Profesor Mancing Rebut Pajero Sport Di Event Spektakuler Akhir Tahun | Tengkele Kukusan Ft YPS</h1>
           <div class="video-ad">
   <ins class="adsbygoogle"
        style="display:block"
@@ -192,7 +192,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-          <div class="meta">Diunggah oleh <strong>Republik Mancing</strong> • 3 Desember 2025 • Durasi 12:56</div>
+       <div class="meta" data-timestamp="2025-12-03T00:00:00Z">Diunggah oleh <strong>Republik Mancing</strong> • <span class="realtime">3 Desember 2025</span> • Durasi 12:56</div>
 
           <div class="actions">
             <a class="btn" href="#">💬 1.2K</a>
@@ -347,7 +347,34 @@
   </div>
 </footer>
 </body>
-  <!-- JSON-LD for video (basic) -->
+  <!<script>
+function updateRealtime() {
+  const metas = document.querySelectorAll('.meta');
+  metas.forEach(meta => {
+    const span = meta.querySelector('.realtime');
+    const timestamp = new Date(meta.getAttribute('data-timestamp'));
+    const now = new Date();
+    const diff = now - timestamp; // selisih ms
+    
+    let text = '';
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    
+    if (days > 0) text = `${days} hari lalu`;
+    else if (hours > 0) text = `${hours} jam lalu`;
+    else if (minutes > 0) text = `${minutes} menit lalu`;
+    else text = `Baru saja`;
+    
+    span.textContent = text;
+  });
+}
+
+// update pertama kali & interval tiap 1 menit
+updateRealtime();
+setInterval(updateRealtime, 60000);
+</script>-- JSON-LD for video (basic) -->
    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -360,5 +387,6 @@
     "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "duration": "PT12M45S"
   }
+     
   </script>
 </html>
