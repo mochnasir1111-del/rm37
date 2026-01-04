@@ -194,10 +194,14 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
   .article-card:hover img,
   .slide:hover img {transform: scale(1.06);filter: brightness(0.9);}
    .info-lomba {position: fixed;bottom: 0;left: 0;width: 100%;background: #ff0000;color: #fff;padding: 8px 0;z-index: 9999;font-size: 15px;white-space: nowrap;overflow: hidden;}
-   /* Running text (marquee style) */
-   .info-lomba {overflow: hidden;background: #e42525; padding: 5px 0;}
-   .running-text ul {display: flex;list-style: none;white-space: nowrap;animation: scroll-left 40s linear infinite;}
-    .running-text li {margin-right: 50px; /* Jarak antar item */}
+   .info-lomba{width:100%;overflow:hidden;background:#0b1b22;padding:8px 0;border-radius:10px;}
+    /* Runing Text */
+.running-text{width:100%;overflow:hidden;}
+.marquee{display:flex;width:max-content;animation: scroll 120s linear infinite;}
+.marquee:hover{animation-play-state: paused;}
+.marquee ul{display:flex;list-style:none;padding:0;margin:0;}
+.marquee li{white-space:nowrap;padding:0 40px;font-weight:700;color:#fff;font-size:14px;}
+@keyframes scroll{from{transform: translateX(0);}to{transform: translateX(-50%);}}
    /* Animasi scroll horizontal */
      @keyframes scroll-left {0% { transform: translateX(100%); }100% { transform: translateX(-100%); }} 
    .top-ad{background:#f8f9fa;padding:10px 0;margin-bottom:24px;}
@@ -422,25 +426,76 @@ a.title:hover {color: #c00; }
       <a href="kontak.html" class="hover-red">Kontak</a>
   </nav>
 </div>
-   <div class="offcanvas-backdrop" id="offBackdrop"></div>
-<div class="info-lomba">
+  <div class="info-lomba">
   <div class="running-text">
-    <ul>
-     <li>Pemancingan ikan mas yang ada di daerah Jabodetabek, Banten, Jawa Barat Yang Sudah Pernah Di Liput Republik Mancing.</li>
-      <li>1. My fishing Indramayu 2. Pemancingan Telaga Silet Bogor 3. New Telaga Heliconia Bekasi 4. Tengkele Pemancingan Serang Banten 5. Sapta 48 Serang </li>
-       <li>6. Telaga Joglo Kalijati Subang 7. Empang Damai Gothe Pantura 8. Telaga Pekayon  9. Patriot Bekasi 10. JW Bekasi</li>
-       <lil>11. Jatiranggon 12. Mpo fishing  13. Stj 50 14. Telaga mini 15. Galatama mas Auri 16. New Babon 17. Empang villa Depok 18. Minapuri Tangsel 19. Cs 101 20. Telaga metro</lil>
-<li>21. Empang kecil 22. Gilang 60 23. Gilang 44 24. Bmsk 1 25. Bmsk 2 26. Telaga masbay 27. Agus maung  28. TGK 29. Palem Lestari 30. Pemancingan Kevin Palem </li>
-<li>31. Mpo Yuli 32. Aselih 33. Pemancingan AO 34. Kedondong 35. Pringgon 36. Teratai 37. Bas fishing 38. Brigif Fishing Djakarta  39. Yayasan buncit 40. Pemancingan Tuan Muda Kemang Fishing </li>
-<li>41. Cipta alam kemang 42. Yuli jeruk purut 43. H Caki jeruk purut 44. Empang Bogel jagakarsa 45. Empang Doblong pekayon 46. Empang Noor pekayon 47. Cepoy pejaten 48. Ebenk 66 49. Poncol 50. Pemancingan h muhi pd pinang</li>
-<li>51. Betawi Kumpul dah perna mancing tapi dulu... 52. Galatama Deplu oran narik pisan😆 53. Tabgha sampai lupa wkwkk...maaf Om Daniel Tabgha Pemancingan 😆🙏 54. Pmc Pangeranjati Tangerang Banten 55. TB 3 56, Palem Krukut 57. Valasindo 58. Pemancingan H Agam Zul  59. Tirta Gadog Bogor 60. H Beko Karawang</li>
-<li>61. Balong Barong Karawang 62, Telaga Si Abang Cibening Bekasi 63. Brigif Kujang 2 Bandung</li>
-  <li>64. Pemancingan Maninjo Jaksel</li>
-      <li>65. Pemancingan Karimata</li>
-      <li>66. Pemancingan H Khayar Ciganjur</li>
-<li>Ayo mana lagi hg belum dikunjungi...??</li>
-      
-    </ul>
+    <div class="marquee">
+      <ul aria-hidden="true">
+        <li>Pemancingan ikan mas Jabodetabek, Banten & Jawa Barat – Sudah Diliput Republik Mancing:</li>
+        <li>1. My Fishing Indramayu</li>
+        <li>2. Telaga Silet Bogor</li>
+        <li>3. Heliconia Bekasi</li>
+        <li>4. Tengkele Serang</li>
+        <li>5. Sapta 48</li>
+        <li>6. Telaga Joglo Subang</li>
+        <li>7. Empang Damai Gothe</li>
+        <li>8. Telaga Pekayon</li>
+        <li>9. Patriot Bekasi</li>
+        <li>10. JW Bekasi</li>
+        <li>11. Jatiranggon</li>
+        <li>12. Mpo Fishing</li>
+        <li>13. STJ 50</li>
+        <li>14. Telaga Mini</li>
+        <li>15. AURI</li>
+        <li>16. New Babon</li>
+        <li>17. Empang Villa Depok</li>
+        <li>18. Minapuri Tangsel</li>
+        <li>19. CS 101</li>
+        <li>20. Telaga Metro</li>
+        <li>21. Empang Kecil</li>
+        <li>22. Gilang 60</li>
+        <li>23. Gilang 44</li>
+        <li>24. BMSK 1</li>
+        <li>25. BMSK 2</li>
+        <li>26. Telaga Masbay</li>
+        <li>27. Agus Maung</li>
+        <li>28. TGK</li>
+        <li>29. Palem Lestari</li>
+        <li>30. Kevin Palem</li>
+        <li>31. Mpo Yuli</li>
+        <li>32. Aselih</li>
+        <li>33. Pemancingan AO</li>
+        <li>34. Kedondong</li>
+        <li>35. Pringgon</li>
+        <li>36. Teratai</li>
+        <li>37. BAS Fishing</li>
+        <li>38. Brigif Fishing</li>
+        <li>39. Yayasan Buncit</li>
+        <li>40. Tuan Muda Kemang</li>
+        <li>41. Cipta Alam Kemang</li>
+        <li>42. Yuli Jeruk Purut</li>
+        <li>43. H Caki Jeruk Purut</li>
+        <li>44. Empang Bogel Jagakarsa</li>
+        <li>45. Empang Doblong</li>
+        <li>46. Empang Noor</li>
+        <li>47. Cepoy Pejaten</li>
+        <li>48. Ebenk 66</li>
+        <li>49. Poncol</li>
+        <li>50. H Muhi Pd Pinang</li>
+        <li>51. Betawi Kumpul</li>
+        <li>52. Galatama Deplu</li>
+        <li>53. Tabgha</li>
+        <li>54. PMC Pangeranjati</li>
+        <li>55. TB 3</li>
+        <li>56. Palem Krukut</li>
+        <li>57. Valasindo</li>
+        <li>58. H Agam Zul</li>
+        <li>59. Tirta Gadog</li>
+        <li>60. H Beko Karawang</li>
+        <li>61. Balong Barong</li>
+        <li>62. Telaga Si Abang</li>
+        <li>63. Brigif Kujang 2 Bandung</li>
+      </ul>
+    </div>
   </div>
 </div>
 <!-- BANNER TAHUN BARU -->
@@ -1175,6 +1230,7 @@ setInterval(() => {
 </script>
 </body>
 </html>
+
 
 
 
