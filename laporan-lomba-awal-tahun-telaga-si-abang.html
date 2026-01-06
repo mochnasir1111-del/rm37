@@ -15,43 +15,124 @@
   <title>Liputan Lomba Awal Tahun 2026 Telaga Si Abang – Cibening Setu Bekasi | Republik Mancing</title>
 
 <meta name="description" content="Laporan lengkap event mancing spesial awal tahun 2026 di Pemancingan Telaga Si Abang Cibening Setu Bekasi. Sistem happy gentak, 28 lapak, 1 joran 3 kail, 1 ton ikan, juara dan momen terbaik." />
-
 <meta property="og:title" content="Lomba Mancing Awal Tahun 2026 Telaga Si Abang Cibening Setu Bekasi" />
 <meta property="og:description" content="Event spektakuler awal tahun di Telaga Si Abang Bekasi berlangsung meriah. Ribuan ikan ditebar, persaingan ketat, dan para angler top turut meramaikan." />
-
 <meta property="og:image" content="https://republikmancing.com/assets/img/event/abang1.JPG" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Republik Mancing" />
-
 <link rel="stylesheet" href="assets/css/style.css">
-
+<link rel="icon" href="assets/img/favicon.ico">
   <style>
-    /* Minimal inline styles untuk preview mandiri */
-    :root{--accent:#2e6d3e;--muted:#666}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
-    .container{max-width:920px;margin:32px auto;padding:0 16px}
-    header.site-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-    header .brand{font-weight:700;color:var(--accent);font-size:20px;text-decoration:none}
-    nav.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:12px}
-    
-    .rm-news {max-width: 900px;margin: auto;font-family: 'Segoe UI', Arial, sans-serif;line-height: 1.7;}
-    .rm-meta {color: #888;font-size: 14px; margin-bottom: 12px;}
-    .rm-lead {font-size: 18px;font-weight: 600;margin-bottom: 18px;}
-    .rm-img-right, .rm-img-left {width: 40%;margin: 10px;}
-    .rm-img-right {float: right;}
-    .rm-img-left {float: left;}
-    .rm-img-right img, .rm-img-left img {width: 100%;border-radius: 8px;}
-    .rm-img-right span, .rm-img-left span {display: block;font-size: 12px;color: #777;margin-top: 4px;}
-    .rm-note {font-size: 14px;color: #555;}
-    .rm-greeting {font-size: 18px;text-align: center;margin-top: 30px;}
-    .rm-slogan {text-align: center;font-weight: bold;margin-top: 10px;color: #b40000;}
-    .rm-hero {width: 100%;margin-bottom: 18px;position: relative;overflow: hidden;border-radius: 12px;}
-    .rm-hero img {width: 100%;height: 420px;object-fit: cover;display: block;}
-    .rm-hero-caption {position: absolute;bottom: 0;left: 0;right: 0;padding: 12px 16px;background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));color: #fff;font-size: 14px;}
-    .rm-section{margin:28px 0; clear:both;}
-    .rm-float-wrap::after{ content:"";display:block; clear:both;}
-   /* ACTIONS BAR */
-  .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+/* ===== ROOT & RESET ===== */
+:root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1100px;
+      --shadow:0 6px 18px rgba(16,24,40,.07);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* ===== HEADER GLOBAL ===== */
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+    .brand span{color:#c00}
+    .main-nav{margin-left:auto;display:flex;gap:16px}
+    .main-nav a{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+    .main-nav a:hover{color:#c00}
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
+    .sub-nav a:hover{color:#c00}
+
+    /* LAYOUT */
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}}
+
+    /* CARD */
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+
+    /* REVIEW */
+    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
+    h1{margin:12px 0 6px;font-size:1.8rem}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .hero{width:100%;height:320px;border-radius:12px;object-fit:cover;margin-bottom:14px}
+
+    .rating{display:flex;align-items:center;gap:6px;margin:10px 0}
+    .star{color:#facc15;font-size:18px}
+
+    .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+    .info{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;font-size:14px}
+
+    /* PROS CONS */
+    .pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+    .pc div{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:14px}
+    .pc h4{margin-top:0}
+
+    /* SIDEBAR */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list a{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .list img{width:72px;height:50px;border-radius:8px;object-fit:cover}
+
+    /* ZOOM */
+    img{transition:.3s}
+    img:hover{transform:scale(1.05)}
+
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0;}
+   .gallery img{width:100%;border-radius:8px;}
+   .gallery figcaption{font-size:13px;color:#666;margin-top:6px;text-align:center;}
+    /* THUMBNAIL ARTIKEL */
+   .thumb{max-width:680px;        /* batas aman desktop */margin:20px auto;      /* center */text-align:center;}
+   .thumb img{width:100%;height:320px;          /* paksa tinggi */object-fit:cover;      /* potong rapi */border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+   .thumb figcaption{margin-top:8px;font-size:13px;color:#666;font-style:italic;}
+    .share-title{margin:0 0 .5rem 0;font-size:.95rem;}
+    .share-buttons{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+    .share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);color:#111;cursor:pointer;}
+    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
+    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
+    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
+    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
+    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
+    .share-btn.copy{background:#f3f4f6}
+    .sr-only{position:relative;left:-9999px}
+    @media (max-width:600px){.article h1{font-size:20px}}
+        /* ===== FOOTER ===== */
+.site-footer{background:#111;color:#ddd;margin-top:40px;}
+.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.footer-col h3,
+.footer-col h4{color:#fff;margin-bottom:12px;}
+.footer-col h3 span{color:#e53935;}
+.footer-col p{font-size:14px;line-height:1.6;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
+.footer-col a:hover{color:#e53935;}
+/* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+  /* OFFCANVAS MOBILE */
+.offcanvas {position: fixed; top: 0;right: -100%;width: 280px;height: 100%;background: #111;color: #fff;z-index: 9999;padding: 20px;transition: right 0.3s ease;}
+.offcanvas.active {right: 0;}
+.off-nav {
+  display: flex;flex-direction: column;
+  gap: 14px;margin-top: 40px;}
+.off-nav a {color: #fff;text-decoration: none;font-size: 16px;}
+.close-off {position: absolute;top: 10px;right: 14px;font-size: 28px;background: none; border: none;color: #fff;cursor: pointer;}
+/* TAMPILKAN HANYA DI MOBILE */
+@media (min-width: 900px) {
+  .offcanvas {display: none;}}
+   .menu-btn {font-size: 24px; background: none;border: none;cursor: pointer;display: none;}
+@media (max-width: 900px) {
+  .menu-btn {display: block;}}
+ /* ACTIONS BAR */
+.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
   .rm-view span,.rm-btn span{font-size:14px;color:#555}
   .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
@@ -83,18 +164,66 @@
   .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
-  </style>
-   </head>
-   <body>
+  
+  /* FOTO HEADER */
+.rm-featured img{width:100%;max-height:380px;object-fit:cover;border-radius:12px;}
+/* FOTO DALAM ARTIKEL */
+.rm-photo-left,
+.rm-photo-right{max-width:42%;margin:12px 0;}
+.rm-photo-left img,
+.rm-photo-right img{width:100%;height:auto;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.25);}
+/* POSISI */
+.rm-photo-left{float:left;margin-right:16px;}
+.rm-photo-right{float:right;margin-left:16px;}
+/* MOBILE */
+@media(max-width:768px){
+  .rm-photo-left,
+  .rm-photo-right{float:none;max-width:100%;margin:14px 0;}
+  .rm-featured img{max-height:240px;}}
+  /* FOTO UTAMA */
+.article-thumb{max-width: 900px; margin: 20px auto;text-align: center;}
+.article-thumb:not(.gallery) img{width: 100%;max-height: 520px;object-fit: cover;border-radius: 10px;box-shadow: 0 6px 18px rgba(0,0,0,.15);}
+.news-article .rm-photo{width:42%;max-width:420px;}
+.news-article .rm-photo img{width:100%;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.35);}
+.news-article .rm-photo.left{float:left;margin:6px 22px 12px 0;}
+.news-article .rm-photo.right{float:right;margin:6px 0 12px 22px;}
+.news-article p,
+.news-article li{font-size:18px;line-height:1.85;color:#000000;}
+.news-article h1{font-size:32px;line-height:1.3;margin-bottom:10px;color:#000000;}
+.news-article h2{font-size:24px;margin-top:30px;margin-bottom:12px;color:#000000;}
+.news-article .meta{font-size:14px;color:#000000;margin-bottom:20px;}
+.news-article ul{margin-left:20px;}
+</style>
+</head>
+<body>
 
-  <div class="container">
-    <header class="site-header">
-      <a class="brand" href="index.html">Republik Mancing</a>
-      <div style="margin-left:auto;color:var(--muted);font-size:14px">Update Lomba • Spot • Tips</div>
-    </header>
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Teknik & Umpan
+<!-- HEADER -->
+<header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="berita.html">Berita</a>
+      <a href="video.html">Video</a>
+      <a href="profil-angler2.html">Profil Angler</a>
+      <a href="kontak.html">Kontak</a>
     </nav>
+  </div>
+</header>
+
+<!-- SUBHEADER -->
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+    <a href="laporan-lomba.html">Laporan Lomba</a>
+    <a href="review-empang.html">Review Empang</a>
+    <a href="teknik.html">Teknik Ikan Mas</a>
+    <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
+
+  <main class="container">
    <article class="card"itemscopeitemtype="http://schema.org/Article"data-id="laporan-lomba-awal-tahun-telaga-si-abang"data-title="Liputan Mancing Spesial Awal Tahun 2026 – Telaga Si Abang Cibening Setu Bekasi Berlangsung Meriah">
 
 
@@ -115,7 +244,7 @@
     </div>
 
  <p><strong>Cibening Bekasi</strong> - Event mancing spesial awal tahun 2026 di Pemancingan
-  <a href="https://www.republikmancing.com/spot/si abang" target="_blank" title="Profil Pemancingan Telaga Si Abang Cibening Setu Bekasi">Telaga Si Abang – Cibening, Setu, Bekasi</a> berlangsung sangat meriah dan penuh euforia. Dengan sistem <em>happy gentak</em>, para angler menikmati adu teknik, strategi umpan, dan adrenalin tarik ikan sejak peluit pertama dibunyikan.</p>
+  <a href="https://www.republikmancing.com/si abang" target="_blank" title="Profil Pemancingan Telaga Si Abang Cibening Setu Bekasi">Telaga Si Abang – Cibening, Setu, Bekasi</a> berlangsung sangat meriah dan penuh euforia. Dengan sistem <em>happy gentak</em>, para angler menikmati adu teknik, strategi umpan, dan adrenalin tarik ikan sejak peluit pertama dibunyikan.</p>
 <!-- FOTO UTAMA BERITA -->
 <div class="rm-hero">
   <img src="assets/img/event/abang1.JPG" alt="Telaga Si Abang Event 1 Januari 2026">
@@ -360,6 +489,7 @@ function nativeShare(){
 </script>
 </body>
 </html>
+
 
 
 
