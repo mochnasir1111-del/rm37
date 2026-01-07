@@ -160,6 +160,46 @@
 .rm-photo-left figcaption,
 .rm-photo-right figcaption,
 .rm-featured figcaption{font-size:12px;color:#aaa;margin-top:5px;}
+.rm-video{position:relative;width:100%;aspect-ratio:16/9;margin:24px 0; border-radius:12px;overflow:hidden;background:#000;}
+.rm-video iframe{width:100%;height:100%;border:0;}
+.rm-video figcaption{margin-top:8px;font-size:13px;color:#666;}
+
+.rm-comments{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:2px solid #eee;
+}
+
+.rm-comments h3{
+  margin-bottom:6px;
+}
+
+.rm-muted{
+  color:#777;
+  font-size:14px;
+  margin-bottom:14px;
+}
+
+#commentList > div{
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+}
+
+#commentList b{
+  color:#222;
+}
+
+.rm-comment-form{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.rm-comment-form input,
+.rm-comment-form textarea{padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px;}
+.rm-comment-form button{align-self:flex-start;padding:10px 18px;background:#0b7cff;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:600;}
+.rm-comment-form button:hover{background:#095ec4;}
   </style>
 </head>
 <body>
@@ -188,7 +228,7 @@
   </nav>
 </div>
 <main class="container">
- <article class="card"itemscopeitemtype="https://schema.org/Article"data-id="ebenk"data-title="Lomba Eksekutif Bulanan Pemancingan Bang Ebenk Pondok Pinang Berlangsung Meriah"></article>
+ <article class="card"itemscope itemtype="https://schema.org/Article"data-id="ebenk"data-title="Lomba Eksekutif Bulanan Pemancingan Bang Ebenk Pondok Pinang Berlangsung Meriah"></article>
   
 <h1>Lomba Eksekutif Bulanan Pemancingan Bang Ebenk Pondok Pinang Berlangsung Meriah</h1>
 <p class="meta">RepublikMancing.com | Minggu, 4 Januari 2026</p>
@@ -208,9 +248,10 @@
       </div>
 
 <figure class="rm-featured">
-  <img src="assets/img/event/ebenk.JPG" alt="Lomba Eksekutif Bulanan Pemancingan Bang Ebenk Pondok Pinang">
-  <em>Suasana lomba eksekutif bulanan di Pemancingan Bang Ebenk, Pondok Pinang, Jakarta Selatan. ( Foto: Republik Mancing )</em>
+  <img src="assets/img/event/ebenk.JPG" alt="Lomba Eksekutif Bang Ebenk">
+  <figcaption>Suasana lomba eksekutif bulanan di Pemancingan Bang Ebenk. (Foto: Republik Mancing)</figcaption>
 </figure>
+
 
 <p><strong>Pondok Pinang, Jakarta</strong> - 
 Hari ini, Minggu 4 Januari 2026, tim Republik Mancing kembali berkeliling empang dan kali ini
@@ -226,10 +267,12 @@ Dari pantauan Republik Mancing langsung dari pemancingan,
 Peserta datang dari berbagai wilayah seperti Bekasi, Cawang, dan daerah lainnya,
 menunjukkan bahwa komunitas di Pemancingan Bang Ebenk masih sangat solid dan setia.
 </p>
-<figure class="rm-photo-right">
-    <img src="assets/img/event/beng2.png" alt="Tarikan ikan induk di Pemancingan Bang Ebenk">
-    <em>Tarikan keras induk dari lapak 27. ( Foto: Republik Mancing )</em>
-</figure>
+<h2>VIDEO LIPUTAN</h2>
+<div class="rm-video">
+  <iframe src="https://www.youtube.com/embed/pr35k7FwpLI?si=jUphw-O7Agy_kqn2"
+    allowfullscreen></iframe>
+</div>
+
 <h2>🎣 Data Event Eksekutif Bulanan</h2>
 <ul>
   <li>Tiket: Rp1.100.000</li>
@@ -329,23 +372,21 @@ apa adanya dari lapangan. Semoga pemancingan di seluruh Indonesia bisa saling me
 <div style="max-width:800px;margin:40px auto 0 auto;padding:0 10px">
   <div style="clear:both"></div>
 
-  <section id="comments">
-    <h3>Komentar</h3>
-    <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+  <section id="comments" class="rm-comments">
+  <h3>💬 Komentar Pemancing</h3>
+  <p class="rm-muted">Bagikan pengalaman dan pendapatmu seputar spot atau event ini.</p>
 
-    <form style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
-      <input type="text" placeholder="Nama" required
-        style="padding:12px;border-radius:8px;border:1px solid #ddd">
+  <!-- LIST KOMENTAR (Firebase akan isi otomatis di sini) -->
+  <div id="commentList"></div>
 
-      <textarea placeholder="Tulis komentar..." rows="4" required
-        style="padding:12px;border-radius:8px;border:1px solid #ddd"></textarea>
+  <!-- FORM KOMENTAR -->
+  <form id="commentForm" class="rm-comment-form">
+    <input type="text" placeholder="Nama kamu..." required>
+    <textarea placeholder="Tulis komentar..." rows="4" required></textarea>
+    <button type="submit">Kirim Komentar</button>
+  </form>
+</section>
 
-      <button type="submit"
-        style="padding:12px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer">
-        Kirim Komentar
-      </button>
-    </form>
-  </section>
 </div> 
 </article>
   </div>
@@ -535,6 +576,7 @@ db.collection("comments")
 
 </body>
 </html>
+
 
 
 
