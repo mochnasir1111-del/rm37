@@ -131,7 +131,16 @@
   .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
-
+.rm-featured{ margin:24px 0;border-radius:14px;overflow:hidden;background:#000;}
+.rm-featured img{width:100%;height:auto;display:block;}
+.rm-featured em{display:block;padding:10px 12px;font-size:13px;color:#ccc;background:#111;font-style:normal;}
+.rm-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:20px 0;}
+.rm-gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;transition:.3s;}
+.rm-gallery img:hover{transform:scale(1.05);}
+.rm-gallery figcaption{grid-column:1/-1;font-size:13px;color:#666;margin-top:8px;}
+.rm-video{position:relative;width:100%;aspect-ratio:16/9;margin:24px 0; border-radius:12px;overflow:hidden;background:#000;}
+.rm-video iframe{width:100%;height:100%;border:0;}
+.rm-video figcaption{margin-top:8px;font-size:13px;color:#666;}
   </style>
 </head>
 <body>
@@ -513,6 +522,7 @@ loadComments();
 
 </body>
 </html>
+
 
 
 
