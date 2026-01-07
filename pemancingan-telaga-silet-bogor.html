@@ -57,16 +57,6 @@ h1{margin:12px 0;font-size:1.6rem}
 .spot h3{margin:0 0 6px;font-size:1.05rem}
 .spot p{margin:0;color:var(--muted);font-size:0.9rem}
 
-/* FOOTER */
-.site-footer{background:#111;color:#ddd;margin-top:40px;}
-.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
-.footer-col h3,
-.footer-col h4{color:#fff;margin-bottom:12px;}
-.footer-col p{font-size:14px;line-height:1.6;}
-.footer-col ul{list-style:none;padding:0;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
-.footer-col a:hover{color:#e53935}
 
 /* GOOGLE MAPS */
 .map-wrap{position:relative;width:100%;padding-top:56.25%; margin:18px 0;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);}
@@ -74,33 +64,49 @@ h1{margin:12px 0;font-size:1.6rem}
 
 /* ACTIONS BAR */
 .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
-.rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
-.rm-view span,.rm-btn span{font-size:14px;color:#555}
-.rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
-.rm-sawer-btn img{animation: sawerPulse 1s infinite;}
-.rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
-.rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
-.rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.rm-head b{font-size:18px;color:#111}
-.rm-head span{cursor:pointer;font-size:18px}
-.rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
-.rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
-.rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
-.qris{max-width:180px;width:100%;margin:12px auto;display:block;border-radius:8px}
-.rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
-.rm-pay-icons img{width:100px;height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
-.rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
-@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-@keyframes sawerPulse{0%{transform:scale(1);filter:brightness(1);}50%{transform:scale(1.1);filter:brightness(1.4);}100%{transform:scale(1);filter:brightness(1);}}
+  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
+  .rm-view span,.rm-btn span{font-size:14px;color:#555}
+  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
+  .rm-sawer-btn{color:#e60012}
+  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
+  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
+  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rm-head b{font-size:18px;color:#111}
+  .rm-head span{cursor:pointer;font-size:18px}
+  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
+  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
+  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
+  .qris{max-width:100%;margin:12px 0}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
+  /* Animasi Kedip untuk Tombol Sawer */
+  @keyframes sawerPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
+
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER GLOBAL -->
 <header class="topbar">
   <div class="top-inner">
-    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
-    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+
     <nav class="main-nav">
       <a href="index.html" class="hover-red">Beranda</a>
       <a href="berita.html" class="hover-red">Berita</a>
@@ -111,7 +117,7 @@ h1{margin:12px 0;font-size:1.6rem}
   </div>
 </header>
 
-<!-- SUBHEADER -->
+<!-- SUB HEADER -->
 <div class="subheader">
   <nav class="sub-nav">
     <a href="lomba.html">Jadwal Lomba</a>
@@ -121,6 +127,7 @@ h1{margin:12px 0;font-size:1.6rem}
     <a href="spot.html">Spot Kolam</a>
   </nav>
 </div>
+
 
 <!-- MAIN LAYOUT -->
 <main class="container">
@@ -132,7 +139,23 @@ h1{margin:12px 0;font-size:1.6rem}
 
       <div class="spot-kolam">
         <h1>Telaga Silet Bogor</h1>
-        <p><strong>Pusat Galatama & Galapung Ikan Mas Bertaraf Nasional</strong></p>
+         <span>✍️Ditulis oleh <strong>Tim Republik Mancing</strong></span>
+  <span> Diperbarui: 7 Januari 2026</span>
+  <span> Bogor, Jawa Barat</span>
+        <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
+    <p><strong>Pusat Galatama & Galapung Ikan Mas Bertaraf Nasional</strong></p>
         <p>Telaga Silet Bogor adalah salah satu pemancingan paling prestisius di Jabodetabek. Memiliki dua kolam utama khusus lomba ikan mas, yaitu kolam galatama dan kolam galapung yang sering digunakan untuk event reguler hingga event eksekutif bertiket sultan.</p>
 
         <h2>📍 Alamat & Lokasi</h2>
@@ -209,13 +232,19 @@ h1{margin:12px 0;font-size:1.6rem}
 
       </div> <!-- .spot-kolam -->
 
-      <!-- ACTIONS BAR -->
-      <div class="rm-actions">
-        <div class="rm-view">👁 <span class="rmView">0</span></div>
-        <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-        <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">🔗</button>
-        <button class="rm-btn rm-sawer-btn" onclick="openSawer()"><img src="assets/img/icon/rp.png" alt="Sawer"></button>
-      </div>
+     <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
 
     </article>
 
@@ -252,7 +281,27 @@ h1{margin:12px 0;font-size:1.6rem}
         </div>
       </div>
     </aside>
+<div style="max-width:800px;margin:40px auto 0 auto;padding:0 10px">
+  <div style="clear:both"></div>
 
+  <section id="comments">
+    <h3>Komentar</h3>
+    <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+
+    <form style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+      <input type="text" placeholder="Nama" required
+        style="padding:12px;border-radius:8px;border:1px solid #ddd">
+
+      <textarea placeholder="Tulis komentar..." rows="4" required
+        style="padding:12px;border-radius:8px;border:1px solid #ddd"></textarea>
+
+      <button type="submit"
+        style="padding:12px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer">
+        Kirim Komentar
+      </button>
+    </form>
+  </section>
+</div> 
   </div> <!-- .layout -->
 </main>
 
@@ -311,52 +360,137 @@ h1{margin:12px 0;font-size:1.6rem}
     © 2025 Republik Mancing. All Rights Reserved.
   </div>
 </footer>
+</footer>
+<!-- SHARE MODAL -->
+<div id="rmShare" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
+    <p style="color:#555;font-size:14px;margin:8px 0 16px;">Pilih platform untuk membagikan artikel ini:</p>
+    <div class="rm-share-icons">
+      <a id="wa" target="_blank" aria-label="WhatsApp"><img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+      <a id="fb" target="_blank" aria-label="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook"></a>
+      <a id="tg" target="_blank" aria-label="Telegram"><img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+      <a id="tw" target="_blank" aria-label="X"><img src="assets/img/icon/twitter.png" alt="X / Twitter"></a>
+      <a id="ln" target="_blank" aria-label="LinkedIn"><img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+      <button onclick="nativeShare()" class="rm-native"><img src="assets/img/icon/gl.jpg" alt="Share"></button>
+      <button class="rm-btn" onclick="openShare()"> <img src="assets/img/icon/link.jpg" alt="Bagikan Link"> </button>
+    </div>
+  </div>
+</div>
 
-<!-- JSON-LD Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FishingActivity",
-  "name": "Telaga Silet Bogor",
-  "description": "Telaga Silet Bogor adalah pemancingan ikan mas kelas premium, menyediakan kolam galatama dan galapung dengan event bertiket sultan.",
-  "url": "https://www.republikmancing.com/spot-kolam/telaga-silet-bogor.html",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jl. Batu Hulung No.44",
-    "addressLocality": "Bogor Barat",
-    "addressRegion": "Jawa Barat",
-    "postalCode": "16116",
-    "addressCountry": "ID"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -6.5688595,
-    "longitude": 106.7443278
-  }
+<!-- SAWER MODAL -->
+<div id="rmSawer" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
+</div>
+</div>
+</div>
+<!-- ================= VIEW + LIKE ================= -->
+<script>
+const postID = location.pathname;
+
+// VIEW
+let views = Number(localStorage.getItem("rmView_"+postID)) || 0;
+views++;
+localStorage.setItem("rmView_"+postID, views);
+document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+
+// LIKE
+let likes = Number(localStorage.getItem("rmLike_"+postID)) || 0;
+document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
+
+function likeArticle(){
+  likes++;
+  localStorage.setItem("rmLike_"+postID, likes);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
 }
 </script>
 
+<!-- ================= SHARE + SAWER ================= -->
 <script>
-/* MOBILE OFFCANVAS */
-document.getElementById('openOff').onclick = ()=>document.getElementById('offcanvas').style.display='flex';
-document.getElementById('closeOff').onclick = ()=>document.getElementById('offcanvas').style.display='none';
-
-/* Dummy like counter */
-function likeArticle(){
-  let span=document.querySelector('.rmLike');
-  span.textContent=parseInt(span.textContent)+1;
-}
-
-/* Dummy share modal */
 function openShare(){
-  alert('Fitur share siap diimplementasi!');
+  const url = encodeURIComponent(location.href);
+  const title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text="+title+" "+url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u="+url;
+  tg.href = "https://t.me/share/url?url="+url+"&text="+title;
+  tw.href = "https://twitter.com/intent/tweet?url="+url+"&text="+title;
+  ln.href = "https://www.linkedin.com/sharing/share-offsite/?url="+url;
+  rmShare.style.display="flex";
+}
+function closeShare(){ rmShare.style.display="none"; }
+
+function openSawer(){
+  document.getElementById("sawerFor").innerText="💰 Sawer untuk: "+document.title;
+  rmSawer.style.display="flex";
+}
+function closeSawer(){ rmSawer.style.display="none"; }
+
+function sawerWA(){
+  const msg = `Halo Admin Republik Mancing%0A%0ASaya mau SAWER untuk:%0A${document.title}%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text="+msg,"_blank");
+}
+</script>
+
+<!-- ================= KOMENTAR SUPABASE ================= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabase = supabase.createClient(
+  "https://pydbpqnwmlzjbwfdwkte.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5ZGJwcW53bWx6amJ3ZmR3a3RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3MzA1MDgsImV4cCI6MjA4MzMwNjUwOH0.j8E3v01fR1H3snIHueCjSSHUVoJ5IscGfDRimTIlV08"
+);
+
+const page = location.pathname;
+const form = document.querySelector("#comments form");
+const list = document.createElement("div");
+document.getElementById("comments").appendChild(list);
+
+async function loadComments(){
+  const { data } = await supabase
+    .from("comments")
+    .select("*")
+    .eq("page", page)
+    .order("created_at", { ascending: false });
+
+  list.innerHTML = "";
+  data.forEach(c => {
+    list.innerHTML += `
+      <div style="border-bottom:1px solid #eee;padding:10px 0">
+        <b>${c.name}</b>
+        <small style="color:#777"> · ${new Date(c.created_at).toLocaleString()}</small>
+        <p>${c.message}</p>
+      </div>
+    `;
+  });
 }
 
-/* Dummy sawer modal */
-function openSawer(){
-  alert('Fitur sawer siap diimplementasi!');
-}
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = form.querySelector("input").value.trim();
+  const msg = form.querySelector("textarea").value.trim();
+  if(!name || !msg) return;
+
+  await supabase.from("comments").insert([{
+    name,
+    message: msg,
+    page
+  }]);
+
+  form.reset();
+  loadComments();
+});
+
+loadComments();
 </script>
 
 </body>
 </html>
+
