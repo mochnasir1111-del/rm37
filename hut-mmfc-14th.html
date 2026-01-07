@@ -402,61 +402,107 @@
   <img src="assets/img/icon/ovo.jpg">
   <img src="assets/img/icon/gopay.jpg">
 </div>
-      <!-- Functionality -->
-  <script>
- /* ===============================
-   VIEW & LIKE SYSTEM
-================================ */
-let views = Number(localStorage.getItem("rmView")) || 0;
-let likes = Number(localStorage.getItem("rmLike")) || 0;
-/* Tambah view 1x per load */
-views++;
-localStorage.setItem("rmView", views);
-/* Render ke semua tempat */
-function renderCounters(){
-  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
-  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
-renderCounters();
+     <!-- ================= VIEW + LIKE ================= -->
+<script>
+const postID = location.pathname;
 
-/* Like button */
+// VIEW
+let views = Number(localStorage.getItem("rmView_"+postID)) || 0;
+views++;
+localStorage.setItem("rmView_"+postID, views);
+document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+
+// LIKE
+let likes = Number(localStorage.getItem("rmLike_"+postID)) || 0;
+document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
+
 function likeArticle(){
   likes++;
-  localStorage.setItem("rmLike", likes);
-  renderCounters();}
-/* OPEN/CLOSE SHARE MODAL */
+  localStorage.setItem("rmLike_"+postID, likes);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
+}
+</script>
+
+<!-- ================= SHARE + SAWER ================= -->
+<script>
 function openShare(){
-  let url = encodeURIComponent(location.href);
-  let title = encodeURIComponent(document.title);
-  wa.href = "https://wa.me/?text=" + title + "%20" + url;
-  fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-  tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
-  rmShare.style.display = "flex";}
-function closeShare(){ rmShare.style.display = "none"; }
-/* OPEN/CLOSE SAWER MODAL */
-function openSawer(btn){
-  const article = btn.closest("article");
-  const articleId = article?.dataset.id || location.pathname;
-  const articleTitle = article?.dataset.title || document.title;
-  localStorage.setItem("rm_sawer_article_id", articleId);
-  localStorage.setItem("rm_sawer_article_title", articleTitle);
-  document.getElementById("sawerFor").innerText =
-    "💰 Sawer untuk: " + articleTitle;
-  rmSawer.style.display = "flex";}
-function closeSawer(){ rmSawer.style.display = "none"; }
-/* NATIVE SHARE */
-function nativeShare(){
-  if(navigator.share){
-    navigator.share({title:document.title,url:location.href});
-  } else {
-    alert("Fitur share tidak tersedia di browser ini.");}}
-    function sawerWA(){
-  const id = localStorage.getItem("rm_sawer_article_id");
-  const title = localStorage.getItem("rm_sawer_article_title");
-  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
-  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
-  </script>
+  const url = encodeURIComponent(location.href);
+  const title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text="+title+" "+url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u="+url;
+  tg.href = "https://t.me/share/url?url="+url+"&text="+title;
+  tw.href = "https://twitter.com/intent/tweet?url="+url+"&text="+title;
+  ln.href = "https://www.linkedin.com/sharing/share-offsite/?url="+url;
+  rmShare.style.display="flex";
+}
+function closeShare(){ rmShare.style.display="none"; }
+
+function openSawer(){
+  document.getElementById("sawerFor").innerText="💰 Sawer untuk: "+document.title;
+  rmSawer.style.display="flex";
+}
+function closeSawer(){ rmSawer.style.display="none"; }
+
+function sawerWA(){
+  const msg = `Halo Admin Republik Mancing%0A%0ASaya mau SAWER untuk:%0A${document.title}%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text="+msg,"_blank");
+}
+</script>
+
+<!-- ================= KOMENTAR SUPABASE ================= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabase = supabase.createClient(
+  "https://pydbpqnwmlzjbwfdwkte.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5ZGJwcW53bWx6amJ3ZmR3a3RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3MzA1MDgsImV4cCI6MjA4MzMwNjUwOH0.j8E3v01fR1H3snIHueCjSSHUVoJ5IscGfDRimTIlV08"
+);
+
+const page = location.pathname;
+const form = document.querySelector("#comments form");
+const list = document.createElement("div");
+document.getElementById("comments").appendChild(list);
+
+async function loadComments(){
+  const { data } = await supabase
+    .from("comments")
+    .select("*")
+    .eq("page", page)
+    .order("created_at", { ascending: false });
+
+  list.innerHTML = "";
+  data.forEach(c => {
+    list.innerHTML += `
+      <div style="border-bottom:1px solid #eee;padding:10px 0">
+        <b>${c.name}</b>
+        <small style="color:#777"> · ${new Date(c.created_at).toLocaleString()}</small>
+        <p>${c.message}</p>
+      </div>
+    `;
+  });
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = form.querySelector("input").value.trim();
+  const msg = form.querySelector("textarea").value.trim();
+  if(!name || !msg) return;
+
+  await supabase.from("comments").insert([{
+    name,
+    message: msg,
+    page
+  }]);
+
+  form.reset();
+  loadComments();
+});
+
+loadComments();
+</script>
+
 </body>
 </html>
+
 
 
 
