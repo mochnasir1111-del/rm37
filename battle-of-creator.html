@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TQSG1MEQ8B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TQSG1MEQ8B');
-</script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Battle Of Creator 2025 — Republik Mancing</title>
@@ -18,8 +9,32 @@
   <meta property="og:description" content="Liputan tentang joki bekas yang sering meraih juara total ikan mas di berbagai pemancingan." />
   <meta property="og:image" content="https://picsum.photos/1200/630?random=2" />
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/favicon.ico">
   <style>
+    /* HEADER GLOBAL */
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
     /* Minimal inline styles untuk preview mandiri */
     :root{--accent:#2e6d3e;--muted:#666}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
@@ -41,24 +56,7 @@
     .related .card{padding:12px;border:1px solid #eee;border-radius:8px}
     footer{margin:40px 0 80px;color:var(--muted);font-size:13px}
     @media (max-width:600px){.article h1{font-size:20px}}
-     .share {isplay: inline-block;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    .share-title {margin: 0 0 .5rem 0;font-size: .95rem;}
-    .share-buttons {display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
-    .share-btn{display:inline-flex;align-items:center;gap:.5rem;
-    padding:.45rem .6rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;border:1px solid rgba(0,0,0,.08);
-    background: #fff;box-shadow: 0 1px 2px rgba(0,0,0,.04);color: #111;cursor:pointer;}
-    .share-btn svg{display:block}
-    .share-btn .label{display:inline-block}
-    .share-btn.facebook{background:#1877F2;color:#fff;border-color:transparent}
-    .share-btn.x{background:#0A0A0A;color:#fff;border-color:transparent}
-    .share-btn.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#515bd4);color:#fff;border-color:transparent}
-    .share-btn.whatsapp{background:#25D366;color:#fff;border-color:transparent}
-    .share-btn.telegram{background:#2AABEE;color:#fff;border-color:transparent}
-    .share-btn.copy{background:#f3f4f6}
-    .share-btn:focus{outline:3px solid Highlight; outline-offset:2px}
-    .sr-only{position:relative}
-    @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-    .hero-article img {width: 100%;border-radius: 10px;margin-bottom: 20px;}
+        .hero-article img {width: 100%;border-radius: 10px;margin-bottom: 20px;}
     .title-article {font-size: 28px;margin-bottom: 10px;line-height: 1.3;}
     .meta-article {color: #666;font-size: 14px;margin-bottom: 20px;display: flex;gap: 20px;flex-wrap: wrap;}
     .lokasi-box {background: #f1f1f1;padding: 15px;border-radius: 10px;margin-bottom: 20px;}
@@ -68,8 +66,7 @@
     .gallery-juara .g-item:hover {transform: translateY(-4px);box-shadow: 0 6px 18px rgba(0,0,0,0.12);}
     .g-caption {padding: 10px;font-size: 14px;text-align: center;color: #444;}
     .artikel-stats{display:flex;gap:18px;background:#f5f5f5;padding:10px 15px;border-radius:10px;margin:15px 0 25px;font-size:14px;flex-wrap:wrap;}
-    .stat-item{display:flex;align-items:center;gap:5px;background:#fff;padding:6px 10px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.08);}
-      
+    .stat-item{display:flex;align-items:center;gap:5px;background:#fff;padding:6px 10px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.08);}  
    /* ACTIONS BAR */
 .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
@@ -107,6 +104,29 @@
   </style>
 </head>
 <body>
+  <header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
   <div class="container">
     <header class="site-header">
       <a class="brand" href="index.html">Republik Mancing</a>
@@ -186,7 +206,19 @@
   <div class="stat-item">❤️ <span id="likeCount">0</span> suka</div>
   <div class="stat-item">📅 <span id="readDate"></span></div>
 </div>
-
+ <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+   <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
   <!-- GALERI JUARA -->
   <h2>Galeri Momen Para Juara</h2>
 
@@ -219,64 +251,8 @@
 
 </article>
 
- <!-- ACTIONS BAR -->
-    <div class="rm-actions">
-     <div class="rm-view">👁 <span class="rmView">0</span></div>
-<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
-        </svg>
-      </button>
-   <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
-        <img src="assets/img/icon/rp.png" alt="Sawer">
-      </button>
-    </div>
-
-<!-- GALERI FOTO & MOMEN STRIKE (letakkan sesudah konten artikel, sebelum komentar) -->
-<section class="gallery-section" style="margin-top:28px">
-  <h2 style="margin-bottom:12px">Galeri Foto &amp; Momen Strike Babon</h2>
-
-  <div class="gallery-grid" style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:12px;">
-    
-    <!-- Foto 1 -->
-    <figure style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin:0;background:#fff">
-      <img src="assets/img/event/image1.png" alt="Detik-detik pelampung tenggelam penuh – babon pertama" style="width:100%;display:block">
-      <figcaption style="padding:10px;font-size:14px;color:#444">Detik-detik pelampung tenggelam penuh – babon pertama naik!</figcaption>
-    </figure>
-
-    <!-- Foto 2 -->
-    <figure style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin:0;background:#fff">
-      <img src="https://picsum.photos/600/400?random=42" alt="Tarikan monster – joran melengkung sempurna" style="width:100%;display:block">
-      <figcaption style="padding:10px;font-size:14px;color:#444">Tarikan monster – joran melengkung sempurna.</figcaption>
-    </figure>
-
-    <!-- Foto 3 -->
-    <figure style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin:0;background:#fff">
-      <img src="https://picsum.photos/600/400?random=43" alt="Babon mulai muncul di permukaan, air pecah" style="width:100%;display:block">
-      <figcaption style="padding:10px;font-size:14px;color:#444">Babon mulai muncul di permukaan, air pecah!</figcaption>
-    </figure>
-
-    <!-- Foto 4 -->
-    <figure style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin:0;background:#fff">
-      <img src="https://picsum.photos/600/400?random=44" alt="Pose juara – babon juara total sukses didapatkan" style="width:100%;display:block">
-      <figcaption style="padding:10px;font-size:14px;color:#444">Pose wajib – babon juara total sukses didapatkan.</figcaption>
-    </figure>
-  </div>
-           <hr style="margin-top:22px">
-      <section id="comments">
-        <h3>Komentar</h3>
-        <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
-        <form style="display:flex;flex-direction:column;gap:8px;max-width:520px;margin-top:12px">
-          <input type="text" placeholder="Nama" required style="padding:10px;border-radius:6px;border:1px solid #ddd">
-          <textarea placeholder="Tulis komentar..." rows="4" required style="padding:10px;border-radius:6px;border:1px solid #ddd"></textarea>
-          <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
-        </form>
-      </section>
-</section>
+ 
+  
 <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
@@ -361,7 +337,7 @@
   <img src="assets/img/icon/ovo.jpg">
   <img src="assets/img/icon/gopay.jpg">
 </div>
-<script>
+  <script>
 /* ===============================
    VIEW & LIKE SYSTEM
 ================================ */
@@ -421,7 +397,3 @@ function nativeShare(){
 </script>
 </body>
 </html>
-
-
-
-
