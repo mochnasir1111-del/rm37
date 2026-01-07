@@ -11,7 +11,503 @@
 </script>
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Telaga Silet Bogor – Galatama & Galapung Ikan Mas Tiket Sultan</title>
+<meta name="description" content="Telaga Silet Bogor adalah pemancingan ikan mas elite dengan kolam galatama dan galapung. Tiket dari Rp500 ribu sampai Rp20 juta, event grandprix dan hadiah mobil.">
+<meta name="keywords" content="Telaga Silet, galatama Bogor, pelampungan ikan mas, lomba tiket sultan, kolam galapung Bogor, pemancingan ikan mas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.republikmancing.com/spot-kolam/telaga-silet-bogor.html">
+<link rel="icon" href="assets/img/favicon.ico">
+<style>
+/* ================= GLOBAL ================= */
+:root{
+  --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+  --shadow:0 6px 18px rgba(16,24,40,0.07); --radius:12px;
+  font-family:Inter, ui-sans-serif, system-ui;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+/* HEADER GLOBAL */
+.topbar{background:#000;color:#fff;position:sticky;top:0;z-index:200;}
+.top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+.brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+.brand span{color:#c00}
+.main-nav{display:flex;gap:16px;margin-left:auto;}
+.main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+.hover-red:hover{color:#c00}
+.menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}
+}
+
+/* SUBHEADER */
+.subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+.sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+.sub-nav a:hover{color:#c00}
+
+/* LAYOUT */
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+.layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
+article.card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+.kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+h1{margin:12px 0;font-size:1.6rem}
+.meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+.hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:16px}
+.content p{margin:12px 0}
+.content h2{margin-top:20px}
+
+/* SPOT LIST */
+.spot-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+.spot{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eef2f7;box-shadow:var(--shadow)}
+.spot img{width:100%;height:160px;object-fit:cover}
+.spot div{padding:12px}
+.spot h3{margin:0 0 6px;font-size:1.05rem}
+.spot p{margin:0;color:var(--muted);font-size:0.9rem}
+
+
+/* GOOGLE MAPS */
+.map-wrap{position:relative;width:100%;padding-top:56.25%; margin:18px 0;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+.map-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+/* ACTIONS BAR */
+.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+  .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
+  .rm-view span,.rm-btn span{font-size:14px;color:#555}
+  .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
+  .rm-sawer-btn{color:#e60012}
+  .rm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;padding:20px;overflow:auto}
+  .rm-box{background:#fff;padding:24px 20px;width:100%;max-width:380px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.25);text-align:center;animation:fadeIn 0.2s ease}
+  .rm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rm-head b{font-size:18px;color:#111}
+  .rm-head span{cursor:pointer;font-size:18px}
+  .rm-share-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:12px}
+  .rm-share-icons img{width:40px;height:40px;object-fit:contain;transition:transform 0.2s,filter 0.2s}
+  .rm-share-icons img:hover{transform:scale(1.1);filter:brightness(1.2)}
+  .qris{max-width:100%;margin:12px 0}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:400px){.rm-box{padding:16px}.rm-share-icons img{width:32px;height:32px}}
+  /* Animasi Kedip untuk Tombol Sawer */
+  @keyframes sawerPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }}
+  .rm-sawer-btn img {animation: sawerPulse 1s infinite;}
+  .rm-pay-icons{display:flex;justify-content:center;gap:16px;margin-top:12px;}
+  .rm-pay-icons img{width:48px;height:48px;object-fit:contain;cursor:pointer;transition: transform 0.2s;}
+  .rm-pay-icons img:hover{transform:scale(1.1);}
+   /* QRIS */
+  .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
+  /* Icon pembayaran */
+  .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+  .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  /* efek hover biar lebih hidup */
+  .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SUB HEADER -->
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+    <a href="laporan-lomba.html">Laporan Lomba</a>
+    <a href="review-empang.html">Review Empang</a>
+    <a href="teknik.html">Teknik Ikan Mas</a>
+    <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
+
+
+<!-- MAIN LAYOUT -->
+<main class="container">
+  <div class="layout">
+    
+    <!-- KONTEN UTAMA -->
+    <article class="card">
+      <span class="kicker">Spot Kolam • Jabodetabek</span>
+
+      <div class="spot-kolam">
+        <h1>Telaga Silet Bogor</h1>
+         <span>✍️Ditulis oleh <strong>Tim Republik Mancing</strong></span>
+  <span> Diperbarui: 7 Januari 2026</span>
+  <span> Bogor, Jawa Barat</span>
+        <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
+    <p><strong>Pusat Galatama & Galapung Ikan Mas Bertaraf Nasional</strong></p>
+        <p>Telaga Silet Bogor adalah salah satu pemancingan paling prestisius di Jabodetabek. Memiliki dua kolam utama khusus lomba ikan mas, yaitu kolam galatama dan kolam galapung yang sering digunakan untuk event reguler hingga event eksekutif bertiket sultan.</p>
+
+        <h2>📍 Alamat & Lokasi</h2>
+        <p>Jl. Batu Hulung No.44, RT.03/RW.01, Margajaya, Kecamatan Bogor Barat, Kota Bogor, Jawa Barat 16116, Indonesia</p>
+
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.2170800805294!2d106.7443278!3d-6.5688595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c4c0125d5b85%3A0x6ebc0caa6e354ae5!2sPemancingan%20Telaga%20Silet!5e0!3m2!1sid!2sid!4v0000000000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Kolam Galatama -->
+        <h2>🎣 Kolam Galatama Ikan Mas</h2>
+        <p>Kolam galatama Telaga Silet dikenal sebagai arena adu teknik joki kelas atas yang rutin mengadakan lomba galatama dengan tiket reguler sampai event eksekutif berskala besar.</p>
+        <table border="1" cellpadding="8">
+          <tr><th>Tipe Tiket</th><th>Harga</th></tr>
+          <tr><td>Reguler</td><td>Rp 500.000 – Rp 2.000.000</td></tr>
+          <tr><td>Eksekutif / Grandprix</td><td>Rp 5.000.000 – Rp 10.000.000</td></tr>
+        </table>
+
+        <!-- Kolam Galapung -->
+        <h2>🎈 Kolam Galapung (Pelampungan) Ikan Mas</h2>
+        <p>Kolam galapung ini sering dipakai untuk agenda pelampungan reguler hingga event eksekutif dengan hadiah besar, termasuk hadiah mobil dan jackpot besar.</p>
+        <table border="1" cellpadding="8">
+          <tr><th>Tipe Tiket</th><th>Harga</th></tr>
+          <tr><td>Reguler</td><td>Rp 300.000 – Rp 1.000.000</td></tr>
+          <tr><td>Event Eksekutif</td><td>Rp 5.000.000 – Rp 20.000.000</td></tr>
+        </table>
+
+        <h2>🏆 Ciri Khas Telaga Silet</h2>
+        <ul>
+          <li>Kolam elite dengan tiket sultan</li>
+          <li>Dipakai lomba galatama & pelampungan nasional</li>
+          <li>Hadiah mobil, jackpot, piala & prestise juara</li>
+          <li>Sering jadi arena adu joki & kedi top</li>
+        </ul>
+
+        <h2>🏟️ Fasilitas Telaga Silet Bogor</h2>
+        <ul>
+          <li>🚗 <strong>Area parkir luas</strong></li>
+          <li>☕ <strong>Cafe & resto</strong></li>
+          <li>🎤 <strong>Karaoke</strong></li>
+          <li>🎱 <strong>Meja billiard</strong></li>
+          <li>🕌 <strong>Mushola bersih</strong></li>
+          <li>🚻 <strong>Toilet terjaga</strong></li>
+          <li>🌳 <strong>Taman indah</strong></li>
+          <li>🪑 <strong>Tempat duduk nyaman</strong></li>
+        </ul>
+
+        <h2>🏆 Event & Reputasi</h2>
+        <p>Telaga Silet Bogor dikenal sebagai venue langganan event besar seperti Grandprix Galatama, Pelampungan Eksekutif, dan turnamen nasional dengan hadiah ratusan juta hingga mobil. Banyak joki papan atas Indonesia menjadikan Telaga Silet sebagai arena uji kemampuan.</p>
+
+        <h2>📞 Kontak & Informasi Lomba</h2>
+        <p>WhatsApp Panitia: <strong>085882797515 (Kang BK)</strong></p>
+
+        <h2>🗓 Jadwal Umum</h2>
+        <ul>
+          <li>Galatama: Siang – Sore – Malam</li>
+          <li>Galapung: Siang & Malam</li>
+          <li>Event Eksekutif: Jadwal khusus</li>
+        </ul>
+
+        <h2>⭐ Penilaian Pemancing</h2>
+        <p>Telaga Silet dikenal sebagai salah satu kolam paling bergengsi di Indonesia, dengan kualitas ikan, fasilitas, dan sistem lomba yang profesional.</p>
+
+        <h2>📐 Spesifikasi Kolam</h2>
+        <ul>
+          <li>Jenis ikan: Ikan Mas Super (galatama & galapung)</li>
+          <li>Sistem lomba: Target bobot & peringkat</li>
+          <li>Model lapak: Permanen & keramik</li>
+          <li>Kepadatan ikan: Tinggi (khusus event)</li>
+        </ul>
+
+        <h2>🔗 Liputan Republik Mancing</h2>
+        <p>Telaga Silet Bogor sudah pernah diliput oleh RepublikMancing.com dalam berbagai event galatama dan pelampungan ikan mas.</p>
+
+      </div> <!-- .spot-kolam -->
+
+     <!-- ACTIONS BAR -->
+    <div class="rm-actions">
+     <div class="rm-view">👁 <span class="rmView">0</span></div>
+<button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
+      <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
+        </svg>
+      </button>
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
+        <img src="assets/img/icon/rp.png" alt="Sawer">
+      </button>
+    </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="card">
+        <h4>🎣 Kolam Rekomendasi</h4>
+        <div class="spot">
+          <a href="si-abang.html" class="news-card">
+            <img src="assets/img/mmfc/she-abang.png" alt="Pemancingan She Abang Bekasi">
+            <div class="spot-info">
+              <h3>Pemancingan She Abang</h3>
+              <p>Spot lomba ikan mas di Bekasi – 60 lapak.</p>
+            </div>
+          </a>
+        </div>
+        <div class="spot">
+          <a href="new-babon.html" class="news-card">
+            <img src="assets/img/mmfc/new-babon.png" alt="Pemancingan New Babon Bekasi">
+            <div class="spot-info">
+              <h3>Pemancingan New Babon</h3>
+              <p>Kolam galatama & galapung – 40 lapak.</p>
+            </div>
+          </a>
+        </div>
+        <div class="spot">
+          <a href="brigif.html" class="news-card">
+            <img src="assets/img/event/brigif1.png" alt="Pemancingan Brigif Bandung">
+            <div class="spot-info">
+              <h3>Pemancingan Brigif</h3>
+              <p>Spot galatama premium Bandung – Tiket eksekutif tersedia.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </aside>
+<div style="max-width:800px;margin:40px auto 0 auto;padding:0 10px">
+  <div style="clear:both"></div>
+
+  <section id="comments">
+    <h3>Komentar</h3>
+    <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
+
+    <form style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+      <input type="text" placeholder="Nama" required
+        style="padding:12px;border-radius:8px;border:1px solid #ddd">
+
+      <textarea placeholder="Tulis komentar..." rows="4" required
+        style="padding:12px;border-radius:8px;border:1px solid #ddd"></textarea>
+
+      <button type="submit"
+        style="padding:12px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer">
+        Kirim Komentar
+      </button>
+    </form>
+  </section>
+</div> 
+  </div> <!-- .layout -->
+</main>
+
+<!-- FOOTER -->
+  <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan-privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+</footer>
+<!-- SHARE MODAL -->
+<div id="rmShare" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
+    <p style="color:#555;font-size:14px;margin:8px 0 16px;">Pilih platform untuk membagikan artikel ini:</p>
+    <div class="rm-share-icons">
+      <a id="wa" target="_blank" aria-label="WhatsApp"><img src="assets/img/icon/wa.png" alt="WhatsApp"></a>
+      <a id="fb" target="_blank" aria-label="Facebook"><img src="assets/img/icon/fb.png" alt="Facebook"></a>
+      <a id="tg" target="_blank" aria-label="Telegram"><img src="assets/img/icon/telegram.png" alt="Telegram"></a>
+      <a id="tw" target="_blank" aria-label="X"><img src="assets/img/icon/twitter.png" alt="X / Twitter"></a>
+      <a id="ln" target="_blank" aria-label="LinkedIn"><img src="assets/img/icon/linkedin.png" alt="LinkedIn"></a>
+      <button onclick="nativeShare()" class="rm-native"><img src="assets/img/icon/gl.jpg" alt="Share"></button>
+      <button class="rm-btn" onclick="openShare()"> <img src="assets/img/icon/link.jpg" alt="Bagikan Link"> </button>
+    </div>
+  </div>
+</div>
+
+<!-- SAWER MODAL -->
+<div id="rmSawer" class="rm-modal">
+  <div class="rm-box">
+    <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
+    <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
+   <p>Scan QR dengan DANA / OVO / GoPay</p>
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
+<div class="rm-pay-icons">
+  <img src="assets/img/icon/dana.jpg">
+  <img src="assets/img/icon/ovo.jpg">
+  <img src="assets/img/icon/gopay.jpg">
+</div>
+</div>
+</div>
+<!-- ================= VIEW + LIKE ================= -->
+<script>
+const postID = location.pathname;
+
+// VIEW
+let views = Number(localStorage.getItem("rmView_"+postID)) || 0;
+views++;
+localStorage.setItem("rmView_"+postID, views);
+document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+
+// LIKE
+let likes = Number(localStorage.getItem("rmLike_"+postID)) || 0;
+document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
+
+function likeArticle(){
+  likes++;
+  localStorage.setItem("rmLike_"+postID, likes);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
+}
+</script>
+
+<!-- ================= SHARE + SAWER ================= -->
+<script>
+function openShare(){
+  const url = encodeURIComponent(location.href);
+  const title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text="+title+" "+url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u="+url;
+  tg.href = "https://t.me/share/url?url="+url+"&text="+title;
+  tw.href = "https://twitter.com/intent/tweet?url="+url+"&text="+title;
+  ln.href = "https://www.linkedin.com/sharing/share-offsite/?url="+url;
+  rmShare.style.display="flex";
+}
+function closeShare(){ rmShare.style.display="none"; }
+
+function openSawer(){
+  document.getElementById("sawerFor").innerText="💰 Sawer untuk: "+document.title;
+  rmSawer.style.display="flex";
+}
+function closeSawer(){ rmSawer.style.display="none"; }
+
+function sawerWA(){
+  const msg = `Halo Admin Republik Mancing%0A%0ASaya mau SAWER untuk:%0A${document.title}%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text="+msg,"_blank");
+}
+</script>
+
+<!-- ================= KOMENTAR SUPABASE ================= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabase = supabase.createClient(
+  "https://pydbpqnwmlzjbwfdwkte.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5ZGJwcW53bWx6amJ3ZmR3a3RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3MzA1MDgsImV4cCI6MjA4MzMwNjUwOH0.j8E3v01fR1H3snIHueCjSSHUVoJ5IscGfDRimTIlV08"
+);
+
+const page = location.pathname;
+const form = document.querySelector("#comments form");
+const list = document.createElement("div");
+document.getElementById("comments").appendChild(list);
+
+async function loadComments(){
+  const { data } = await supabase
+    .from("comments")
+    .select("*")
+    .eq("page", page)
+    .order("created_at", { ascending: false });
+
+  list.innerHTML = "";
+  data.forEach(c => {
+    list.innerHTML += `
+      <div style="border-bottom:1px solid #eee;padding:10px 0">
+        <b>${c.name}</b>
+        <small style="color:#777"> · ${new Date(c.created_at).toLocaleString()}</small>
+        <p>${c.message}</p>
+      </div>
+    `;
+  });
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = form.querySelector("input").value.trim();
+  const msg = form.querySelector("textarea").value.trim();
+  if(!name || !msg) return;
+
+  await supabase.from("comments").insert([{
+    name,
+    message: msg,
+    page
+  }]);
+
+  form.reset();
+  loadComments();
+});
+
+loadComments();
+</script>
+
+</body>
+</html>
+
+
   <title>Rekomendasi Pemancingan Ikan Mas Terbaik — Republik Mancing</title>
   <meta name="description" content="Kumpulan Pemancingan Terbaik Yang Ada Di Indonesia." />
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
