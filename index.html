@@ -367,6 +367,16 @@ a.title:hover {color: #c00; }
 .rm-stats-box h3{margin-bottom:12px; font-size:18px; border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:10px;}
 .rm-stat{display:flex;justify-content:space-between;background:rgba(255,255,255,.05);padding:12px 14px; border-radius:10px; margin-bottom:10px;}
 .rm-stat b{color:#ffd700;font-size:20px;}
+    .rm-sidebar {width: 100%;}
+.side-box.upcoming-events {background: #0b5ed7;color: #fff;border-radius: 12px;overflow: hidden;box-shadow: 0 5px 20px rgba(0,0,0,.15);}
+.side-box.upcoming-events h2 {background: #084298;padding: 12px 15px;font-size: 16px;margin: 0;text-align: center;}
+.side-box.upcoming-events img {width: 100%;display: block;object-fit: cover;}
+.side-box.upcoming-events .event-info {padding: 15px;}
+.side-box.upcoming-events strong {display: block;font-size: 16px;margin-bottom: 6px;}
+.side-box.upcoming-events p {font-size: 14px;opacity: .9;margin-bottom: 12px;}
+.side-box.upcoming-events a {display: block;text-align: center;background: #ffc107;color: #000;padding: 10px;border-radius: 8px;font-weight: bold;text-decoration: none;}
+.side-box.upcoming-events a:hover {background: #ffcd39;}
+
   </style>
 </head>
 <body>
@@ -851,6 +861,22 @@ a.title:hover {color: #c00; }
     <b>3485</b>
   </div>
 </div>
+<aside class="rm-sidebar">
+
+  <div class="side-box upcoming-events">
+    <h2>🏆 Lomba Mancing Yang Akan Datang</h2>
+
+    <img src="assets/img/jadwal lomba/sabtu 30 januari.jpeg"
+         alt="Lomba Mancing Mobilan Awal Tahun Januari 2026">
+
+    <div class="event-info">
+      <strong>Mobilan Awal Tahun – Lomba Ikan Mas</strong>
+      <p>📅 Sabtu, 30 Januari 2026 • 👥 Open Angler</p>
+      <a href="#">Lihat Detail</a>
+    </div>
+  </div>
+
+</aside>
 
 <!-- WIDGET: NEWSLETTER -->
 <div class="widget">
@@ -1225,6 +1251,7 @@ setInterval(() => {
 </script>
 </body>
 </html>
+
 
 
 
