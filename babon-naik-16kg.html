@@ -19,7 +19,45 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <style>
-    /* Minimal inline styles (mengikuti style template) */
+ :root{--bg:#ffffff;--muted:#6b7280;--accent:#c00;--maxw:1200px;font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6;}
+/* ================= HEADER ================= */
+ .topbar{background:#000000; color:#fff;position:sticky; top:0;z-index:200;}
+ .top-inner{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+ .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+ .brand-logo img{width:34px;height:34px}
+ .brand-logo span{color:#c00}
+ .main-nav{display:flex;gap:16px;margin-left:auto;}
+ .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+.main-nav a:hover{color:#c00}
+.menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+/* ================= SUBHEADER ================= */
+.subheader{
+  background:#fff;
+  border-bottom:2px solid #c00;
+  position:sticky;
+  top:52px;
+  z-index:90;
+}
+.sub-nav{
+  max-width:var(--maxw);
+  margin:auto;
+  display:flex;
+  gap:18px;
+  padding:8px 16px;
+  overflow-x:auto;
+}
+.sub-nav a{
+  font-size:14px;
+  font-weight:600;
+  color:#333;
+  text-decoration:none;
+}
+.sub-nav a:hover{color:#c00}
+    /* Minimal inline styles untuk preview mandiri */
     :root{--accent:#2e6d3e;--muted:#666}
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#111;background:#fff}
     .container{max-width:920px;margin:32px auto;padding:0 16px}
@@ -34,8 +72,23 @@
     .article p{margin:12px 0}
     .article h2{margin-top:20px}
     .tips{background:#f7f8fa;padding:12px;border-left:4px solid var(--accent);border-radius:6px}
-  /* ACTIONS BAR */
-.rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
+    .share{display:flex;gap:8px;margin-top:18px}
+    .share a{padding:8px 12px;border-radius:6px;text-decoration:none;border:1px solid #eee;font-size:14px}
+    .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+    .related .card{padding:12px;border:1px solid #eee;border-radius:8px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .winners{background:#f7f8fa;padding:12px;border-radius:8px;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;text-align:left;border-bottom:1px solid #eee}
+    .caption{font-size:13px;color:var(--muted);margin-top:6px}
+    .note{font-size:14px;color:var(--muted);margin-top:10px}
+    footer{margin:40px 0 80px;color:var(--muted);font-size:13px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.article h1{font-size:20px}; .gallery{grid-template-columns:1fr}}
+ /* ACTIONS BAR */
+  .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
   .rm-view span,.rm-btn span{font-size:14px;color:#555}
   .rm-btn img{width:32px;height:32px;object-fit:contain;cursor:pointer}
@@ -64,36 +117,46 @@
   .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
   /* Icon pembayaran */
   .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
-  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
   </style>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TQSG1MEQ8B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TQSG1MEQ8B');
-</script>
-
 </head>
 <body>
+   <!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
+    <div class="brand">
+     <a href="index.html" class="brand-logo">
+  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+  </nav>
+</div>
   
   <div class="container">
-    <header class="site-header">
-      <a class="brand" href="index.html">Republik Mancing</a>
-      <div style="margin-left:auto;color:var(--muted);font-size:14px">Update Lomba • Spot • Tips</div>
-    </header>
-
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Liputan
-    </nav>
-
     <article class="article">
       <h1>Babon 16 Kg Naik di Ratu Mas Ayu Padalarang — Tiket Executive 40 Juta Pecah Rekor!</h1>
       <div class="meta">Oleh <strong>Redaksi Republik Mancing</strong> • Padalarang, Bandung • 6 Desember 2025 </div>
- <!-- ACTIONS BAR -->
+  <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -102,11 +165,10 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
-
       <div class="hero">
         <!-- ganti src sesuai file di folder assets/img/berita/ -->
         <img src="assets/img/event/Hitam dan Merah Ilustratif Misteri Cerita Horor Thumbnail YouTube.png" alt="Penimbangan Babon 16kg di Ratu Mas Ayu">
@@ -168,17 +230,15 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
-
 
 
       <div class="related">
@@ -213,7 +273,8 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
       </section>
     </article>
 
-       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+       
+   <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
@@ -241,7 +302,7 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
     <div style="flex:1;min-width:220px">
       <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
       <ul style="list-style:none;padding:0;margin:0;line-height:2">
-        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
         <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
         <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
         <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
@@ -289,116 +350,70 @@ Tarikan berlangsung sekitar 7 menit dengan beberapa sprint keras menuju pojok ko
 <div id="rmSawer" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
     <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
    <p>Scan QR dengan DANA / OVO / GoPay</p>
-
-<img src="assets/img/icon/qr.jpeg" class="qris">
-
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
 <div class="rm-pay-icons">
   <img src="assets/img/icon/dana.jpg">
   <img src="assets/img/icon/ovo.jpg">
   <img src="assets/img/icon/gopay.jpg">
 </div>
-<!-- ================= VIEW + LIKE ================= -->
 <script>
-const postID = location.pathname;
-
-// VIEW
-let views = Number(localStorage.getItem("rmView_"+postID)) || 0;
+/* ===============================
+   VIEW & LIKE SYSTEM
+================================ */
+let views = Number(localStorage.getItem("rmView")) || 0;
+let likes = Number(localStorage.getItem("rmLike")) || 0;
+/* Tambah view 1x per load */
 views++;
-localStorage.setItem("rmView_"+postID, views);
-document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+localStorage.setItem("rmView", views);
+/* Render ke semua tempat */
+function renderCounters(){
+  document.querySelectorAll(".rmView").forEach(el => el.textContent = views);
+  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);}
+renderCounters();
 
-// LIKE
-let likes = Number(localStorage.getItem("rmLike_"+postID)) || 0;
-document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
-
+/* Like button */
 function likeArticle(){
   likes++;
-  localStorage.setItem("rmLike_"+postID, likes);
-  document.querySelectorAll(".rmLike").forEach(el => el.textContent = likes);
-}
-</script>
-
-<!-- ================= SHARE + SAWER ================= -->
-<script>
+  localStorage.setItem("rmLike", likes);
+  renderCounters();}
+/* OPEN/CLOSE SHARE MODAL */
 function openShare(){
-  const url = encodeURIComponent(location.href);
-  const title = encodeURIComponent(document.title);
-  wa.href = "https://wa.me/?text="+title+" "+url;
-  fb.href = "https://www.facebook.com/sharer/sharer.php?u="+url;
-  tg.href = "https://t.me/share/url?url="+url+"&text="+title;
-  tw.href = "https://twitter.com/intent/tweet?url="+url+"&text="+title;
-  ln.href = "https://www.linkedin.com/sharing/share-offsite/?url="+url;
-  rmShare.style.display="flex";
-}
-function closeShare(){ rmShare.style.display="none"; }
-
-function openSawer(){
-  document.getElementById("sawerFor").innerText="💰 Sawer untuk: "+document.title;
-  rmSawer.style.display="flex";
-}
-function closeSawer(){ rmSawer.style.display="none"; }
-
-function sawerWA(){
-  const msg = `Halo Admin Republik Mancing%0A%0ASaya mau SAWER untuk:%0A${document.title}%0A%0ASudah transfer via QRIS.`;
-  window.open("https://wa.me/6285693927647?text="+msg,"_blank");
-}
+  let url = encodeURIComponent(location.href);
+  let title = encodeURIComponent(document.title);
+  wa.href = "https://wa.me/?text=" + title + "%20" + url;
+  fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  tg.href = "https://t.me/share/url?url=" + url + "&text=" + title;
+  rmShare.style.display = "flex";}
+function closeShare(){ rmShare.style.display = "none"; }
+/* OPEN/CLOSE SAWER MODAL */
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
+function closeSawer(){ rmSawer.style.display = "none"; }
+/* NATIVE SHARE */
+function nativeShare(){
+  if(navigator.share){
+    navigator.share({title:document.title,url:location.href});
+  } else {
+    alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
-
-<!-- ================= KOMENTAR SUPABASE ================= -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const supabase = supabase.createClient(
-  "https://pydbpqnwmlzjbwfdwkte.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5ZGJwcW53bWx6amJ3ZmR3a3RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3MzA1MDgsImV4cCI6MjA4MzMwNjUwOH0.j8E3v01fR1H3snIHueCjSSHUVoJ5IscGfDRimTIlV08"
-);
-
-const page = location.pathname;
-const form = document.querySelector("#comments form");
-const list = document.createElement("div");
-document.getElementById("comments").appendChild(list);
-
-async function loadComments(){
-  const { data } = await supabase
-    .from("comments")
-    .select("*")
-    .eq("page", page)
-    .order("created_at", { ascending: false });
-
-  list.innerHTML = "";
-  data.forEach(c => {
-    list.innerHTML += `
-      <div style="border-bottom:1px solid #eee;padding:10px 0">
-        <b>${c.name}</b>
-        <small style="color:#777"> · ${new Date(c.created_at).toLocaleString()}</small>
-        <p>${c.message}</p>
-      </div>
-    `;
-  });
-}
-
-form.addEventListener("submit", async e => {
-  e.preventDefault();
-  const name = form.querySelector("input").value.trim();
-  const msg = form.querySelector("textarea").value.trim();
-  if(!name || !msg) return;
-
-  await supabase.from("comments").insert([{
-    name,
-    message: msg,
-    page
-  }]);
-
-  form.reset();
-  loadComments();
-});
-
-loadComments();
-</script>
-
 </body>
 </html>
+
 
 
 
