@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Ramadan Ceria – RepublikMancing Berbagi untuk Yatim & Dhuafa</title>
+<meta name="description" content="Program Ramadan Ceria RepublikMancing dan Forum Komunikasi Warga Gandekan berbagi santunan, bingkisan dan buka puasa bersama anak yatim & dhuafa.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+   :root{
+      --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+
+    /* HEADER GLOBAL */
+    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:#c00}
+    .main-nav{display:flex;gap:16px;margin-left:auto;}
+    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+    .hover-red:hover{color:#c00}
+
+    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+
+    /* SUBHEADER */
+    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+    .sub-nav a:hover{color:#c00}
+
+    /* OFFCANVAS */
+    .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+    .offcanvas.active{right:0}
+    .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+    .off-nav a{color:#fff;text-decoration:none;}
+    .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+body{font-family:Arial, sans-serif;background:#f4f6f7;margin:0;line-height:1.7;color:#222;}
+.container{max-width:900px;margin:30px auto;background:#fff;padding:25px;box-shadow:0 0 15px rgba(0,0,0,0.05);}
+.header{text-align:center;margin-bottom:20px;}
+.logo-space{height:80px;display:flex;align-items:center;justify-content:center;border:2px dashed #ddd;margin-bottom:15px;color:#aaa;}
+h1{color:#111;margin-bottom:10px;}
+.tagline{font-size:18px;color:#1a8f5c;font-weight:bold;}
+.meta{color:#777;font-size:14px;margin-bottom:20px;}
+section{margin:30px 0;}
+figure{margin:20px 0;}
+figure img{width:100%;border-radius:8px;}
+figcaption{text-align:center;font-size:13px;color:#666;margin-top:6px;}
+blockquote{background:#f1f8f5;border-left:5px solid #1a8f5c;padding:18px;margin:25px 0;font-style:italic;}
+.highlight{background:#e8f7f1;padding:18px;border-radius:8px;}
+ul{padding-left:20px;}
+ul li{margin-bottom:8px;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+}
+.grid img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.btn-donate{display:inline-block;background:#1a8f5c;color:#fff;padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px;}
+.footer{text-align:center;font-size:14px;color:#777;margin-top:40px;}
+iframe{border-radius:10px;}
+.info{background:#f9f9f9;padding:15px;border-left:4px solid #1a8f5c;border-radius:6px;margin:20px 0;font-size:15px;}
+</style>
+</head>
+<body>
+  <header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+    <nav class="main-nav">
+      <a href="laporan lomba.html/index" class="hover-red">Beranda</a>
+      <a href="laporan lomba/berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+     <a href="event.html">Jadwal Lomba</a>
+      <a href="galeri.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+      <a href="sosial-komunitas.html">Sosial & Komunitas</a>
+  </nav>
+</div>
+
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angle</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+  </nav>
+</div>
+<div class="container">
+<div class="header">
+  <h1>Ramadan Ceria: RepublikMancing Berbagi untuk Yatim & Dhuafa</h1>
+  <div class="tagline">Hidup lebih indah saat kita berbagi. Yuk, jadikan hari mereka lebih cerah.</div>
+  <div class="meta">Program Sosial RepublikMancing | Ramadan 1448 H</div>
+</div>
+<section>
+<figure>
+<img src="assets/img/sosial/4.jpg" alt="Ramadan Ceria RepublikMancing">
+<figcaption>Dokumentasi kegiatan santunan anak yatim & dhuafa.</figcaption>
+</figure>
+<p><strong>RepublikMancing.com</strong> – Ramadan adalah bulan kepedulian dan kebersamaan. Di momen penuh berkah ini, RepublikMancing bersama <strong>Forum Komunikasi Warga Gandekan</strong> menggelar program <strong>“Ramadan Ceria Bersama Yatim & Dhuafa”</strong>, sebagai bentuk nyata kepedulian komunitas pemancing terhadap masyarakat.</p>
+<p>Kegiatan ini bertujuan untuk menghadirkan kebahagiaan bagi anak-anak yatim dan kaum dhuafa di wilayah Gandekan dan sekitarnya melalui santunan, bingkisan, serta buka puasa bersama.</p>
+<blockquote>
+“Bukan seberapa besar yang kita miliki, tetapi seberapa tulus kita berbagi.”
+</blockquote>
+</section>
+<section>
+<h2>📌 Tentang Program Ramadan Ceria</h2>
+<p>Ramadan Ceria adalah kegiatan sosial kolaboratif yang menghadirkan nilai kepedulian dan kebersamaan antara komunitas pemancing dan warga Gandekan.</p>
+<ul>
+<li>👥 Penerima manfaat: Anak yatim & dhuafa</li>
+<li>🤝 Penyelenggara: RepublikMancing & Forum Komunikasi Perantau Gandekan</li>
+<li>🕌 Lokasi: Masjid Sabilul Jannah, Dusun II, Desa Pegandekan</li>
+<li>📍 Kecamatan Kemangkon, Kabupaten Purbalingga, Jawa Tengah</li>
+</ul>
+</section>
+<h3>🕌 Rangkaian Kegiatan</h3>
+<ul>
+  <li>Pembukaan acara</li>
+  <li>Sambutan Panitia Penyelenggara RepublikMancing & Forum Komunikasi Perantau Gandekan</li>
+  <li>Tausiyah dan sambutan Ustadz sebelum waktu berbuka puasa</li>
+  <li>Buka puasa bersama</li>
+  <li>Pembagian bingkisan dan santunan berupa amplop kepada anak yatim dan dhuafa</li>
+  <li>Doa bersama dan penutup</li>
+</ul>
+<div class="info">
+<strong>📍 Lokasi:</strong> Masjid Sabilul Jannah, Dusun II, Desa Pegandekan, Kecamatan Kemangkon, Kabupaten Purbalingga, Jawa Tengah<br>
+<strong>📅 Tanggal:</strong>Minggu, 15 Maret 2026<br>
+<strong>⏰ Waktu:</strong> Menjelang waktu berbuka puasa hingga selesai
+</div>
+<section>
+<h2>🎁 Apa yang Mereka Terima?</h2>
+<ul>
+<li>Santunan uang tunai</li>
+<li>Paket sembako</li>
+<li>Bingkisan Ramadan</li>
+<li>Buka puasa bersama</li>
+<li>Doa dan kebersamaan</li>
+</ul>
+</section>
+
+<section>
+<h2>📍 Lokasi Kegiatan</h2>
+<p>Masjid Sabilul Jannah – Dusun II, Desa Pegandekan, Kecamatan Kemangkon, Kabupaten Purbalingga, Jawa Tengah</p>
+<iframe src="https://www.google.com/maps?q=Masjid+Sabilul+Jannah+Gandekan+Kemangkon&output=embed" width="100%" height="300"></iframe>
+</section>
+
+<section class="highlight" id="donasi">
+<h2>🤲 Dukung Program Ini</h2>
+<p>Kami membuka kesempatan bagi para donatur, pemancing, dan masyarakat umum untuk berpartisipasi dalam program Ramadan Ceria. Donasi yang terkumpul akan sepenuhnya disalurkan untuk santunan dan kebutuhan kegiatan.</p>
+
+<img src="assets/img/sosial/qris.jpeg" 
+     alt="QRIS Donasi" 
+     onclick="openQRIS()"
+     style="max-width:180px;margin:15px auto;display:block;border-radius:10px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,0.15);">
+<p style="text-align:center;font-size:14px;color:#555;">Klik QRIS untuk memperbesar</p>
+
+
+<br>
+<a href="#donasi" class="btn-donate">Saya Mau Berdonasi</a>
+
+<div style="margin-top:25px;background:#fff;padding:15px;border-radius:8px;border:1px solid #ddd">
+  <h3 style="margin-top:0;color:#1a8f5c">💳 Donasi via Transfer Bank</h3>
+  <p>
+    Bagi donatur yang ingin menyalurkan bantuan melalui transfer bank, silakan ke rekening berikut:
+  </p>
+  <p style="font-size:16px;font-weight:bold;line-height:1.8">
+    Bank: <strong>BRI</strong><br>
+    Atas Nama: <strong>Mochamad Nasirudin (RepublikMancing)</strong><br>
+    Nomor Rekening: <strong>xxxxxxxx</strong>
+  </p>
+  <p style="font-size:14px;color:#666">
+    Mohon konfirmasi setelah transfer agar donasi dapat kami catat dan salurkan dengan amanah.
+  </p>
+</div>
+<a href="https://wa.me/6285693927647?text=Halo%20Admin%20RepublikMancing,%20saya%20sudah%20melakukan%20donasi%20untuk%20program%20Ramadan%20Ceria.%20Berikut%20bukti%20transfer%20saya."
+target="_blank"
+style="
+display:inline-block;
+margin-top:15px;
+background:#25D366;
+color:#fff;
+padding:14px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+">
+📲 Konfirmasi Donasi via WhatsApp
+</a>
+
+</section>
+
+<section>
+<h2>📸 Galeri Kegiatan Sebelumnya</h2>
+<div class="grid">
+  <img src="assets/img/sosial/sumbangan1.jpg">
+  <img src="assets/img/sosial/kegiatan.jpg">
+  <img src="assets/img/sosial/1.jpg">
+</div>
+</section>
+
+<section>
+<h2>💚 Mengapa RepublikMancing Peduli?</h2>
+<p>RepublikMancing percaya bahwa dunia pemancingan tidak hanya tentang ikan dan lomba, tetapi juga tentang persaudaraan dan empati. Dari kolam pancing, tumbuh kebersamaan. Dari kebersamaan, lahir kepedulian.</p>
+</section>
+
+
+       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+     <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
+    <!-- BRAND -->
+    <div style="flex:1;min-width:240px">
+      <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
+       <span style="color:#fff">Republik</span>
+       <span style="color:#e10600">Mancing</span>
+       </h3>
+      <p style="color:#bbb;line-height:1.7;margin:0">
+        Media online seputar dunia mancing Indonesia.  
+        Menyajikan berita, liputan lomba ikan mas, spot pemancingan, teknik, 
+        dokumentasi event, dan komunitas angler Nusantara.
+      </p>
+    </div>
+    <!-- NAVIGASI -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Kanal</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+        <li><a href="berita.html" style="color:#bbb;text-decoration:none">Berita Mancing</a></li>
+        <li><a href="laporan-lomba.html" style="color:#bbb;text-decoration:none">Laporan Lomba</a></li>
+        <li><a href="video.html" style="color:#bbb;text-decoration:none">Video Mancing</a></li>
+        <li><a href="profil-angler2.html" style="color:#bbb;text-decoration:none">Profil Angler</a></li>
+      </ul>
+    </div>
+    <!-- LEGAL -->
+    <div style="flex:1;min-width:220px">
+      <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
+        <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
+        <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
+        <li><a href="kebijakan-privasi.html" style="color:#bbb;text-decoration:none">Privacy Policy</a></li>
+        <li><a href="disclaimer.html" style="color:#bbb;text-decoration:none">Disclaimer</a></li>
+        <li><a href="review-produk.html" style="color:#bbb;text-decoration:none">Review & Produk</a></li>
+      </ul>
+    </div>
+    <!-- SOSIAL -->
+    <div style="flex:1;min-width:200px">
+      <h4 style="color:#fff;margin-bottom:12px">Ikuti Kami</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:2">
+       <li>📷 <a href="https://www.instagram.com/republikmancing37/" style="color:#bbb;text-decoration:none">Instagram</a></li>
+       <li>▶️ <a href="https://www.youtube.com/c/RepublikMancing37" style="color:#bbb;text-decoration:none">YouTube</a></li>
+       <li>📘 <a href="https://www.facebook.com/robben.bralink" style="color:#bbb;text-decoration:none">Facebook</a></li>
+       <li>🎵 <a href="https://www.tiktok.com/@republikmancing?lang=id-ID" style="color:#bbb;text-decoration:none">TikTok</a></li>
+       <li>💬 <a href="#" style="color:#bbb;text-decoration:none">WhatsApp Komunitas</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- COPYRIGHT -->
+  <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
+    © 2025 Republik Mancing. All Rights Reserved.
+  </div>
+</footer>
+
+
+</div>
+<script>
+function openQRIS(){
+  document.getElementById("qrisPopup").style.display="flex";
+}
+function closeQRIS(){
+  document.getElementById("qrisPopup").style.display="none";
+}
+</script>
+<div id="qrisPopup" style="
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
+z-index:9999;
+align-items:center;
+justify-content:center;
+">
+
+  <div style="background:#fff;padding:20px;border-radius:12px;max-width:90%;text-align:center;position:relative;">
+    <span onclick="closeQRIS()" style="position:absolute;top:10px;right:15px;font-size:22px;cursor:pointer;">✖</span>
+    <h3>Scan QRIS untuk Berdonasi</h3>
+    <img src="assets/img/sosial/qris.jpeg" style="max-width:320px;width:100%;border-radius:10px;">
+    <p style="font-size:14px;color:#666;margin-top:10px;">
+      Gunakan OVO, DANA, GoPay, ShopeePay, atau Mobile Banking
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
