@@ -14,55 +14,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Profil Angler: Om Rangga Siliwangi, Pengurus  MMFC — Republik Mancing</title>
   <meta name="description" content="Profil Om Rangga,salah satu panutan di komunitas pemancing MMFC." />
-
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <style>
-    :root{
+     :root{
       --bg:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#059669; --card:#f8fafc; --maxw:1000px;
-      --shadow:0 6px 18px rgba(16,24,40,.07);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      --shadow: 0 6px 18px rgba(16,24,40,0.07);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.7}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
+  /* ================= HEADER GLOBAL ================= */
+  .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .brand span{color:#f7d40f}
+  .main-nav{display:flex;gap:16px;margin-left:auto;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+  .hover-red:hover{color:#f7d40f}
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover{color:#c00}
+   /* OFFCANVAS */
+  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+  .offcanvas.active{right:0}
+  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+  .off-nav a{color:#fff;text-decoration:none;}
+  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+    /* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f4f4f4;margin:0}
+.container{max-width:980px;margin:auto;background:#fff;padding:20px}
+h1,h2,h3{color:#111}
+.meta{color:#777;font-size:14px;margin-bottom:15px}
+.highlight{background:#fff8e1;padding:15px;border-left:5px solid #d4a017;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ddd;padding:8px;font-size:14px}
+th{background:#f0f0f0}
+.rm-gallery,.rm-moment{margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+figure{margin:0}
+figure img{width:100%;border-radius:6px}
+figcaption{text-align:center;font-size:13px;color:#555;margin-top:6px}
+.rm-thanks{background:#f9f9f9;padding:20px;border-left:5px solid #333;margin-top:40px}
+.rm-moment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.moment-item img{width:100%;border-radius:6px}
+     /* LAYOUT */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
 
-    /* HEADER GLOBAL */
-    .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
-    .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
-    .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-    .brand span{color:#c00}
-    .main-nav{display:flex;gap:16px;margin-left:auto;}
-    .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
-    .hover-red:hover{color:#c00}
+    /* CARD */
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
 
-    .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
-    @media(max-width:768px){.main-nav{display:none}.menu-btn{display:block}}
+    /* PROFIL */
+    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    h1{margin:12px 0 6px;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:12px}
 
+    .profile-grid{display:grid;grid-template-columns:180px 1fr;gap:18px;margin-top:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;object-fit:cover}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.85rem;margin-right:6px}
 
-    /* SUBHEADER */
-    .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:100}
-    .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto}
-    .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none}
-    .sub-nav a:hover{color:#c00}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .stat{background:#fff;border:1px solid #eef2f7;border-radius:10px;padding:12px;text-align:center}
+    .stat strong{display:block;font-size:1.1rem}
 
-    /* LAYOUT */
-    .container{max-width:var(--maxw);margin:auto;padding:24px}
-    article.card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+    /* SIDEBAR */
+    .related-list{display:flex;flex-direction:column;gap:12px}
+    .related-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
+    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
 
-    /* ARTICLE */
-    .kicker{display:inline-block;background:rgba(6,182,212,.1);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
-    h1{margin:12px 0 8px;font-size:1.8rem}
-    .meta{color:var(--muted);font-size:14px;margin-bottom:16px}
-    .hero{width:100%;height:340px;object-fit:cover;border-radius:12px;margin-bottom:14px}
-    .caption{font-size:13px;color:var(--muted);margin-bottom:18px}
-
-    h2{margin-top:26px}
-    p{margin:12px 0}
-
-    blockquote{border-left:4px solid var(--accent);padding-left:14px;color:#334155;margin:18px 0;font-style:italic}
-
-    /* ZOOM */
-    img{transition:.35s}
-    img:hover{transform:scale(1.05)}
-
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+      .avatar{width:100%;height:260px}}
+    /* ZOOM EFFECT */
+    img{transition:transform .35s ease, filter .35s ease}
+    img:hover{transform:scale(1.05);filter:brightness(.95)}
+      .hero-wrap{width:100%;aspect-ratio:16 / 9;   /* kunci 1920x1080 */overflow:hidden;border-radius:12px;margin-bottom:14px;}
+    .hero-wrap img.hero{width:100%;height:100%;object-fit:cover;      /* crop elegan ala Detik/Kompas */}
+    
      .inline-half{display:flex;gap:16px;margin:25px 0;align-items:flex-start;}
    .inline-half img{width:50%;border-radius:6px;object-fit:cover;}
    .inline-half .text{width:50%;}
@@ -134,17 +172,15 @@
       <a href="review-empang.html">Review Empang</a>
       <a href="teknik.html">Teknik Ikan Mas</a>
       <a href="spot.html">Spot Kolam</a>
-       <a href="sosial-komunitas.html">Sosial & Komunitas</a>
-     <a href="review-produk.html">Review Alat Pancing/Produk</a>
   </nav>
 </div>
 <main class="container">
 
-  <article class="card" itemscope itemtype="http://schema.org/Article">
+  <article class="card"itemscopeitemtype="http://schema.org/Article"data-id="rangga"data-title=" Om Siliwangi, Gentakan Kilat Angler MMFC yang Disegani di Pinggir Empang">
     <span class="kicker">Profil Angler • Tokoh Komunitas</span>
-    <h1>⚡ Om Siliwangi, Gentakan Kilat Angler MMFC yang Disegani di Pinggir Empang</h1>
+    <h1> Om Siliwangi, Gentakan Kilat Angler MMFC yang Disegani di Pinggir Empang</h1>
     <div class="meta">Ditulis oleh <strong>Redaksi Republik Mancing</strong> • Desember 2025</div>
-  <!-- ACTIONS BAR -->
+   <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -153,7 +189,7 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -204,7 +240,7 @@ Om Siliwangi adalah potret angler MMFC yang lengkap: tajam di lapangan, dewasa d
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -269,13 +305,13 @@ Om Siliwangi adalah potret angler MMFC yang lengkap: tajam di lapangan, dewasa d
 </a>
 </main>
    
-  <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+  <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
       <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
        <span style="color:#fff">Republik</span>
-       <span style="color:#e10600">Mancing</span>
+       <span style="color:#f7d40f">Mancing</span>
        </h3>
       <p style="color:#bbb;line-height:1.7;margin:0">
         Media online seputar dunia mancing Indonesia.  
@@ -344,11 +380,10 @@ Om Siliwangi adalah potret angler MMFC yang lengkap: tajam di lapangan, dewasa d
 <div id="rmSawer" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
     <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
    <p>Scan QR dengan DANA / OVO / GoPay</p>
-
-<img src="assets/img/icon/qr.jpeg" class="qris">
-
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
 <div class="rm-pay-icons">
   <img src="assets/img/icon/dana.jpg">
   <img src="assets/img/icon/ovo.jpg">
@@ -384,7 +419,15 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -392,6 +435,11 @@ function nativeShare(){
     navigator.share({title:document.title,url:location.href});
   } else {
     alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
