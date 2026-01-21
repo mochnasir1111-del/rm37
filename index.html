@@ -67,19 +67,7 @@ updateStatistik();
   --radius:10px;
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
 html,body{font-family:var(--font);background:var(--bg);color:#222}
-/* ---------- TOP BAR / NAV ---------- */
-.topbar{position: sticky;top:0;z-index:10000;}
-.top-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 16px}
-.brand a{font-weight:800;font-size:20px;color:#111;text-decoration:none}
-.brand span{color:var(--accent)}
-.main-nav{margin-left:auto; /* dorong ke kanan */display:flex; gap:16px;white-space:nowrap;}
-.main-nav a{text-decoration:none;color:#333;font-weight:600;padding:6px 8px;border-radius:6px}
-.main-nav a:hover{background:#f0f6ff;color:var(--accent)}
-/* ---------- SUBHEADER ---------- */
-.subheader{ background:#fff;border-bottom:2px solid var(--accent);position:sticky; top:0;z-index:90;}
-.sub-nav{max-width:var(--max-width);margin:0 auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
-.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
-.sub-nav a:hover{color:var(--accent);}
+
 /* HAMBURGER */
 .hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:6px 8px}
 .hamburger span{display:block;width:22px;height:2px;background:#333;margin:4px 0;border-radius:2px}
@@ -144,17 +132,7 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .popular-list li{margin-bottom:8px}
 .video-thumb img{width:100%;border-radius:8px;display:block}
 .ad-box{display:flex;align-items:center;justify-content:center;height:250px;color:var(--muted);font-weight:700;border:2px dashed #e6e6e6}
-/* ===== FOOTER ===== */
-.site-footer{background:#111;color:#ddd;margin-top:40px;}
-.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
-.footer-col h3,
-.footer-col h4{color:#fff;margin-bottom:12px;}
-.footer-col h3 span{color:#e53935;}
-.footer-col p{font-size:14px;line-height:1.6;}
-.footer-col ul{list-style:none;padding:0;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
-.footer-col a:hover{color:#e53935;}
+
 /* SOCIAL */
 .social a{display:inline-block;margin-right:10px;font-size:14px;}
 /* BOTTOM */
@@ -241,29 +219,15 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .offcanvas.active{right: 0;}
 .offcanvas-backdrop{position: fixed;inset: 0;background: rgba(0,0,0,.45);opacity: 0;pointer-events: none;transition: opacity .25s ease;z-index: 10001;}
 .offcanvas-backdrop.show{opacity: 1;pointer-events: auto;}
-    /* TOPBAR */
-  .topbar{background:#111;color:#fff;}
-  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:10px 16px;}
-  .brand a{font-size:20px;font-weight:800;color:#fff;}
-  .brand span{color:#c00}
-  .main-nav{display:flex;gap:16px;margin-left:auto;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;}
-  .hover-red:hover{color:#c00}
-   /* SUBHEADER */
-  .subheader{background:#fff;border-bottom:2px solid #c00;}
-  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
-  .sub-nav a{font-size:14px;font-weight:600;color:#333;}
-  .sub-nav a:hover{color:#c00;}
-    /* STICKY (OPSIONAL, KEREN) */
-  .subheader{position: sticky;top:52px;z-index:50;}
+    
   /* ================= HEADER GLOBAL ================= */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
+  .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand span{color:#c00}
+  .brand span{color:#f7d40f}
   .main-nav{display:flex;gap:16px;margin-left:auto;}
   .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
-  .hover-red:hover{color:#c00}
+  .hover-red:hover{color:#f7d40f}
    /* SUBHEADER */
   .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
   .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
@@ -297,21 +261,13 @@ html,body{font-family:var(--font);background:var(--bg);color:#222}
 .toko-item p{font-size:13px;color:#374151;margin:2px 0;}
 .btn-sidebar{display:block;text-align:center;margin-top:14px;padding:10px;background:#dc2626;color:#fff;text-decoration:none;border-radius:10px;font-size:14px;font-weight:600;}
 .btn-sidebar:hover{background:#b91c1c;}
-/* ===== TOPBAR ===== */
-.topbar{background:#111;position:sticky;top:0;z-index:10000;}
-.top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 16px;}
-.brand-logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:20px;text-decoration:none;}
-.brand-logo span{color:#c00;}
-.brand-logo img{width:32px;height:32px}
+
 /* MENU DESKTOP */
 .main-nav{margin-left:auto;display:flex;gap:18px;}
 .main-nav a{color:#fff;text-decoration:none;font-weight:600;}
 /* HAMBURGER */
 .menu-btn{display:none;font-size:26px;background:none;border:none;color:#fff;cursor:pointer;}
-/* ===== SUBHEADER ===== */
-.subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:56px;z-index:999;}
-.sub-nav{max-width:1200px;margin:auto;display:flex;gap:16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;}
-.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+
 /* ===== OFFCANVAS ===== */
 .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:10001;padding:20px;transition:.3s ease;}
 .offcanvas.active{right:0;}
@@ -383,14 +339,15 @@ a.title:hover {color: #c00; }
   <!-- ================= IKLAN TOP ================= -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
      crossorigin="anonymous"></script>
-  <!-- TOP NAV -->
+  <!-- HEADER GLOBAL -->
 <header class="topbar">
   <div class="top-inner">
-    <button class="menu-btn" id="openOff" aria-label="Menu">☰</button>
-    <a href="index.html" class="brand-logo">
-      <img src="assets/img/icon/rm.png" alt="Republik Mancing">
-      Republik<span>Mancing</span>
-    </a><div class="rm-search">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+    <div class="rm-search">
   <input 
     type="text" 
     id="searchInput" 
@@ -918,13 +875,13 @@ a.title:hover {color: #c00; }
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4116447342838753"
      crossorigin="anonymous"></script>
      
-       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+       <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
       <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
        <span style="color:#fff">Republik</span>
-       <span style="color:#e10600">Mancing</span>
+       <span style="color:#f7d40f">Mancing</span>
        </h3>
       <p style="color:#bbb;line-height:1.7;margin:0">
         Media online seputar dunia mancing Indonesia.  
@@ -1268,71 +1225,3 @@ setInterval(() => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
