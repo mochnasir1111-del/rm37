@@ -60,8 +60,8 @@
 
     @media(max-width:980px){.layout{grid-template-columns:1fr}}
 
-      /* ================= HEADER GLOBAL ================= */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
+     /* ================= HEADER GLOBAL ================= */
+  .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand span{color:#f7d40f}
@@ -84,25 +84,23 @@
 @media(max-width:768px){
   .main-nav{display:none}
   .menu-btn{display:block}}
-  
-  .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand-logo img{width:34px;height:34px;object-fit:contain;}
-  /* ===== FOOTER ===== */
-.site-footer{background:#111;color:#ddd;margin-top:40px;}
-.footer-container{max-width:1200px;margin:auto;padding:40px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
-.footer-col h3,
-.footer-col h4{color:#fff;margin-bottom:12px;}
-.footer-col h3 span{color:#e53935;}
-.footer-col p{font-size:14px;line-height:1.6;}
-.footer-col ul{list-style:none;padding:0;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col a{color:#ccc;text-decoration:none;font-size:14px;}
-.footer-col a:hover{color:#e53935;}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f4f4f4;margin:0}
+.container{max-width:980px;margin:auto;background:#fff;padding:20px}
+h1,h2,h3{color:#111}
+.meta{color:#777;font-size:14px;margin-bottom:15px}
+.highlight{background:#fff8e1;padding:15px;border-left:5px solid #d4a017;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ddd;padding:8px;font-size:14px}
+th{background:#f0f0f0}
+.rm-gallery,.rm-moment{margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+figure{margin:0}
+figure img{width:100%;border-radius:6px}
+figcaption{text-align:center;font-size:13px;color:#555;margin-top:6px}
+.rm-thanks{background:#f9f9f9;padding:20px;border-left:5px solid #333;margin-top:40px}
+.rm-moment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.moment-item img{width:100%;border-radius:6px}
 
-.article-ad {
-  margin: 30px 0;
-  text-align: center;
-}
 /* Hilangkan biru di semua card berita */
 .news-card a {
   color: #000;
@@ -134,14 +132,13 @@
   </style>
 </head>
 <body>
- <!-- HEADER GLOBAL -->
+  <!-- HEADER GLOBAL -->
 <header class="topbar">
   <div class="top-inner">
     <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
 
-   <div class="brand">
-     <a href="index.html" class="brand-logo">
-  <img src="assets/img/icon/rm.png" alt="Logo Republik Mancing">Republik<span>Mancing</span></a>
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
     </div>
    <nav class="main-nav">
       <a href="index.html" class="hover-red">Beranda</a>
@@ -160,8 +157,6 @@
       <a href="review-empang.html">Review Empang</a>
       <a href="teknik.html">Teknik Ikan Mas</a>
       <a href="spot.html">Spot Kolam</a>
-          <a href="sosial-komunitas.html">Sosial & Komunitas</a>
-      <a href="review-produk.html">Review Alat Pancing/Produk</a>
   </nav>
 </div>
 
@@ -334,7 +329,7 @@ setInterval(updateRealtime, 60000);  // update tiap 1 menit
        data-full-width-responsive="true"></ins>
 </div>
 
-       <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+       <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
