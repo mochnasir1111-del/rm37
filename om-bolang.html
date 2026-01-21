@@ -520,7 +520,15 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -528,6 +536,11 @@ function nativeShare(){
     navigator.share({title:document.title,url:location.href});
   } else {
     alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
