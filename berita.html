@@ -25,14 +25,7 @@
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
-    /* SEARCH */
-     .search-area{margin-left:auto}
-     .search-area input{padding:8px 12px;border:1px solid #e3e6ea;border-radius:8px;width:240px}
-
-    /* header */
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
-
+   
     /* GRID BERITA */
     .news-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
     h1{margin-bottom:14px;font-size:1.7rem}
@@ -58,57 +51,46 @@
   .top-ad {width: 100%;background: #ffffff;padding: 8px 0;border-bottom: 1px solid #ffffff;}
   .top-ad .container {display: flex;justify-content: center;align-items: center;}
   .top-ad img {max-width: 100%;height: auto;display: block;}
-  /* ==================================================
-   HEADER UTAMA – REPUBLIK MANCING
-   ================================================== */
-  .topbar{background:#111;color:#fff;position:sticky;top:0;z-index:200;}
-  .top-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:18px;}
-  /* BRAND */
+  /* ================= HEADER GLOBAL ================= */
+  .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
   .brand span{color:#f7d40f}
-  /* NAV UTAMA */
-  .main-nav{margin-left:auto;display:flex;gap:16px;white-space:nowrap;}
-  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;padding:6px 4px;position:relative;}
-  .main-nav a:hover,
-  .main-nav a.active{color:#f7d40f}
-  /* ==================================================
-   SUBHEADER (MENU KEDUA)
-   ================================================== */
-  .subheader{background:#fff;border-bottom:2px solid #c00; position:sticky;top:52px;z-index:150;}
-  .sub-nav{ max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;}
+  .main-nav{display:flex;gap:16px;margin-left:auto;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+  .hover-red:hover{color:#f7d40f}
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
   .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
-  .sub-nav a:hover,
-  .sub-nav a.active{color:#c00;}
-  /* ==================================================
-   MOBILE
-   ================================================== */
-  .menu-btn{display:none;font-size:22px;background:none;border:none; color:#fff;cursor:pointer;}
-  @media (max-width: 768px){
-  .main-nav{display:none;}
-  .menu-btn{display:block;}}
-
-.ads-slot{
-  margin:24px 0;
-  text-align:center;
-}
-.ads-label{
-  display:block;
-  font-size:12px;
-  color:#999;
-  margin-bottom:6px;
-}
-.ads-box{
-  max-width:728px;
-  height:90px;
-  margin:auto;
-  background:#f4f5f7;
-  border:1px dashed #ccc;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#aaa;
-}
+  .sub-nav a:hover{color:#c00}
+   /* OFFCANVAS */
+  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+  .offcanvas.active{right:0}
+  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+  .off-nav a{color:#fff;text-decoration:none;}
+  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+    /* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f4f4f4;margin:0}
+.container{max-width:980px;margin:auto;background:#fff;padding:20px}
+h1,h2,h3{color:#111}
+.meta{color:#777;font-size:14px;margin-bottom:15px}
+.highlight{background:#fff8e1;padding:15px;border-left:5px solid #d4a017;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ddd;padding:8px;font-size:14px}
+th{background:#f0f0f0}
+.rm-gallery,.rm-moment{margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+figure{margin:0}
+figure img{width:100%;border-radius:6px}
+figcaption{text-align:center;font-size:13px;color:#555;margin-top:6px}
+.rm-thanks{background:#f9f9f9;padding:20px;border-left:5px solid #333;margin-top:40px}
+.rm-moment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.moment-item img{width:100%;border-radius:6px}
 /* ================================
    NEWS CARD
 ================================ */
@@ -118,13 +100,11 @@
   gap:22px;
 }
 .news-card{
-  position: relative; /* PENTING */
   background:var(--card);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   overflow:hidden;
 }
-
 .news-card img{
   width:100%;
   height:180px;
@@ -176,9 +156,11 @@
   </style>
 </head>
 <body>
- <header class="topbar">
+  <!-- HEADER GLOBAL -->
+<header class="topbar">
   <div class="top-inner">
-    <button class="menu-btn" id="openOff">☰</button>
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
     <div class="brand">
       <a href="index.html">Republik<span>Mancing</span></a>
     </div>
@@ -202,8 +184,6 @@
     <a href="review-empang.html">Review Empang</a>
     <a href="teknik.html">Teknik Ikan Mas</a>
     <a href="spot.html">Spot Kolam</a>
-      <a href="sosial-komunitas.html">Sosial & Komunitas</a>
-     <a href="review-produk.html">Review Alat Pancing/Produk</a>
   </nav>
 </div>
 
@@ -228,46 +208,6 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <div class="news-list">
-
-   <article class="news-card">
-<a href="liputan-khusus-class-of-king-angler-2026.html">
-<img src="assets/img/mmfc/raja.png" alt="Dua Raja, Satu Sejarah, Total Hadiah Hampir 2 Milyar Rupiah..">
-<div class="news-body">
-<h3 class="title">Dua Raja, Satu Sejarah, Total Hadiah Hampir 2 Milyar Rupiah.</h3>
-</div>
-</a>
-</article>
-  
-  <article class="news-card">
-     <span style="
-position:absolute;
-background:#c00;
-color:#fff;
-padding:4px 10px;
-font-size:11px;
-font-weight:700;
-border-radius:6px;
-top:10px;
-left:10px;
-z-index:5;">
-BREAKING
-</span>
-<a href="king-of-angler-2026.html">
-<img src="assets/img/galeri/raja.png" alt="king of angler 2026">
-<div class="news-body">
-<h3 class="title">Erfan Katumiri & Telaga Silet Resmi Dinobatkan Sebagai King of Angler 2026.</h3>
-</div>
-</a>
-</article>
-
-  <article class="news-card">
-<a href="republik-mancing-cetak-sejarah-liputan12jam-nonstop.html">
-<img src="assets/img/galeri/headline1.JPG" alt="RepublikMancing Cetak Sejarah: Live 6,5 Jam Nonstop di Class Of King Angler 2026.">
-<div class="news-body">
-<h3 class="title">RepublikMancing Cetak Sejarah: Live 6,5 Jam Nonstop di Class Of King Angler 2026.</h3>
-</div>
-</a>
-</article>
   
 <article class="news-card">
 <a href="ebenk.html">
@@ -322,14 +262,7 @@ BREAKING
 </div>
 </a>
 </article>
- 
-          <article class="news-card">
-          <a href="battle-of-creator.html">
-            <img src="assets/img/event/DSCF6845.jpg" alt="battle of creator 2025">
-            <div class="news-body">
-              <h3 class="title">Mancing Bareng Senar Pancing & Duraking Duraflex: Pertempuran Seru Komunitas dan Konten Kreator</h3>
-            </div>
-          </a></article>
+
 <article class="news-card">
 <a href="cs-101.html">
 <img src="assets/img/event/bolang.png" alt="Pemancingan CS101 feat MMFC">
@@ -435,7 +368,7 @@ BREAKING
 </div>
 </main>
 
- <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+ <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
