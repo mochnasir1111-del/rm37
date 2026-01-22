@@ -14,6 +14,7 @@
   <title>Review & Referensi Produk Pancing — Republik Mancing</title>
   <meta name="description" content="Kumpulan review dan referensi produk pancing di Republik Mancing, disajikan secara informatif dan editorial.">
   <meta name="robots" content="index, follow">
+  <link rel="icon" href="assets/img/favicon.ico">
   <style>
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f6f7;color:#222;line-height:1.7}
     .container{max-width:900px;margin:auto;padding:40px 20px;background:#fff}
@@ -26,6 +27,47 @@
     .note{font-size:14px;color:#666;background:#f9fafb;padding:16px;border-left:4px solid #ddd;margin-top:30px}
     footer{text-align:center;padding:24px;background:#111;color:#aaa;margin-top:40px;font-size:14px}
     footer a{color:#bbb;text-decoration:none;margin:0 6px}
+      /* ================= HEADER GLOBAL ================= */
+  .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
+  .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+  .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .brand span{color:#f7d40f}
+  .main-nav{display:flex;gap:16px;margin-left:auto;}
+  .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+  .hover-red:hover{color:#f7d40f}
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover{color:#c00}
+   /* OFFCANVAS */
+  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+  .offcanvas.active{right:0}
+  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+  .off-nav a{color:#fff;text-decoration:none;}
+  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+    /* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f4f4f4;margin:0}
+.container{max-width:980px;margin:auto;background:#fff;padding:20px}
+h1,h2,h3{color:#111}
+.meta{color:#777;font-size:14px;margin-bottom:15px}
+.highlight{background:#fff8e1;padding:15px;border-left:5px solid #d4a017;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ddd;padding:8px;font-size:14px}
+th{background:#f0f0f0}
+.rm-gallery,.rm-moment{margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+figure{margin:0}
+figure img{width:100%;border-radius:6px}
+figcaption{text-align:center;font-size:13px;color:#555;margin-top:6px}
+.rm-thanks{background:#f9f9f9;padding:20px;border-left:5px solid #333;margin-top:40px}
+.rm-moment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.moment-item img{width:100%;border-radius:6px}
+
     /* ACTIONS BAR */
 .rm-actions{display:flex;gap:18px;margin:12px 0 24px;align-items:center}
   .rm-view,.rm-btn{background:transparent;border:none;display:flex;align-items:center;gap:6px;font-size:18px;cursor:pointer;color:#111}
@@ -63,14 +105,43 @@
   </style>
 </head>
 <body>
-
-<header style="background:#111;color:#fff;padding:14px 20px">
-  <div style="max-width:1100px;margin:auto;font-weight:800">
-    <a href="index.html" style="color:#fff;text-decoration:none">
-      Republik<span style="color:#c00">Mancing</span></a>
+ <header class="topbar">
+  <div class="top-inner">
+    <button class="menu-btn">☰</button>
+    <div class="brand"><a href="index.html">Republik<span>Mancing</span></a></div>
+      <nav class="main-nav">
+      <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+    </nav>
   </div>
-  
 </header>
+
+<div class="subheader">
+  <nav class="sub-nav">
+    <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+        <a href="sosial-komunitas.html">Sosial & Komunitas</a>
+      <a href="review-produk.html">Review Alat Pancing/Produk</a>
+  </nav>
+</div>
+
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angle</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
+  </nav>
+</div>
 
 <main class="container">
 
@@ -82,7 +153,7 @@
     Konten ditujukan sebagai bahan pertimbangan dan wawasan bagi pemancing,
     bukan sebagai ajakan transaksi langsung.
   </p>
-<!-- ACTIONS BAR -->
+ <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -91,7 +162,7 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -135,7 +206,7 @@
     Republik Mancing menyajikan ulasan secara independen dan objektif,
     tanpa intervensi pihak penjual atau produsen.
   </div>
-<!-- ACTIONS BAR -->
+ <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
@@ -144,19 +215,19 @@
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+     <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
 </main>
 
-<footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
+<footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
       <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
        <span style="color:#fff">Republik</span>
-       <span style="color:#e10600">Mancing</span>
+       <span style="color:#f7d40f">Mancing</span>
        </h3>
       <p style="color:#bbb;line-height:1.7;margin:0">
         Media online seputar dunia mancing Indonesia.  
