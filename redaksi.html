@@ -24,7 +24,8 @@
     .nav-links a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
     .nav-links a:hover{background:#f1f5f9;color:#063740}
   
-        /* ================= HEADER GLOBAL ================= */
+      
+    /* ================= HEADER GLOBAL ================= */
   .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
@@ -32,7 +33,20 @@
   .main-nav{display:flex;gap:16px;margin-left:auto;}
   .main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
   .hover-red:hover{color:#f7d40f}
-  
+   /* SUBHEADER */
+  .subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+  .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+  .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+  .sub-nav a:hover{color:#c00}
+    /* OFFCANVAS */
+  .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
+  .offcanvas.active{right:0}
+  .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+  .off-nav a{color:#fff;text-decoration:none;}
+  .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
+  /* MOBILE */
+  .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+
    body{font-family:Inter,Arial,sans-serif;background:#f5f6f7;color:#222;line-height:1.7}
     .wrap{max-width:900px;margin:40px auto;padding:0 16px}
     h1{font-size:2rem;margin-bottom:10px}
@@ -62,7 +76,29 @@
     </nav>
   </div>
 </header>
+<div class="subheader">
+  <nav class="sub-nav">
+  <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+     <a href="sosial-komunitas.html">Sosial & Komunitas</a>
+    <a href="review-produk.html">Review Alat Pancing/Produk</a>
+  </nav>
+</div>
 
+<!-- OFFCANVAS MOBILE -->
+<div class="offcanvas" id="offcanvas">
+  <button class="close-off" id="closeOff">×</button>
+  <nav class="off-nav">
+    <a href="index.html">Beranda</a>
+      <a href="berita.html" class="active">Berita</a>
+      <a href="video.html">Video</a>
+      <a href="profil-angler2.html">Profil Angler</a>
+      <a href="kontak.html">Kontak</a>
+  </nav>
+</div>
 <main class="container">
   <h1>Redaksi</h1>
   <div class="meta">Republik Mancing • Diperbarui: 2025</div>
@@ -165,7 +201,7 @@
     <div style="flex:1;min-width:220px">
       <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
       <ul style="list-style:none;padding:0;margin:0;line-height:2">
-       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
         <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
         <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
         <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
@@ -189,6 +225,6 @@
   <!-- COPYRIGHT -->
   <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
     © 2025 Republik Mancing. All Rights Reserved.
-  </div></footer>
-
+  </div>
+</footer>
 </body></html>
