@@ -129,7 +129,15 @@
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
 
-   
+   .news-card {
+  display: block;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.3s ease;}
+.news-card img {transition: transform 0.3s ease;}
+.news-card:hover img {transform: scale(1.03);}
+.hover-red:hover h3,
+.hover-red:hover p {color: #c00;}
   </style>
 </head>
 <body>
@@ -274,35 +282,40 @@
           <div class="card">
             <h4>Kolam Rekomendasi</h4>
             <div class="spot">
-                <a href="my fishing.html" class="news-card">
-              <img src="assets/img/mmfc/rangga diam.png" alt="Sungai Mahakam" />
+                <a href="my fishing.html" class="news-card hover-red">
+              <img src="assets/img/mmfc/rangga diam.png" alt="Pemancingan My Fishing -Gantar Indramayu" />
               <div>
                 <h3>Pemancingan My Fishing -Gantar Indramayu</h3>
-                <p>Pemancingan Lomba Ikan Mas.</p></a>
+                <p>Pemancingan Lomba Ikan Mas.</p>
               </div>
+                </a>
             </div>
             <div class="spot">
-              <a href="brigif.html" class="news-card">
-              <img src="assets/img/event/brigif1.png" alt="Pantai Selatan Jawa" />
+              <a href="brigif.html" class="news-card hover-red">
+              <img src="assets/img/event/brigif1.png" alt="mancingan Brigif-Bandunga" />
               <div>
                 <h3>Pemancingan Brigif-Bandung</h3>
-                <p>Lomba Ikan Mas.</p></a>
+                <p>Lomba Ikan Mas.</p>
               </div>
+              </a>
+            </div>
                <div class="spot">
-              <a href="si abang.html" class="news-card">
+              <a href="si abang.html" class="news-card hover-red">
               <img src="assets/img/mmfc/she abang.png" alt="si abang" />
               <div>
                 <h3>Pemancingan She Abang</h3>
-                <p>Pemancingan Lomba Ikan Mas.</p></a>
+                <p>Pemancingan Lomba Ikan Mas.</p>
               </div>
+              </a>
             </div>
              <div class="spot">
-              <a href="spot.html" class="news-card">
-              <img src="assets/img/berita/image5.jpeg" alt="Waduk Jatiluhur" />
+              <a href="spot.html" class="news-card hover-red">
+              <img src="assets/img/berita/image5.jpeg" alt="Pemancingan Tabgha-Tangerang" />
               <div>
                 <h3>Pemancingan Tabgha-Tangerang</h3>
-                <p>Pemancingan Galapung/Lomba Ikan Mas.</p>      </a>
+                <p>Pemancingan Galapung/Lomba Ikan Mas.</p>     
               </div>
+              </a>
             </div>
 
       </article>
@@ -433,6 +446,7 @@ function nativeShare(){
 </script>
 </body>
 </html>
+
 
 
 
