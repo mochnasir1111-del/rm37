@@ -8,12 +8,12 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TQSG1MEQ8B');
-</script>
-
+   </script>
+   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pemancingan CS 101 Joglo</title>
- <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+ 
   <style>
     /* Minimal inline styles untuk preview mandiri */
     :root{--accent:#2e6d3e;--muted:#666}
@@ -45,7 +45,25 @@
     .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
     @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.article h1{font-size:20px}; .gallery{grid-template-columns:1fr}}
+/* HEADER GLOBAL */
+.topbar{background:#000;color:#fff;position:sticky;top:0;z-index:200;}
+.top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
+.brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+.brand span{color:#f7d40f}
+.main-nav{display:flex;gap:16px;margin-left:auto;}
+.main-nav a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;}
+.hover-red:hover{color:#f7d40f}
+.menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .menu-btn{display:block}
+}
 
+/* SUBHEADER */
+.subheader{background:#fff;border-bottom:2px solid #c00;position:sticky;top:52px;z-index:90;}
+.sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
+.sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
+.sub-nav a:hover{color:#c00}
       .article-container {max-width: 850px;     /* lebar pas seperti detik */margin: 0 auto;       /* center */padding: 0 16px;      /* biar rapi di HP */}
   .article-photo {width: 100%;max-width: 800px;display: block;margin: 20px auto;border-radius: 10px;}
  /* ACTIONS BAR */
@@ -78,20 +96,51 @@
   .qris{max-width:180px;   /* atur ukuran di sini */width:100%; margin:12px auto;display:block;border-radius:8px;}
   /* Icon pembayaran */
   .rm-pay-icons{display:flex;justify-content:center;gap:12px;margin-top:10px;}
-  .rm-pay-icons img{ width:120px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
+  .rm-pay-icons img{ width:100px;          /* ukuran icon */height:auto;cursor:pointer;transition:transform .2s ease, filter .2s ease;}
   /* efek hover biar lebih hidup */
   .rm-pay-icons img:hover{transform:scale(1.15);filter:brightness(1.15);}
+  .berita p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <a class="brand" href="index.html">Republik Mancing</a>
-      <div style="margin-left:auto;color:var(--muted);font-size:14px">Berita • Event • Galeri</div>
-    </header>
-    <nav class="breadcrumb">
-      <a href="index.html">Beranda</a> › <a href="berita.html">Berita</a> › Event
+   <!-- HEADER GLOBAL -->
+<header class="topbar">
+  <div class="top-inner">
+    <button id="openOff" class="menu-btn" aria-label="Menu">☰</button>
+
+    <div class="brand">
+      <a href="index.html">Republik<span>Mancing</span></a>
+    </div>
+     <nav class="main-nav">
+       <a href="index.html" class="hover-red">Beranda</a>
+      <a href="berita.html" class="hover-red">Berita</a>
+      <a href="video.html" class="hover-red">Video</a>
+      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
+      <a href="kontak.html" class="hover-red">Kontak</a>
     </nav>
+
+  </div>
+</header>
+
+
+<!-- SUBMENU -->
+<div class="subheader">
+  <nav class="sub-nav">
+     <a href="lomba.html">Jadwal Lomba</a>
+      <a href="laporan-lomba.html">Laporan Lomba</a>
+      <a href="review-empang.html">Review Empang</a>
+      <a href="teknik.html">Teknik Ikan Mas</a>
+      <a href="spot.html">Spot Kolam</a>
+     <a href="sosial-komunitas.html">Sosial & Komunitas</a>
+    <a href="review-produk.html">Review Alat Pancing/Produk</a>
+    <a href="tentang.html"> Tentang Kami</a>
+  </nav>
+</div>
+  <div class="container">
         <article class="article-page">
   <!-- HEADER IMAGE -->
   <article class="article-container">
@@ -103,13 +152,12 @@
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -222,17 +270,16 @@
     <strong>CS101 feat MMFC</strong> tahun ini dianggap sebagai salah satu lomba paling kompetitif dan meriah. 
     Banyak peserta berharap acara ini berlanjut di edisi mendatang.
   </p>
-   <!-- ACTIONS BAR -->
+  <!-- ACTIONS BAR -->
     <div class="rm-actions">
      <div class="rm-view">👁 <span class="rmView">0</span></div>
 <button class="rm-btn" onclick="likeArticle()">👍 <span class="rmLike">0</span></button>
-
       <button class="rm-btn" onclick="openShare()" aria-label="Bagikan">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 17 5-5-5-5"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>
         </svg>
       </button>
-      <button class="rm-btn rm-sawer-btn" onclick="openSawer()">
+      <button class="rm-btn rm-sawer-btn" onclick="openSawer(this)">
         <img src="assets/img/icon/rp.png" alt="Sawer">
       </button>
     </div>
@@ -257,17 +304,6 @@
         </div>
       </div>
      
-
-           <hr style="margin-top:22px">
-      <section id="comments">
-        <h3>Komentar</h3>
-        <p style="color:var(--muted)">Belum ada komentar. Jadilah yang pertama memberikan pengalaman mancingmu!</p>
-        <form style="display:flex;flex-direction:column;gap:8px;max-width:520px;margin-top:12px">
-          <input type="text" placeholder="Nama" required style="padding:10px;border-radius:6px;border:1px solid #ddd">
-          <textarea placeholder="Tulis komentar..." rows="4" required style="padding:10px;border-radius:6px;border:1px solid #ddd"></textarea>
-          <button type="submit" style="padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer">Kirim Komentar</button>
-        </form>
-      </section>
     </article>
     <footer style="background:#111;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
@@ -275,7 +311,7 @@
     <div style="flex:1;min-width:240px">
       <h3 style="font-size:22px;margin-bottom:12px;font-weight:800">
        <span style="color:#fff">Republik</span>
-       <span style="color:#e10600">Mancing</span>
+       <span style="color:#f7d40f">Mancing</span>
        </h3>
       <p style="color:#bbb;line-height:1.7;margin:0">
         Media online seputar dunia mancing Indonesia.  
@@ -324,7 +360,7 @@
   </div>
 </footer>
   </div>
-  <!-- SHARE MODAL -->
+ <!-- SHARE MODAL -->
 <div id="rmShare" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Bagikan Artikel Ini</b><span onclick="closeShare()">✖</span></div>
@@ -345,96 +381,17 @@
 <div id="rmSawer" class="rm-modal">
   <div class="rm-box">
     <div class="rm-head"><b>Dukung Liputan Dunia Mancing Ikan Mas</b><span onclick="closeSawer()">✖</span></div>
+    <p id="sawerFor" style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:8px"></p>
     <p>Artikel gratis. Dukunganmu membantu kami menghadirkan tips, trik, dan laporan lomba ikan mas terbaru.</p>
    <p>Scan QR dengan DANA / OVO / GoPay</p>
-
-<img src="assets/img/icon/qr.jpeg" class="qris">
-
+<img src="assets/img/icon/qris.jpeg" class="qris" onclick="sawerWA()" style="cursor:pointer">
 <div class="rm-pay-icons">
   <img src="assets/img/icon/dana.jpg">
   <img src="assets/img/icon/ovo.jpg">
   <img src="assets/img/icon/gopay.jpg">
 </div>
-  <!-- Functionality -->
 <script>
-(function() {
-  // Get current page url and title (fallback to document.location)
-  const pageUrl = encodeURIComponent(window.location.href);
-  const pageTitle = encodeURIComponent(document.title || '');
-
-  const fb = document.getElementById('shareFacebook');
-  const x = document.getElementById('shareX');
-  const ig = document.getElementById('shareInstagram');
-  const wa = document.getElementById('shareWhatsApp');
-  const tg = document.getElementById('shareTelegram');
-  const copyBtn = document.getElementById('copyLink');
-  const feedback = document.getElementById('shareFeedback');
-
-  // Facebook share dialog (opens in new window)
-  fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-
-  // X (Twitter) share
-  x.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-
-  // Instagram: no official web share for arbitrary links.
-  // We'll open the profile URL if provided, otherwise fallback to Instagram home.
-  // If you prefer direct "share to Instagram" on mobile, users can paste the link manually.
-  const instagramProfile = ''; // <-- optional: masukkan username profil jika mau, misal 'republikmancing'
-  if (instagramProfile) {
-    ig.href = `https://www.instagram.com/${instagramProfile}/`;
-  } else {
-    ig.href = `https://www.instagram.com/`;
-  }
-
-  // WhatsApp (works on mobile & web)
-  wa.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
-
-  // Telegram
-  tg.href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
-
-  // Copy to clipboard
-  copyBtn.addEventListener('click', function() {
-    const text = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => {
-        feedback.textContent = 'Tautan disalin ke clipboard';
-        // small visual feedback
-        copyBtn.innerHTML = '✓ <span class="label">Tersalin</span>';
-        setTimeout(() => {
-          copyBtn.innerHTML = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v12h2V3h12V1zM20 5H8a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h12v14z"/></svg><span class="label">Salin Link</span>`;
-        }, 1500);
-      }).catch(err => {
-        feedback.textContent = 'Gagal menyalin tautan';
-      });
-    } else {
-      // fallback older browsers
-      const input = document.createElement('input');
-      input.value = text;
-      document.body.appendChild(input);
-      input.select();
-      try {
-        document.execCommand('copy');
-        feedback.textContent = 'Tautan disalin ke clipboard';
-      } catch (e) {
-        feedback.textContent = 'Browser tidak mendukung salin otomatis';
-      } finally {
-        input.remove();
-      }
-    }
-  });
-
-  // Accessibility: announce focus
-  const buttons = document.querySelectorAll('#shareWidget .share-btn, #shareWidget button');
-  buttons.forEach(b => {
-    b.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        b.click();
-      }
-    });
-  });
-})();
-
-  /* ===============================
+/* ===============================
    VIEW & LIKE SYSTEM
 ================================ */
 let views = Number(localStorage.getItem("rmView")) || 0;
@@ -463,7 +420,15 @@ function openShare(){
   rmShare.style.display = "flex";}
 function closeShare(){ rmShare.style.display = "none"; }
 /* OPEN/CLOSE SAWER MODAL */
-function openSawer(){ rmSawer.style.display = "flex"; }
+function openSawer(btn){
+  const article = btn.closest("article");
+  const articleId = article?.dataset.id || location.pathname;
+  const articleTitle = article?.dataset.title || document.title;
+  localStorage.setItem("rm_sawer_article_id", articleId);
+  localStorage.setItem("rm_sawer_article_title", articleTitle);
+  document.getElementById("sawerFor").innerText =
+    "💰 Sawer untuk: " + articleTitle;
+  rmSawer.style.display = "flex";}
 function closeSawer(){ rmSawer.style.display = "none"; }
 /* NATIVE SHARE */
 function nativeShare(){
@@ -471,9 +436,16 @@ function nativeShare(){
     navigator.share({title:document.title,url:location.href});
   } else {
     alert("Fitur share tidak tersedia di browser ini.");}}
+    function sawerWA(){
+  const id = localStorage.getItem("rm_sawer_article_id");
+  const title = localStorage.getItem("rm_sawer_article_title");
+  const msg = `Halo Admin Republik Mancing,%0A%0ASaya mau SAWER untuk artikel:%0A${title}%0A(ID: ${id})%0A%0ASudah transfer via QRIS.`;
+  window.open("https://wa.me/6285693927647?text=" + msg, "_blank");}
 </script>
 </body>
 </html>
+
+
 
 
 
