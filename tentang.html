@@ -17,50 +17,7 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#0f172a;line-height:1.6}
 
-    /* header */
-    .site-header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.85);z-index:100;border-bottom:1px solid #eef2f7}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    .nav{display:flex;align-items:center;gap:16px}
-    .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
-    .nav-links{margin-left:12px;display:flex;gap:10px}
-    .nav-links a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
-    .nav-links a:hover{background:#f1f5f9;color:#063740}
-
-    /* layout */
-    .layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:18px 0}
-
-    /* article */
-    article.card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
-    .kicker{display:inline-block;background:rgba(6,182,212,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:0.85rem}
-    h1{margin:12px 0 6px;font-size:1.6rem}
-    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
-    .hero{width:100%;height:320px;border-radius:10px;object-fit:cover;margin-bottom:16px}
-
-    .content p{margin:12px 0}
-    .content h2{margin-top:20px}
-    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
-    .tip{background:#fff;padding:12px;border-radius:10px;border:1px solid #eef2f7}
-
-    /* share */
-    .share{display:flex;gap:8px;align-items:center;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid #e6eef0}
-
-    /* sidebar */
-    aside .card{padding:16px}
-    .related-list{display:flex;flex-direction:column;gap:12px}
-    .related-item{display:flex;gap:10px;align-items:center}
-    .related-item img{width:72px;height:48px;object-fit:cover;border-radius:8px}
-
-    /* comments placeholder */
-    .comments{margin-top:18px;border-top:1px dashed #e6eef0;padding-top:14px}
-    .comment-box textarea{width:100%;min-height:90px;padding:10px;border-radius:8px;border:1px solid #e6eef0}
-    .row{display:flex;gap:12px;align-items:center}
-
-    /* responsive */
-    @media (max-width:880px){
-      .layout{grid-template-columns:1fr;}
-      aside{order:2}}
-        /* ================= HEADER GLOBAL ================= */
+    /* ================= HEADER GLOBAL ================= */
   .topbar{background:#000000;color:#fff;position:sticky;top:0;z-index:200;}
   .top-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 16px;}
   .brand a{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
@@ -73,20 +30,52 @@
   .sub-nav{max-width:1200px;margin:auto;display:flex;gap:18px;padding:8px 16px;overflow-x:auto;}
   .sub-nav a{font-size:14px;font-weight:600;color:#333;text-decoration:none;}
   .sub-nav a:hover{color:#c00}
-   /* OFFCANVAS */
+    /* OFFCANVAS */
   .offcanvas{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#111;color:#fff;z-index:9999;padding:20px;transition:.3s;}
   .offcanvas.active{right:0}
   .off-nav{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
   .off-nav a{color:#fff;text-decoration:none;}
   .close-off{position:absolute;top:10px;right:14px;font-size:28px;background:none;border:none;color:#fff;cursor:pointer;}
-    /* MOBILE */
+  /* MOBILE */
   .menu-btn{display:none;font-size:24px;background:none;border:none;color:#fff;}
 @media(max-width:768px){
   .main-nav{display:none}
   .menu-btn{display:block}}
-  
-  .brand-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
-  .brand-logo img{width:34px;height:34px;object-fit:contain;}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f4f4f4;margin:0}
+.container{max-width:980px;margin:auto;background:#fff;padding:20px}
+h1,h2,h3{color:#111}
+.meta{color:#777;font-size:14px;margin-bottom:15px}
+.highlight{background:#fff8e1;padding:15px;border-left:5px solid #d4a017;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ddd;padding:8px;font-size:14px}
+th{background:#f0f0f0}
+.rm-gallery,.rm-moment{margin-top:40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+figure{margin:0}
+figure img{width:100%;border-radius:6px}
+figcaption{text-align:center;font-size:13px;color:#555;margin-top:6px}
+.rm-thanks{background:#f9f9f9;padding:20px;border-left:5px solid #333;margin-top:40px}
+.rm-moment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.moment-item img{width:100%;border-radius:6px}
+    /* ===== CONTENT ===== */
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      padding:40px 20px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+    }
+    h1{font-size:28px;margin-bottom:10px}
+    h2{font-size:20px;margin-top:30px}
+    p,li{margin:10px 0}
+    ul{padding-left:20px}
+    .meta{
+      font-size:14px;
+      color:#777;
+      margin-bottom:30px;
+    }
+
   </style>
 </head>
 <body>
@@ -111,8 +100,8 @@
       <a href="review-empang.html">Review Empang</a>
       <a href="teknik.html">Teknik Ikan Mas</a>
       <a href="spot.html">Spot Kolam</a>
-       <a href="sosial-komunitas.html">Sosial & Komunitas</a>
-     <a href="review-produk.html">Review Alat Pancing/Produk</a>
+     <a href="sosial-komunitas.html">Sosial & Komunitas</a>
+    <a href="review-produk.html">Review Alat Pancing/Produk</a>
   </nav>
 </div>
 
@@ -120,11 +109,11 @@
 <div class="offcanvas" id="offcanvas">
   <button class="close-off" id="closeOff">×</button>
   <nav class="off-nav">
-    <a href="index.html" class="hover-red">Beranda</a>
-      <a href="berita.html" class="hover-red">Berita</a>
-      <a href="video.html" class="hover-red">Video</a>
-      <a href="profil-angler2.html" class="hover-red">Profil Angler</a>
-      <a href="kontak.html" class="hover-red">Kontak</a>
+    <a href="index.html">Beranda</a>
+      <a href="berita.html" class="active">Berita</a>
+      <a href="video.html">Video</a>
+      <a href="profil-angler2.html">Profil Angler</a>
+      <a href="kontak.html">Kontak</a>
   </nav>
 </div>
 
@@ -213,7 +202,7 @@
     <a href="https://wa.me/6285693927647?text=Halo%20Republik%20Mancing"
        class="contact-btn">Hubungi via WhatsApp</a>
   </section>
-  <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
+ <footer style="background:#000000;color:#ddd;padding:50px 20px;margin-top:60px">
      <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px">
     <!-- BRAND -->
     <div style="flex:1;min-width:240px">
@@ -241,7 +230,7 @@
     <div style="flex:1;min-width:220px">
       <h4 style="color:#fff;margin-bottom:12px">Informasi</h4>
       <ul style="list-style:none;padding:0;margin:0;line-height:2">
-       <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
+        <li><a href="tentang.html" style="color:#bbb;text-decoration:none">Tentang Kami</a></li>
         <li><a href="redaksi.html" style="color:#bbb;text-decoration:none">Redaksi</a></li>
         <li><a href="pedoman-media-siber.html" style="color:#bbb;text-decoration:none">Pedoman Media Siber</a></li>
         <li><a href="kontak.html" style="color:#bbb;text-decoration:none">Kontak</a></li>
@@ -265,8 +254,8 @@
   <!-- COPYRIGHT -->
   <div style="border-top:1px solid #222;margin-top:40px;padding-top:20px;text-align:center;color:#777;font-size:14px">
     © 2025 Republik Mancing. All Rights Reserved.
-  </div></footer>
-
+  </div>
+</footer>
 </div>
 </body>
 </html>
