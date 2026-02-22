@@ -203,10 +203,10 @@ header p{margin-top:10px;color:#000000;}
 <div class="container">
 
 <div class="filter-btns">
-  <button class="filter-btn active" onclick="filterSelection('all')">Semua</button>
-  <button class="filter-btn" onclick="filterSelection('elite')">Elite</button>
-  <button class="filter-btn" onclick="filterSelection('senior')">Senior</button>
-  <button class="filter-btn" onclick="filterSelection('muda')">Muda</button>
+  <button class="filter-btn active" onclick="filterSelection('all', this)">Semua</button>
+  <button class="filter-btn" onclick="filterSelection('elite', this)">Elite</button>
+  <button class="filter-btn" onclick="filterSelection('senior', this)">Senior</button>
+  <button class="filter-btn" onclick="filterSelection('muda', this)">Muda</button>
 </div>
  <!-- ACTIONS BAR -->
     <div class="rm-actions">
@@ -422,9 +422,36 @@ function nativeShare(){
 
   window.open("https://wa.me/6285693927647?text=" + msg, "_blank");
 }
+
+    
+function filterSelection(category, el) {
+
+  // Hapus active dari semua tombol
+  let buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  // Tambahkan active ke tombol yang diklik
+  el.classList.add('active');
+
+  // Filter card
+  let cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if (category === 'all') {
+      card.style.display = "block";
+    } else {
+      if (card.classList.contains(category)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  });
+
+}
 </script>
 </body>
 </html>
+
 
 
 
